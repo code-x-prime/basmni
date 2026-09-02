@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background: #f3f6f7;
+    /* `clip` prevents horizontal overflow WITHOUT turning <html> (or <body>)
+       into a second scroll container — using `overflow-x: hidden` on <body>
+       forces its `overflow-y` to compute to `auto`, which produces a second
+       vertical scrollbar next to the document one. */
+    overflow-x: clip;
+  }
+  body {
+    background: #f3f6f7;
+    color: #102b3b;
+    font-family: var(--font-manrope), Arial, sans-serif;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button {
+    font: inherit;
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+    letter-spacing: -0.055em;
+    line-height: 1.02;
+    font-weight: 700;
+  }
+  p {
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.06);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+  .animate-hero-zoom {
+    animation: hero-zoom 2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-hero-zoom {
+      animation: none;
+    }
+  }
+}

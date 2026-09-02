@@ -1,0 +1,45 @@
+export const site = {
+  company: 'Basmni Technologies Pvt. Ltd.',
+  tagline: 'Engineering the future of water infrastructure.',
+  phone: '+91 98101 48456',
+  email: 'info@basmni.com',
+  address: '904 New Delhi House, 27 Barakhamba Road, New Delhi - 110001',
+  // logoLight: white wordmark for dark backgrounds (header, dark sections)
+  // logoDark: dark wordmark for light backgrounds (footer)
+  logo: '/images/basmni-logo-light.png',
+  logoLight: '/images/basmni-logo-light.png',
+  logoDark: '/images/basmni-logo-dark.png',
+}
+
+// All site imagery is served locally from /public/images. Keys are referenced
+// across pages and content modules, so keep them stable.
+export const media = {
+  hero: '/images/hero-valley-installation.jpeg',
+  dredging: '/images/dredging-intake-structure.jpeg',
+  pac: '/images/pac-hydraulic-power-units.jpeg',
+  trcm: '/images/trcm-hydraulic-machines.jpeg',
+  spillway: '/images/spillway-debris-boom.jpeg',
+  field: '/images/field-crane-installation.jpeg',
+  logBoom: '/images/reservoir-log-boom.jpeg',
+  debrisPanorama: '/images/debris-management-panorama.jpeg',
+  // Stock photography (real, documentary) filling gaps where a Basmni photo
+  // does not exist for the subject.
+  pacInfra: '/images/pac-high-voltage-substation.jpeg',
+  hydropowerDam: '/images/hydropower-dam-reservoir.jpeg',
+  civil: '/images/dam-concrete-civil-construction.jpeg',
+  cableDredge: '/images/dredger-pumping-sediment.jpeg',
+  remoteDredge: '/images/dredging-barge-excavator.jpeg',
+  amphibiousDredge: '/images/amphibious-floating-excavator.jpeg',
+  slurryPump: '/images/slurry-submersible-pump.jpeg',
+  trashRack: '/images/intake-debris-trash-rack.jpeg',
+  fieldInspection: '/images/field-engineering-inspection.jpeg',
+  civilSiteReview: '/images/civil-engineering-site-review.jpeg',
+  heroAbout: '/images/about-dam-canyon-hero.jpeg',
+  heroReferences: '/images/references-dam-crane-hero.jpeg',
+  homeIntro: '/images/home-water-infrastructure.jpeg',
+  homeHero: '/images/home-hero-hydro-intake.jpeg',
+  pacAerial: '/images/pac-substation-aerial.jpeg',
+  pacGantry: '/images/pac-transmission-gantry.jpeg',
+}
+
+export type MediaKey = keyof typeof media
