@@ -37,6 +37,21 @@ export const servicesHero: PageHeroContent = {
   breadcrumb: [home, { label: 'Products & Services', href: '/products-services' }],
 }
 
+export const pacHero: PageHeroContent = {
+  eyebrow: 'Pressurized Air Cables',
+  titleLines: ['High-pressurized', 'air cable systems.'],
+  description:
+    'Heavy-duty power transmission insulated with clean compressed technical air — SF6-free, PFAS-free, low-loss and continuously monitored. Basmni engineers, supplies and commissions PAC systems for high-voltage substations, dense grid corridors and hydropower evacuation.',
+  image: 'pacGis',
+  imageAlt: 'Gas-insulated high-voltage switchgear lineup inside a substation hall',
+  imagePosition: 'center',
+  breadcrumb: [
+    home,
+    { label: 'Products & Services', href: '/products-services' },
+    { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
+  ],
+}
+
 export const referencesHero: PageHeroContent = {
   eyebrow: 'Project References',
   titleLines: ['Engineering', 'in the field.'],

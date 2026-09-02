@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 import { media } from '@/content/site'
 import {
   services,
@@ -19,7 +21,7 @@ import { MetricGrid } from '@/components/shared/blocks'
 import { ServiceNavigation } from '@/components/services/ServiceNavigation'
 import { ServiceFeature } from '@/components/services/ServiceFeature'
 import { DredgingEquipmentBlock } from '@/components/services/DredgingEquipmentBlock'
-import { sectionPad } from '@/components/shared/ui'
+import { sectionPad, textLink } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
   title: 'Products & Services | Basmni Technologies Pvt. Ltd.',
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     'Specialized heavy industrial systems and allied civil works from Basmni Technologies: deep dam dredging, dredging equipment, high-pressurized air cable systems, trash rack cleaning machines, log boom barriers, fine screen cleaning machines and civil works.',
 }
 
-const dredging = services[0]
+const dredging = services.find((s) => s.id === 'deep-dam-dredging')!
 const pac = services.find((s) => s.id === 'pac')!
 const rest = services.filter((s) => s.id !== 'deep-dam-dredging' && s.id !== 'pac')
 
@@ -46,6 +48,37 @@ export default function ServicesPage() {
         <div className="mt-12 sm:mt-16">
           <ServiceNavigation />
         </div>
+      </section>
+
+      {/* PAC — flagship: full feature + technical pillars + dedicated page */}
+      <ServiceFeature service={pac} flip dark />
+      <section className={`${sectionPad} bg-graphite text-white`}>
+        <SectionHeading
+          dark
+          label="PAC — technical pillars"
+          title="Engineered for clean, dense power corridors."
+        />
+        <div className="mt-12 grid grid-cols-1 gap-px border border-[#2d4653] bg-[#2d4653] sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+          {pacPillars.map((p) => (
+            <Reveal key={p.title} className="bg-graphite p-6">
+              <h3 className="text-[0.95rem] uppercase leading-[1.15] tracking-tightest text-ice">
+                {p.title}
+              </h3>
+              <p className="mt-2.5 text-[0.82rem] leading-[1.55] text-[#c4d3d9]">{p.text}</p>
+            </Reveal>
+          ))}
+        </div>
+        {pac.highlights && (
+          <div className="mt-10">
+            <MetricGrid items={pac.highlights} dark columns="sm:grid-cols-3" />
+          </div>
+        )}
+        <Link
+          href="/products-services/pressurized-air-cables"
+          className={`${textLink} mt-10 border-ice text-ice`}
+        >
+          Explore the full PAC system <ArrowUpRight />
+        </Link>
       </section>
 
       {/* Deep dam dredging — full feature */}
@@ -84,31 +117,6 @@ export default function ServicesPage() {
             </Reveal>
           ))}
         </div>
-      </section>
-
-      {/* PAC — full feature + technical pillars */}
-      <ServiceFeature service={pac} flip dark />
-      <section className={`${sectionPad} bg-graphite text-white`}>
-        <SectionHeading
-          dark
-          label="PAC — technical pillars"
-          title="Engineered for clean, dense power corridors."
-        />
-        <div className="mt-12 grid grid-cols-1 gap-px border border-[#2d4653] bg-[#2d4653] sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
-          {pacPillars.map((p) => (
-            <Reveal key={p.title} className="bg-graphite p-6">
-              <h3 className="text-[0.95rem] uppercase leading-[1.15] tracking-tightest text-ice">
-                {p.title}
-              </h3>
-              <p className="mt-2.5 text-[0.82rem] leading-[1.55] text-[#c4d3d9]">{p.text}</p>
-            </Reveal>
-          ))}
-        </div>
-        {pac.highlights && (
-          <div className="mt-10">
-            <MetricGrid items={pac.highlights} dark columns="sm:grid-cols-3" />
-          </div>
-        )}
       </section>
 
       {/* TRCM, Log boom, Fine screen, Civil works */}

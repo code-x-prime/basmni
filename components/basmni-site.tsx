@@ -11,10 +11,11 @@ import { services } from '@/content/services'
 import { projects, projectCategories, type ProjectFilterValue } from '@/content/projects'
 import { home } from '@/content/home'
 import { contact } from '@/content/contact'
+import { pacHomeIntro, pacFeatures, pacHeadlineMetrics, pacHowItWorks } from '@/content/pac'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
-import { ImageRotator } from '@/components/shared/ImageRotator'
 import { SectionHeading } from '@/components/shared/SectionHeading'
+import { MetricGrid } from '@/components/shared/blocks'
 import { CTASection } from '@/components/shared/CTASection'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { MagneticButton } from '@/components/motion/MagneticButton'
@@ -44,6 +45,29 @@ const gallery = [
 
 const solutionTabs = ['All', 'Dredging', 'PAC', 'TRCM', 'Civil'] as const
 type SolutionTab = (typeof solutionTabs)[number]
+
+/** Flagship solutions, surfaced as a full section directly below the hero.
+ * PAC leads, then trash rack / debris management, then dredging. */
+const flagshipSystems = [
+  {
+    title: 'Pressurized Air Cables',
+    blurb: 'SF6- and PFAS-free high-voltage power transmission — up to 420 kV and 5,000 A.',
+    src: media.pacInfra,
+    href: '/products-services/pressurized-air-cables',
+  },
+  {
+    title: 'Trash Rack Cleaning Machines',
+    blurb: 'Automated intake debris removal — hydraulic and wire-rope machines, log booms.',
+    src: media.trcm,
+    href: '/products-services#trcm',
+  },
+  {
+    title: 'Dredging Services',
+    blurb: 'Deep dam and reservoir dredging engineered to 100 m working depth.',
+    src: media.dredging,
+    href: '/products-services#deep-dam-dredging',
+  },
+]
 
 /**
  * Full-bleed hero photograph: a slow ~6s zoom-out on mount plus a subtle
@@ -98,7 +122,6 @@ const processSteps = company.capabilitySteps.map((s, i) => ({
 }))
 
 export function BasmniSite() {
-  const reduce = useReducedMotion()
   const [serviceFilter, setServiceFilter] = useState<SolutionTab>('All')
   const [projectFilter, setProjectFilter] = useState<ProjectFilterValue>('All')
   const [galleryFilter, setGalleryFilter] = useState<SolutionTab | 'Hydropower'>('All')
@@ -128,7 +151,7 @@ export function BasmniSite() {
         <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] opacity-[0.05] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:72px_72px] lg:block" />
 
         <RevealStagger
-          className="relative z-[1] w-full px-5 pb-20 pt-32 sm:px-[clamp(1.5rem,7vw,7rem)] sm:pb-24 sm:pt-36"
+          className="relative z-[1] w-full px-5 pb-16 pt-28 sm:px-[clamp(1.5rem,7vw,7rem)] sm:pb-16 sm:pt-32"
           stagger={0.09}
         >
           <div className="max-w-[760px] border-l-2 border-orange/70 pl-5 sm:pl-8">
@@ -158,32 +181,62 @@ export function BasmniSite() {
               </div>
             </RevealItem>
           </div>
+
+          <RevealItem>
+            <p className="border-white/12 mt-10 border-t pt-3 text-[0.56rem] uppercase tracking-[0.16em] text-white/55 sm:mt-12">
+              Est. 2016 · Delhi / India · Hydropower · Water resources · Infrastructure
+            </p>
+          </RevealItem>
         </RevealStagger>
+      </section>
 
-        {/* Technical footer strip */}
-        <div className="pointer-events-none absolute inset-x-5 bottom-6 z-[1] flex flex-col gap-1 border-t border-white/15 pt-3 text-[0.58rem] uppercase tracking-[0.16em] text-white/55 sm:inset-x-[clamp(1.5rem,7vw,7rem)] sm:bottom-7 sm:flex-row sm:items-center sm:gap-x-5">
-          <span className="text-white/75">Est. 2016 — Delhi / India</span>
-          <span aria-hidden className="hidden opacity-30 sm:inline">
-            /
-          </span>
-          <span>Hydropower · Water resources · Infrastructure</span>
-        </div>
-
-        {/* Scroll cue */}
-        <a
-          href="#about"
-          aria-label="Scroll to introduction"
-          className="group absolute bottom-14 right-5 z-[1] hidden items-center gap-3 text-[0.56rem] uppercase tracking-[0.22em] text-white/55 transition-colors hover:text-white sm:bottom-16 sm:right-[clamp(1.5rem,7vw,7rem)] sm:flex"
+      {/* Flagship systems */}
+      <section className={`${sectionPad} bg-graphite text-white`}>
+        <SectionHeading
+          dark
+          label="Flagship solutions"
+          title={<>Three systems that define our field</>}
+          deck="Purpose-built power-transmission, debris-management and dredging platforms — engineered, manufactured and commissioned by Basmni."
+        />
+        <RevealStagger
+          className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-3 sm:gap-6"
+          stagger={0.1}
         >
-          Scroll
-          <span className="relative block h-10 w-px overflow-hidden bg-white/20">
-            <motion.span
-              className="absolute inset-x-0 top-0 block h-4 bg-ice"
-              animate={reduce ? undefined : { y: ['-16px', '40px'] }}
-              transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
-            />
-          </span>
-        </a>
+          {flagshipSystems.map((s, i) => (
+            <RevealItem key={s.title}>
+              <Link
+                href={s.href}
+                className="border-white/12 group flex h-full flex-col overflow-hidden border bg-[#061a25]/60 transition-colors duration-300 hover:border-ice/50"
+              >
+                <span className="relative block aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={s.src}
+                    alt={s.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, 32vw"
+                    className="object-cover transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
+                  />
+                  <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#061a25cc,transparent_55%)]" />
+                  <span className="absolute left-4 top-4 text-[0.7rem] font-bold tracking-[0.12em] text-ice">
+                    0{i + 1}
+                  </span>
+                </span>
+                <span className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
+                  <span className="flex items-start justify-between gap-3">
+                    <span className="text-[clamp(1.15rem,1.6vw,1.5rem)] font-bold uppercase leading-[1.12] tracking-[0.01em] text-white">
+                      {s.title}
+                    </span>
+                    <ArrowUpRight className="mt-1 w-4 shrink-0 -translate-x-1 text-ice opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                  </span>
+                  <span className="text-[0.9rem] leading-[1.6] text-[#c4d3d9]">{s.blurb}</span>
+                  <span className="mt-auto pt-3 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-ice/80">
+                    Explore system
+                  </span>
+                </span>
+              </Link>
+            </RevealItem>
+          ))}
+        </RevealStagger>
       </section>
 
       {/* Intro */}
@@ -290,7 +343,7 @@ export function BasmniSite() {
                     {service.description}
                   </p>
                   <Link
-                    href={`/products-services#${service.id}`}
+                    href={service.href ?? `/products-services#${service.id}`}
                     className="mt-4 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.1em] text-ice"
                   >
                     Explore solution <MoveRight />
@@ -302,12 +355,69 @@ export function BasmniSite() {
         </div>
       </section>
 
+      {/* Feature: PAC — flagship */}
+      <section className={`${sectionPad} bg-graphite text-white`}>
+        <Reveal direction="up">
+          <p className={`${sectionLabel} text-ice`}>04 — Pressurized Air Cables</p>
+          <h2 className={`${displayHeading} mt-2 max-w-[20ch]`}>
+            {home.pacTitle} <em className="not-italic text-ice">{home.pacEmphasis}</em>
+          </h2>
+          <p className="mt-5 max-w-[560px] leading-[1.65] text-[#c4d3d9]">{pacHomeIntro[0]}</p>
+        </Reveal>
+
+        <Reveal direction="up" className="mt-10 sm:mt-12">
+          <ImageBlock
+            src={media.pacGis}
+            alt="Gas-insulated high-voltage switchgear lineup inside a substation hall"
+            reveal
+            sizes="(max-width: 1024px) 100vw, 86vw"
+            className="aspect-[4/3] sm:aspect-[16/8]"
+          />
+        </Reveal>
+
+        <RevealStagger
+          className="mt-12 grid grid-cols-1 gap-px border border-[#2d4653] bg-[#2d4653] sm:mt-14 sm:grid-cols-2 lg:grid-cols-3"
+          stagger={0.07}
+        >
+          {pacFeatures.slice(0, 6).map((f) => (
+            <RevealItem key={f.number} className="bg-graphite p-6">
+              <span className="text-[0.63rem] font-bold text-ice">{f.number}</span>
+              <h3 className="mt-3 text-[0.95rem] uppercase leading-[1.18] tracking-tightest text-ice">
+                {f.title}
+              </h3>
+              <p className="mt-2 text-[0.82rem] leading-[1.55] text-[#c4d3d9]">{f.text}</p>
+            </RevealItem>
+          ))}
+        </RevealStagger>
+
+        <div className="mt-10">
+          <MetricGrid items={pacHeadlineMetrics} dark columns="sm:grid-cols-4" />
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-6 border-t border-[#2d4653] pt-8 sm:mt-14 sm:grid-cols-3 sm:gap-8">
+          {pacHowItWorks.map((s) => (
+            <Reveal key={s.number}>
+              <span className="text-[0.63rem] font-bold text-ice">{s.number}</span>
+              <h3 className="mt-3 text-[0.9rem] uppercase tracking-tightest">{s.title}</h3>
+              <p className="mt-2 text-[0.82rem] leading-[1.55] text-[#a9bec5]">{s.text}</p>
+            </Reveal>
+          ))}
+        </div>
+
+        <Link
+          href="/products-services/pressurized-air-cables"
+          className={`${textLink} mt-10 border-ice text-ice`}
+        >
+          Explore PAC systems <ArrowUpRight />
+        </Link>
+      </section>
+
       {/* Feature: dredging */}
       <section
         className={`${sectionPad} grid grid-cols-1 items-center gap-8 sm:grid-cols-[1fr_0.85fr] sm:gap-[6vw]`}
       >
         <Reveal direction="right">
-          <p className={`${sectionLabel} text-blue`}>04 — Deep dam dredging</p>
+          <p className={`${sectionLabel} text-blue`}>05 — Deep dam dredging</p>
           <h2 className={displayHeading}>{home.dredgingTitle}</h2>
           <p className="mt-5 max-w-[480px] leading-[1.65] text-muted">
             Deep dam and reservoir dredging under extreme operating conditions requires specialized
@@ -336,65 +446,6 @@ export function BasmniSite() {
             reveal
             className="min-h-[360px] sm:min-h-[500px]"
           />
-        </Reveal>
-      </section>
-
-      {/* PAC */}
-      <section
-        className={`${sectionPad} grid grid-cols-1 items-center gap-10 bg-graphite text-white sm:grid-cols-[1.05fr_0.95fr] sm:gap-[6vw]`}
-      >
-        <Reveal direction="right">
-          <div className="border-l-2 border-orange/70 pl-3 sm:pl-4">
-            <ImageRotator
-              className="aspect-[4/3] sm:aspect-[4/5]"
-              sizes="(max-width: 768px) 100vw, 48vw"
-              caption="High-voltage transmission infrastructure"
-              slides={[
-                {
-                  src: media.pacInfra,
-                  alt: 'High-voltage substation switchyard with busbars and disconnect switches',
-                },
-                {
-                  src: media.pacAerial,
-                  alt: 'Aerial view of an electrical power substation compound',
-                },
-                {
-                  src: media.pacGantry,
-                  alt: 'High-voltage substation gantries and insulator strings against a clear sky',
-                },
-              ]}
-            />
-          </div>
-        </Reveal>
-        <Reveal direction="left">
-          <p className={`${sectionLabel} text-blue`}>05 — Power transmission</p>
-          <h2 className={displayHeading}>{home.pacTitle}</h2>
-          <p className="mt-5 max-w-[480px] leading-[1.65] text-[#c4d3d9]">
-            PAC replaces SF6- and fluid-dependent insulation with clean compressed technical air —
-            engineered for high-voltage substations, dense grid corridors and modern transmission
-            infrastructure.
-          </p>
-          <RevealStagger className="mt-10 border-t border-[#2d4653]" stagger={0.06}>
-            {[
-              'Clean technical air',
-              'Low transmission losses',
-              'High current capacity',
-              'Compact infrastructure integration',
-              'Condition monitoring',
-              '40+ year projected lifecycle',
-            ].map((item, i) => (
-              <RevealItem
-                key={item}
-                className="flex items-center gap-6 border-b border-[#2d4653] py-3.5 transition-colors hover:border-ice/40"
-              >
-                <span className="text-[0.63rem] text-ice">0{i + 1}</span>
-                <b className="text-[0.86rem] font-medium uppercase">{item}</b>
-              </RevealItem>
-            ))}
-          </RevealStagger>
-          <Link href="/products-services#pac" className={`${textLink} mt-9 border-ice text-ice`}>
-            Explore PAC systems <ArrowUpRight />
-          </Link>
         </Reveal>
       </section>
 

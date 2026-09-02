@@ -1,7 +1,18 @@
-export const navigation = [
+export type NavChild = { label: string; href: string }
+export type NavItem = { label: string; href: string; children?: NavChild[] }
+
+export const navigation: NavItem[] = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about-us' },
-  { label: 'Products & Services', href: '/products-services' },
+  {
+    label: 'Products & Services',
+    href: '/products-services',
+    children: [
+      { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
+      { label: 'Trash Rack Cleaning Machines', href: '/products-services#trcm' },
+      { label: 'Dredging Services', href: '/products-services#deep-dam-dredging' },
+    ],
+  },
   { label: 'References', href: '/references' },
   { label: 'Contact', href: '/contact' },
 ]

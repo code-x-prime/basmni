@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -82,9 +82,8 @@ export function Header() {
       <nav className="hidden items-center gap-[clamp(1rem,2.5vw,2rem)] text-[0.68rem] uppercase tracking-[0.11em] md:flex">
         {navigation.map((item) => {
           const active = isActive(pathname, item.href)
-          return (
+          const link = (
             <Link
-              key={item.href}
               href={item.href}
               aria-current={active ? 'page' : undefined}
               className={`group relative py-1 transition-colors duration-200 ${
@@ -102,6 +101,28 @@ export function Header() {
                 <span className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-0 bg-ice/70 transition-[width] duration-300 group-hover:w-full" />
               )}
             </Link>
+          )
+          if (!item.children) return <Fragment key={item.href}>{link}</Fragment>
+          return (
+            <div key={item.href} className="group/nav relative">
+              {link}
+              <div className="invisible absolute left-1/2 top-full z-10 w-[264px] -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-200 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:opacity-100">
+                <ul className="flex flex-col border border-white/15 bg-graphite/95 p-2 shadow-[0_20px_40px_-16px_rgba(0,0,0,0.6)] backdrop-blur-lg">
+                  {item.children.map((c) => (
+                    <li key={c.href}>
+                      <Link
+                        href={c.href}
+                        className={`block px-3 py-2.5 text-[0.64rem] tracking-[0.1em] transition-colors hover:bg-white/5 hover:text-ice ${
+                          pathname === c.href ? 'text-ice' : 'text-white/70'
+                        }`}
+                      >
+                        {c.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           )
         })}
         <MagneticButton>
@@ -159,6 +180,22 @@ export function Header() {
                     >
                       {item.label}
                     </Link>
+                    {item.children && (
+                      <div className="mb-1 ml-3 flex flex-col border-l border-white/15 pl-3">
+                        {item.children.map((c) => (
+                          <Link
+                            key={c.href}
+                            href={c.href}
+                            className={`py-1.5 text-[0.72rem] uppercase tracking-[0.08em] ${
+                              pathname === c.href ? 'text-ice' : 'opacity-70'
+                            }`}
+                            onClick={() => setOpen(false)}
+                          >
+                            {c.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
                   </motion.div>
                 )
               })}

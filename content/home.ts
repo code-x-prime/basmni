@@ -11,7 +11,8 @@ export const home = {
   solutionIntro:
     'Specialized systems engineered for demanding water and power infrastructure environments.',
   dredgingTitle: 'Deeper. Heavier. Engineered.',
-  pacTitle: 'High-pressurized air cable systems',
+  pacTitle: 'High-performance power transmission,',
+  pacEmphasis: 'built for the next generation of grids.',
   debrisTitle: 'Protecting critical water intakes.',
   processTitle: 'From design to execution.',
   projectsTitle: 'Projects that speak for themselves.',

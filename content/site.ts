@@ -40,6 +40,10 @@ export const media = {
   homeHero: '/images/home-hero-hydro-intake.jpeg',
   pacAerial: '/images/pac-substation-aerial.jpeg',
   pacGantry: '/images/pac-transmission-gantry.jpeg',
+  pacGis: '/images/pac-gis-switchgear.jpeg',
+  pacControl: '/images/pac-control-monitoring.jpeg',
+  pacTrench: '/images/pac-trench-installation.jpeg',
+  pacInspection: '/images/pac-engineer-inspection.jpeg',
 }
 
 export type MediaKey = keyof typeof media

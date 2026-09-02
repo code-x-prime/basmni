@@ -13,6 +13,8 @@ export type Service = {
   description: string
   image: MediaKey
   category: ServiceCategory
+  /** Optional dedicated detail page (PAC has one); otherwise the `#id` anchor. */
+  href?: string
   /** Metric callouts shown beside the feature copy. */
   highlights?: ServiceHighlight[]
   /** Simple bullet list of capabilities / features. */
@@ -29,6 +31,31 @@ export type Service = {
 export const services: Service[] = [
   {
     number: '01',
+    id: 'pac',
+    title: 'High-pressurized air cable systems',
+    shortTitle: 'High-Pressurized Air Cable Systems',
+    description:
+      'PAC technology replaces fluid- or SF6-dependent insulation with clean, compressed technical air for heavy-duty power transmission — engineered for modern grid infrastructure, high-voltage substations and dense industrial corridors.',
+    image: 'pacInfra',
+    category: 'PAC',
+    href: '/products-services/pressurized-air-cables',
+    highlights: [
+      { value: 'Up to 420 kV', label: 'Voltage rating' },
+      { value: 'Up to 5,000 A', label: 'Continuous current' },
+      { value: '2×–10×', label: 'Lower losses' },
+    ],
+    points: [
+      'Completely SF6-free and PFAS-free — clean dry technical air or controlled nitrogen–oxygen mixtures, reducing the global-warming-potential factor to zero.',
+      'Large aluminium conductor cross-sections (frequently exceeding 2,200 mm²) that lower ohmic resistance and heat.',
+      'Transmission losses 2× to 10× lower than standard underground polymeric cables.',
+      'Compact modular piping routed through microtunnels, service corridors and utility bridges — no external forced cooling.',
+      'Rigid metallic enclosure acts as a Faraday cage, keeping external magnetic fields to minimal levels.',
+      'Integrated real-time condition monitoring of internal pressure, gas density and temperature.',
+      'Hermetically sealed compartments give a projected operational life beyond 40 years with minimal maintenance.',
+    ],
+  },
+  {
+    number: '02',
     id: 'deep-dam-dredging',
     title: 'Deep dam dredging',
     shortTitle: 'Deep Dam Dredging',
@@ -48,30 +75,6 @@ export const services: Service[] = [
       'Pump range including high-head models for extended discharge distances.',
       'High working depth achievable with a compact pontoon — around 100 m depth with a 12 × 8 m dredge.',
       'Multi-stage and booster pump configurations to hold velocity above the critical deposition limit.',
-    ],
-  },
-  {
-    number: '02',
-    id: 'pac',
-    title: 'High-pressurized air cable systems',
-    shortTitle: 'High-Pressurized Air Cable Systems',
-    description:
-      'PAC technology replaces fluid- or SF6-dependent insulation with clean, compressed technical air for heavy-duty power transmission — engineered for modern grid infrastructure, high-voltage substations and dense industrial corridors.',
-    image: 'pacInfra',
-    category: 'PAC',
-    highlights: [
-      { value: 'Up to 420 kV', label: 'Voltage rating' },
-      { value: 'Up to 5,000 A', label: 'Continuous current' },
-      { value: '2×–10×', label: 'Lower losses' },
-    ],
-    points: [
-      'Completely SF6-free and PFAS-free — clean dry technical air or controlled nitrogen–oxygen mixtures, reducing the global-warming-potential factor to zero.',
-      'Large aluminium conductor cross-sections (frequently exceeding 2,200 mm²) that lower ohmic resistance and heat.',
-      'Transmission losses 2× to 10× lower than standard underground polymeric cables.',
-      'Compact modular piping routed through microtunnels, service corridors and utility bridges — no external forced cooling.',
-      'Rigid metallic enclosure acts as a Faraday cage, keeping external magnetic fields to minimal levels.',
-      'Integrated real-time condition monitoring of internal pressure, gas density and temperature.',
-      'Hermetically sealed compartments give a projected operational life beyond 40 years with minimal maintenance.',
     ],
   },
   {

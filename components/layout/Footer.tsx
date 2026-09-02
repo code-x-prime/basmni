@@ -12,8 +12,8 @@ const companyLinks = [
 ]
 
 const solutionLinks = [
+  { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
   { label: 'Deep Dam Dredging', href: '/products-services#deep-dam-dredging' },
-  { label: 'PAC Systems', href: '/products-services#pac' },
   { label: 'Trash Rack Cleaning Machines', href: '/products-services#trcm' },
   { label: 'Log Boom Barriers', href: '/products-services#log-boom' },
   { label: 'Fine Screen Cleaning', href: '/products-services#fine-screen-cleaning' },
