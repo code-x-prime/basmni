@@ -26,7 +26,7 @@ import { sectionPad, textLink } from '@/components/shared/ui'
 export const metadata: Metadata = {
   title: 'Products & Services | Basmni Technologies Pvt. Ltd.',
   description:
-    'Specialized heavy industrial systems and allied civil works from Basmni Technologies: deep dam dredging, dredging equipment, high-pressurized air cable systems, trash rack cleaning machines, log boom barriers, fine screen cleaning machines and civil works.',
+    'Specialized heavy industrial systems from Basmni Technologies: high-pressurized air cable systems, deep dam dredging, trash rack cleaning machines and specialized civil works.',
 }
 
 const dredging = services.find((s) => s.id === 'deep-dam-dredging')!

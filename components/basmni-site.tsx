@@ -47,7 +47,7 @@ const solutionTabs = ['All', 'Dredging', 'PAC', 'TRCM', 'Civil'] as const
 type SolutionTab = (typeof solutionTabs)[number]
 
 /** Flagship solutions, surfaced as a full section directly below the hero.
- * PAC leads, then trash rack / debris management, then dredging. */
+ * PAC leads, then trash rack / debris management, dredging and civil works. */
 const flagshipSystems = [
   {
     title: 'Pressurized Air Cables',
@@ -66,6 +66,12 @@ const flagshipSystems = [
     blurb: 'Deep dam and reservoir dredging engineered to 100 m working depth.',
     src: media.dredging,
     href: '/products-services#deep-dam-dredging',
+  },
+  {
+    title: 'Civil Works',
+    blurb: 'Allied civil engineering for dams, barrages and river weirs.',
+    src: media.civil,
+    href: '/products-services#civil-works',
   },
 ]
 
@@ -195,12 +201,12 @@ export function BasmniSite() {
         <SectionHeading
           dark
           label="Flagship solutions"
-          title={<>Three systems that define our field</>}
-          deck="Purpose-built power-transmission, debris-management and dredging platforms — engineered, manufactured and commissioned by Basmni."
+          title={<>Four systems that define our field</>}
+          deck="Purpose-built power-transmission, debris-management, dredging and civil engineering platforms — engineered, manufactured and commissioned by Basmni."
         />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-3 sm:gap-6"
-          stagger={0.1}
+          className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
+          stagger={0.09}
         >
           {flagshipSystems.map((s, i) => (
             <RevealItem key={s.title}>

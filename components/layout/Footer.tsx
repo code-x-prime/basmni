@@ -15,8 +15,6 @@ const solutionLinks = [
   { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
   { label: 'Deep Dam Dredging', href: '/products-services#deep-dam-dredging' },
   { label: 'Trash Rack Cleaning Machines', href: '/products-services#trcm' },
-  { label: 'Log Boom Barriers', href: '/products-services#log-boom' },
-  { label: 'Fine Screen Cleaning', href: '/products-services#fine-screen-cleaning' },
   { label: 'Civil Works', href: '/products-services#civil-works' },
 ]
 

@@ -103,39 +103,6 @@ export const services: Service[] = [
   },
   {
     number: '04',
-    id: 'log-boom',
-    title: 'Log boom barriers',
-    shortTitle: 'Log Boom Barriers',
-    description:
-      'The first line of defence: floating barriers that intercept heavy debris before it reaches your intake systems, cutting the mechanical load on everything downstream.',
-    image: 'logBoom',
-    category: 'TRCM',
-    points: [
-      'Engineered to stop massive floating logs, uprooted trees and seasonal ice floes.',
-      'Reduce mechanical load and wear on downstream trash racks and cleaning machines.',
-      'Lower the downstream debris load reaching turbines and gates.',
-      'High-visibility, impact-resistant buoyancy modules.',
-      'Heavy-duty steel tension cables that rise and fall with fluctuating water levels.',
-    ],
-  },
-  {
-    number: '05',
-    id: 'fine-screen-cleaning',
-    title: 'Fine screen cleaning machines',
-    shortTitle: 'Fine Screen Cleaning Machines',
-    description:
-      'Precise secondary screening for sensitive pumping stations and delicate turbine protection, removing the debris that slips through primary coarse racks.',
-    image: 'spillway',
-    category: 'TRCM',
-    points: [
-      'Tightly spaced teeth for small debris — leaves, plastic waste and aquatic weeds.',
-      'Ideal for secondary screening downstream of coarse racks.',
-      'Protects sensitive pumping stations and turbines.',
-      'Efficient weed, algae and plastics removal for canal-based and cooling-water intakes.',
-    ],
-  },
-  {
-    number: '06',
     id: 'civil-works',
     title: 'Specialized civil works',
     shortTitle: 'Civil Works',
@@ -305,9 +272,5 @@ export const servicesFaq: { q: string; a: string }[] = [
   {
     q: 'Where are TRCM systems used?',
     a: 'At dams and hydropower plants to protect penstocks and turbines, at barrages and river weirs to manage seasonal debris and prevent gate jamming, and on canal-based projects to remove aquatic weeds, algae and plastics from irrigation and cooling-water intakes.',
-  },
-  {
-    q: 'What are log boom barriers used for?',
-    a: 'They are a floating first line of defence that intercepts heavy debris — logs, uprooted trees and seasonal ice floes — before it reaches the intake, reducing wear on downstream trash racks and cleaning machines. They are built with impact-resistant buoyancy modules and steel tension cables that rise and fall with the water level.',
   },
 ]

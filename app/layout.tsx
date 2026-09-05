@@ -12,7 +12,6 @@ export const metadata: Metadata = {
   title: 'Basmni Technologies Pvt. Ltd. | Hydropower & Water Infrastructure Solutions',
   description:
     'Basmni Technologies Pvt. Ltd. provides advanced deep dam dredging, pressurized air cable systems, trash rack cleaning machines and specialized engineering solutions for hydropower and water infrastructure projects across India.',
-  generator: 'v0.app',
   openGraph: {
     title: 'Basmni Technologies Pvt. Ltd.',
     description: 'Engineering the future of water infrastructure.',

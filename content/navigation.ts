@@ -11,6 +11,7 @@ export const navigation: NavItem[] = [
       { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
       { label: 'Trash Rack Cleaning Machines', href: '/products-services#trcm' },
       { label: 'Dredging Services', href: '/products-services#deep-dam-dredging' },
+      { label: 'Civil Works', href: '/products-services#civil-works' },
     ],
   },
   { label: 'References', href: '/references' },

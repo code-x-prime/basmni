@@ -149,7 +149,7 @@ export const company = {
     {
       title: 'PAC systems',
       text: 'Clean compressed-air insulated power transmission — SF6-free and PFAS-free.',
-      href: '/products-services#pac',
+      href: '/products-services/pressurized-air-cables',
     },
     {
       title: 'TRCM systems',
@@ -159,7 +159,7 @@ export const company = {
     {
       title: 'Fine screen cleaners',
       text: 'Tightly spaced teeth for leaves, plastics and aquatic weeds.',
-      href: '/products-services#fine-screen-cleaning',
+      href: '/products-services#trcm',
     },
   ],
 
