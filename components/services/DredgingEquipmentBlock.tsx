@@ -19,13 +19,13 @@ export function DredgingEquipmentBlock({
   return (
     <div
       id={item.id}
-      className={`${sectionPad} grid scroll-mt-24 grid-cols-1 items-center gap-8 border-t border-border sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]`}
+      className={`${sectionPad} grid scroll-mt-32 grid-cols-1 items-center gap-8 border-t border-border sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]`}
     >
       <Reveal className={flip ? 'sm:order-2' : ''} direction={flip ? 'left' : 'right'}>
         <span className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
           Equipment {String(index + 1).padStart(2, '0')}
         </span>
-        <h3 className="mt-2 text-[clamp(1.6rem,3.4vw,2.8rem)] uppercase leading-[1.05] tracking-tightest">
+        <h3 className="mt-2 text-[clamp(1.6rem,3.4vw,2.8rem)] uppercase leading-[1.1] tracking-tightest">
           {item.title}
         </h3>
         <p className="mt-4 max-w-[520px] leading-[1.65] text-muted">{item.body}</p>

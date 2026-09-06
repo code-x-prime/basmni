@@ -9,9 +9,12 @@ export const navigation: NavItem[] = [
     href: '/products-services',
     children: [
       { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
-      { label: 'Trash Rack Cleaning Machines', href: '/products-services#trcm' },
-      { label: 'Dredging Services', href: '/products-services#deep-dam-dredging' },
-      { label: 'Civil Works', href: '/products-services#civil-works' },
+      {
+        label: 'Trash Rack Cleaning Machines',
+        href: '/products-services/trash-rack-cleaning-machines',
+      },
+      { label: 'Dredging Services', href: '/products-services/deep-dam-dredging' },
+      { label: 'Civil Works', href: '/products-services/civil-works' },
     ],
   },
   { label: 'References', href: '/references' },
@@ -24,10 +27,10 @@ export const routeCopy = {
     title: 'Engineering with field intelligence.',
     body: 'Basmni Technologies Pvt. Ltd. brings design, manufacturing, installation and commissioning together for demanding water infrastructure.',
   },
-  '/products-services': {
-    eyebrow: 'Products & Services',
-    title: 'Systems built for difficult water.',
-    body: 'From deep dam dredging to intake protection, our specialist systems are engineered for dependable operation.',
+  '/products-services/pressurized-air-cables': {
+    eyebrow: 'Pressurized Air Cables',
+    title: 'High-performance power transmission.',
+    body: 'SF6- and PFAS-free power transmission insulated with clean compressed technical air.',
   },
   '/references': {
     eyebrow: 'References',
@@ -41,7 +44,10 @@ export const routeCopy = {
   },
 } as const
 export type RouteKey = keyof typeof routeCopy
-export const exploreCta = { label: 'Explore Solutions', href: '/products-services' }
+export const exploreCta = {
+  label: 'Explore Solutions',
+  href: '/products-services/pressurized-air-cables',
+}
 export const callCta = { label: 'Talk to Our Engineers', href: 'tel:+919810148456' }
 export const enquiryCta = { label: 'Send an Enquiry', href: '/contact' }
 export const contactLinks = { phone: 'tel:+919810148456', email: 'mailto:info@basmni.com' }

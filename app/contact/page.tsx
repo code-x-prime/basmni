@@ -61,7 +61,7 @@ export default function ContactPage() {
       </section>
 
       {/* Quick actions */}
-      <section className={`${sectionPad} bg-[#dceaf0]`}>
+      <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading label={contactSections.quick.label} title={contactSections.quick.title} />
         <div className="mt-10 sm:mt-12">
           <QuickActions />
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 alt="Hydropower infrastructure — Basmni project environment"
                 className="min-h-[240px] sm:min-h-[320px]"
               />
-              <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#081b25e6,transparent_60%)]" />
+              <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70e6,transparent_60%)]" />
               <span className="pointer-events-none absolute inset-x-5 bottom-5">
                 <span className="block text-[0.62rem] font-bold uppercase tracking-[0.14em] text-ice">
                   Central Delhi · Barakhamba Road

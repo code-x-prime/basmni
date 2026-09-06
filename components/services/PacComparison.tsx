@@ -2,18 +2,25 @@ import type { PacComparisonRow } from '@/content/pac'
 import { Reveal } from '@/components/shared/Reveal'
 
 /**
- * PAC vs conventional XLPE / traditional systems. A bordered table on `sm+`
- * (wrapped in `overflow-x-auto` so it can never push the page wider), and a
- * stack of per-criteria cards below `sm`.
+ * PAC vs an established alternative. A bordered table on `sm+` (wrapped in
+ * `overflow-x-auto` so it can never push the page wider), and a stack of
+ * per-criteria cards below `sm`. `conventionalLabel` names the second column
+ * (default: XLPE / traditional cable).
  */
-export function PacComparison({ rows }: { rows: PacComparisonRow[] }) {
+export function PacComparison({
+  rows,
+  conventionalLabel = 'Conventional XLPE / traditional',
+}: {
+  rows: PacComparisonRow[]
+  conventionalLabel?: string
+}) {
   return (
     <Reveal>
       {/* Mobile: stacked cards */}
       <div className="flex flex-col gap-4 sm:hidden">
         {rows.map((r) => (
           <div key={r.criteria} className="border border-border">
-            <p className="border-b border-border bg-[#dceaf0] px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-navy">
+            <p className="border-b border-border bg-[#dbe9fb] px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-navy">
               {r.criteria}
             </p>
             <div className="px-4 py-3">
@@ -24,7 +31,7 @@ export function PacComparison({ rows }: { rows: PacComparisonRow[] }) {
             </div>
             <div className="border-t border-border px-4 py-3">
               <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-muted">
-                Conventional XLPE / traditional
+                {conventionalLabel}
               </p>
               <p className="mt-1 text-[0.86rem] leading-[1.5] text-muted">{r.conventional}</p>
             </div>
@@ -44,7 +51,7 @@ export function PacComparison({ rows }: { rows: PacComparisonRow[] }) {
                 Pressurized Air Cable
               </th>
               <th className="w-[36%] px-4 py-3 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
-                Conventional XLPE / traditional
+                {conventionalLabel}
               </th>
             </tr>
           </thead>

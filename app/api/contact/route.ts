@@ -64,17 +64,17 @@ export async function POST(req: Request) {
   ]
   const textBody = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nMessage:\n${data.message}\n`
   const htmlBody = `
-    <table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;color:#102b3b">
+    <table style="border-collapse:collapse;font-family:Arial,sans-serif;font-size:14px;color:#125096">
       ${rows
         .map(
           ([k, v]) =>
-            `<tr><td style="padding:4px 16px 4px 0;color:#617681;text-transform:uppercase;font-size:11px;letter-spacing:.08em">${esc(
+            `<tr><td style="padding:4px 16px 4px 0;color:#4a7ab8;text-transform:uppercase;font-size:11px;letter-spacing:.08em">${esc(
               k
             )}</td><td style="padding:4px 0">${esc(v)}</td></tr>`
         )
         .join('')}
     </table>
-    <p style="font-family:Arial,sans-serif;font-size:14px;color:#102b3b;white-space:pre-wrap;margin-top:16px">${esc(
+    <p style="font-family:Arial,sans-serif;font-size:14px;color:#125096;white-space:pre-wrap;margin-top:16px">${esc(
       data.message
     )}</p>`
 

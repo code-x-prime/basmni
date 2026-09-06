@@ -80,7 +80,7 @@ export function ContactForm() {
     return (
       <div
         id="enquiry-form"
-        className="flex scroll-mt-24 flex-col items-start gap-4 border border-border bg-white p-7"
+        className="flex scroll-mt-32 flex-col items-start gap-4 border border-border bg-white p-7"
       >
         <span className="grid h-11 w-11 place-items-center bg-navy text-white [&_svg]:w-5">
           <Check />
@@ -102,7 +102,7 @@ export function ContactForm() {
   }
 
   return (
-    <form id="enquiry-form" onSubmit={onSubmit} noValidate className="scroll-mt-24">
+    <form id="enquiry-form" onSubmit={onSubmit} noValidate className="scroll-mt-32">
       <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
         Send an enquiry
       </p>

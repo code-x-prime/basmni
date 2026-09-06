@@ -14,10 +14,8 @@ export const home = {
   pacTitle: 'High-performance power transmission,',
   pacEmphasis: 'built for the next generation of grids.',
   debrisTitle: 'Protecting critical water intakes.',
-  processTitle: 'From design to execution.',
   projectsTitle: 'Projects that speak for themselves.',
   galleryTitle: 'Engineering in the field.',
-  whyTitle: 'Built for demanding environments.',
   ctaTitle: 'Have a challenging project?',
 
   featuredNote:

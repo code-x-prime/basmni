@@ -32,7 +32,7 @@ export function PageHero({
   const reduce = useReducedMotion()
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#071f2b] text-white">
+    <section className="relative isolate overflow-hidden bg-[#0b3a70] text-white">
       <div className="grid grid-cols-1 lg:min-h-[600px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
         {/* Image */}
         <motion.div
@@ -52,7 +52,7 @@ export function PageHero({
           />
           {/* Legibility for the header logo on mobile; blend into navy at the
               content edge on desktop. */}
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,31,43,0.62)_0%,rgba(7,31,43,0.12)_42%,rgba(7,31,43,0)_72%)] lg:bg-[linear-gradient(90deg,rgba(7,31,43,0.42)_0%,rgba(7,31,43,0)_40%,rgba(7,31,43,0)_80%,#071f2b_100%),linear-gradient(180deg,rgba(7,31,43,0.42)_0%,rgba(7,31,43,0)_24%)]" />
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,31,43,0.62)_0%,rgba(7,31,43,0.12)_42%,rgba(7,31,43,0)_72%)] lg:bg-[linear-gradient(90deg,rgba(7,31,43,0.42)_0%,rgba(7,31,43,0)_40%,rgba(7,31,43,0)_80%,#0b3a70_100%),linear-gradient(180deg,rgba(7,31,43,0.42)_0%,rgba(7,31,43,0)_24%)]" />
         </motion.div>
 
         {/* Content */}
@@ -96,7 +96,7 @@ export function PageHero({
 
             <motion.h1
               variants={fadeUp}
-              className="mt-3 max-w-[17ch] text-[clamp(2rem,4.6vw,3.5rem)] uppercase leading-[1.05] tracking-tightest [overflow-wrap:anywhere]"
+              className="mt-3 max-w-[17ch] text-[clamp(2rem,4.6vw,3.5rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]"
             >
               {titleLines.map((line, i) => (
                 <Fragment key={line}>
@@ -109,7 +109,7 @@ export function PageHero({
             {description && (
               <motion.p
                 variants={fadeUp}
-                className="mt-5 max-w-[48ch] leading-[1.65] text-[#d6e3e6]"
+                className="mt-5 max-w-[48ch] leading-[1.65] text-[#c9def5]"
               >
                 {description}
               </motion.p>

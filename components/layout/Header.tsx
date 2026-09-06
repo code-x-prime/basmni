@@ -1,10 +1,10 @@
 'use client'
 
-import { Fragment, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ArrowUpRight, Menu, X } from 'lucide-react'
+import { ArrowUpRight, Mail, Menu, Phone, X } from 'lucide-react'
 import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from 'framer-motion'
 import { site } from '@/content/site'
 import { navigation, navigationCta } from '@/content/navigation'
@@ -43,9 +43,11 @@ export function Header() {
     setOpen(false)
   }, [pathname])
 
+  const telHref = `tel:${site.phone.replace(/\s+/g, '')}`
+
   return (
     <motion.header
-      className={`fixed inset-x-0 top-0 z-30 flex h-[68px] items-center justify-between px-4 text-white sm:h-[78px] sm:px-[clamp(1rem,5vw,4.5rem)] ${
+      className={`fixed inset-x-0 top-0 z-30 flex flex-col text-white ${
         open ? 'bg-graphite/85 backdrop-blur-lg' : ''
       }`}
       style={
@@ -54,87 +56,122 @@ export function Header() {
           : { backgroundColor, backdropFilter, borderBottomWidth: 1, borderBottomColor }
       }
     >
-      <Link
-        href="/"
-        className="[&_img]:object-contain [&_img]:object-left [&_img]:drop-shadow-[0_2px_5px_rgba(0,0,0,0.45)]"
-        onClick={() => setOpen(false)}
-      >
-        <Image
-          src={site.logoLight}
-          alt={site.company}
-          width={170}
-          height={66}
-          priority
-          className="h-auto w-[140px] sm:w-[170px]"
-        />
-      </Link>
+      {/* Utility bar — phone / email, desktop only */}
+      <div className="hidden h-9 items-center justify-end gap-6 border-b border-white/10 bg-black/10 px-[clamp(1rem,5vw,4.5rem)] text-[0.68rem] tracking-[0.02em] lg:flex">
+        <a
+          href={telHref}
+          className="flex items-center gap-1.5 text-white/75 transition-colors hover:text-ice"
+        >
+          <Phone className="w-3.5" />
+          {site.phone}
+        </a>
+        <span className="h-3 w-px bg-white/15" aria-hidden />
+        <a
+          href={`mailto:${site.email}`}
+          className="flex items-center gap-1.5 text-white/75 transition-colors hover:text-ice"
+        >
+          <Mail className="w-3.5" />
+          {site.email}
+        </a>
+      </div>
 
-      <button
-        className="border-0 bg-transparent text-white md:hidden [&_svg]:w-6"
-        aria-label={open ? 'Close navigation' : 'Open navigation'}
-        aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
-      >
-        {open ? <X /> : <Menu />}
-      </button>
+      {/* Main row */}
+      <div className="flex h-[68px] items-center justify-between px-4 sm:h-[78px] sm:px-[clamp(1rem,5vw,4.5rem)]">
+        <Link
+          href="/"
+          className="shrink-0 [&_img]:object-contain [&_img]:object-left [&_img]:drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
+          onClick={() => setOpen(false)}
+        >
+          <Image
+            src={site.logoLight}
+            alt={site.company}
+            width={948}
+            height={299}
+            priority
+            className="h-auto w-[150px] sm:w-[190px]"
+          />
+        </Link>
 
-      {/* Desktop nav */}
-      <nav className="hidden items-center gap-[clamp(1rem,2.5vw,2rem)] text-[0.68rem] uppercase tracking-[0.11em] md:flex">
-        {navigation.map((item) => {
-          const active = isActive(pathname, item.href)
-          const link = (
-            <Link
-              href={item.href}
-              aria-current={active ? 'page' : undefined}
-              className={`group relative py-1 transition-colors duration-200 ${
-                active ? 'text-ice' : 'text-white/80 hover:text-white'
-              }`}
-            >
-              {item.label}
-              {active ? (
-                <motion.span
-                  layoutId="nav-indicator"
-                  className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-full bg-ice"
-                  transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                />
-              ) : (
-                <span className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-0 bg-ice/70 transition-[width] duration-300 group-hover:w-full" />
-              )}
-            </Link>
-          )
-          if (!item.children) return <Fragment key={item.href}>{link}</Fragment>
-          return (
-            <div key={item.href} className="group/nav relative">
-              {link}
-              <div className="invisible absolute left-1/2 top-full z-10 w-[264px] -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-200 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:opacity-100">
-                <ul className="flex flex-col border border-white/15 bg-graphite/95 p-2 shadow-[0_20px_40px_-16px_rgba(0,0,0,0.6)] backdrop-blur-lg">
-                  {item.children.map((c) => (
-                    <li key={c.href}>
-                      <Link
-                        href={c.href}
-                        className={`block px-3 py-2.5 text-[0.64rem] tracking-[0.1em] transition-colors hover:bg-white/5 hover:text-ice ${
-                          pathname === c.href ? 'text-ice' : 'text-white/70'
-                        }`}
-                      >
-                        {c.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+        <button
+          className="border-0 bg-transparent text-white md:hidden [&_svg]:w-6"
+          aria-label={open ? 'Close navigation' : 'Open navigation'}
+          aria-expanded={open}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+
+        {/* Desktop nav */}
+        <nav className="hidden items-center gap-[clamp(1rem,2.5vw,2rem)] text-[0.72rem] font-semibold uppercase tracking-[0.11em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
+          {navigation.map((item) => {
+            const active = isActive(pathname, item.href)
+            const labelCls = `group relative py-1 transition-colors duration-200 ${
+              active ? 'text-ice' : 'text-white hover:text-ice'
+            }`
+            const indicator = active ? (
+              <motion.span
+                layoutId="nav-indicator"
+                className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-full bg-ice"
+                transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+              />
+            ) : (
+              <span className="pointer-events-none absolute -bottom-0.5 left-0 h-px w-0 bg-ice/70 transition-[width] duration-300 group-hover:w-full" />
+            )
+
+            if (!item.children) {
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-current={active ? 'page' : undefined}
+                  className={labelCls}
+                >
+                  {item.label}
+                  {indicator}
+                </Link>
+              )
+            }
+
+            return (
+              <div key={item.href} className="group/nav relative">
+                <button
+                  type="button"
+                  aria-haspopup="true"
+                  className={`${labelCls} cursor-default uppercase tracking-[0.11em]`}
+                >
+                  {item.label}
+                  {indicator}
+                </button>
+                <div className="invisible absolute left-1/2 top-full z-10 w-[264px] -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-200 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:opacity-100">
+                  <ul className="flex flex-col border border-white/15 bg-graphite/95 p-2 shadow-[0_20px_40px_-16px_rgba(0,0,0,0.6)] backdrop-blur-lg">
+                    {item.children.map((c) => (
+                      <li key={c.href}>
+                        <Link
+                          href={c.href}
+                          className={`block px-3 py-2.5 text-[0.64rem] tracking-[0.1em] transition-colors hover:bg-white/5 hover:text-ice ${
+                            pathname === c.href ? 'text-ice' : 'text-white/70'
+                          }`}
+                        >
+                          {c.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </div>
-          )
-        })}
-        <MagneticButton>
-          <Link
-            className="flex items-center gap-1.5 border border-white/50 px-3.5 py-3 [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1"
-            href={navigationCta.href}
-          >
-            {navigationCta.label}
-            <ArrowUpRight />
-          </Link>
-        </MagneticButton>
-      </nav>
+            )
+          })}
+          <MagneticButton>
+            <Link
+              className="flex items-center gap-1.5 border border-white/50 px-3.5 py-3 [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1"
+              href={navigationCta.href}
+            >
+              {navigationCta.label}
+              <ArrowUpRight />
+            </Link>
+          </MagneticButton>
+        </nav>
+      </div>
 
       {/* Mobile menu */}
       <AnimatePresence>
@@ -165,21 +202,26 @@ export function Header() {
             >
               {navigation.map((item) => {
                 const active = isActive(pathname, item.href)
+                const mobileLabelCls = `block py-1.5 text-[0.9rem] uppercase tracking-[0.08em] ${
+                  active ? 'text-ice opacity-100' : 'opacity-80'
+                }`
                 return (
                   <motion.div
                     key={item.href}
                     variants={{ hidden: { opacity: 0, x: -12 }, show: { opacity: 1, x: 0 } }}
                   >
-                    <Link
-                      href={item.href}
-                      aria-current={active ? 'page' : undefined}
-                      className={`block py-1.5 text-[0.9rem] uppercase tracking-[0.08em] ${
-                        active ? 'text-ice opacity-100' : 'opacity-80'
-                      }`}
-                      onClick={() => setOpen(false)}
-                    >
-                      {item.label}
-                    </Link>
+                    {item.children ? (
+                      <span className={mobileLabelCls}>{item.label}</span>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        aria-current={active ? 'page' : undefined}
+                        className={mobileLabelCls}
+                        onClick={() => setOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                     {item.children && (
                       <div className="mb-1 ml-3 flex flex-col border-l border-white/15 pl-3">
                         {item.children.map((c) => (

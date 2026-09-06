@@ -129,22 +129,22 @@ export const company = {
     {
       title: 'Cable dredges',
       text: 'Crane- or gantry-suspended for vertical descent into deep zones and dam intakes.',
-      href: '/products-services#deep-dam-dredging',
+      href: '/products-services/deep-dam-dredging',
     },
     {
       title: 'Remote-controlled dredges',
       text: 'Modular platforms with GPS, sonar and cameras for hazardous or restricted zones.',
-      href: '/products-services#deep-dam-dredging',
+      href: '/products-services/deep-dam-dredging',
     },
     {
       title: 'Amphibious dredges',
       text: 'Track-mounted pontoons for shallow tail-water zones and marshy peripheries.',
-      href: '/products-services#deep-dam-dredging',
+      href: '/products-services/deep-dam-dredging',
     },
     {
       title: 'Slurry submersible pumps',
       text: 'High-chrome wear components, electric or hydraulic drive; high-head models available.',
-      href: '/products-services#deep-dam-dredging',
+      href: '/products-services/deep-dam-dredging',
     },
     {
       title: 'PAC systems',
@@ -154,12 +154,12 @@ export const company = {
     {
       title: 'TRCM systems',
       text: 'Hydraulic and wire-rope trash rack cleaning machines for water intakes.',
-      href: '/products-services#trcm',
+      href: '/products-services/trash-rack-cleaning-machines',
     },
     {
       title: 'Fine screen cleaners',
       text: 'Tightly spaced teeth for leaves, plastics and aquatic weeds.',
-      href: '/products-services#trcm',
+      href: '/products-services/trash-rack-cleaning-machines',
     },
   ],
 

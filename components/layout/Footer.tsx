@@ -6,16 +6,18 @@ import { contact } from '@/content/contact'
 
 const companyLinks = [
   { label: 'About Us', href: '/about-us' },
-  { label: 'Products & Services', href: '/products-services' },
   { label: 'References', href: '/references' },
   { label: 'Contact', href: '/contact' },
 ]
 
 const solutionLinks = [
   { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
-  { label: 'Deep Dam Dredging', href: '/products-services#deep-dam-dredging' },
-  { label: 'Trash Rack Cleaning Machines', href: '/products-services#trcm' },
-  { label: 'Civil Works', href: '/products-services#civil-works' },
+  { label: 'Deep Dam Dredging', href: '/products-services/deep-dam-dredging' },
+  {
+    label: 'Trash Rack Cleaning Machines',
+    href: '/products-services/trash-rack-cleaning-machines',
+  },
+  { label: 'Civil Works', href: '/products-services/civil-works' },
 ]
 
 const linkClass = 'text-[0.82rem] leading-[1.6] text-muted hover:text-foreground'
@@ -29,9 +31,9 @@ export function Footer() {
           <Image
             src={site.logoDark}
             alt={site.company}
-            width={200}
-            height={63}
-            className="h-auto w-[180px] object-contain"
+            width={871}
+            height={292}
+            className="h-auto w-[200px] object-contain"
           />
           <p className="mt-4 max-w-[260px] leading-[1.6] text-muted">{site.tagline}</p>
         </div>

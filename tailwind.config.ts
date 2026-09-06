@@ -5,21 +5,21 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#f3f6f7',
-        foreground: '#102b3b',
-        muted: '#617681',
-        border: '#c7d4d9',
-        navy: '#102b3b',
-        graphite: '#0a1e29',
-        blue: '#126ba4',
-        ice: '#bfe4ef',
-        orange: '#e2a04b',
+        background: '#f5f9fd',
+        foreground: '#125096',
+        muted: '#4a7ab8',
+        border: '#d5e3f5',
+        navy: '#125096',
+        graphite: '#0b3a70',
+        blue: '#1363b7',
+        ice: '#ffffff',
+        orange: '#1363b7',
       },
       fontFamily: {
         sans: ['var(--font-manrope)', 'Arial', 'sans-serif'],
       },
       letterSpacing: {
-        tightest: '-0.055em',
+        tightest: '-0.02em',
       },
     },
   },

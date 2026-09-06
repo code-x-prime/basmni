@@ -53,7 +53,7 @@ export function CTASection({
           </h2>
         </RevealItem>
         <RevealItem>
-          <p className="max-w-[480px] leading-[1.65] text-[#d4e1e5]">{description}</p>
+          <p className="max-w-[480px] leading-[1.65] text-[#c9def5]">{description}</p>
         </RevealItem>
         <RevealItem>
           <div className="mt-7 flex flex-wrap gap-3">

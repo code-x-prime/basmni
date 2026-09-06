@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { RevealStagger, RevealItem } from './Reveal'
+import { AnimatedCounter } from './AnimatedCounter'
 
 /**
  * Technical metric blocks — value + label, border-topped. Used for spec callouts
@@ -22,13 +23,12 @@ export function MetricGrid({
           key={m.label}
           className={`border-t-2 pt-3 ${dark ? 'border-ice' : 'border-orange'}`}
         >
-          <strong
-            className={`block text-[clamp(1.4rem,3vw,2.4rem)] tracking-[-0.06em] ${dark ? 'text-ice' : 'text-blue'}`}
-          >
-            {m.value}
-          </strong>
+          <AnimatedCounter
+            value={m.value}
+            className={`block text-[clamp(1.4rem,3vw,2.4rem)] font-bold tracking-[-0.06em] ${dark ? 'text-ice' : 'text-blue'}`}
+          />
           <span
-            className={`mt-1 block text-[0.6rem] uppercase tracking-[0.1em] ${dark ? 'text-[#a9bec5]' : 'text-muted'}`}
+            className={`mt-1 block text-[0.6rem] uppercase tracking-[0.1em] ${dark ? 'text-[#c9def5]' : 'text-muted'}`}
           >
             {m.label}
           </span>
@@ -49,7 +49,7 @@ export function FeatureRows({
   items: { number?: string; title: string; text: string; href?: string }[]
   dark?: boolean
 }) {
-  const base = dark ? 'border-[#2d4653]' : 'border-border'
+  const base = dark ? 'border-[#1f4a80]' : 'border-border'
   return (
     <RevealStagger className={`border-t ${base}`}>
       {items.map((item, i) => {
@@ -75,7 +75,7 @@ export function FeatureRows({
                 {item.title}
               </span>
               <span
-                className={`mt-2 block text-[0.9rem] leading-[1.55] ${dark ? 'text-[#c4d3d9]' : 'text-muted'}`}
+                className={`mt-2 block text-[0.9rem] leading-[1.55] ${dark ? 'text-[#c9def5]' : 'text-muted'}`}
               >
                 {item.text}
               </span>

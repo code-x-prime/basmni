@@ -63,6 +63,7 @@ export const services: Service[] = [
       'Complete, end-to-end dredging for dams and reservoirs operating under extreme conditions — depths up to 100 m, high solid concentrations, hydrostatic pressure, abrasion and long discharge pipelines, where standard low-head equipment fails through choking and rapid wear.',
     image: 'dredging',
     category: 'Dredging',
+    href: '/products-services/deep-dam-dredging',
     highlights: [
       { value: 'Up to 100m', label: 'Working depth' },
       { value: '35–60%', label: 'Solids handling' },
@@ -86,6 +87,7 @@ export const services: Service[] = [
       'Automated debris removal that keeps intake bays clear when submerged debris, vegetation and trash accumulate on intake grates and threaten water flow to turbines and gates.',
     image: 'trcm',
     category: 'TRCM',
+    href: '/products-services/trash-rack-cleaning-machines',
     groups: [
       {
         title: 'Hydraulic type',
@@ -110,6 +112,7 @@ export const services: Service[] = [
       'Allied civil engineering for major dams, barrages and river weirs — tailored to the hydrodynamic and structural challenges of each site.',
     image: 'civil',
     category: 'Civil',
+    href: '/products-services/civil-works',
     groups: [
       {
         title: 'Dams (storage)',
@@ -141,7 +144,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'cable-dredges',
     title: 'Cable dredges',
-    image: 'cableDredge',
+    image: 'dredgeSubmersibleHead',
     application:
       'Extreme depths, up to and beyond 100 m — deep canyons, dead-storage zones and dam intakes.',
     benefit:
@@ -151,7 +154,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'remote-controlled-dredges',
     title: 'Remote-controlled dredges',
-    image: 'remoteDredge',
+    image: 'dredgeArchDamAerial',
     application:
       'Hazardous environments and restricted zones near intake gates, trash racks and toxic or acidic sludge basins.',
     benefit: 'Keeps operators away from the hazard while retaining precise, monitored positioning.',
@@ -160,7 +163,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'amphibious-dredges',
     title: 'Amphibious dredges',
-    image: 'amphibiousDredge',
+    image: 'dredgeDamShoreline',
     application:
       'Shallow tail-water zones, marshy reservoir peripheries and littoral areas with fluctuating water levels.',
     benefit:
@@ -170,7 +173,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'slurry-submersible-pumps',
     title: 'Slurry submersible pumps',
-    image: 'slurryPump',
+    image: 'dredgeDragflowMachine',
     application:
       'Integrated directly onto cable-deployment frames or remote dredges as the core workhorse.',
     benefit:
@@ -204,73 +207,5 @@ export const dredgingTechnology: { title: string; text: string }[] = [
   {
     title: 'Jet ring systems',
     text: 'High-pressure water jets fluidize silt and clay for varied sediment types.',
-  },
-]
-
-/** PAC technical pillars — from the supplied content document. */
-export const pacPillars: { title: string; text: string }[] = [
-  {
-    title: 'SF6-free & PFAS-free',
-    text: 'Clean dry technical air or nitrogen–oxygen mixtures eliminate greenhouse gases and fluoropolymers.',
-  },
-  {
-    title: 'Electrical efficiency',
-    text: 'Large aluminium conductor cross-sections lower resistance; losses 2×–10× below polymeric cables.',
-  },
-  {
-    title: 'Thermal performance',
-    text: 'Large-profile enclosures dissipate heat passively — no external forced-cooling plant.',
-  },
-  {
-    title: 'Current capacity',
-    text: 'Up to 5,000 A continuous at voltage ratings up to 420 kV without excessive thermal degradation.',
-  },
-  {
-    title: 'Compact integration',
-    text: 'Modular piping routed through microtunnels, service corridors and narrow utility bridges.',
-  },
-  {
-    title: 'Low EMF',
-    text: 'The rigid metallic enclosure acts as a Faraday cage, reducing external magnetic fields to minimal levels.',
-  },
-  {
-    title: 'Condition monitoring',
-    text: 'Continuous real-time telemetry of internal pressure, gas density and localized temperatures.',
-  },
-  {
-    title: 'Long lifecycle',
-    text: 'Hermetically sealed, pressure-monitored compartments give a projected life beyond 40 years.',
-  },
-]
-
-/** Products & Services FAQ — answers drawn strictly from the sources. */
-export const servicesFaq: { q: string; a: string }[] = [
-  {
-    q: 'What is deep dam dredging?',
-    a: 'It is the removal of accumulated sediment from dams and reservoirs operating under extreme conditions — depths that can reach 100 m, high solid concentrations, hydrostatic pressure, abrasion and long discharge pipelines. Standard low-head equipment fails rapidly under these parameters, so specialized heavy-duty configurations are used.',
-  },
-  {
-    q: 'How deep can Basmni dredging systems operate?',
-    a: 'Up to and beyond 100 m working depth. This is achievable with a compact pontoon — around 100 m depth with a dredge as small as 12 × 8 m — using cable-deployed submersible pumps rather than a conventional ladder dredge.',
-  },
-  {
-    q: 'What types of dredging equipment are available?',
-    a: 'Cable dredges for extreme depth, remote-controlled dredges for hazardous or restricted zones, amphibious dredges for shallow near-shore areas, and slurry submersible pumps as the core pumping unit — supported by side cutters, jet ring systems and high-head or booster pump configurations.',
-  },
-  {
-    q: 'How does Basmni handle high solid concentrations?',
-    a: 'Through sediment fluidization and specialized pump dynamics. Jet ring systems and side cutters break up compacted silt, clay and consolidated banks, and open multi-vane or vortex-style impellers pass large solids without choking, supporting solid concentrations in the 35–60% range.',
-  },
-  {
-    q: 'What is a PAC system?',
-    a: 'A High-Pressurized Air Cable system: heavy-duty power transmission that replaces SF6- or fluid-dependent insulation with clean compressed technical air. It is SF6-free and PFAS-free, handles up to 5,000 A at up to 420 kV, and runs with 2×–10× lower losses than standard underground polymeric cables.',
-  },
-  {
-    q: 'What is a Trash Rack Cleaning Machine?',
-    a: 'An automated machine that removes debris, vegetation and trash accumulating on intake grates so water flow to turbines and gates is not blocked. Basmni offers hydraulic-type, wire-rope-type and fine-screen configurations depending on intake depth and debris volume.',
-  },
-  {
-    q: 'Where are TRCM systems used?',
-    a: 'At dams and hydropower plants to protect penstocks and turbines, at barrages and river weirs to manage seasonal debris and prevent gate jamming, and on canal-based projects to remove aquatic weeds, algae and plastics from irrigation and cooling-water intakes.',
   },
 ]

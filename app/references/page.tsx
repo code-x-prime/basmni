@@ -32,15 +32,15 @@ export default function ReferencesPage() {
           label={referencesSections.stats.label}
           title={referencesSections.stats.title}
         />
-        <div className="mt-12 grid grid-cols-2 gap-4 border-t border-[#385463] sm:mt-16 sm:grid-cols-4">
+        <div className="mt-12 grid grid-cols-2 gap-4 border-t border-[#2a5c94] sm:mt-16 sm:grid-cols-4">
           {projectStats.map((s) => (
             <Reveal key={s.label}>
-              <div className="border-r border-[#385463] py-4">
+              <div className="border-r border-[#2a5c94] py-4">
                 <AnimatedCounter
                   value={s.value}
                   className="block text-[2.4rem] tracking-[-0.08em] text-ice sm:text-[clamp(2.4rem,5vw,4.6rem)]"
                 />
-                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#a9bec5]">
+                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#c9def5]">
                   {s.label}
                 </span>
               </div>
@@ -90,7 +90,7 @@ export default function ReferencesPage() {
       <ReferencesGrid label="Browse" title="All reference projects." />
 
       {/* Complete archive list */}
-      <section className={`${sectionPad} bg-[#dceaf0]`}>
+      <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading
           label={referencesSections.archive.label}
           title={referencesSections.archive.title}
@@ -150,7 +150,7 @@ export default function ReferencesPage() {
         description="Discuss your hydropower, dredging, hydro-mechanical or water infrastructure requirement with Basmni Technologies."
         image={media.spillway}
         primary={{ label: 'Discuss Your Project', href: '/contact' }}
-        secondary={{ label: 'Our Capabilities', href: '/products-services' }}
+        secondary={{ label: 'Our Solutions', href: '/products-services/pressurized-air-cables' }}
       />
     </PageTransition>
   )

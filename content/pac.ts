@@ -24,7 +24,7 @@ import type { MediaKey } from './site'
 export type PacStep = { number: string; title: string; text: string }
 export type PacFeature = { number: string; title: string; text: string }
 export type PacComponent = { title: string; text: string }
-export type PacApplication = { title: string; text: string; image: MediaKey }
+export type PacSolution = { title: string; text: string; tags: string[]; image: MediaKey }
 export type PacComparisonRow = { criteria: string; pac: string; conventional: string }
 export type PacSpec = { label: string; value: string }
 
@@ -121,39 +121,101 @@ export const pacComponents: PacComponent[] = [
   },
 ]
 
-/** Where PAC can be used — framed as suitability, not as claimed Basmni projects. */
-export const pacApplications: PacApplication[] = [
+/** Solutions by grid level — framed as suitability, not as claimed Basmni projects. */
+export const pacGridSolutions: PacSolution[] = [
   {
-    title: 'Transmission networks & grid expansion',
-    text: 'High-capacity links for new and reinforced transmission corridors where losses and right-of-way both need to stay low.',
-    image: 'pacInfra',
+    title: 'High-voltage networks',
+    text: 'High-performance links for transmission networks and grid-expansion projects — moving large blocks of power over medium and long distances with low losses and a narrow right-of-way.',
+    tags: ['Transmission networks', 'Grid expansion', 'Bulk power transfer'],
+    image: 'pacTransmissionGrid',
   },
   {
-    title: 'Substations & switchgear corridors',
-    text: 'Compact connections into and between high-voltage substations, including confined approaches up to 420 kV.',
-    image: 'pacGis',
+    title: 'Medium-voltage networks',
+    text: 'Compact, efficient feeds for industrial facilities, critical infrastructure and regional distribution networks with demanding power requirements.',
+    tags: ['Industrial supply', 'Critical infrastructure', 'Regional distribution'],
+    image: 'pacCableIndustrial',
   },
   {
-    title: 'Hydropower evacuation',
-    text: 'Moving generated power from powerhouse to switchyard and grid through steep, space-constrained hydropower sites.',
-    image: 'hydropowerDam',
+    title: 'Substations & switchgear',
+    text: 'One phase per pressurized-air duct — a flexible architecture for connections into and between high-voltage substations up to 420 kV, including gas-insulated switchgear connections and wall bushings.',
+    tags: ['GIS connections', 'Wall bushings', 'Up to 420 kV'],
+    image: 'pacSubstationSwitchyard',
   },
   {
-    title: 'Industrial & high-current power systems',
-    text: 'Heavy continuous loads for industrial plants, data centres and other facilities that need dense, reliable feeds.',
-    image: 'pacGantry',
-  },
-  {
-    title: 'Underground & confined infrastructure',
-    text: 'Routes through built-up areas where overhead lines are not an option and space for conventional cable trenches is tight.',
-    image: 'pacTrench',
-  },
-  {
-    title: 'Tunnels & utility bridges',
-    text: 'Modular piping carried through microtunnels, service tunnels and utility bridges alongside other infrastructure.',
-    image: 'pacAerial',
+    title: 'Specialised & high-current applications',
+    text: 'Engineered for battery energy storage systems, data centres, hydrogen facilities and other loads that need high current capacity within a limited footprint.',
+    tags: ['Battery energy storage', 'Data centres', 'High-current busbars'],
+    image: 'pacHvApplications',
   },
 ]
+
+/** PAC vs overhead lines (OHL) — rendered with the PacComparison table. */
+export const pacVsOhl: PacComparisonRow[] = [
+  {
+    criteria: 'Land use',
+    pac: 'Underground route — a narrow permanent corridor with no visible structures.',
+    conventional: 'A wide right-of-way with visible towers and conductors along the whole route.',
+  },
+  {
+    criteria: 'Cost & materials',
+    pac: 'Higher civil and material content for the enclosure and buried route.',
+    conventional: 'Low material requirement and cost per kilometre on open ground.',
+  },
+  {
+    criteria: 'Transmission performance',
+    pac: 'High capacity and low losses in a compact, weather-independent cross-section.',
+    conventional: 'Proven high capacity, but rating varies with weather and conductor spacing.',
+  },
+  {
+    criteria: 'Environmental & visual impact',
+    pac: 'No overhead structures; low external magnetic field from the metallic enclosure.',
+    conventional: 'Visual intrusion and a larger electromagnetic footprint at ground level.',
+  },
+  {
+    criteria: 'Grid-expansion acceptance',
+    pac: 'Easier to route through built-up and sensitive areas where overhead lines are opposed.',
+    conventional: 'Faster to build on open land, but planning can be slow near settlements.',
+  },
+]
+
+/** Technology maturity — the credibility block. Claims about pilot installations
+ * and field trials belong to the wider technology reference, not to Basmni, so
+ * only the technology-class maturity is stated here. */
+export const pacProven = {
+  intro:
+    'PAC combines the proven engineering principles of gas-insulated transmission with a pressurized-air architecture, giving a sustainable, high-performance route for modern medium- and high-voltage networks.',
+  points: [
+    'Voltage levels up to 420 kV',
+    'PFAS- and SF6-free insulation',
+    'Built on established gas-insulated transmission engineering',
+    'Continuous condition monitoring for safe, reliable operation',
+    'Suited to transmission, distribution and industrial applications',
+  ],
+}
+
+/** Engineering support — what Basmni offers around a PAC project. */
+export const pacEngineeringSupport = {
+  intro:
+    'Whether you are a grid operator, an industrial company or an infrastructure developer, Basmni supports you in evaluating and integrating a PAC system.',
+  services: [
+    {
+      title: 'Technical feasibility assessments',
+      text: 'A route, voltage, current and site review to confirm PAC is the right fit before design begins.',
+    },
+    {
+      title: 'Application & project consulting',
+      text: 'Configuration advice for transmission, distribution and industrial use cases.',
+    },
+    {
+      title: 'Technical documentation & test reports',
+      text: 'The drawings, calculations and commissioning records needed to approve and operate the link.',
+    },
+    {
+      title: 'Direct access to the engineering team',
+      text: 'A direct line to the engineers who design and commission the system.',
+    },
+  ],
+}
 
 /** PAC vs conventional XLPE / traditional systems — source-supported wording only. */
 export const pacComparison: PacComparisonRow[] = [

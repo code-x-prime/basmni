@@ -44,6 +44,18 @@ export const media = {
   pacControl: '/images/pac-control-monitoring.jpeg',
   pacTrench: '/images/pac-trench-installation.jpeg',
   pacInspection: '/images/pac-engineer-inspection.jpeg',
+  pacTransmissionGrid: '/images/pac-transmission-grid.jpeg',
+  pacCableIndustrial: '/images/pac-cable-industrial.jpeg',
+  pacSubstationSwitchyard: '/images/pac-substation-switchyard.jpeg',
+  pacHvApplications: '/images/pac-hv-applications.jpeg',
+  pacCableTunnel: '/images/pac-cable-tunnel.jpeg',
+  dredgeDragflowMachine: '/images/dredge-dragflow-machine.jpeg',
+  dredgeSubmersibleHead: '/images/dredge-submersible-head.jpeg',
+  dredgePumpPontoon: '/images/dredge-pump-pontoon-reservoir.jpeg',
+  dredgeDamShoreline: '/images/dredge-dam-shoreline.jpeg',
+  dredgeArchDamAerial: '/images/dredge-arch-dam-aerial.jpeg',
+  dredgeReservoirValley: '/images/dredge-reservoir-valley.jpeg',
+  dredgeSlurryDischarge: '/images/dredge-slurry-discharge.jpeg',
 }
 
 export type MediaKey = keyof typeof media

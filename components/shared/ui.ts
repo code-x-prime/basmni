@@ -26,4 +26,4 @@ export const textLink =
 
 /** Homepage hero / CTA overlay gradient. */
 export const overlayGradient =
-  'bg-[linear-gradient(90deg,#0a1e29f5,#0a1e2990_48%,#0a1e2920),linear-gradient(0deg,#0a1e29cc,transparent_60%)]'
+  'bg-[linear-gradient(90deg,#0b3a70f5,#0b3a7090_48%,#0b3a7020),linear-gradient(0deg,#0b3a70cc,transparent_60%)]'

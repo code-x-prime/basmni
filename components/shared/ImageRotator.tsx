@@ -57,7 +57,7 @@ export function ImageRotator({
         </AnimatePresence>
       )}
 
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#061a25cc,transparent_52%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70cc,transparent_52%)]" />
 
       <div className="pointer-events-none absolute inset-x-4 bottom-4 flex items-end justify-between gap-3 sm:inset-x-5 sm:bottom-5">
         {caption && (

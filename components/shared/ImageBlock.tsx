@@ -37,7 +37,7 @@ export function ImageBlock(props: Props) {
   if (!parallax && !reveal) {
     return (
       <div
-        className={`relative overflow-hidden bg-[#b8c8cd] [&_img]:object-cover [&_img]:transition-transform [&_img]:duration-[600ms] hover:[&_img]:scale-[1.04] ${className}`}
+        className={`relative overflow-hidden bg-[#dbe6f2] [&_img]:object-cover [&_img]:transition-transform [&_img]:duration-[600ms] hover:[&_img]:scale-[1.04] ${className}`}
       >
         <Image src={src} alt={alt} fill priority={priority} sizes={sizes} />
       </div>
@@ -64,7 +64,7 @@ function ParallaxImage({
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
   return (
-    <div ref={ref} className={`relative overflow-hidden bg-[#b8c8cd] ${className}`}>
+    <div ref={ref} className={`relative overflow-hidden bg-[#dbe6f2] ${className}`}>
       <motion.div className="absolute inset-0" style={{ y, scale: 1.15 }}>
         <Image
           src={src}
@@ -88,7 +88,7 @@ function RevealImage({
 }: Required<Omit<Props, 'parallax' | 'reveal'>>) {
   return (
     <div
-      className={`group relative overflow-hidden bg-[#b8c8cd] [&_img]:transition-transform [&_img]:duration-[700ms] hover:[&_img]:scale-[1.05] ${className}`}
+      className={`group relative overflow-hidden bg-[#dbe6f2] [&_img]:transition-transform [&_img]:duration-[700ms] hover:[&_img]:scale-[1.05] ${className}`}
     >
       <motion.div
         className="absolute inset-0"

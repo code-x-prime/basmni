@@ -26,7 +26,7 @@ export function SectionHeading({
       </div>
       {deck && (
         <p
-          className={`ml-auto mt-6 max-w-[420px] leading-[1.6] ${dark ? 'text-[#a9bec5]' : 'text-muted'}`}
+          className={`ml-auto mt-6 max-w-[420px] leading-[1.6] ${dark ? 'text-[#c9def5]' : 'text-muted'}`}
         >
           {deck}
         </p>

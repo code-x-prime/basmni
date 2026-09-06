@@ -36,7 +36,7 @@ export function ProjectCard({ project, onClick }: { project: Project; onClick: (
           />
         </motion.div>
         <motion.div
-          className="absolute inset-0 bg-[linear-gradient(0deg,#081b25cc,transparent_55%)]"
+          className="absolute inset-0 bg-[linear-gradient(0deg,#0b3a70cc,transparent_55%)]"
           variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
           transition={{ duration: 0.3 }}
         />
