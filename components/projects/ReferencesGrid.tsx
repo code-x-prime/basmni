@@ -42,7 +42,7 @@ export function ReferencesGrid({ label, title }: { label: string; title: string 
 
       <motion.div
         layout
-        className="mt-10 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
+        className="mt-8 grid grid-cols-1 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-3"
       >
         <AnimatePresence mode="popLayout">
           {filtered.map((project) => (

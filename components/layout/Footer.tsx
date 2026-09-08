@@ -73,20 +73,6 @@ export function Footer() {
         <span>© 2026 Basmni Technologies Pvt. Ltd.</span>
         <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
           <span>All rights reserved.</span>
-          <span aria-hidden className="hidden opacity-40 sm:inline">
-            /
-          </span>
-          <span>
-            Design by{' '}
-            <a
-              href="https://groxmedia.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-bold text-blue transition-colors hover:text-foreground"
-            >
-              Grox Media
-            </a>
-          </span>
         </span>
       </div>
     </footer>

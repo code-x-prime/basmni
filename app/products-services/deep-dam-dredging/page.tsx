@@ -42,14 +42,14 @@ export default function DredgingPage() {
       {/* 01 — Overview */}
       <section className={sectionPad}>
         <SectionHeading label="Overview" title="Recovering storage lost to sediment." />
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-[6vw]">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {dredgingHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
               <p className="leading-[1.7] text-muted">{p}</p>
             </Reveal>
           ))}
         </div>
-        <div className="mt-12 sm:mt-14">
+        <div className="mt-8 sm:mt-10">
           <MetricGrid items={dredgingHeadlineMetrics} columns="sm:grid-cols-3" />
         </div>
       </section>
@@ -87,7 +87,7 @@ export default function DredgingPage() {
       {/* 03 — How it works */}
       <section className={`${sectionPad} bg-navy text-white`}>
         <SectionHeading dark label="How it works" title="Fluidise. Pump. Convey." />
-        <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-11 sm:grid-cols-3">
           {dredgingHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
               <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
@@ -116,7 +116,7 @@ export default function DredgingPage() {
           title="Built for extreme conditions."
           deck="Depth, solids concentration, cutting tools and discharge distance — engineered to the reservoir."
         />
-        <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {dredgingFeatures.map((f) => (
             <RevealItem key={f.number} className="bg-graphite p-6">
               <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
@@ -149,7 +149,7 @@ export default function DredgingPage() {
           deck="Three platform series — cable, remote-controlled and shallow-water — each with a fixed general arrangement."
         />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3"
+          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
           stagger={0.08}
         >
           {dredgingSeries.map((s) => (
@@ -191,7 +191,7 @@ export default function DredgingPage() {
           label="Dredging technology"
           title="The technical concept behind the depth."
         />
-        <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {dredgingTechnology.map((t) => (
             <Reveal key={t.title} className="bg-navy p-6 sm:p-8">
               <h3 className="text-[clamp(1.1rem,2.2vw,1.5rem)] uppercase leading-[1.15] tracking-tightest">
@@ -209,7 +209,7 @@ export default function DredgingPage() {
           label="Why Basmni's solution"
           title="High depth, small dredge, fast on site."
         />
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 sm:gap-[6vw]">
+        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-2 sm:gap-[6vw]">
           {dredgingAdvantages.map((a) => (
             <Reveal key={a.title}>
               <h3 className="border-t-2 border-orange pt-4 text-[1.15rem] uppercase leading-[1.15] tracking-tightest text-navy">
@@ -240,7 +240,7 @@ export default function DredgingPage() {
           deck="Selected deep-dam-dredging campaigns delivered with the dam kept in full operation."
         />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3"
+          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
           stagger={0.08}
         >
           {dredgingCaseStudies.map((c) => (
@@ -275,7 +275,7 @@ export default function DredgingPage() {
           deck="From dead-storage recovery to canal systems — matched to the site and disposal constraints."
         />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}
         >
           {dredgingApplications.map((a) => (
@@ -302,7 +302,7 @@ export default function DredgingPage() {
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-[#d6e8fb]">
           {dredgingProcess.intro}
         </p>
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:grid-cols-5">
             {dredgingProcess.steps.map((step) => (
               <RevealItem key={step} className="bg-navy p-6 sm:p-7">
@@ -328,7 +328,7 @@ export default function DredgingPage() {
       {/* 12 — FAQ */}
       <section className={sectionPad}>
         <SectionHeading label="FAQ" title="Common questions." />
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <FAQ items={dredgingFaq} />
         </div>
       </section>

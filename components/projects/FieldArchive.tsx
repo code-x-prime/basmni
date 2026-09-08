@@ -63,7 +63,7 @@ export function FieldArchive({ items }: { items: FieldArchiveItem[] }) {
   return (
     <>
       <RevealStagger
-        className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 lg:auto-rows-[minmax(0,1fr)] lg:grid-cols-3"
+        className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 lg:auto-rows-[minmax(0,1fr)] lg:grid-cols-3"
         stagger={0.07}
       >
         <Frame

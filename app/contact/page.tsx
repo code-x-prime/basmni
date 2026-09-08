@@ -28,7 +28,7 @@ export default function ContactPage() {
       {/* Contact introduction */}
       <section className={sectionPad}>
         <SectionHeading label={contactSections.intro.label} title={contactSections.intro.title} />
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-12 sm:grid-cols-[1fr_0.9fr] sm:items-center sm:gap-[6vw]">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-12 sm:grid-cols-[1fr_0.9fr] sm:items-center sm:gap-[6vw]">
           <Reveal direction="right" className="leading-[1.7] text-muted">
             <p className="max-w-[560px]">{contactSections.intro.body}</p>
             <p className="mt-4 max-w-[560px]">
@@ -63,7 +63,7 @@ export default function ContactPage() {
       {/* Quick actions */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading label={contactSections.quick.label} title={contactSections.quick.title} />
-        <div className="mt-10 sm:mt-12">
+        <div className="mt-8 sm:mt-10">
           <QuickActions />
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function ContactPage() {
           label={contactSections.location.label}
           title={contactSections.location.title}
         />
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-12 sm:grid-cols-2 sm:items-center sm:gap-[6vw]">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-12 sm:grid-cols-2 sm:items-center sm:gap-[6vw]">
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Head office</p>
             <address className="mt-3 text-[1.15rem] not-italic leading-[1.6] text-foreground">

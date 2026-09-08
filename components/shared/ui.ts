@@ -4,7 +4,7 @@
  * with the exact same typography, spacing and button treatment.
  */
 
-export const sectionPad = 'px-5 py-16 sm:px-[7vw] sm:py-[clamp(4rem,7vw,7rem)]'
+export const sectionPad = 'px-5 py-11 sm:px-[7vw] sm:py-[clamp(2.75rem,4.5vw,4.5rem)]'
 
 export const eyebrow = 'text-[0.84rem] font-bold uppercase tracking-[0.14em] text-blue'
 export const eyebrowDark = 'text-[0.84rem] font-bold uppercase tracking-[0.14em] text-ice'

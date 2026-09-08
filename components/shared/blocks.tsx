@@ -52,20 +52,19 @@ export function FeatureRows({
   const base = dark ? 'border-[#1f4a80]' : 'border-border'
   return (
     <RevealStagger className={`border-t ${base}`}>
-      {items.map((item, i) => {
+      {items.map((item) => {
         const inner = (
           <div
-            className={`group grid grid-cols-[3ch_1fr_auto] items-start gap-4 border-b py-5 transition-colors ${base} ${
+            className={`group grid grid-cols-[1ch_1fr_auto] items-start gap-4 border-b py-5 transition-colors ${base} ${
               item.href ? 'hover:border-blue' : ''
             }`}
           >
             <span
-              className={`text-[0.7rem] font-bold transition-transform duration-300 ${dark ? 'text-ice' : 'text-blue'} ${
+              aria-hidden
+              className={`mt-[0.55rem] h-1.5 w-1.5 shrink-0 transition-transform duration-300 ${dark ? 'bg-ice' : 'bg-blue'} ${
                 item.href ? 'group-hover:translate-x-0.5' : ''
               }`}
-            >
-              {item.number ?? String(i + 1).padStart(2, '0')}
-            </span>
+            />
             <span>
               <span
                 className={`block text-[clamp(1rem,2vw,1.35rem)] uppercase leading-[1.15] tracking-tightest ${dark ? 'text-white' : 'text-foreground'} ${

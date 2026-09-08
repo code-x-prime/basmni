@@ -101,7 +101,7 @@ export function BasmniSite() {
           />
         </div>
         <RevealStagger
-          className="relative mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
+          className="relative mt-9 grid grid-cols-1 gap-5 sm:mt-11 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
           stagger={0.09}
         >
           {flagshipSystems.map((s, i) => (
@@ -144,7 +144,7 @@ export function BasmniSite() {
       {/* Intro */}
       <section id="about" className={sectionPad}>
         <SectionHeading label="Who we are" title={home.intro.title} />
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-[4.5rem] sm:grid-cols-[1.15fr_0.85fr] sm:gap-[8vw]">
+        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-[4.5rem] sm:grid-cols-[1.15fr_0.85fr] sm:gap-[8vw]">
           <div>
             <p className="max-w-[640px] text-[clamp(1.8rem,3.3vw,3.5rem)] leading-[1.1]">
               Engineering that performs where conditions are at their most demanding.
@@ -162,7 +162,7 @@ export function BasmniSite() {
             </p>
           </div>
         </div>
-        <Reveal direction="up" className="mt-12 sm:mt-16">
+        <Reveal direction="up" className="mt-9 sm:mt-11">
           <figure className="relative overflow-hidden border-l-2 border-orange">
             <ImageBlock
               src={media.dredgeArchDamAerial}
@@ -191,7 +191,7 @@ export function BasmniSite() {
           {/* Stats */}
           <section className={`${sectionPad} bg-navy text-white`}>
             <SectionHeading dark label="Experience" title={home.statsTitle} />
-            <div className="mt-12 grid grid-cols-2 items-start gap-4 border-t border-[#2a5c94] sm:mt-[4.5rem] sm:grid-cols-4">
+            <div className="mt-9 grid grid-cols-2 items-start gap-4 border-t border-[#2a5c94] sm:mt-[4.5rem] sm:grid-cols-4">
               {company.stats.map((stat) => (
                 <Reveal key={stat.label}>
                   <div className="border-r border-[#2a5c94] py-4 pr-4">
@@ -273,7 +273,7 @@ export function BasmniSite() {
               <p className="mt-5 max-w-[560px] leading-[1.65] text-[#d6e8fb]">{pacHomeIntro[0]}</p>
             </Reveal>
 
-            <Reveal direction="up" className="mt-10 sm:mt-12">
+            <Reveal direction="up" className="mt-8 sm:mt-10">
               <ImageBlock
                 src={media.pacCableTunnel}
                 alt="Pressurized-air cable ducts routed through a lined service tunnel"
@@ -284,7 +284,7 @@ export function BasmniSite() {
             </Reveal>
 
             <RevealStagger
-              className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-14 sm:grid-cols-2 lg:grid-cols-3"
+              className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-10 sm:grid-cols-2 lg:grid-cols-3"
               stagger={0.07}
             >
               {pacFeatures.slice(0, 6).map((f) => (
@@ -302,7 +302,7 @@ export function BasmniSite() {
               <MetricGrid items={pacHeadlineMetrics} dark columns="sm:grid-cols-4" />
             </div>
 
-            <div className="mt-12 grid grid-cols-1 gap-6 border-t border-[#1f4a80] pt-8 sm:mt-14 sm:grid-cols-3 sm:gap-8">
+            <div className="mt-9 grid grid-cols-1 gap-6 border-t border-[#1f4a80] pt-8 sm:mt-10 sm:grid-cols-3 sm:gap-8">
               {pacHowItWorks.map((s) => (
                 <Reveal key={s.number}>
                   <span className="text-[0.63rem] font-bold text-ice">{s.number}</span>
@@ -367,7 +367,7 @@ export function BasmniSite() {
           <section className={sectionPad}>
             <SectionHeading label="Debris management" title={home.debrisTitle} />
             <RevealStagger
-              className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3"
+              className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
               stagger={0.1}
             >
               {[

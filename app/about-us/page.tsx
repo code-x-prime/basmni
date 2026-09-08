@@ -32,7 +32,7 @@ export default function AboutPage() {
           title={aboutSections.intro.title}
           deck={aboutSections.intro.deck}
         />
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[7vw]">
+        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[7vw]">
           <Reveal className="space-y-5 leading-[1.75] text-muted" direction="right">
             {company.story.map((para) => (
               <p key={para.slice(0, 24)}>{para}</p>
@@ -59,7 +59,7 @@ export default function AboutPage() {
         </div>
 
         {/* small engineering facts */}
-        <RevealStagger className="mt-12 grid grid-cols-2 gap-px border-t border-border sm:mt-14 sm:grid-cols-4">
+        <RevealStagger className="mt-9 grid grid-cols-2 gap-px border-t border-border sm:mt-10 sm:grid-cols-4">
           {[
             { value: '2016', label: 'Established' },
             { value: 'Delhi', label: 'Headquarters' },
@@ -120,7 +120,7 @@ export default function AboutPage() {
           title={aboutSections.capabilities.title}
           deck={aboutSections.capabilities.deck}
         />
-        <Reveal direction="up" className="mt-12 sm:mt-16">
+        <Reveal direction="up" className="mt-9 sm:mt-11">
           <ImageBlock
             src={media.civilSiteReview}
             alt="Basmni engineers reviewing drawings at a waterfront construction site"
@@ -152,7 +152,7 @@ export default function AboutPage() {
           label={aboutSections.applications.label}
           title={aboutSections.applications.title}
         />
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-[1fr_1fr] sm:gap-[6vw]">
+        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-[1fr_1fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <ImageBlock
               src={media.spillway}
@@ -174,7 +174,7 @@ export default function AboutPage() {
           label={aboutSections.glance.label}
           title={aboutSections.glance.title}
         />
-        <div className="mt-12 grid grid-cols-2 gap-4 border-t border-[#2a5c94] sm:mt-16 sm:grid-cols-4">
+        <div className="mt-9 grid grid-cols-2 gap-4 border-t border-[#2a5c94] sm:mt-11 sm:grid-cols-4">
           {company.stats.map((stat) => (
             <Reveal key={stat.label}>
               <div className="border-r border-[#2a5c94] py-4">
@@ -198,7 +198,7 @@ export default function AboutPage() {
           title={aboutSections.equipment.title}
           deck={aboutSections.equipment.deck}
         />
-        <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-border bg-border sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {company.equipment.map((eq) => (
             <RevealItem key={eq.title}>
               <Link
@@ -226,7 +226,7 @@ export default function AboutPage() {
       {/* Why Basmni + field experience */}
       <section className={sectionPad}>
         <SectionHeading label={aboutSections.why.label} title={aboutSections.why.title} />
-        <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
+        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2">
               {company.whyBasmni.map((w) => (
@@ -257,7 +257,7 @@ export default function AboutPage() {
       {/* Engineering-to-execution process */}
       <section id="process" className={`${sectionPad} scroll-mt-52`}>
         <SectionHeading label={aboutSections.process.label} title={aboutSections.process.title} />
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <FeatureRows
             items={company.capabilitySteps.map((s) => ({
               number: s.number,

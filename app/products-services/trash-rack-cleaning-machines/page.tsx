@@ -38,14 +38,14 @@ export default function TrcmPage() {
       {/* Overview */}
       <section className={sectionPad}>
         <SectionHeading label="Overview" title="Keeping the intake bay clear." />
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-[6vw]">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {trcmHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
               <p className="leading-[1.7] text-muted">{p}</p>
             </Reveal>
           ))}
         </div>
-        <div className="mt-12 sm:mt-14">
+        <div className="mt-8 sm:mt-10">
           <MetricGrid items={trcmHeadlineMetrics} columns="sm:grid-cols-3" />
         </div>
       </section>
@@ -53,7 +53,7 @@ export default function TrcmPage() {
       {/* How it works */}
       <section className={`${sectionPad} bg-navy text-white`}>
         <SectionHeading dark label="How it works" title="Detect. Rake. Discharge." />
-        <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-11 sm:grid-cols-3">
           {trcmHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
               <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
@@ -82,7 +82,7 @@ export default function TrcmPage() {
           title="Automated, and matched to the intake."
           deck="The mechanism is chosen for the depth, channel and debris — not one machine for every site."
         />
-        <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {trcmFeatures.map((f) => (
             <RevealItem key={f.number} className="bg-graphite p-6">
               <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
@@ -98,7 +98,7 @@ export default function TrcmPage() {
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading label="Configurations" title="Four ways to keep a rack clean." />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2"
+          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2"
           stagger={0.08}
         >
           {trcmConfigurations.map((c) => (
@@ -126,7 +126,7 @@ export default function TrcmPage() {
           title="What a cleaning machine is made of."
           deck="Five sub-assemblies work together to rake the screen, move along the intake and carry the debris off site."
         />
-        <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-border bg-border sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {trcmComponents.map((c) => (
             <RevealItem key={c.title} className="bg-background p-6 sm:p-7">
               <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
@@ -142,7 +142,7 @@ export default function TrcmPage() {
       <section className={`${sectionPad} bg-navy text-white`}>
         <SectionHeading dark label="Applications" title="Where debris management matters." />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3"
+          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}
         >
           {trcmApplications.map((a) => (
@@ -170,7 +170,7 @@ export default function TrcmPage() {
           title="Operating with and without a machine."
           deck="The return shows up as recovered capacity, lower maintenance, safer work and flood-season uptime."
         />
-        <div className="mt-12 overflow-x-auto sm:mt-16">
+        <div className="mt-9 overflow-x-auto sm:mt-11">
           <table className="w-full min-w-[640px] border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
@@ -204,7 +204,7 @@ export default function TrcmPage() {
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading label="Engineering & delivery" title="Survey to commissioning." />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{trcmProcess.intro}</p>
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {trcmProcess.steps.map((step) => (
               <RevealItem key={step} className="bg-[#dbe9fb] p-6 sm:p-7">
@@ -230,7 +230,7 @@ export default function TrcmPage() {
       {/* FAQ */}
       <section className={sectionPad}>
         <SectionHeading label="FAQ" title="Common questions." />
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <FAQ items={trcmFaq} />
         </div>
       </section>

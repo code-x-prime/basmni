@@ -32,7 +32,7 @@ export default function ReferencesPage() {
           label={referencesSections.stats.label}
           title={referencesSections.stats.title}
         />
-        <div className="mt-12 grid grid-cols-2 gap-4 border-t border-[#2a5c94] sm:mt-16 sm:grid-cols-4">
+        <div className="mt-9 grid grid-cols-2 gap-4 border-t border-[#2a5c94] sm:mt-11 sm:grid-cols-4">
           {projectStats.map((s) => (
             <Reveal key={s.label}>
               <div className="border-r border-[#2a5c94] py-4">
@@ -55,7 +55,7 @@ export default function ReferencesPage() {
           label={referencesSections.featured.label}
           title={referencesSections.featured.title}
         />
-        <div className="mt-12 grid grid-cols-1 gap-x-6 gap-y-12 sm:mt-16 sm:grid-cols-2">
+        <div className="mt-9 grid grid-cols-1 gap-x-6 gap-y-12 sm:mt-11 sm:grid-cols-2">
           {featuredProjects.map((p, i) => (
             <Reveal key={p.id} direction={i % 2 === 0 ? 'right' : 'left'}>
               <article className="group">
@@ -95,7 +95,7 @@ export default function ReferencesPage() {
           label={referencesSections.archive.label}
           title={referencesSections.archive.title}
         />
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <ProjectArchive />
         </div>
       </section>

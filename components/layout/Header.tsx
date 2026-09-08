@@ -87,8 +87,9 @@ export function Header() {
         <nav className="hidden items-center gap-[clamp(0.7rem,1.5vw,1.6rem)] whitespace-nowrap text-[0.82rem] font-semibold uppercase tracking-[0.1em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
           {navigation.map((item) => {
             const active = isActive(pathname, item.href)
-            const labelCls = `group relative whitespace-nowrap py-1 transition-colors duration-200 ${active ? 'text-ice' : 'text-white hover:text-ice'
-              }`
+            const labelCls = `group relative whitespace-nowrap py-1 transition-colors duration-200 ${
+              active ? 'text-ice' : 'text-white hover:text-ice'
+            }`
             const indicator = active ? (
               <motion.span
                 layoutId="nav-indicator"
@@ -129,8 +130,9 @@ export function Header() {
                       <li key={c.href}>
                         <Link
                           href={c.href}
-                          className={`block whitespace-nowrap px-4 py-2.5 text-[0.82rem] font-semibold uppercase tracking-[0.09em] transition-colors hover:bg-white/5 hover:text-ice ${pathname === c.href ? 'text-ice' : 'text-white/75'
-                            }`}
+                          className={`block whitespace-nowrap px-4 py-2.5 text-[0.82rem] font-semibold uppercase tracking-[0.09em] transition-colors hover:bg-white/5 hover:text-ice ${
+                            pathname === c.href ? 'text-ice' : 'text-white/75'
+                          }`}
                         >
                           {c.label}
                         </Link>
@@ -182,8 +184,9 @@ export function Header() {
             >
               {navigation.map((item) => {
                 const active = isActive(pathname, item.href)
-                const mobileLabelCls = `block py-1.5 text-[1rem] uppercase tracking-[0.08em] ${active ? 'text-ice opacity-100' : 'opacity-80'
-                  }`
+                const mobileLabelCls = `block py-1.5 text-[1rem] uppercase tracking-[0.08em] ${
+                  active ? 'text-ice opacity-100' : 'opacity-80'
+                }`
                 return (
                   <motion.div
                     key={item.href}
@@ -207,8 +210,9 @@ export function Header() {
                           <Link
                             key={c.href}
                             href={c.href}
-                            className={`py-1.5 text-[0.72rem] uppercase tracking-[0.08em] ${pathname === c.href ? 'text-ice' : 'opacity-70'
-                              }`}
+                            className={`py-1.5 text-[0.72rem] uppercase tracking-[0.08em] ${
+                              pathname === c.href ? 'text-ice' : 'opacity-70'
+                            }`}
                             onClick={() => setOpen(false)}
                           >
                             {c.label}

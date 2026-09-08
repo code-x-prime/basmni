@@ -46,14 +46,14 @@ export default function PacPage() {
           label="Overview"
           title="Power transmission insulated with pressurized air."
         />
-        <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-[6vw]">
+        <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {pacHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
               <p className="leading-[1.7] text-muted">{p}</p>
             </Reveal>
           ))}
         </div>
-        <div className="mt-12 sm:mt-14">
+        <div className="mt-8 sm:mt-10">
           <MetricGrid items={pacHeadlineMetrics} columns="sm:grid-cols-4" />
         </div>
       </section>
@@ -61,7 +61,7 @@ export default function PacPage() {
       {/* 02 — How PAC works */}
       <section className={`${sectionPad} bg-navy text-white`}>
         <SectionHeading dark label="How PAC works" title="Three functions, one sealed pipe." />
-        <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-11 sm:grid-cols-3">
           {pacHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
               <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
@@ -90,7 +90,7 @@ export default function PacPage() {
           title="What makes PAC different."
           deck="Capacity, efficiency, a clean insulating medium and built-in monitoring in one metallic system."
         />
-        <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-11 sm:grid-cols-2 lg:grid-cols-4">
           {pacFeatures.map((f) => (
             <RevealItem key={f.number} className="bg-graphite p-6">
               <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
@@ -134,7 +134,7 @@ export default function PacPage() {
       {/* 05 — Key components */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading label="Key components" title="What a PAC system is made of." />
-        <div className="mt-10 sm:mt-14">
+        <div className="mt-8 sm:mt-10">
           <FeatureRows items={pacComponents.map((c) => ({ title: c.title, text: c.text }))} />
         </div>
       </section>
@@ -142,7 +142,7 @@ export default function PacPage() {
       {/* 06 — Technical specifications */}
       <section className={sectionPad}>
         <SectionHeading label="Technical specifications" title="Basmni PAC system parameters." />
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
           <Reveal>
             <table className="w-full border-collapse text-left">
               <tbody>
@@ -179,7 +179,7 @@ export default function PacPage() {
           deck="From transmission networks and substations to specialised high-current applications — engineered to the rated parameters of each project."
         />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-6 sm:mt-16 sm:grid-cols-2"
+          className="mt-9 grid grid-cols-1 gap-6 sm:mt-11 sm:grid-cols-2"
           stagger={0.08}
         >
           {pacGridSolutions.map((s) => (
@@ -219,13 +219,13 @@ export default function PacPage() {
           title="PAC vs established alternatives."
           deck="How a pressurized-air cable compares with underground XLPE cable and with overhead lines."
         />
-        <div className="mt-10 sm:mt-14">
+        <div className="mt-8 sm:mt-10">
           <p className="mb-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
             PAC vs XLPE cable
           </p>
           <PacComparison rows={pacComparison} conventionalLabel="Conventional XLPE cable" />
         </div>
-        <div className="mt-14 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <p className="mb-4 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
             PAC vs overhead lines
           </p>
@@ -240,7 +240,7 @@ export default function PacPage() {
           label="Proven engineering"
           title="Established principles, a cleaner architecture."
         />
-        <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
+        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
           <Reveal>
             <ul className="border-t border-[#1f4a80]">
               {pacProven.points.map((p) => (
@@ -310,7 +310,7 @@ export default function PacPage() {
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-[#d6e8fb]">
           {pacInstallation.intro}
         </p>
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:grid-cols-4">
             {pacInstallation.steps.map((step) => (
               <RevealItem key={step} className="bg-navy p-6 sm:p-7">
@@ -341,7 +341,7 @@ export default function PacPage() {
           deck={pacEngineeringSupport.intro}
         />
         <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-px border border-border bg-border sm:mt-16 sm:grid-cols-2"
+          className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2"
           stagger={0.06}
         >
           {pacEngineeringSupport.services.map((s) => (
@@ -358,7 +358,7 @@ export default function PacPage() {
       {/* 13 — FAQ */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading label="FAQ" title="Common questions." />
-        <div className="mt-12 sm:mt-16">
+        <div className="mt-9 sm:mt-11">
           <FAQ items={pacFaq} />
         </div>
       </section>
