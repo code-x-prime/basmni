@@ -6,10 +6,10 @@
 
 export const sectionPad = 'px-5 py-16 sm:px-[7vw] sm:py-[clamp(4rem,7vw,7rem)]'
 
-export const eyebrow = 'text-[0.68rem] font-bold uppercase tracking-[0.17em] text-blue'
-export const eyebrowDark = 'text-[0.68rem] font-bold uppercase tracking-[0.17em] text-ice'
+export const eyebrow = 'text-[0.84rem] font-bold uppercase tracking-[0.14em] text-blue'
+export const eyebrowDark = 'text-[0.84rem] font-bold uppercase tracking-[0.14em] text-ice'
 
-export const sectionLabel = 'text-[0.68rem] font-bold uppercase tracking-[0.17em]'
+export const sectionLabel = 'text-[0.84rem] font-bold uppercase tracking-[0.14em]'
 
 export const displayHeading = 'flex-1 text-[clamp(2.2rem,4.5vw,4.4rem)] uppercase tracking-tightest'
 
@@ -22,7 +22,7 @@ export const buttonDark = `${button} bg-navy text-white`
 export const buttonOutline = `${button} border-navy/40 text-navy`
 
 export const textLink =
-  'inline-flex items-center gap-1.5 border-b border-blue pb-1.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-blue [&_svg]:w-4'
+  'inline-flex items-center gap-1.5 border-b border-blue pb-1.5 text-[0.8rem] font-bold uppercase tracking-[0.09em] text-blue [&_svg]:w-4'
 
 /** Homepage hero / CTA overlay gradient. */
 export const overlayGradient =

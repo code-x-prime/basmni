@@ -20,7 +20,7 @@ export function ProjectArchive() {
                 {p.client}
               </p>
             </div>
-            <div className="text-[0.85rem] leading-[1.55] text-muted">
+            <div className="text-[1rem] leading-[1.55] text-muted">
               <p>{p.scope}</p>
               <p className="mt-2 text-[0.68rem] uppercase tracking-[0.06em] text-muted/80">
                 {p.contractNo ? `Contract ${p.contractNo}` : 'Contract ref. on file'}

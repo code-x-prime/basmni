@@ -5,7 +5,7 @@ export const home = {
     description:
       'Advanced engineering, dredging and hydro-mechanical solutions for dams, reservoirs and hydropower infrastructure.',
   },
-  intro: { label: '01 — Who we are', title: 'Engineering solutions for critical infrastructure.' },
+  intro: { label: 'Who we are', title: 'Engineering solutions for critical infrastructure.' },
   statsTitle: 'Built on engineering experience.',
   solutionTitle: 'Our core engineering solutions',
   solutionIntro:

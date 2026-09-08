@@ -27,13 +27,13 @@ export function PacComparison({
               <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-blue">
                 Pressurized Air Cable
               </p>
-              <p className="mt-1 text-[0.86rem] leading-[1.5] text-foreground">{r.pac}</p>
+              <p className="mt-1 text-[1rem] leading-[1.5] text-foreground">{r.pac}</p>
             </div>
             <div className="border-t border-border px-4 py-3">
               <p className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-muted">
                 {conventionalLabel}
               </p>
-              <p className="mt-1 text-[0.86rem] leading-[1.5] text-muted">{r.conventional}</p>
+              <p className="mt-1 text-[1rem] leading-[1.5] text-muted">{r.conventional}</p>
             </div>
           </div>
         ))}
@@ -61,8 +61,8 @@ export function PacComparison({
                 <td className="py-4 pr-4 text-[0.8rem] font-bold uppercase tracking-tightest text-navy">
                   {r.criteria}
                 </td>
-                <td className="px-4 py-4 text-[0.88rem] leading-[1.55] text-foreground">{r.pac}</td>
-                <td className="px-4 py-4 text-[0.88rem] leading-[1.55] text-muted">
+                <td className="px-4 py-4 text-[1rem] leading-[1.55] text-foreground">{r.pac}</td>
+                <td className="px-4 py-4 text-[1rem] leading-[1.55] text-muted">
                   {r.conventional}
                 </td>
               </tr>

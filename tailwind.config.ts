@@ -7,7 +7,7 @@ const config: Config = {
       colors: {
         background: '#f5f9fd',
         foreground: '#125096',
-        muted: '#4a7ab8',
+        muted: '#3a6198',
         border: '#d5e3f5',
         navy: '#125096',
         graphite: '#0b3a70',

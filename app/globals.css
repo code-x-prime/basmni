@@ -16,6 +16,8 @@
     background: #f5f9fd;
     color: #125096;
     font-family: var(--font-manrope), Arial, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.65;
   }
   a {
     color: inherit;

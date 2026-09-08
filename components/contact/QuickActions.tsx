@@ -34,7 +34,7 @@ export function QuickActions() {
             <span className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted">
               {label}
             </span>
-            <span className="mt-1 flex items-center gap-1.5 text-[0.95rem] text-foreground">
+            <span className="mt-1 flex items-center gap-1.5 text-[1rem] text-foreground">
               {value}
               <ArrowUpRight className="w-4 text-muted transition-colors group-hover:text-blue" />
             </span>

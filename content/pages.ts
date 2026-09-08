@@ -27,16 +27,16 @@ export const aboutHero: PageHeroContent = {
 }
 
 export const pacHero: PageHeroContent = {
-  eyebrow: 'Pressurized Air Cables',
+  eyebrow: 'Pressurized Air Cables (PAC)',
   titleLines: ['High-pressurized', 'air cable systems.'],
   description:
     'Heavy-duty power transmission insulated with clean compressed technical air — SF6-free, PFAS-free, low-loss and continuously monitored. Basmni engineers, supplies and commissions PAC systems for high-voltage substations, dense grid corridors and hydropower evacuation.',
-  image: 'pacTransmissionGrid',
-  imageAlt: 'Transmission pylon, a cutaway pressurized-air cable and a power corridor',
+  image: 'pacCableIndustrial',
+  imageAlt: 'Cutaway of a pressurized-air cable beside an industrial power plant',
   imagePosition: 'center',
   breadcrumb: [
     home,
-    { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
+    { label: 'Pressurized Air Cables (PAC)', href: '/products-services/pressurized-air-cables' },
   ],
 }
 
@@ -52,12 +52,13 @@ export const dredgingHero: PageHeroContent = {
 }
 
 export const trcmHero: PageHeroContent = {
-  eyebrow: 'Trash Rack Cleaning Machines',
+  eyebrow: 'Trash Rack Cleaning Machines (TRCM)',
   titleLines: ['Trash rack', 'cleaning machines.'],
   description:
-    'Automated debris removal that keeps intake bays clear when submerged debris, vegetation and trash accumulate on intake grates and threaten flow to turbines and gates. Hydraulic, wire-rope and fine-screen types matched to the intake.',
-  image: 'trcm',
-  imageAlt: 'Hydro-mechanical trash rack cleaning machines installed on a project platform',
+    'Automated debris removal that protects downstream infrastructure and holds peak water flow. Debris on the intake screen builds a differential head across the rack, starves turbines and pumps, and loads the bars until they bend. Hydraulic, wire-rope, chain and gantry machines — matched to the intake.',
+  image: 'trcmDamIntakeMachine',
+  imageAlt:
+    'Gantry-mounted trash rack cleaning machine lifting logs off a dam intake screen, spillway behind',
   imagePosition: 'center',
   breadcrumb: [
     home,
@@ -72,9 +73,10 @@ export const civilHero: PageHeroContent = {
   eyebrow: 'Specialized Civil Works',
   titleLines: ['Specialized', 'civil works.'],
   description:
-    'Allied civil engineering for major dams, barrages and river weirs — bedrock treatment, mass concrete and RCC works, spillways, seepage cut-offs and intake troughs, each tailored to the hydrodynamic and structural challenges of the site.',
-  image: 'civil',
-  imageAlt: 'Concrete arch dam and reservoir in a river canyon',
+    'Allied civil engineering for dams, barrages and river weirs — foundation and bedrock treatment, mass concrete and RCC works, spillways, seepage cut-offs, trench-weir troughs and desilting chambers, built in coordination with the hydro-mechanical scope and tailored to the site.',
+  image: 'civilTrenchWeirIntake',
+  imageAlt:
+    'Trench-weir intake structure with embedded steel screens in a concrete channel on a Basmni project',
   imagePosition: 'center 55%',
   breadcrumb: [home, { label: 'Civil Works', href: '/products-services/civil-works' }],
 }
@@ -104,28 +106,28 @@ export const contactHero: PageHeroContent = {
 /** Section copy shared across the enriched inner pages. */
 export const aboutSections = {
   intro: {
-    label: '01 — About Basmni',
+    label: 'About Basmni',
     title: 'About Basmni.',
     deck: 'An engineering and infrastructure solutions provider operating on a Pan-India scale for the hydro-power and water resource sectors since 2016.',
   },
   capabilities: {
-    label: '02 — Capabilities',
+    label: 'Capabilities',
     title: 'From engineering to execution.',
     deck: 'One accountable team across every stage — equipment is engineered for the site and stays supported through commissioning.',
   },
   applications: {
-    label: '03 — Applications',
+    label: 'Applications',
     title: 'Where our engineering works.',
   },
-  glance: { label: '04 — At a glance', title: 'Basmni at a glance.' },
+  glance: { label: 'At a glance', title: 'Basmni at a glance.' },
   equipment: {
-    label: '05 — Technology & equipment',
+    label: 'Technology & equipment',
     title: 'The systems behind the work.',
     deck: 'Dredges, pumps, cleaning machines and power-transmission systems — engineered, built and commissioned by Basmni.',
   },
-  why: { label: '06 — Why Basmni', title: 'Built for demanding environments.' },
+  why: { label: 'Why Basmni', title: 'Built for demanding environments.' },
   process: {
-    label: '07 — Process',
+    label: 'Process',
     title: 'A single path from design to site.',
   },
 }

@@ -35,7 +35,7 @@ export default function CivilPage() {
 
       {/* Overview */}
       <section className={sectionPad}>
-        <SectionHeading label="01 — Overview" title="Engineered for the site, not the drawing." />
+        <SectionHeading label="Overview" title="Engineered for the site, not the drawing." />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-[6vw]">
           {civilHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
@@ -52,17 +52,16 @@ export default function CivilPage() {
       <section className={`${sectionPad} bg-navy text-white`}>
         <SectionHeading
           dark
-          label="02 — How it works"
+          label="How it works"
           title="Read the site. Treat the foundation. Pass water."
         />
         <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-3">
           {civilHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
-              <span className="text-[0.7rem] font-bold text-ice">{s.number}</span>
-              <h3 className="mt-4 text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
                 {s.title}
               </h3>
-              <p className="mt-3 text-[0.88rem] leading-[1.6] text-[#c9def5]">{s.text}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
             </Reveal>
           ))}
         </div>
@@ -70,8 +69,8 @@ export default function CivilPage() {
 
       {/* Image band */}
       <ImageBlock
-        src={media.civilSiteReview}
-        alt="Basmni engineers reviewing drawings at a waterfront construction site"
+        src={media.civilTrashRackPanels}
+        alt="Long embedded steel screen panels set into a dewatered concrete intake structure"
         parallax
         sizes="100vw"
         className="h-[42vh] min-h-[280px] sm:h-[56vh]"
@@ -81,18 +80,17 @@ export default function CivilPage() {
       <section className={`${sectionPad} bg-graphite text-white`}>
         <SectionHeading
           dark
-          label="03 — Key features"
+          label="Key features"
           title="Foundation, seepage, flood and fit."
           deck="The parts of a water-retaining structure that decide whether it lasts — engineered per site."
         />
         <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
           {civilFeatures.map((f) => (
             <RevealItem key={f.number} className="bg-graphite p-6">
-              <span className="text-[0.7rem] font-bold text-ice">{f.number}</span>
-              <h3 className="mt-4 text-[0.98rem] uppercase leading-[1.18] tracking-tightest text-ice">
+              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
                 {f.title}
               </h3>
-              <p className="mt-2.5 text-[0.83rem] leading-[1.55] text-[#c9def5]">{f.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -100,7 +98,7 @@ export default function CivilPage() {
 
       {/* Structure types */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
-        <SectionHeading label="04 — Structure types" title="Three settings, three structures." />
+        <SectionHeading label="Structure types" title="Three settings, three structures." />
         <RevealStagger
           className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3"
           stagger={0.08}
@@ -116,7 +114,7 @@ export default function CivilPage() {
                 <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
                   {c.title}
                 </h3>
-                <p className="mt-2 text-[0.86rem] leading-[1.55] text-muted">{c.text}</p>
+                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{c.text}</p>
               </div>
             </RevealItem>
           ))}
@@ -125,7 +123,7 @@ export default function CivilPage() {
 
       {/* Applications */}
       <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="05 — Applications" title="Where civil works are delivered." />
+        <SectionHeading dark label="Applications" title="Where civil works are delivered." />
         <RevealStagger
           className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}
@@ -141,7 +139,7 @@ export default function CivilPage() {
                 <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-ice">
                   {a.title}
                 </h3>
-                <p className="mt-2 text-[0.86rem] leading-[1.55] text-[#c9def5]">{a.text}</p>
+                <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{a.text}</p>
               </div>
             </RevealItem>
           ))}
@@ -150,19 +148,13 @@ export default function CivilPage() {
 
       {/* Engineering & delivery */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
-        <SectionHeading
-          label="06 — Engineering & delivery"
-          title="Investigation to commissioning."
-        />
+        <SectionHeading label="Engineering & delivery" title="Investigation to commissioning." />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{civilProcess.intro}</p>
         <div className="mt-12 sm:mt-16">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
-            {civilProcess.steps.map((step, i) => (
+            {civilProcess.steps.map((step) => (
               <RevealItem key={step} className="bg-[#dbe9fb] p-6 sm:p-7">
-                <span className="text-[0.7rem] font-bold text-blue">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3 className="mt-4 text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
+                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
                   {step}
                 </h3>
               </RevealItem>
@@ -183,7 +175,7 @@ export default function CivilPage() {
 
       {/* FAQ */}
       <section className={sectionPad}>
-        <SectionHeading label="07 — FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions." />
         <div className="mt-12 sm:mt-16">
           <FAQ items={civilFaq} />
         </div>
@@ -194,8 +186,8 @@ export default function CivilPage() {
         title={civilCta.title}
         emphasis={civilCta.emphasis}
         description={civilCta.description}
-        image={media.hydropowerDam}
-        imageAlt="Concrete dam and reservoir in a river valley"
+        image={media.civilFoundationExcavation}
+        imageAlt="Long-reach excavator preparing a dam foundation in a dewatered riverbed"
         primary={{ label: 'Discuss Your Project', href: '/contact' }}
         secondary={{ label: 'View References', href: '/references' }}
       />

@@ -13,8 +13,8 @@ export type CivilStructure = { title: string; text: string; image: MediaKey }
 export type CivilApplication = { title: string; text: string; image: MediaKey }
 
 export const civilHomeIntro: string[] = [
-  'Every dam, barrage and river weir sits in a different hydrodynamic and geological setting — a mountain valley, a broad alluvial river, a steep rocky bed. The civil structure has to be engineered for that site, not adapted from a standard drawing.',
-  'Basmni delivers allied civil engineering for major water-retaining and diversion structures — bedrock treatment, mass concrete and RCC works, spillways, seepage cut-offs and intake troughs — tied into the hydro-mechanical scope.',
+  'Every dam, barrage and river weir sits in a different hydrodynamic and geological setting — a mountain valley, a broad alluvial river, a steep boulder-strewn bed. The civil structure is engineered for that site, from the foundation up, not adapted from a standard drawing.',
+  'Basmni delivers the allied civil scope for water-retaining and diversion structures — foundation and bedrock treatment, mass concrete and RCC works, spillways and energy dissipators, seepage cut-offs, trench-weir troughs and desilting chambers — and builds it in step with the trash racks, gates and embedded parts so the two packages fit together on site.',
 ]
 
 export const civilHeadlineMetrics = [
@@ -78,50 +78,50 @@ export const civilStructures: CivilStructure[] = [
   {
     title: 'Dams (storage)',
     text: 'Built in mountain valleys. Deep bedrock grouting, mass concrete / rockfill placement and spillways to withstand high water pressure and store large volumes.',
-    image: 'civil',
+    image: 'civilFoundationExcavation',
   },
   {
     title: 'Barrages (diversion)',
     text: 'Built across broad, flat rivers. Wide concrete raft slabs, underground sheet piles to block seepage, and gated RCC piers to divert water without large reservoirs.',
-    image: 'hydropowerDam',
+    image: 'civilDewateredIntakeBay',
   },
   {
     title: 'Trench weirs (intake)',
     text: 'Built flush inside steep rocky riverbeds. Boulder-resistant concrete troughs, embedded steel trash racks and desilting chambers to capture stream water while shedding debris.',
-    image: 'spillway',
+    image: 'civilTrenchWeirIntake',
   },
 ]
 
 export const civilApplications: CivilApplication[] = [
   {
     title: 'Storage dams',
-    text: 'New and modified concrete or rockfill dams in mountain valleys, with grouting, spillways and outlet works.',
-    image: 'civil',
+    text: 'New and modified concrete or rockfill dams in mountain valleys, with foundation grouting, spillways and outlet works.',
+    image: 'civilFoundationExcavation',
   },
   {
     title: 'Diversion barrages',
     text: 'Gated barrages on wide rivers, with raft foundations and seepage cut-offs to divert flow into canals or intakes.',
-    image: 'hydropowerDam',
+    image: 'civilDewateredIntakeBay',
   },
   {
     title: 'Trench-weir intakes',
     text: 'Stream intakes flush in steep rocky beds, capturing water while passing boulders and debris downstream.',
-    image: 'spillway',
+    image: 'civilTrenchWeirIntake',
   },
   {
-    title: 'Spillways & energy dissipators',
-    text: 'Overflow sections, chutes and stilling basins engineered to pass design floods without scour damage.',
-    image: 'debrisPanorama',
+    title: 'Intake screens & channels',
+    text: 'Embedded rack panels and lined approach channels that screen the diverted flow before it reaches the conveyance system.',
+    image: 'civilIntakeScreensCanal',
   },
   {
     title: 'Desilting & intake chambers',
     text: 'Sediment-excluding chambers and approach structures tied into the intake and trash-rack arrangement.',
-    image: 'trashRack',
+    image: 'civilTrashRackPanels',
   },
   {
-    title: 'Allied structural works',
-    text: 'Piers, walls, decks and embedded parts that support gates, hoists and cleaning machines at the structure.',
-    image: 'field',
+    title: 'Embedded steel & site logistics',
+    text: 'Fabricated racks, liners, gate frames and embedded parts hauled to remote sites and set into the structure.',
+    image: 'civilSteelDeliverySite',
   },
 ]
 

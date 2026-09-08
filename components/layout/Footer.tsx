@@ -11,7 +11,7 @@ const companyLinks = [
 ]
 
 const solutionLinks = [
-  { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
+  { label: 'Pressurized Air Cables (PAC)', href: '/products-services/pressurized-air-cables' },
   { label: 'Deep Dam Dredging', href: '/products-services/deep-dam-dredging' },
   {
     label: 'Trash Rack Cleaning Machines',
@@ -20,7 +20,7 @@ const solutionLinks = [
   { label: 'Civil Works', href: '/products-services/civil-works' },
 ]
 
-const linkClass = 'text-[0.82rem] leading-[1.6] text-muted hover:text-foreground'
+const linkClass = 'text-[1rem] leading-[1.6] text-muted hover:text-foreground'
 
 export function Footer() {
   const tel = `tel:${contact.phone.replaceAll(' ', '')}`

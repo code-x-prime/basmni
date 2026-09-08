@@ -13,86 +13,140 @@ export type TrcmConfig = { title: string; text: string; image: MediaKey }
 export type TrcmApplication = { title: string; text: string; image: MediaKey }
 
 export const trcmHomeIntro: string[] = [
-  'Submerged debris, timber, vegetation and trash build up against intake grates and throttle the flow to turbines and gates. Left unmanaged, the head loss cuts generation and the mechanical load can jam gates or damage racks.',
-  'Basmni designs, manufactures, installs and commissions automated trash rack cleaning machines — hydraulic, wire-rope and fine-screen types — matched to the intake depth, debris volume and structure on each site.',
+  'A trash rack cleaning machine keeps the debris load off the intake screen so the plant runs at design head. Logs, branches, leaves, aquatic weed and plastics collect on the bars, build a differential water level across the rack, and starve the turbines or pumps downstream — a head loss of a few centimetres is lost megawatts.',
+  'Basmni designs, manufactures, installs and commissions automated TRCMs — hydraulic arm, wire-rope, chain-rake and traversing-gantry types — matched to the intake depth, channel width, debris profile and structure on each site, with PLC or SCADA control for manual, semi-automatic and fully automatic cleaning cycles.',
 ]
 
 export const trcmHeadlineMetrics = [
-  { value: '3', label: 'Machine types' },
-  { value: 'Up to ~20m', label: 'Hydraulic reach' },
+  { value: '4', label: 'Machine types' },
+  { value: 'Up to ~20m', label: 'Hydraulic-arm reach' },
+  { value: '>20m', label: 'Wire-rope depth' },
   { value: '24/7', label: 'Automated cleaning' },
+]
+
+/** The five sub-assemblies of a trash rack cleaning machine. */
+export const trcmComponents: { title: string; text: string }[] = [
+  {
+    title: 'Grab / rake bucket',
+    text: 'The primary clearing tool. Tines or blades interlock with the trash-rack bars and comb debris off the screen from the bottom up.',
+  },
+  {
+    title: 'Hoisting & raking mechanism',
+    text: 'Hydraulic cylinders or a wire-rope winch that lowers, opens, closes and lifts the grab along the face of the rack.',
+  },
+  {
+    title: 'Travelling carriage / gantry',
+    text: 'A rail-mounted frame that moves the machine laterally so one unit serves every bay across a wide intake.',
+  },
+  {
+    title: 'Debris disposal system',
+    text: 'Hoppers, conveyor belts or collection bins that carry the raked material clear of the water and out to a truck or skip.',
+  },
+  {
+    title: 'Control system (PLC / SCADA)',
+    text: 'Runs manual, semi-automatic or fully automatic cleaning cycles, typically triggered by a differential water-level sensor or a timer.',
+  },
+]
+
+/** ROI comparison — operating a plant with and without an automated TRCM. */
+export const trcmRoi: { benefit: string; without: string; with: string }[] = [
+  {
+    benefit: 'Plant capacity',
+    without: 'Reduced by head loss across a blocked rack',
+    with: 'Runs at design hydraulic efficiency',
+  },
+  {
+    benefit: 'Maintenance cost',
+    without: 'High — repeated turbine and pump repairs from debris strikes',
+    with: 'Minimal — routine machine servicing',
+  },
+  {
+    benefit: 'Labour risk',
+    without: 'Manual raking, crane-slinging and diving in live intake currents',
+    with: 'Unmanned, automated cleaning cycles',
+  },
+  {
+    benefit: 'Flood readiness',
+    without: 'Intake chokes as debris inflow spikes; risk of shutdown',
+    with: 'Continuous real-time extraction through the flood peak',
+  },
 ]
 
 export const trcmHowItWorks: TrcmStep[] = [
   {
     number: '01',
     title: 'Detect the load',
-    text: 'The machine tracks differential head across the rack, or runs on a set cleaning cycle, so debris is cleared before head loss reaches the turbines.',
+    text: 'A differential water-level sensor watches the head across the rack, or the machine runs a timed cycle, so a cleaning pass starts before the blockage costs generation.',
   },
   {
     number: '02',
     title: 'Rake the screen',
-    text: 'A rake is driven down the face of the trash rack — by rigid hydraulic cylinders or a wire-rope hoist — combing debris off the bars from bottom to top.',
+    text: 'The grab is driven down the face of the trash rack — by rigid hydraulic arms or a wire-rope hoist — and combs debris off the bars from the bottom up with positive force.',
   },
   {
     number: '03',
     title: 'Discharge the debris',
-    text: 'The raked material is lifted clear of the water and dropped into a skip, conveyor or spillway channel for removal from site.',
+    text: 'The raked material is lifted clear of the water and released into a hopper, conveyor or skip, then carried off site — no manual handling in the intake current.',
   },
 ]
 
 export const trcmFeatures: TrcmFeature[] = [
   {
     number: '01',
-    title: 'Automated operation',
-    text: 'Continuous or head-triggered cleaning keeps the intake clear without a permanent manual crew on the deck.',
+    title: 'Maintains operating head',
+    text: 'Continuous or head-triggered cleaning holds the differential across the rack near zero, so the plant keeps its design flow and full generation or pumping yield year-round.',
   },
   {
     number: '02',
-    title: 'Configured to the intake',
-    text: 'Hydraulic, wire-rope or fine-screen mechanisms are selected for the depth, channel geometry and debris on site.',
+    title: 'Protects downstream equipment',
+    text: 'Clearing the load before it chokes penstocks and intake channels keeps logs, timber and boulders off runner blades, impellers and seals — and prevents cavitation and vibration.',
   },
   {
     number: '03',
-    title: 'Positive raking force',
-    text: 'Hydraulic cylinders drive the rake into highly compacted debris mats that a gravity rake cannot penetrate.',
+    title: 'Relieves structural load',
+    text: 'A heavily clogged rack carries immense hydrostatic pressure that bends bars or collapses the screen. Regular raking keeps that differential pressure down.',
   },
   {
     number: '04',
-    title: 'Deep-water reach',
-    text: 'Wire-rope machines lower the rake far below the deck for deep intakes and steep channels at large hydropower plants.',
+    title: 'Removes the manual hazard',
+    text: 'Automating trash removal ends the safety risk of hand raking, crane-slinging and sending divers into turbulent intake currents.',
   },
   {
     number: '05',
-    title: 'Fine screening',
-    text: 'Tightly spaced teeth remove leaves, plastics and aquatic weeds that slip through coarse racks and reach sensitive equipment.',
+    title: 'Unmanned automated cycles',
+    text: 'Semi-automatic and fully automatic machines run on level-differential sensors or timers, cutting the on-site crew to routine servicing.',
   },
   {
     number: '06',
-    title: 'Upstream protection',
-    text: 'Floating log booms intercept heavy timber and ice before it reaches the rack, cutting the load on everything downstream.',
+    title: 'Flood-season capacity',
+    text: 'Debris inflow rises sharply through the monsoon. The machine handles the peak continuously, with no extra labour shifts, and log booms hold heavy timber and ice off the rack.',
   },
 ]
 
 export const trcmConfigurations: TrcmConfig[] = [
   {
-    title: 'Hydraulic type',
-    text: 'Best for heavy debris, logs and thick trash mats at shallow to medium depths (up to ~20 m). Rigid hydraulic cylinders give positive downward raking force so the rake pierces and combs highly compacted debris.',
+    title: 'Hydraulic jib / arm type',
+    text: 'For shallow-to-medium intake depths (up to about 15–20 m). Rigid single, double or telescopic hydraulic arms exert positive raking force into a deep, compacted debris layer that a gravity rake cannot penetrate.',
     image: 'trcm',
   },
   {
-    title: 'Wire rope type',
-    text: 'Best for deep-water intakes, steep channels and large hydropower plants. The rake is lowered on a wire rope and hoisting mechanism — highly cost-effective and adaptable where hydraulic arms cannot reach.',
+    title: 'Rope / wire-cable operated',
+    text: 'For deep intake channels beyond 20 m. Wire-rope hoists lower heavy grab buckets or multi-blade grapples under gravity — cost-effective and adaptable where a rigid arm cannot reach.',
     image: 'spillway',
   },
   {
-    title: 'Fine screen cleaners',
-    text: 'Best for secondary screening, sensitive pumping stations and delicate turbine protection. Tightly spaced teeth remove small debris — leaves, plastic waste and aquatic weeds — that slips through coarse racks.',
+    title: 'Chain-driven continuous rake',
+    text: 'For shallow channels, pump houses and high volumes of fine debris. Continuous rotating chains pull a series of rake blades along the screen panel for uninterrupted cleaning.',
     image: 'trashRack',
   },
   {
+    title: 'Traversing / mobile gantry',
+    text: 'For multi-bay dam intakes and wide barrages. A self-propelled carriage on rail tracks above the deck moves along the structure so one machine services every bay.',
+    image: 'trcmDamIntakeMachine',
+  },
+  {
     title: 'Log boom barriers',
-    text: 'A floating first line of defence: impact-resistant buoyancy modules on steel tension cables that rise and fall with the water level, intercepting logs, uprooted trees and seasonal ice floes.',
+    text: 'A floating first line of defence: impact-resistant buoyancy modules on steel tension cables that rise and fall with the water level, intercepting logs, uprooted trees and seasonal ice floes before they reach the rack.',
     image: 'logBoom',
   },
 ]
@@ -148,12 +202,16 @@ export const trcmFaq: { q: string; a: string }[] = [
     a: 'At dams and hydropower plants to protect penstocks and turbines, at barrages and river weirs to manage seasonal debris and prevent gate jamming, and on canal-based projects to remove aquatic weeds, algae and plastics from irrigation and cooling-water intakes.',
   },
   {
-    q: 'How do I choose between the hydraulic and wire-rope type?',
-    a: 'The hydraulic type suits heavy debris and compacted mats at shallow to medium depths (up to about 20 m), where positive downward force is needed. The wire-rope type suits deep-water intakes and steep channels at large plants, where the rake has to be lowered well below the deck.',
+    q: 'Which machine type suits my intake?',
+    a: 'The hydraulic jib/arm type suits heavy debris and compacted mats at shallow-to-medium depths (up to about 15–20 m). The wire-rope type suits deep channels beyond 20 m, where the grab is lowered well below the deck. A chain-driven continuous rake suits shallow channels and pump houses with high volumes of fine debris. A traversing gantry suits multi-bay dam intakes and wide barrages where one machine has to serve every bay.',
   },
   {
-    q: 'What do fine screen cleaners add?',
-    a: 'They provide secondary screening downstream of the coarse rack, using tightly spaced teeth to catch leaves, plastics and aquatic weeds that would otherwise pass through and reach sensitive pumping stations and turbines.',
+    q: 'What are the main parts of a TRCM?',
+    a: 'A grab or rake bucket that interlocks with the rack bars; a hydraulic or wire-rope hoisting and raking mechanism; a travelling carriage or gantry on rails for lateral movement across bays; a debris disposal system of hoppers, conveyors or bins; and a PLC/SCADA control system that runs manual, semi-automatic or fully automatic cleaning cycles.',
+  },
+  {
+    q: 'How does a TRCM pay for itself?',
+    a: 'It keeps the plant at design hydraulic efficiency instead of losing capacity to head loss, cuts turbine and pump repair costs from debris strikes, removes the safety exposure of manual raking, and keeps the intake clear through flood season when debris inflow spikes — so there is no forced shutdown.',
   },
   {
     q: 'What are log boom barriers for?',

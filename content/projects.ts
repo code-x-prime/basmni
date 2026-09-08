@@ -56,7 +56,7 @@ export const projects: Project[] = [
     scope:
       'Design, manufacturing, supply and erection of a modified trash rack with civil work at the Bhaledh trench weir apron to increase water carrying capacity and prevent wash-out of the trash rack.',
     contractNo: 'NH/BSPS/CC/CW/69/2024-25/LOA-09',
-    image: 'spillway',
+    image: 'civilTrenchWeirIntake',
     featured: true,
   },
   {

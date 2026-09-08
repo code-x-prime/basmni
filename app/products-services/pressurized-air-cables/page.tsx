@@ -43,7 +43,7 @@ export default function PacPage() {
       {/* 01 — Overview */}
       <section className={sectionPad}>
         <SectionHeading
-          label="01 — Overview"
+          label="Overview"
           title="Power transmission insulated with pressurized air."
         />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-[6vw]">
@@ -60,15 +60,14 @@ export default function PacPage() {
 
       {/* 02 — How PAC works */}
       <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="02 — How PAC works" title="Three functions, one sealed pipe." />
+        <SectionHeading dark label="How PAC works" title="Three functions, one sealed pipe." />
         <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-3">
           {pacHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
-              <span className="text-[0.7rem] font-bold text-ice">{s.number}</span>
-              <h3 className="mt-4 text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
                 {s.title}
               </h3>
-              <p className="mt-3 text-[0.88rem] leading-[1.6] text-[#c9def5]">{s.text}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
             </Reveal>
           ))}
         </div>
@@ -87,18 +86,17 @@ export default function PacPage() {
       <section className={`${sectionPad} bg-graphite text-white`}>
         <SectionHeading
           dark
-          label="03 — Key features"
+          label="Key features"
           title="What makes PAC different."
           deck="Capacity, efficiency, a clean insulating medium and built-in monitoring in one metallic system."
         />
         <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
           {pacFeatures.map((f) => (
             <RevealItem key={f.number} className="bg-graphite p-6">
-              <span className="text-[0.7rem] font-bold text-ice">{f.number}</span>
-              <h3 className="mt-4 text-[0.98rem] uppercase leading-[1.18] tracking-tightest text-ice">
+              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
                 {f.title}
               </h3>
-              <p className="mt-2.5 text-[0.83rem] leading-[1.55] text-[#c9def5]">{f.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -109,7 +107,7 @@ export default function PacPage() {
         className={`${sectionPad} grid grid-cols-1 items-center gap-8 sm:grid-cols-[1fr_0.85fr] sm:gap-[6vw]`}
       >
         <Reveal direction="right">
-          <p className={`${sectionLabel} text-blue`}>04 — Why pressurized air</p>
+          <p className={`${sectionLabel} text-blue`}>Why pressurized air</p>
           <h2 className={`${displayHeading} mt-2`}>SF6-free. PFAS-free. Just clean air.</h2>
           <p className="mt-5 max-w-[520px] leading-[1.65] text-muted">
             Conventional gas-insulated transmission relies on SF6 — a gas with a very high
@@ -125,8 +123,8 @@ export default function PacPage() {
         </Reveal>
         <Reveal direction="left">
           <ImageBlock
-            src={media.pacCableIndustrial}
-            alt="Cutaway of a pressurized-air cable showing the conductor and air-insulated enclosure"
+            src={media.pacTransmissionGrid}
+            alt="High-voltage transmission corridor served by a pressurized-air cable system"
             reveal
             className="min-h-[320px] sm:min-h-[460px]"
           />
@@ -135,7 +133,7 @@ export default function PacPage() {
 
       {/* 05 — Key components */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
-        <SectionHeading label="05 — Key components" title="What a PAC system is made of." />
+        <SectionHeading label="Key components" title="What a PAC system is made of." />
         <div className="mt-10 sm:mt-14">
           <FeatureRows items={pacComponents.map((c) => ({ title: c.title, text: c.text }))} />
         </div>
@@ -143,10 +141,7 @@ export default function PacPage() {
 
       {/* 06 — Technical specifications */}
       <section className={sectionPad}>
-        <SectionHeading
-          label="06 — Technical specifications"
-          title="Basmni PAC system parameters."
-        />
+        <SectionHeading label="Technical specifications" title="Basmni PAC system parameters." />
         <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
           <Reveal>
             <table className="w-full border-collapse text-left">
@@ -169,7 +164,7 @@ export default function PacPage() {
               <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
                 Technology reference
               </p>
-              <p className="mt-3 text-[0.85rem] leading-[1.65] text-muted">{pacReferenceNote}</p>
+              <p className="mt-3 text-[1rem] leading-[1.65] text-muted">{pacReferenceNote}</p>
             </div>
           </Reveal>
         </div>
@@ -179,7 +174,7 @@ export default function PacPage() {
       <section className={`${sectionPad} bg-navy text-white`}>
         <SectionHeading
           dark
-          label="07 — Solutions by grid level"
+          label="Solutions by grid level"
           title="Where PAC fits across the grid."
           deck="From transmission networks and substations to specialised high-current applications — engineered to the rated parameters of each project."
         />
@@ -201,12 +196,12 @@ export default function PacPage() {
               <h3 className="text-[1.15rem] uppercase leading-[1.15] tracking-tightest text-ice">
                 {s.title}
               </h3>
-              <p className="mt-2.5 text-[0.88rem] leading-[1.6] text-[#c9def5]">{s.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {s.tags.map((t) => (
                   <span
                     key={t}
-                    className="border border-[#2a5c94] px-2.5 py-1 text-[0.6rem] uppercase tracking-[0.1em] text-[#c9def5]"
+                    className="border border-[#2a5c94] px-2.5 py-1 text-[0.6rem] uppercase tracking-[0.1em] text-[#d6e8fb]"
                   >
                     {t}
                   </span>
@@ -220,7 +215,7 @@ export default function PacPage() {
       {/* 08 — Comparison */}
       <section className={sectionPad}>
         <SectionHeading
-          label="08 — Comparison"
+          label="Comparison"
           title="PAC vs established alternatives."
           deck="How a pressurized-air cable compares with underground XLPE cable and with overhead lines."
         />
@@ -242,7 +237,7 @@ export default function PacPage() {
       <section className={`${sectionPad} bg-graphite text-white`}>
         <SectionHeading
           dark
-          label="09 — Proven engineering"
+          label="Proven engineering"
           title="Established principles, a cleaner architecture."
         />
         <div className="mt-10 grid grid-cols-1 gap-8 sm:mt-14 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
@@ -251,7 +246,7 @@ export default function PacPage() {
               {pacProven.points.map((p) => (
                 <li
                   key={p}
-                  className="flex items-start gap-3 border-b border-[#1f4a80] py-3.5 text-[0.92rem] leading-[1.5] text-[#c9def5]"
+                  className="flex items-start gap-3 border-b border-[#1f4a80] py-3.5 text-[1rem] leading-[1.5] text-[#d6e8fb]"
                 >
                   <span className="mt-0.5 shrink-0 text-ice">✓</span>
                   {p}
@@ -260,12 +255,12 @@ export default function PacPage() {
             </ul>
           </Reveal>
           <Reveal direction="left">
-            <p className="leading-[1.7] text-[#c9def5]">{pacProven.intro}</p>
+            <p className="leading-[1.7] text-[#d6e8fb]">{pacProven.intro}</p>
             <div className="mt-6 border-l-2 border-orange bg-[#0a2f5c]/40 p-5">
               <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ice">
                 Technology reference
               </p>
-              <p className="mt-2.5 text-[0.83rem] leading-[1.6] text-[#c9def5]">
+              <p className="mt-2.5 text-[1rem] leading-[1.6] text-[#d6e8fb]">
                 Wider references for pressurized-air / gas-insulated transmission cite their own
                 validation testing and pilot installations. Those belong to the technology as a
                 class; every Basmni link is engineered and tested to its own rated parameters.
@@ -288,7 +283,7 @@ export default function PacPage() {
           />
         </Reveal>
         <Reveal direction="left">
-          <p className={`${sectionLabel} text-blue`}>10 — Pressure &amp; condition monitoring</p>
+          <p className={`${sectionLabel} text-blue`}>Pressure &amp; condition monitoring</p>
           <h2 className={`${displayHeading} mt-2`}>The system tells you how it is doing.</h2>
           <p className="mt-5 max-w-[520px] leading-[1.65] text-muted">
             Monitoring is part of the design, not an add-on. Continuous measurement gives the
@@ -296,14 +291,12 @@ export default function PacPage() {
             planned activity.
           </p>
           <ul className="mt-8 border-t border-border">
-            {pacMonitoring.map((m, i) => (
+            {pacMonitoring.map((m) => (
               <li
                 key={m}
-                className="flex gap-4 border-b border-border py-3 text-[0.9rem] leading-[1.55] text-muted"
+                className="flex gap-4 border-b border-border py-3 text-[1rem] leading-[1.55] text-muted"
               >
-                <span className="shrink-0 text-[0.7rem] font-bold text-blue">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
+                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                 {m}
               </li>
             ))}
@@ -313,22 +306,15 @@ export default function PacPage() {
 
       {/* 11 — Engineering & installation */}
       <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading
-          dark
-          label="11 — Engineering & installation"
-          title="One accountable scope."
-        />
-        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-[#c9def5]">
+        <SectionHeading dark label="Engineering & installation" title="One accountable scope." />
+        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-[#d6e8fb]">
           {pacInstallation.intro}
         </p>
         <div className="mt-12 sm:mt-16">
           <RevealStagger className="grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:grid-cols-4">
-            {pacInstallation.steps.map((step, i) => (
+            {pacInstallation.steps.map((step) => (
               <RevealItem key={step} className="bg-navy p-6 sm:p-7">
-                <span className="text-[0.7rem] font-bold text-ice">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3 className="mt-4 text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest">
+                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest">
                   {step}
                 </h3>
               </RevealItem>
@@ -339,7 +325,7 @@ export default function PacPage() {
           {pacInstallation.contexts.map((c) => (
             <span
               key={c}
-              className="border border-[#2a5c94] px-3 py-2 text-[0.68rem] uppercase tracking-[0.08em] text-[#c9def5]"
+              className="border border-[#2a5c94] px-3 py-2 text-[0.68rem] uppercase tracking-[0.08em] text-[#d6e8fb]"
             >
               {c}
             </span>
@@ -350,7 +336,7 @@ export default function PacPage() {
       {/* 12 — Engineering support */}
       <section className={sectionPad}>
         <SectionHeading
-          label="12 — Engineering support"
+          label="Engineering support"
           title="Work with our engineering team."
           deck={pacEngineeringSupport.intro}
         />
@@ -358,15 +344,12 @@ export default function PacPage() {
           className="mt-12 grid grid-cols-1 gap-px border border-border bg-border sm:mt-16 sm:grid-cols-2"
           stagger={0.06}
         >
-          {pacEngineeringSupport.services.map((s, i) => (
+          {pacEngineeringSupport.services.map((s) => (
             <RevealItem key={s.title} className="bg-background p-6 sm:p-8">
-              <span className="text-[0.7rem] font-bold text-blue">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-4 text-[clamp(1.1rem,2vw,1.4rem)] uppercase leading-[1.15] tracking-tightest text-navy">
+              <h3 className="text-[clamp(1.1rem,2vw,1.4rem)] uppercase leading-[1.15] tracking-tightest text-navy">
                 {s.title}
               </h3>
-              <p className="mt-2.5 text-[0.88rem] leading-[1.6] text-muted">{s.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -374,7 +357,7 @@ export default function PacPage() {
 
       {/* 13 — FAQ */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
-        <SectionHeading label="13 — FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions." />
         <div className="mt-12 sm:mt-16">
           <FAQ items={pacFaq} />
         </div>

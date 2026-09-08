@@ -32,8 +32,8 @@ export function PageHero({
   const reduce = useReducedMotion()
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#0b3a70] text-white">
-      <div className="grid grid-cols-1 lg:min-h-[600px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+    <section className="relative isolate overflow-hidden bg-[#0b3a70] pt-[68px] text-white sm:pt-[132px] lg:pt-[168px]">
+      <div className="grid grid-cols-1 lg:min-h-[560px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
         {/* Image */}
         <motion.div
           className="relative min-h-[248px] sm:min-h-[300px] lg:min-h-0"
@@ -58,7 +58,7 @@ export function PageHero({
         {/* Content */}
         <div className="relative flex items-center">
           <motion.div
-            className="w-full px-5 pb-14 pt-12 sm:px-8 sm:pb-16 lg:px-[clamp(2.5rem,4.5vw,4.75rem)] lg:py-24"
+            className="w-full px-5 pb-14 pt-10 sm:px-8 sm:pb-16 lg:px-[clamp(2.5rem,4.5vw,4.75rem)] lg:pb-24 lg:pt-14"
             initial="hidden"
             animate="show"
             variants={{
@@ -109,7 +109,7 @@ export function PageHero({
             {description && (
               <motion.p
                 variants={fadeUp}
-                className="mt-5 max-w-[48ch] leading-[1.65] text-[#c9def5]"
+                className="mt-5 max-w-[48ch] leading-[1.65] text-[#d6e8fb]"
               >
                 {description}
               </motion.p>

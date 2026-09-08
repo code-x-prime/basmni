@@ -10,11 +10,9 @@ export const contact = {
     encodeURIComponent('New Delhi House, 27 Barakhamba Road, New Delhi 110001'),
   cta: 'Let’s engineer the solution.',
   projectTypes: [
-    'Deep Dam Dredging',
-    'High-Pressurized Air Cable Systems',
+    'Pressurized Air Cables (PAC)',
     'Trash Rack Cleaning Machines',
-    'Log Boom Barriers',
-    'Fine Screen Cleaning Machines',
+    'Dredging Services',
     'Civil Works',
     'Other',
   ],

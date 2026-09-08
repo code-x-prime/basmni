@@ -40,7 +40,7 @@ export default function ReferencesPage() {
                   value={s.value}
                   className="block text-[2.4rem] tracking-[-0.08em] text-ice sm:text-[clamp(2.4rem,5vw,4.6rem)]"
                 />
-                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#c9def5]">
+                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#d6e8fb]">
                   {s.label}
                 </span>
               </div>
@@ -72,7 +72,7 @@ export default function ReferencesPage() {
                   <h3 className="mt-1.5 text-[1.25rem] leading-[1.2] tracking-tightest sm:text-[1.4rem]">
                     {p.name}
                   </h3>
-                  <p className="mt-2 text-[0.85rem] leading-[1.55] text-muted">{p.scope}</p>
+                  <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{p.scope}</p>
                   {p.contractNo && (
                     <p className="mt-3 text-[0.66rem] uppercase tracking-[0.06em] text-muted/80">
                       Contract {p.contractNo}
@@ -126,19 +126,19 @@ export default function ReferencesPage() {
               caption: 'Hydraulic TRCM on site',
             },
             {
-              src: media.spillway,
-              title: 'Spillway debris boom',
-              caption: 'Floating barrier at the spillway',
+              src: media.civilTrenchWeirIntake,
+              title: 'Trench-weir intake structure',
+              caption: 'Embedded screens in a diversion channel',
             },
             {
-              src: media.debrisPanorama,
-              title: 'Reservoir debris management',
-              caption: 'Silt and debris clearance',
+              src: media.civilFoundationExcavation,
+              title: 'Dam foundation excavation',
+              caption: 'Dewatered riverbed preparation',
             },
             {
-              src: media.fieldInspection,
-              title: 'Field engineering inspection',
-              caption: 'Site survey at a water structure',
+              src: media.civilSteelDeliverySite,
+              title: 'Embedded steel to site',
+              caption: 'Fabricated sections on the hill road',
             },
           ]}
         />

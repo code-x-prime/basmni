@@ -147,7 +147,7 @@ export const company = {
       href: '/products-services/deep-dam-dredging',
     },
     {
-      title: 'PAC systems',
+      title: 'Pressurized Air Cables (PAC)',
       text: 'Clean compressed-air insulated power transmission — SF6-free and PFAS-free.',
       href: '/products-services/pressurized-air-cables',
     },

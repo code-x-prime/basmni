@@ -95,18 +95,16 @@ export default function AboutPage() {
             <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
               {company.philosophy.title}
             </h2>
-            <p className="mt-5 max-w-[560px] leading-[1.7] text-[#c9def5]">
+            <p className="mt-5 max-w-[560px] leading-[1.7] text-[#d6e8fb]">
               {company.philosophy.body}
             </p>
             <ul className="mt-8 border-t border-[#1f4a80]">
-              {company.philosophy.points.map((p, i) => (
+              {company.philosophy.points.map((p) => (
                 <li
                   key={p}
-                  className="flex gap-4 border-b border-[#1f4a80] py-3 text-[0.9rem] text-[#c9def5]"
+                  className="flex gap-4 border-b border-[#1f4a80] py-3 text-[1rem] text-[#d6e8fb]"
                 >
-                  <span className="shrink-0 text-[0.7rem] font-bold text-ice">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-ice" aria-hidden />
                   {p}
                 </li>
               ))}
@@ -136,16 +134,13 @@ export default function AboutPage() {
               key={step.label}
               className="group flex flex-col bg-[#dbe9fb] p-6 transition-colors hover:bg-white sm:p-8"
             >
-              <div className="flex items-center justify-between">
-                <span className="text-[0.7rem] font-bold text-blue transition-transform duration-300 group-hover:translate-x-0.5">
-                  {step.number}
-                </span>
+              <div className="flex items-center justify-end">
                 <ArrowUpRight className="w-4 -translate-x-1 text-blue opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </div>
-              <h3 className="mt-5 text-[clamp(1.15rem,2.2vw,1.7rem)] uppercase leading-[1.1] tracking-tightest">
+              <h3 className="mt-3 text-[clamp(1.15rem,2.2vw,1.7rem)] uppercase leading-[1.1] tracking-tightest">
                 {step.label}
               </h3>
-              <p className="mt-3 text-[0.88rem] leading-[1.6] text-muted">{step.blurb}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{step.blurb}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -187,7 +182,7 @@ export default function AboutPage() {
                   value={stat.value}
                   className="block text-[2.6rem] tracking-[-0.08em] text-ice sm:text-[clamp(2.6rem,5vw,5rem)]"
                 />
-                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#c9def5]">
+                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#d6e8fb]">
                   {stat.label}
                 </span>
               </div>
@@ -216,7 +211,7 @@ export default function AboutPage() {
                   </h3>
                   <ArrowUpRight className="w-4 shrink-0 -translate-x-1 text-blue opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                 </div>
-                <p className="mt-2.5 text-[0.85rem] leading-[1.55] text-muted">{eq.text}</p>
+                <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{eq.text}</p>
               </Link>
             </RevealItem>
           ))}
@@ -239,7 +234,7 @@ export default function AboutPage() {
                   <h3 className="text-[1rem] uppercase leading-[1.15] tracking-tightest text-blue">
                     {w.title}
                   </h3>
-                  <p className="mt-2.5 text-[0.85rem] leading-[1.55] text-muted">{w.text}</p>
+                  <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{w.text}</p>
                 </RevealItem>
               ))}
             </RevealStagger>
@@ -251,7 +246,7 @@ export default function AboutPage() {
               reveal
               className="min-h-[300px] sm:min-h-[460px]"
             />
-            <p className="mt-4 text-[0.8rem] leading-[1.6] text-muted">
+            <p className="mt-4 text-[1rem] leading-[1.6] text-muted">
               Field execution across dams, barrages and hydro-power stations — delivered for NHPC,
               NEEPCO and other operators.
             </p>
@@ -260,7 +255,7 @@ export default function AboutPage() {
       </section>
 
       {/* Engineering-to-execution process */}
-      <section id="process" className={`${sectionPad} scroll-mt-32`}>
+      <section id="process" className={`${sectionPad} scroll-mt-52`}>
         <SectionHeading label={aboutSections.process.label} title={aboutSections.process.title} />
         <div className="mt-12 sm:mt-16">
           <FeatureRows

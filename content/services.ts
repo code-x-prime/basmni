@@ -32,8 +32,8 @@ export const services: Service[] = [
   {
     number: '01',
     id: 'pac',
-    title: 'High-pressurized air cable systems',
-    shortTitle: 'High-Pressurized Air Cable Systems',
+    title: 'Pressurized Air Cables (PAC)',
+    shortTitle: 'Pressurized Air Cables (PAC)',
     description:
       'PAC technology replaces fluid- or SF6-dependent insulation with clean, compressed technical air for heavy-duty power transmission — engineered for modern grid infrastructure, high-voltage substations and dense industrial corridors.',
     image: 'pacInfra',

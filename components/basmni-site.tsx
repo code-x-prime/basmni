@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowUpRight, MoveRight } from 'lucide-react'
-import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { media } from '@/content/site'
 import { company } from '@/content/company'
 import { services } from '@/content/services'
@@ -18,16 +18,7 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 import { MetricGrid } from '@/components/shared/blocks'
 import { CTASection } from '@/components/shared/CTASection'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
-import { MagneticButton } from '@/components/motion/MagneticButton'
-import {
-  sectionPad,
-  eyebrowDark,
-  sectionLabel,
-  displayHeading,
-  buttonLight,
-  buttonGhost,
-  textLink,
-} from '@/components/shared/ui'
+import { sectionPad, sectionLabel, displayHeading, textLink } from '@/components/shared/ui'
 import { ProjectFilter } from '@/components/projects/ProjectFilter'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { ProjectModal } from '@/components/projects/ProjectModal'
@@ -50,9 +41,9 @@ type SolutionTab = (typeof solutionTabs)[number]
  * PAC leads, then trash rack / debris management, dredging and civil works. */
 const flagshipSystems = [
   {
-    title: 'Pressurized Air Cables',
+    title: 'Pressurized Air Cables (PAC)',
     blurb: 'SF6- and PFAS-free high-voltage power transmission — up to 420 kV and 5,000 A.',
-    src: media.pacTransmissionGrid,
+    src: media.pacCableIndustrial,
     href: '/products-services/pressurized-air-cables',
   },
   {
@@ -70,87 +61,10 @@ const flagshipSystems = [
   {
     title: 'Civil Works',
     blurb: 'Allied civil engineering for dams, barrages and river weirs.',
-    src: media.civil,
+    src: media.civilTrenchWeirIntake,
     href: '/products-services/civil-works',
   },
 ]
-
-/** Rotating hero photographs — same cinematic treatment, a different real
- * engineering photograph every cycle. */
-const heroSlides = [
-  {
-    src: media.homeHero,
-    alt: 'Hydroelectric dam intake towers rising from a reservoir',
-    position: 'center 32%',
-  },
-  {
-    src: media.civil,
-    alt: 'Concrete arch dam across a desert reservoir canyon',
-    position: 'center 55%',
-  },
-  {
-    src: media.hydropowerDam,
-    alt: 'Hydropower dam and reservoir surrounded by forested hills',
-    position: 'center 45%',
-  },
-  {
-    src: media.hero,
-    alt: 'Crane installation equipment at a misty mountain hydropower site',
-    position: 'center 40%',
-  },
-]
-
-/**
- * Full-bleed hero photograph: crossfades between real engineering photographs
- * on a timer, each with a slow Ken-Burns zoom, plus a subtle scroll-linked
- * drift on desktop. Both the rotation and the drift are disabled under
- * prefers-reduced-motion (holds the first photograph only).
- */
-function HomeHeroImage() {
-  const reduce = useReducedMotion()
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] })
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', reduce ? '0%' : '12%'])
-  const [i, setI] = useState(0)
-
-  useEffect(() => {
-    if (reduce) return
-    const id = setInterval(() => setI((n) => (n + 1) % heroSlides.length), 6500)
-    return () => clearInterval(id)
-  }, [reduce])
-
-  const active = heroSlides[reduce ? 0 : i]
-
-  return (
-    <div ref={ref} className="absolute inset-0 overflow-hidden">
-      <motion.div className="absolute inset-[-8%]" style={{ y }}>
-        <AnimatePresence initial={false}>
-          <motion.div
-            key={active.src}
-            className="absolute inset-0"
-            initial={{ opacity: 0, scale: reduce ? 1 : 1.09 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{
-              opacity: { duration: i === 0 ? 1.1 : 1.2, ease: 'easeInOut' },
-              scale: { duration: 7, ease: [0.16, 1, 0.3, 1] },
-            }}
-          >
-            <Image
-              src={active.src}
-              alt={active.alt}
-              fill
-              priority={i === 0}
-              sizes="100vw"
-              className="object-cover"
-              style={{ objectPosition: active.position }}
-            />
-          </motion.div>
-        </AnimatePresence>
-      </motion.div>
-    </div>
-  )
-}
 
 export function BasmniSite() {
   const [serviceFilter, setServiceFilter] = useState<SolutionTab>('All')
@@ -172,68 +86,22 @@ export function BasmniSite() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative flex min-h-[620px] items-end overflow-hidden bg-graphite text-white sm:min-h-[clamp(680px,88vh,880px)]">
-        <HomeHeroImage />
-
-        {/* Cinematic wash — dark toward the text (left/bottom), image stays visible on the right. */}
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(96deg,#0b3a70f2_0%,#0b3a70cc_36%,#0b3a7059_66%,#0b3a701a_100%),linear-gradient(0deg,#0b3a70f0_0%,#0b3a7059_34%,transparent_62%),linear-gradient(180deg,#0b3a70a6_0%,transparent_20%)]" />
-        {/* Very faint engineering grid on the image side. */}
-        <div className="pointer-events-none absolute inset-y-0 right-0 hidden w-[46%] opacity-[0.05] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:72px_72px] lg:block" />
-
+      {/* Flagship solutions — homepage hero */}
+      <section
+        className={`${sectionPad} relative overflow-hidden bg-graphite pt-[100px] text-white sm:pt-[164px] lg:pt-[200px]`}
+      >
+        {/* Faint engineering grid */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:72px_72px]" />
+        <div className="relative">
+          <SectionHeading
+            dark
+            label="Flagship solutions"
+            title={<>Four systems that define our field</>}
+            deck="Purpose-built power-transmission, debris-management, dredging and civil engineering platforms — engineered, manufactured and commissioned by Basmni."
+          />
+        </div>
         <RevealStagger
-          className="relative z-[1] w-full px-5 pb-16 pt-28 sm:px-[clamp(1.5rem,7vw,7rem)] sm:pb-16 sm:pt-32"
-          stagger={0.09}
-        >
-          <div className="max-w-[760px] border-l-2 border-orange/70 pl-5 sm:pl-8">
-            <RevealItem>
-              <p className={eyebrowDark}>{home.hero.eyebrow}</p>
-            </RevealItem>
-            <RevealItem>
-              <h1 className="mt-4 text-[clamp(2.3rem,6.4vw,5.2rem)] font-bold uppercase leading-[1.12] tracking-tightest text-ice [overflow-wrap:anywhere]">
-                {home.hero.title}
-              </h1>
-            </RevealItem>
-            <RevealItem>
-              <p className="mt-5 max-w-[520px] leading-[1.65] text-[#c9def5]">
-                {home.hero.description}
-              </p>
-            </RevealItem>
-            <RevealItem>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                <MagneticButton>
-                  <Link
-                    className={`${buttonLight} max-sm:w-full`}
-                    href="/products-services/pressurized-air-cables"
-                  >
-                    Explore Products &amp; Services <ArrowUpRight />
-                  </Link>
-                </MagneticButton>
-                <Link className={`${buttonGhost} max-sm:w-full`} href="/references">
-                  View Project References <ArrowUpRight />
-                </Link>
-              </div>
-            </RevealItem>
-          </div>
-
-          <RevealItem>
-            <p className="border-white/12 mt-10 border-t pt-3 text-[0.56rem] uppercase tracking-[0.16em] text-white/55 sm:mt-12">
-              Est. 2016 · Delhi / India · Hydropower · Water resources · Infrastructure
-            </p>
-          </RevealItem>
-        </RevealStagger>
-      </section>
-
-      {/* Flagship systems */}
-      <section className={`${sectionPad} bg-graphite text-white`}>
-        <SectionHeading
-          dark
-          label="Flagship solutions"
-          title={<>Four systems that define our field</>}
-          deck="Purpose-built power-transmission, debris-management, dredging and civil engineering platforms — engineered, manufactured and commissioned by Basmni."
-        />
-        <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
+          className="relative mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
           stagger={0.09}
         >
           {flagshipSystems.map((s, i) => (
@@ -262,7 +130,7 @@ export function BasmniSite() {
                     </span>
                     <ArrowUpRight className="mt-1 w-4 shrink-0 -translate-x-1 text-ice opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                   </span>
-                  <span className="text-[0.9rem] leading-[1.6] text-[#c9def5]">{s.blurb}</span>
+                  <span className="text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.blurb}</span>
                   <span className="mt-auto pt-3 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-ice/80">
                     Explore system
                   </span>
@@ -275,7 +143,7 @@ export function BasmniSite() {
 
       {/* Intro */}
       <section id="about" className={sectionPad}>
-        <SectionHeading label="01 — Who we are" title={home.intro.title} />
+        <SectionHeading label="Who we are" title={home.intro.title} />
         <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-[4.5rem] sm:grid-cols-[1.15fr_0.85fr] sm:gap-[8vw]">
           <div>
             <p className="max-w-[640px] text-[clamp(1.8rem,3.3vw,3.5rem)] leading-[1.1]">
@@ -285,7 +153,7 @@ export function BasmniSite() {
               Read more about Basmni <ArrowUpRight />
             </Link>
           </div>
-          <div className="leading-[1.7] text-muted">
+          <div className="text-[1.05rem] leading-[1.75] text-muted">
             <p>{company.intro}</p>
             <div className="my-6 w-12 border-t-2 border-orange" />
             <p>
@@ -316,284 +184,294 @@ export function BasmniSite() {
         </Reveal>
       </section>
 
-      {/* Stats */}
-      <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="02 — Experience" title={home.statsTitle} />
-        <div className="mt-12 grid grid-cols-2 items-start gap-4 border-t border-[#2a5c94] sm:mt-[4.5rem] sm:grid-cols-4">
-          {company.stats.map((stat) => (
-            <Reveal key={stat.label}>
-              <div className="border-r border-[#2a5c94] py-4 pr-4">
-                <AnimatedCounter
-                  value={stat.value}
-                  className="block text-[clamp(2rem,7vw,3rem)] leading-[1.1] tracking-[-0.06em] text-ice sm:text-[clamp(2.4rem,4vw,4rem)]"
-                />
-                <span className="mt-2 block text-[0.62rem] uppercase tracking-[0.1em] text-[#c9def5]">
-                  {stat.label}
-                </span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      {/* Sections parked for now — Experience, What we do, PAC, Dredging, Debris,
+          Selected references, Field archive. Restore by removing `{false && (` / `)}`. */}
+      {false && (
+        <>
+          {/* Stats */}
+          <section className={`${sectionPad} bg-navy text-white`}>
+            <SectionHeading dark label="Experience" title={home.statsTitle} />
+            <div className="mt-12 grid grid-cols-2 items-start gap-4 border-t border-[#2a5c94] sm:mt-[4.5rem] sm:grid-cols-4">
+              {company.stats.map((stat) => (
+                <Reveal key={stat.label}>
+                  <div className="border-r border-[#2a5c94] py-4 pr-4">
+                    <AnimatedCounter
+                      value={stat.value}
+                      className="block text-[clamp(2rem,7vw,3rem)] leading-[1.1] tracking-[-0.06em] text-ice sm:text-[clamp(2.4rem,4vw,4rem)]"
+                    />
+                    <span className="mt-2 block text-[0.62rem] uppercase tracking-[0.1em] text-[#d6e8fb]">
+                      {stat.label}
+                    </span>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </section>
 
-      {/* Solutions */}
-      <section id="solutions" className={`${sectionPad} bg-[#dbe9fb]`}>
-        <SectionHeading label="03 — What we do" title={home.solutionTitle} />
-        <p className="ml-auto mt-6 max-w-[380px] leading-[1.6] text-muted">{home.solutionIntro}</p>
-        <ProjectFilter
-          className="my-6"
-          tabs={solutionTabs}
-          active={serviceFilter}
-          onChange={setServiceFilter}
-          groupId="solutions"
-        />
-        <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <AnimatePresence mode="popLayout">
-            {filteredServices.map((service, i) => (
-              <motion.article
-                layout
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-                key={service.number}
-                className="relative min-h-[430px] overflow-hidden bg-navy text-left text-white sm:min-h-[460px]"
-              >
-                <ImageBlock
-                  src={media[service.image]}
-                  alt={service.title}
-                  className="absolute inset-0 h-full"
-                />
-                <div className="absolute inset-0 bg-[linear-gradient(0deg,#0b3a70f5,#0b3a7008_70%)]" />
-                <div className="absolute inset-x-7 bottom-6 [&_svg]:w-4">
-                  <span className="text-[0.65rem] tracking-[0.12em] text-ice">
-                    {service.number} / {service.category}
-                  </span>
-                  <h3 className="my-2.5 max-w-[430px] text-[clamp(1.7rem,3vw,3.1rem)] uppercase tracking-tightest">
-                    {service.title}
-                  </h3>
-                  <p className="max-w-[390px] text-[0.9rem] leading-[1.55] text-[#c9def5]">
-                    {service.description}
-                  </p>
-                  <Link
-                    href={service.href ?? '/contact'}
-                    className="mt-4 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.1em] text-ice"
+          {/* Solutions */}
+          <section id="solutions" className={`${sectionPad} bg-[#dbe9fb]`}>
+            <SectionHeading label="What we do" title={home.solutionTitle} />
+            <p className="ml-auto mt-6 max-w-[380px] leading-[1.6] text-muted">
+              {home.solutionIntro}
+            </p>
+            <ProjectFilter
+              className="my-6"
+              tabs={solutionTabs}
+              active={serviceFilter}
+              onChange={setServiceFilter}
+              groupId="solutions"
+            />
+            <div className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <AnimatePresence mode="popLayout">
+                {filteredServices.map((service, i) => (
+                  <motion.article
+                    layout
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.15 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                    key={service.number}
+                    className="relative min-h-[430px] overflow-hidden bg-navy text-left text-white sm:min-h-[460px]"
                   >
-                    Explore solution <MoveRight />
-                  </Link>
-                </div>
-              </motion.article>
-            ))}
-          </AnimatePresence>
-        </div>
-      </section>
+                    <ImageBlock
+                      src={media[service.image]}
+                      alt={service.title}
+                      className="absolute inset-0 h-full"
+                    />
+                    <div className="absolute inset-0 bg-[linear-gradient(0deg,#0b3a70f5,#0b3a7008_70%)]" />
+                    <div className="absolute inset-x-7 bottom-6 [&_svg]:w-4">
+                      <span className="text-[0.65rem] tracking-[0.12em] text-ice">
+                        {service.number} / {service.category}
+                      </span>
+                      <h3 className="my-2.5 max-w-[430px] text-[clamp(1.7rem,3vw,3.1rem)] uppercase tracking-tightest">
+                        {service.title}
+                      </h3>
+                      <p className="max-w-[390px] text-[1rem] leading-[1.55] text-[#d6e8fb]">
+                        {service.description}
+                      </p>
+                      <Link
+                        href={service.href ?? '/contact'}
+                        className="mt-4 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.1em] text-ice"
+                      >
+                        Explore solution <MoveRight />
+                      </Link>
+                    </div>
+                  </motion.article>
+                ))}
+              </AnimatePresence>
+            </div>
+          </section>
 
-      {/* Feature: PAC — flagship */}
-      <section className={`${sectionPad} bg-graphite text-white`}>
-        <Reveal direction="up">
-          <p className={`${sectionLabel} text-ice`}>04 — Pressurized Air Cables</p>
-          <h2 className={`${displayHeading} mt-2 max-w-[20ch]`}>
-            {home.pacTitle} <em className="not-italic text-ice">{home.pacEmphasis}</em>
-          </h2>
-          <p className="mt-5 max-w-[560px] leading-[1.65] text-[#c9def5]">{pacHomeIntro[0]}</p>
-        </Reveal>
-
-        <Reveal direction="up" className="mt-10 sm:mt-12">
-          <ImageBlock
-            src={media.pacCableTunnel}
-            alt="Pressurized-air cable ducts routed through a lined service tunnel"
-            reveal
-            sizes="(max-width: 1024px) 100vw, 86vw"
-            className="aspect-[4/3] sm:aspect-[16/8]"
-          />
-        </Reveal>
-
-        <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-14 sm:grid-cols-2 lg:grid-cols-3"
-          stagger={0.07}
-        >
-          {pacFeatures.slice(0, 6).map((f) => (
-            <RevealItem key={f.number} className="bg-graphite p-6">
-              <span className="text-[0.63rem] font-bold text-ice">{f.number}</span>
-              <h3 className="mt-3 text-[0.95rem] uppercase leading-[1.18] tracking-tightest text-ice">
-                {f.title}
-              </h3>
-              <p className="mt-2 text-[0.82rem] leading-[1.55] text-[#c9def5]">{f.text}</p>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-
-        <div className="mt-10">
-          <MetricGrid items={pacHeadlineMetrics} dark columns="sm:grid-cols-4" />
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-6 border-t border-[#1f4a80] pt-8 sm:mt-14 sm:grid-cols-3 sm:gap-8">
-          {pacHowItWorks.map((s) => (
-            <Reveal key={s.number}>
-              <span className="text-[0.63rem] font-bold text-ice">{s.number}</span>
-              <h3 className="mt-3 text-[0.9rem] uppercase tracking-tightest">{s.title}</h3>
-              <p className="mt-2 text-[0.82rem] leading-[1.55] text-[#c9def5]">{s.text}</p>
+          {/* Feature: PAC — flagship */}
+          <section className={`${sectionPad} bg-graphite text-white`}>
+            <Reveal direction="up">
+              <p className={`${sectionLabel} text-ice`}>Pressurized Air Cables (PAC)</p>
+              <h2 className={`${displayHeading} mt-2 max-w-[20ch]`}>
+                {home.pacTitle} <em className="not-italic text-ice">{home.pacEmphasis}</em>
+              </h2>
+              <p className="mt-5 max-w-[560px] leading-[1.65] text-[#d6e8fb]">{pacHomeIntro[0]}</p>
             </Reveal>
-          ))}
-        </div>
 
-        <Link
-          href="/products-services/pressurized-air-cables"
-          className={`${textLink} mt-10 border-ice text-ice`}
-        >
-          Explore PAC systems <ArrowUpRight />
-        </Link>
-      </section>
-
-      {/* Feature: dredging */}
-      <section
-        className={`${sectionPad} grid grid-cols-1 items-center gap-8 sm:grid-cols-[1fr_0.85fr] sm:gap-[6vw]`}
-      >
-        <Reveal direction="right">
-          <p className={`${sectionLabel} text-blue`}>05 — Deep dam dredging</p>
-          <h2 className={displayHeading}>{home.dredgingTitle}</h2>
-          <p className="mt-5 max-w-[480px] leading-[1.65] text-muted">
-            Deep dam and reservoir dredging under extreme operating conditions requires specialized
-            heavy-duty mechanical configurations.
-          </p>
-          <div className="mt-11 flex flex-wrap items-end gap-x-4 gap-y-1 border-t border-border pt-3">
-            <strong className="flex items-end leading-none tracking-[-0.08em] text-blue">
-              <AnimatedCounter
-                value="100m"
-                className="text-[clamp(3rem,10vw,5.5rem)] leading-none"
+            <Reveal direction="up" className="mt-10 sm:mt-12">
+              <ImageBlock
+                src={media.pacCableTunnel}
+                alt="Pressurized-air cable ducts routed through a lined service tunnel"
+                reveal
+                sizes="(max-width: 1024px) 100vw, 86vw"
+                className="aspect-[4/3] sm:aspect-[16/8]"
               />
-              <span className="text-[clamp(1.2rem,4vw,2.2rem)] leading-none">+</span>
-            </strong>
-            <span className="pb-2 text-[0.65rem] uppercase text-muted">Maximum dredging depth</span>
-          </div>
-          <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.55rem] font-bold tracking-[0.08em] text-blue">
-            <span>SEDIMENT</span>
-            <i className="w-4 border-t border-orange" />
-            <span>FLUIDIZATION</span>
-            <i className="w-4 border-t border-orange" />
-            <span>PUMPING</span>
-            <i className="w-4 border-t border-orange" />
-            <span>DISCHARGE</span>
-          </div>
-        </Reveal>
-        <Reveal direction="left">
-          <ImageBlock
-            src={media.dredging}
-            alt="Floating dredging system on a mist-covered reservoir"
-            reveal
-            className="min-h-[360px] sm:min-h-[500px]"
-          />
-        </Reveal>
-      </section>
+            </Reveal>
 
-      {/* Debris */}
-      <section className={sectionPad}>
-        <SectionHeading label="06 — Debris management" title={home.debrisTitle} />
-        <RevealStagger
-          className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3"
-          stagger={0.1}
-        >
-          {[
-            {
-              title: 'Hydraulic TRCM',
-              text: 'For heavy debris and logs at shallow to medium depths.',
-              image: media.trcm,
-            },
-            {
-              title: 'Wire rope TRCM',
-              text: 'For deep water intakes and large-scale hydropower plants.',
-              image: media.spillway,
-            },
-            {
-              title: 'Fine screen cleaners',
-              text: 'For leaves, plastics and aquatic weeds.',
-              image: media.trashRack,
-            },
-          ].map((item) => (
-            <RevealItem key={item.title}>
-              <ImageBlock src={item.image} alt={item.title} reveal className="min-h-[300px]" />
-              <div className="pt-4">
-                <h3 className="text-[1.25rem] uppercase">{item.title}</h3>
-                <p className="mt-2 max-w-[270px] text-[0.9rem] leading-[1.55] text-muted">
-                  {item.text}
-                </p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </section>
+            <RevealStagger
+              className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-14 sm:grid-cols-2 lg:grid-cols-3"
+              stagger={0.07}
+            >
+              {pacFeatures.slice(0, 6).map((f) => (
+                <RevealItem key={f.number} className="bg-graphite p-6">
+                  <span className="text-[0.63rem] font-bold text-ice">{f.number}</span>
+                  <h3 className="mt-3 text-[1rem] uppercase leading-[1.18] tracking-tightest text-ice">
+                    {f.title}
+                  </h3>
+                  <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
+                </RevealItem>
+              ))}
+            </RevealStagger>
 
-      {/* Projects */}
-      <section id="projects" className={sectionPad}>
-        <SectionHeading
-          label="07 — Selected references"
-          title={home.projectsTitle}
-          deck="Hydro-mechanical, dredging and civil contracts delivered for NHPC, NEEPCO and other operators. Select a project for scope, contract and award details."
-        />
-        <ProjectFilter
-          className="my-6"
-          tabs={projectCategories}
-          active={projectFilter}
-          onChange={setProjectFilter}
-          groupId="home-projects"
-        />
-        <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-          <AnimatePresence mode="popLayout">
-            {filteredProjects.map((p, i) => (
-              <motion.div
-                layout
-                key={p.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-              >
-                <ProjectCard project={p} onClick={() => setProject(p)} />
-              </motion.div>
-            ))}
-          </AnimatePresence>
-        </motion.div>
-        <Link className={`${textLink} mt-10`} href="/references">
-          View all references <ArrowUpRight />
-        </Link>
-      </section>
+            <div className="mt-10">
+              <MetricGrid items={pacHeadlineMetrics} dark columns="sm:grid-cols-4" />
+            </div>
 
-      {/* Gallery */}
-      <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="08 — Field archive" title={home.galleryTitle} />
-        <ProjectFilter
-          className="my-6"
-          tabs={[...solutionTabs, 'Hydropower']}
-          active={galleryFilter}
-          onChange={setGalleryFilter}
-          groupId="gallery"
-        />
-        <RevealStagger className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3" stagger={0.06}>
-          {filteredGallery.map((item, i) => (
-            <RevealItem key={item.title} direction="scale">
-              <button
-                className="relative block w-full overflow-hidden border-0 bg-graphite p-0 text-left text-white"
-                onClick={() => setLightboxIndex(i)}
-              >
-                <ImageBlock
-                  src={item.src}
-                  alt={item.title}
-                  className="min-h-[210px] sm:min-h-[280px]"
-                />
-                <span className="absolute bottom-4 left-4 z-[1] text-[0.7rem] font-bold uppercase">
-                  {item.title}
+            <div className="mt-12 grid grid-cols-1 gap-6 border-t border-[#1f4a80] pt-8 sm:mt-14 sm:grid-cols-3 sm:gap-8">
+              {pacHowItWorks.map((s) => (
+                <Reveal key={s.number}>
+                  <span className="text-[0.63rem] font-bold text-ice">{s.number}</span>
+                  <h3 className="mt-3 text-[1rem] uppercase tracking-tightest">{s.title}</h3>
+                  <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{s.text}</p>
+                </Reveal>
+              ))}
+            </div>
+
+            <Link
+              href="/products-services/pressurized-air-cables"
+              className={`${textLink} mt-10 border-ice text-ice`}
+            >
+              Explore PAC systems <ArrowUpRight />
+            </Link>
+          </section>
+
+          {/* Feature: dredging */}
+          <section
+            className={`${sectionPad} grid grid-cols-1 items-center gap-8 sm:grid-cols-[1fr_0.85fr] sm:gap-[6vw]`}
+          >
+            <Reveal direction="right">
+              <p className={`${sectionLabel} text-blue`}>Deep dam dredging</p>
+              <h2 className={displayHeading}>{home.dredgingTitle}</h2>
+              <p className="mt-5 max-w-[480px] leading-[1.65] text-muted">
+                Deep dam and reservoir dredging under extreme operating conditions requires
+                specialized heavy-duty mechanical configurations.
+              </p>
+              <div className="mt-11 flex flex-wrap items-end gap-x-4 gap-y-1 border-t border-border pt-3">
+                <strong className="flex items-end leading-none tracking-[-0.08em] text-blue">
+                  <AnimatedCounter
+                    value="100m"
+                    className="text-[clamp(3rem,10vw,5.5rem)] leading-none"
+                  />
+                  <span className="text-[clamp(1.2rem,4vw,2.2rem)] leading-none">+</span>
+                </strong>
+                <span className="pb-2 text-[0.65rem] uppercase text-muted">
+                  Maximum dredging depth
                 </span>
-              </button>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </section>
+              </div>
+              <div className="mt-8 flex flex-wrap items-center gap-x-2 gap-y-1 text-[0.55rem] font-bold tracking-[0.08em] text-blue">
+                <span>SEDIMENT</span>
+                <i className="w-4 border-t border-orange" />
+                <span>FLUIDIZATION</span>
+                <i className="w-4 border-t border-orange" />
+                <span>PUMPING</span>
+                <i className="w-4 border-t border-orange" />
+                <span>DISCHARGE</span>
+              </div>
+            </Reveal>
+            <Reveal direction="left">
+              <ImageBlock
+                src={media.dredging}
+                alt="Floating dredging system on a mist-covered reservoir"
+                reveal
+                className="min-h-[360px] sm:min-h-[500px]"
+              />
+            </Reveal>
+          </section>
+
+          {/* Debris */}
+          <section className={sectionPad}>
+            <SectionHeading label="Debris management" title={home.debrisTitle} />
+            <RevealStagger
+              className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-3"
+              stagger={0.1}
+            >
+              {[
+                {
+                  title: 'Hydraulic TRCM',
+                  text: 'For heavy debris and logs at shallow to medium depths.',
+                  image: media.trcm,
+                },
+                {
+                  title: 'Wire rope TRCM',
+                  text: 'For deep water intakes and large-scale hydropower plants.',
+                  image: media.spillway,
+                },
+                {
+                  title: 'Fine screen cleaners',
+                  text: 'For leaves, plastics and aquatic weeds.',
+                  image: media.trashRack,
+                },
+              ].map((item) => (
+                <RevealItem key={item.title}>
+                  <ImageBlock src={item.image} alt={item.title} reveal className="min-h-[300px]" />
+                  <div className="pt-4">
+                    <h3 className="text-[1.25rem] uppercase">{item.title}</h3>
+                    <p className="mt-2 max-w-[270px] text-[1rem] leading-[1.55] text-muted">
+                      {item.text}
+                    </p>
+                  </div>
+                </RevealItem>
+              ))}
+            </RevealStagger>
+          </section>
+
+          {/* Projects */}
+          <section id="projects" className={sectionPad}>
+            <SectionHeading
+              label="Selected references"
+              title={home.projectsTitle}
+              deck="Hydro-mechanical, dredging and civil contracts delivered for NHPC, NEEPCO and other operators. Select a project for scope, contract and award details."
+            />
+            <ProjectFilter
+              className="my-6"
+              tabs={projectCategories}
+              active={projectFilter}
+              onChange={setProjectFilter}
+              groupId="home-projects"
+            />
+            <motion.div layout className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <AnimatePresence mode="popLayout">
+                {filteredProjects.map((p, i) => (
+                  <motion.div
+                    layout
+                    key={p.id}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.15 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                  >
+                    <ProjectCard project={p} onClick={() => setProject(p)} />
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </motion.div>
+            <Link className={`${textLink} mt-10`} href="/references">
+              View all references <ArrowUpRight />
+            </Link>
+          </section>
+
+          {/* Gallery */}
+          <section className={`${sectionPad} bg-navy text-white`}>
+            <SectionHeading dark label="Field archive" title={home.galleryTitle} />
+            <ProjectFilter
+              className="my-6"
+              tabs={[...solutionTabs, 'Hydropower']}
+              active={galleryFilter}
+              onChange={setGalleryFilter}
+              groupId="gallery"
+            />
+            <RevealStagger className="mt-4 grid grid-cols-2 gap-4 sm:grid-cols-3" stagger={0.06}>
+              {filteredGallery.map((item, i) => (
+                <RevealItem key={item.title} direction="scale">
+                  <button
+                    className="relative block w-full overflow-hidden border-0 bg-graphite p-0 text-left text-white"
+                    onClick={() => setLightboxIndex(i)}
+                  >
+                    <ImageBlock
+                      src={item.src}
+                      alt={item.title}
+                      className="min-h-[210px] sm:min-h-[280px]"
+                    />
+                    <span className="absolute bottom-4 left-4 z-[1] text-[0.7rem] font-bold uppercase">
+                      {item.title}
+                    </span>
+                  </button>
+                </RevealItem>
+              ))}
+            </RevealStagger>
+          </section>
+        </>
+      )}
 
       {/* CTA */}
       <CTASection
-        eyebrow="09 — Start a conversation"
+        eyebrow="Start a conversation"
         title={home.ctaTitle}
         emphasis="Let's engineer the solution."
         description="Discuss your hydropower, dredging, hydro-mechanical or water infrastructure requirement with Basmni Technologies."

@@ -29,7 +29,7 @@ export function ContactInfo() {
             </a>
             <a
               href={`mailto:${contact.emailAlt}`}
-              className="block text-[0.9rem] text-muted transition-colors hover:text-blue"
+              className="block text-[1rem] text-muted transition-colors hover:text-blue"
             >
               {contact.emailAlt}
             </a>

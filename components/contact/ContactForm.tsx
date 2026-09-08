@@ -12,9 +12,9 @@ import {
 } from '@/lib/contact-schema'
 
 const inputBase =
-  'w-full border bg-white px-3 py-2.5 text-[0.95rem] text-foreground outline-none transition-colors focus:border-blue disabled:opacity-60'
+  'w-full border bg-white px-3 py-2.5 text-[1rem] text-foreground outline-none transition-colors focus:border-blue disabled:opacity-60'
 const labelClass = 'text-[0.62rem] font-bold uppercase tracking-[0.14em] text-muted'
-const errClass = 'mt-1 block text-[0.72rem] text-[#c0392b]'
+const errClass = 'mt-1 block text-[0.9rem] text-[#c0392b]'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -80,13 +80,13 @@ export function ContactForm() {
     return (
       <div
         id="enquiry-form"
-        className="flex scroll-mt-32 flex-col items-start gap-4 border border-border bg-white p-7"
+        className="flex scroll-mt-52 flex-col items-start gap-4 border border-border bg-white p-7"
       >
         <span className="grid h-11 w-11 place-items-center bg-navy text-white [&_svg]:w-5">
           <Check />
         </span>
         <h3 className="text-[1.15rem] uppercase leading-[1.2] tracking-tightest">Enquiry sent.</h3>
-        <p className="max-w-[42ch] text-[0.9rem] leading-[1.6] text-muted">
+        <p className="max-w-[42ch] text-[1rem] leading-[1.6] text-muted">
           Thank you — our engineering team has received your details and will respond directly,
           usually within one working day.
         </p>
@@ -102,7 +102,7 @@ export function ContactForm() {
   }
 
   return (
-    <form id="enquiry-form" onSubmit={onSubmit} noValidate className="scroll-mt-32">
+    <form id="enquiry-form" onSubmit={onSubmit} noValidate className="scroll-mt-52">
       <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
         Send an enquiry
       </p>
@@ -203,7 +203,7 @@ export function ContactForm() {
       {status === 'error' && serverError && (
         <p
           role="alert"
-          className="mt-5 border-l-2 border-[#c0392b] bg-[#c0392b]/5 px-3 py-2 text-[0.82rem] leading-[1.5] text-[#c0392b]"
+          className="mt-5 border-l-2 border-[#c0392b] bg-[#c0392b]/5 px-3 py-2 text-[1rem] leading-[1.5] text-[#c0392b]"
         >
           {serverError}
         </p>
@@ -225,7 +225,7 @@ export function ContactForm() {
         )}
       </button>
 
-      <p className="mt-3 text-[0.72rem] leading-[1.5] text-muted">
+      <p className="mt-3 text-[0.95rem] leading-[1.5] text-muted">
         Prefer to write directly?{' '}
         <a href={`mailto:${contact.email}`} className="text-blue underline">
           {contact.email}

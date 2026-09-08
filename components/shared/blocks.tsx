@@ -28,7 +28,7 @@ export function MetricGrid({
             className={`block text-[clamp(1.4rem,3vw,2.4rem)] font-bold tracking-[-0.06em] ${dark ? 'text-ice' : 'text-blue'}`}
           />
           <span
-            className={`mt-1 block text-[0.6rem] uppercase tracking-[0.1em] ${dark ? 'text-[#c9def5]' : 'text-muted'}`}
+            className={`mt-1 block text-[0.6rem] uppercase tracking-[0.1em] ${dark ? 'text-[#d6e8fb]' : 'text-muted'}`}
           >
             {m.label}
           </span>
@@ -75,7 +75,7 @@ export function FeatureRows({
                 {item.title}
               </span>
               <span
-                className={`mt-2 block text-[0.9rem] leading-[1.55] ${dark ? 'text-[#c9def5]' : 'text-muted'}`}
+                className={`mt-2 block text-[1rem] leading-[1.55] ${dark ? 'text-[#d6e8fb]' : 'text-muted'}`}
               >
                 {item.text}
               </span>

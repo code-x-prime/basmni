@@ -8,7 +8,7 @@ export const navigation: NavItem[] = [
     label: 'Products & Services',
     href: '/products-services',
     children: [
-      { label: 'Pressurized Air Cables', href: '/products-services/pressurized-air-cables' },
+      { label: 'Pressurized Air Cables (PAC)', href: '/products-services/pressurized-air-cables' },
       {
         label: 'Trash Rack Cleaning Machines',
         href: '/products-services/trash-rack-cleaning-machines',
@@ -28,7 +28,7 @@ export const routeCopy = {
     body: 'Basmni Technologies Pvt. Ltd. brings design, manufacturing, installation and commissioning together for demanding water infrastructure.',
   },
   '/products-services/pressurized-air-cables': {
-    eyebrow: 'Pressurized Air Cables',
+    eyebrow: 'Pressurized Air Cables (PAC)',
     title: 'High-performance power transmission.',
     body: 'SF6- and PFAS-free power transmission insulated with clean compressed technical air.',
   },

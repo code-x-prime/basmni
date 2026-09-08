@@ -9,6 +9,8 @@ import {
   trcmApplications,
   trcmProcess,
   trcmHeadlineMetrics,
+  trcmComponents,
+  trcmRoi,
   trcmFaq,
   trcmCta,
 } from '@/content/trcm'
@@ -23,9 +25,9 @@ import { MetricGrid } from '@/components/shared/blocks'
 import { sectionPad } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
-  title: 'Trash Rack Cleaning Machines | Basmni Technologies Pvt. Ltd.',
+  title: 'Trash Rack Cleaning Machines (TRCM) | Basmni Technologies Pvt. Ltd.',
   description:
-    'Trash rack cleaning machines from Basmni Technologies — automated hydraulic, wire-rope and fine-screen debris removal for hydropower intakes, barrages and canals, plus log boom barriers. How they work, configurations, applications and installation.',
+    'Trash rack cleaning machines from Basmni Technologies — automated hydraulic-arm, wire-rope, chain-rake and traversing-gantry debris removal for hydropower intakes, barrages, canals and pumping stations, plus log boom barriers. Head-loss protection, machine types, components, ROI, applications and installation.',
 }
 
 export default function TrcmPage() {
@@ -35,7 +37,7 @@ export default function TrcmPage() {
 
       {/* Overview */}
       <section className={sectionPad}>
-        <SectionHeading label="01 — Overview" title="Keeping the intake bay clear." />
+        <SectionHeading label="Overview" title="Keeping the intake bay clear." />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-[6vw]">
           {trcmHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
@@ -50,15 +52,14 @@ export default function TrcmPage() {
 
       {/* How it works */}
       <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="02 — How it works" title="Detect. Rake. Discharge." />
+        <SectionHeading dark label="How it works" title="Detect. Rake. Discharge." />
         <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-3">
           {trcmHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
-              <span className="text-[0.7rem] font-bold text-ice">{s.number}</span>
-              <h3 className="mt-4 text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
                 {s.title}
               </h3>
-              <p className="mt-3 text-[0.88rem] leading-[1.6] text-[#c9def5]">{s.text}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
             </Reveal>
           ))}
         </div>
@@ -66,8 +67,8 @@ export default function TrcmPage() {
 
       {/* Image band */}
       <ImageBlock
-        src={media.trashRack}
-        alt="Debris accumulated against a dam intake trash rack"
+        src={media.trcmIntakeDebrisBand}
+        alt="Logs, branches and weed piled against a dam intake screen, water backed up on the upstream side"
         parallax
         sizes="100vw"
         className="h-[42vh] min-h-[280px] sm:h-[56vh]"
@@ -77,18 +78,17 @@ export default function TrcmPage() {
       <section className={`${sectionPad} bg-graphite text-white`}>
         <SectionHeading
           dark
-          label="03 — Key features"
+          label="Key features"
           title="Automated, and matched to the intake."
           deck="The mechanism is chosen for the depth, channel and debris — not one machine for every site."
         />
         <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
           {trcmFeatures.map((f) => (
             <RevealItem key={f.number} className="bg-graphite p-6">
-              <span className="text-[0.7rem] font-bold text-ice">{f.number}</span>
-              <h3 className="mt-4 text-[0.98rem] uppercase leading-[1.18] tracking-tightest text-ice">
+              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
                 {f.title}
               </h3>
-              <p className="mt-2.5 text-[0.83rem] leading-[1.55] text-[#c9def5]">{f.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -96,7 +96,7 @@ export default function TrcmPage() {
 
       {/* Configurations */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
-        <SectionHeading label="04 — Configurations" title="Four ways to keep a rack clean." />
+        <SectionHeading label="Configurations" title="Four ways to keep a rack clean." />
         <RevealStagger
           className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2"
           stagger={0.08}
@@ -112,10 +112,27 @@ export default function TrcmPage() {
                 <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
                   {c.title}
                 </h3>
-                <p className="mt-2 max-w-[420px] text-[0.86rem] leading-[1.55] text-muted">
-                  {c.text}
-                </p>
+                <p className="mt-2 max-w-[420px] text-[1rem] leading-[1.55] text-muted">{c.text}</p>
               </div>
+            </RevealItem>
+          ))}
+        </RevealStagger>
+      </section>
+
+      {/* Key components */}
+      <section className={sectionPad}>
+        <SectionHeading
+          label="Key components"
+          title="What a cleaning machine is made of."
+          deck="Five sub-assemblies work together to rake the screen, move along the intake and carry the debris off site."
+        />
+        <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-border bg-border sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
+          {trcmComponents.map((c) => (
+            <RevealItem key={c.title} className="bg-background p-6 sm:p-7">
+              <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
+                {c.title}
+              </h3>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{c.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -123,7 +140,7 @@ export default function TrcmPage() {
 
       {/* Applications */}
       <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="05 — Applications" title="Where debris management matters." />
+        <SectionHeading dark label="Applications" title="Where debris management matters." />
         <RevealStagger
           className="mt-12 grid grid-cols-1 gap-4 sm:mt-16 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}
@@ -139,25 +156,59 @@ export default function TrcmPage() {
                 <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-ice">
                   {a.title}
                 </h3>
-                <p className="mt-2 text-[0.86rem] leading-[1.55] text-[#c9def5]">{a.text}</p>
+                <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{a.text}</p>
               </div>
             </RevealItem>
           ))}
         </RevealStagger>
       </section>
 
+      {/* ROI comparison */}
+      <section className={sectionPad}>
+        <SectionHeading
+          label="Direct ROI"
+          title="Operating with and without a machine."
+          deck="The return shows up as recovered capacity, lower maintenance, safer work and flood-season uptime."
+        />
+        <div className="mt-12 overflow-x-auto sm:mt-16">
+          <table className="w-full min-w-[640px] border-collapse text-left">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="w-[26%] py-3.5 pr-4 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
+                  Operational benefit
+                </th>
+                <th className="w-[37%] px-4 py-3.5 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
+                  Without a TRCM
+                </th>
+                <th className="w-[37%] px-4 py-3.5 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-blue">
+                  With a TRCM
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {trcmRoi.map((r) => (
+                <tr key={r.benefit} className="border-b border-border align-top">
+                  <td className="py-4 pr-4 text-[0.8rem] font-bold uppercase tracking-tightest text-navy">
+                    {r.benefit}
+                  </td>
+                  <td className="px-4 py-4 text-[1rem] leading-[1.55] text-muted">{r.without}</td>
+                  <td className="px-4 py-4 text-[1rem] leading-[1.55] text-foreground">{r.with}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
       {/* Engineering & delivery */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
-        <SectionHeading label="06 — Engineering & delivery" title="Survey to commissioning." />
+        <SectionHeading label="Engineering & delivery" title="Survey to commissioning." />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{trcmProcess.intro}</p>
         <div className="mt-12 sm:mt-16">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
-            {trcmProcess.steps.map((step, i) => (
+            {trcmProcess.steps.map((step) => (
               <RevealItem key={step} className="bg-[#dbe9fb] p-6 sm:p-7">
-                <span className="text-[0.7rem] font-bold text-blue">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3 className="mt-4 text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
+                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
                   {step}
                 </h3>
               </RevealItem>
@@ -178,7 +229,7 @@ export default function TrcmPage() {
 
       {/* FAQ */}
       <section className={sectionPad}>
-        <SectionHeading label="07 — FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions." />
         <div className="mt-12 sm:mt-16">
           <FAQ items={trcmFaq} />
         </div>

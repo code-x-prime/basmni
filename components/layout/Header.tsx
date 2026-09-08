@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { ArrowUpRight, Mail, Menu, Phone, X } from 'lucide-react'
-import { motion, AnimatePresence, useScroll, useTransform, useReducedMotion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { site } from '@/content/site'
 import { navigation, navigationCta } from '@/content/navigation'
 import { MagneticButton } from '@/components/motion/MagneticButton'
@@ -18,15 +18,6 @@ function isActive(pathname: string, href: string) {
 export function Header() {
   const [open, setOpen] = useState(false)
   const pathname = usePathname()
-  const reduce = useReducedMotion()
-
-  const { scrollY } = useScroll()
-  const bgOpacity = useTransform(scrollY, [0, 80], [0, 0.85])
-  const blurPx = useTransform(scrollY, [0, 80], [0, 12])
-  const borderOpacity = useTransform(scrollY, [0, 80], [0, 0.15])
-  const backgroundColor = useTransform(bgOpacity, (v) => `rgba(10,30,41,${v})`)
-  const backdropFilter = useTransform(blurPx, (v) => `blur(${v}px)`)
-  const borderBottomColor = useTransform(borderOpacity, (v) => `rgba(255,255,255,${v})`)
 
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : ''
@@ -46,17 +37,9 @@ export function Header() {
   const telHref = `tel:${site.phone.replace(/\s+/g, '')}`
 
   return (
-    <motion.header
-      className={`fixed inset-x-0 top-0 z-30 flex flex-col text-white ${open ? 'bg-graphite/85 backdrop-blur-lg' : ''
-        }`}
-      style={
-        reduce || open
-          ? undefined
-          : { backgroundColor, backdropFilter, borderBottomWidth: 1, borderBottomColor }
-      }
-    >
+    <header className="fixed inset-x-0 top-0 z-30 flex flex-col border-b border-white/10 bg-graphite text-white shadow-[0_2px_24px_-12px_rgba(0,0,0,0.6)]">
       {/* Utility bar — phone / email, desktop only */}
-      <div className="hidden h-9 items-center justify-end gap-6 border-b border-white/10 bg-black/10 px-[clamp(1rem,5vw,4.5rem)] text-[0.68rem] tracking-[0.02em] lg:flex">
+      <div className="hidden h-9 items-center justify-end gap-6 border-b border-white/10 bg-black/10 px-[clamp(1rem,5vw,4.5rem)] text-[1rem] tracking-[0.02em] lg:flex">
         <a
           href={telHref}
           className="flex items-center gap-1.5 text-white/75 transition-colors hover:text-ice"
@@ -75,7 +58,7 @@ export function Header() {
       </div>
 
       {/* Main row */}
-      <div className="flex h-[68px] items-center justify-between px-4 sm:h-[150px] ">
+      <div className="flex h-[68px] items-center justify-between gap-6 px-4 sm:h-[132px] sm:px-[clamp(1.5rem,5vw,4.5rem)]">
         <Link
           href="/"
           className="shrink-0 [&_img]:object-contain [&_img]:object-left [&_img]:drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
@@ -87,7 +70,7 @@ export function Header() {
             width={948}
             height={299}
             priority
-            className="h-auto w-[150px] sm:w-[500px]"
+            className="h-auto w-[150px] sm:w-[360px]"
           />
         </Link>
 
@@ -101,10 +84,10 @@ export function Header() {
         </button>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-[clamp(1rem,2.5vw,2rem)] text-[1rem] font-semibold uppercase tracking-[0.11em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
+        <nav className="hidden items-center gap-[clamp(0.7rem,1.5vw,1.6rem)] whitespace-nowrap text-[0.82rem] font-semibold uppercase tracking-[0.1em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
           {navigation.map((item) => {
             const active = isActive(pathname, item.href)
-            const labelCls = `group relative py-1 transition-colors duration-200 ${active ? 'text-ice' : 'text-white hover:text-ice'
+            const labelCls = `group relative whitespace-nowrap py-1 transition-colors duration-200 ${active ? 'text-ice' : 'text-white hover:text-ice'
               }`
             const indicator = active ? (
               <motion.span
@@ -140,13 +123,13 @@ export function Header() {
                   {item.label}
                   {indicator}
                 </button>
-                <div className="invisible absolute left-1/2 top-full z-10 w-[264px] -translate-x-1/2 pt-4 opacity-0 transition-opacity duration-200 group-focus-within/nav:visible group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:opacity-100">
-                  <ul className="flex flex-col border border-white/15 bg-graphite/95 p-2 shadow-[0_20px_40px_-16px_rgba(0,0,0,0.6)] backdrop-blur-lg">
+                <div className="invisible absolute left-0 top-full z-10 w-max min-w-[240px] max-w-[320px] translate-y-1 pt-4 opacity-0 transition-[opacity,transform] duration-200 group-focus-within/nav:visible group-focus-within/nav:translate-y-0 group-focus-within/nav:opacity-100 group-hover/nav:visible group-hover/nav:translate-y-0 group-hover/nav:opacity-100">
+                  <ul className="flex flex-col border border-white/15 bg-graphite/95 p-1.5 shadow-[0_24px_48px_-16px_rgba(0,0,0,0.7)] backdrop-blur-lg">
                     {item.children.map((c) => (
                       <li key={c.href}>
                         <Link
                           href={c.href}
-                          className={`block px-3 py-2.5 text-[0.85rem] tracking-[0.1em] transition-colors hover:bg-white/5 hover:text-ice ${pathname === c.href ? 'text-ice' : 'text-white/70'
+                          className={`block whitespace-nowrap px-4 py-2.5 text-[0.82rem] font-semibold uppercase tracking-[0.09em] transition-colors hover:bg-white/5 hover:text-ice ${pathname === c.href ? 'text-ice' : 'text-white/75'
                             }`}
                         >
                           {c.label}
@@ -160,7 +143,7 @@ export function Header() {
           })}
           <MagneticButton>
             <Link
-              className="flex items-center gap-1.5 border border-white/50 px-3.5 py-3 [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1"
+              className="flex items-center gap-1.5 whitespace-nowrap border border-white/50 px-4 py-3 [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1"
               href={navigationCta.href}
             >
               {navigationCta.label}
@@ -199,7 +182,7 @@ export function Header() {
             >
               {navigation.map((item) => {
                 const active = isActive(pathname, item.href)
-                const mobileLabelCls = `block py-1.5 text-[0.9rem] uppercase tracking-[0.08em] ${active ? 'text-ice opacity-100' : 'opacity-80'
+                const mobileLabelCls = `block py-1.5 text-[1rem] uppercase tracking-[0.08em] ${active ? 'text-ice opacity-100' : 'opacity-80'
                   }`
                 return (
                   <motion.div
@@ -250,6 +233,6 @@ export function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </header>
   )
 }

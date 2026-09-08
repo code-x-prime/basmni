@@ -61,7 +61,7 @@ export function ReferencesGrid({ label, title }: { label: string; title: string 
       </motion.div>
 
       {filtered.length === 0 && (
-        <p className="mt-10 text-[0.9rem] text-muted">No projects in this category yet.</p>
+        <p className="mt-10 text-[1rem] text-muted">No projects in this category yet.</p>
       )}
 
       <ProjectModal project={selected} onClose={() => setSelected(null)} />

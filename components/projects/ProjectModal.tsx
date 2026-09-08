@@ -101,7 +101,7 @@ export function ProjectModal({
                         <dt className="text-[0.58rem] font-bold uppercase tracking-[0.12em] text-blue">
                           {k}
                         </dt>
-                        <dd className="mt-1 text-[0.85rem] leading-[1.45] [overflow-wrap:anywhere]">
+                        <dd className="mt-1 text-[1rem] leading-[1.45] [overflow-wrap:anywhere]">
                           {v}
                         </dd>
                       </div>

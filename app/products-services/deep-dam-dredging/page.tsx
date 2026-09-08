@@ -41,7 +41,7 @@ export default function DredgingPage() {
 
       {/* 01 — Overview */}
       <section className={sectionPad}>
-        <SectionHeading label="01 — Overview" title="Recovering storage lost to sediment." />
+        <SectionHeading label="Overview" title="Recovering storage lost to sediment." />
         <div className="mt-10 grid grid-cols-1 gap-6 sm:mt-14 sm:grid-cols-2 sm:gap-[6vw]">
           {dredgingHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
@@ -59,18 +59,16 @@ export default function DredgingPage() {
         className={`${sectionPad} grid grid-cols-1 items-center gap-8 bg-[#dbe9fb] sm:grid-cols-[1fr_0.85fr] sm:gap-[6vw]`}
       >
         <Reveal direction="right">
-          <p className={`${sectionLabel} text-blue`}>02 — International partnership</p>
+          <p className={`${sectionLabel} text-blue`}>International partnership</p>
           <h2 className={`${displayHeading} mt-2`}>{dredgingPartnership.title}</h2>
           <p className="mt-5 max-w-[520px] leading-[1.65] text-muted">{dredgingPartnership.text}</p>
           <ul className="mt-8 border-t border-border">
-            {dredgingPartnership.points.map((p, i) => (
+            {dredgingPartnership.points.map((p) => (
               <li
                 key={p}
-                className="flex gap-4 border-b border-border py-3 text-[0.9rem] leading-[1.55] text-muted"
+                className="flex gap-4 border-b border-border py-3 text-[1rem] leading-[1.55] text-muted"
               >
-                <span className="shrink-0 text-[0.7rem] font-bold text-blue">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
+                <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                 {p}
               </li>
             ))}
@@ -88,15 +86,14 @@ export default function DredgingPage() {
 
       {/* 03 — How it works */}
       <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="03 — How it works" title="Fluidise. Pump. Convey." />
+        <SectionHeading dark label="How it works" title="Fluidise. Pump. Convey." />
         <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-3">
           {dredgingHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
-              <span className="text-[0.7rem] font-bold text-ice">{s.number}</span>
-              <h3 className="mt-4 text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
                 {s.title}
               </h3>
-              <p className="mt-3 text-[0.88rem] leading-[1.6] text-[#c9def5]">{s.text}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
             </Reveal>
           ))}
         </div>
@@ -115,18 +112,17 @@ export default function DredgingPage() {
       <section className={`${sectionPad} bg-graphite text-white`}>
         <SectionHeading
           dark
-          label="04 — Key features"
+          label="Key features"
           title="Built for extreme conditions."
           deck="Depth, solids concentration, cutting tools and discharge distance — engineered to the reservoir."
         />
         <RevealStagger className="mt-12 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
           {dredgingFeatures.map((f) => (
             <RevealItem key={f.number} className="bg-graphite p-6">
-              <span className="text-[0.7rem] font-bold text-ice">{f.number}</span>
-              <h3 className="mt-4 text-[0.98rem] uppercase leading-[1.18] tracking-tightest text-ice">
+              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
                 {f.title}
               </h3>
-              <p className="mt-2.5 text-[0.83rem] leading-[1.55] text-[#c9def5]">{f.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -136,7 +132,7 @@ export default function DredgingPage() {
       <section className="pt-6">
         <div className={`${sectionPad} pb-0`}>
           <SectionHeading
-            label="05 — Dredging equipment"
+            label="Dredging equipment"
             title="Equipment for extreme-depth dredging."
           />
         </div>
@@ -148,7 +144,7 @@ export default function DredgingPage() {
       {/* 06 — Dredge series */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading
-          label="06 — Dredge series"
+          label="Dredge series"
           title="DRH, DRP and DRSP."
           deck="Three platform series — cable, remote-controlled and shallow-water — each with a fixed general arrangement."
         />
@@ -170,12 +166,12 @@ export default function DredgingPage() {
                 <h3 className="mt-2 text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
                   {s.title}
                 </h3>
-                <p className="mt-2.5 text-[0.86rem] leading-[1.55] text-muted">{s.forWhat}</p>
+                <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{s.forWhat}</p>
                 <ul className="mt-4 border-t border-border pt-3">
                   {s.components.map((c) => (
                     <li
                       key={c}
-                      className="flex gap-2.5 py-1.5 text-[0.8rem] leading-[1.45] text-muted"
+                      className="flex gap-2.5 py-1.5 text-[0.95rem] leading-[1.5] text-muted"
                     >
                       <span className="mt-0.5 shrink-0 text-blue">—</span>
                       {c}
@@ -192,19 +188,16 @@ export default function DredgingPage() {
       <section className={`${sectionPad} bg-navy text-white`}>
         <SectionHeading
           dark
-          label="07 — Dredging technology"
+          label="Dredging technology"
           title="The technical concept behind the depth."
         />
         <div className="mt-12 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-16 sm:grid-cols-2 lg:grid-cols-3">
-          {dredgingTechnology.map((t, i) => (
+          {dredgingTechnology.map((t) => (
             <Reveal key={t.title} className="bg-navy p-6 sm:p-8">
-              <span className="text-[0.7rem] font-bold text-ice">
-                {String(i + 1).padStart(2, '0')}
-              </span>
-              <h3 className="mt-4 text-[clamp(1.1rem,2.2vw,1.5rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.1rem,2.2vw,1.5rem)] uppercase leading-[1.15] tracking-tightest">
                 {t.title}
               </h3>
-              <p className="mt-2.5 text-[0.86rem] leading-[1.55] text-[#c9def5]">{t.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{t.text}</p>
             </Reveal>
           ))}
         </div>
@@ -213,7 +206,7 @@ export default function DredgingPage() {
       {/* 08 — Why Basmni's solution */}
       <section className={sectionPad}>
         <SectionHeading
-          label="08 — Why Basmni's solution"
+          label="Why Basmni's solution"
           title="High depth, small dredge, fast on site."
         />
         <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-2 sm:gap-[6vw]">
@@ -226,7 +219,7 @@ export default function DredgingPage() {
                 {a.points.map((p) => (
                   <li
                     key={p}
-                    className="flex gap-3 border-b border-border py-3 text-[0.88rem] leading-[1.55] text-muted"
+                    className="flex gap-3 border-b border-border py-3 text-[1rem] leading-[1.55] text-muted"
                   >
                     <span className="mt-0.5 shrink-0 text-blue">✓</span>
                     {p}
@@ -242,7 +235,7 @@ export default function DredgingPage() {
       <section className={`${sectionPad} bg-graphite text-white`}>
         <SectionHeading
           dark
-          label="09 — Case studies"
+          label="Case studies"
           title="Proven on dams in service."
           deck="Selected deep-dam-dredging campaigns delivered with the dam kept in full operation."
         />
@@ -264,12 +257,12 @@ export default function DredgingPage() {
                 <h3 className="mt-2 text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-ice">
                   {c.location}
                 </h3>
-                <p className="mt-2.5 text-[0.84rem] leading-[1.55] text-[#c9def5]">{c.summary}</p>
+                <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{c.summary}</p>
               </div>
             </RevealItem>
           ))}
         </RevealStagger>
-        <p className="mt-10 text-[0.86rem] leading-[1.6] text-[#c9def5]">
+        <p className="mt-10 text-[1rem] leading-[1.6] text-[#d6e8fb]">
           Dam-dredging project references in India include {dredgingIndiaProjects.join(', ')}.
         </p>
       </section>
@@ -277,7 +270,7 @@ export default function DredgingPage() {
       {/* 10 — Applications */}
       <section className={`${sectionPad} bg-[#dbe9fb]`}>
         <SectionHeading
-          label="10 — Applications"
+          label="Applications"
           title="Where dredging is needed."
           deck="From dead-storage recovery to canal systems — matched to the site and disposal constraints."
         />
@@ -296,7 +289,7 @@ export default function DredgingPage() {
                 <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
                   {a.title}
                 </h3>
-                <p className="mt-2 text-[0.86rem] leading-[1.55] text-muted">{a.text}</p>
+                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{a.text}</p>
               </div>
             </RevealItem>
           ))}
@@ -305,18 +298,15 @@ export default function DredgingPage() {
 
       {/* 11 — Engineering & delivery */}
       <section className={`${sectionPad} bg-navy text-white`}>
-        <SectionHeading dark label="11 — Engineering & delivery" title="Survey to handover." />
-        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-[#c9def5]">
+        <SectionHeading dark label="Engineering & delivery" title="Survey to handover." />
+        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-[#d6e8fb]">
           {dredgingProcess.intro}
         </p>
         <div className="mt-12 sm:mt-16">
           <RevealStagger className="grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:grid-cols-5">
-            {dredgingProcess.steps.map((step, i) => (
+            {dredgingProcess.steps.map((step) => (
               <RevealItem key={step} className="bg-navy p-6 sm:p-7">
-                <span className="text-[0.7rem] font-bold text-ice">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-                <h3 className="mt-4 text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest">
+                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest">
                   {step}
                 </h3>
               </RevealItem>
@@ -327,7 +317,7 @@ export default function DredgingPage() {
           {dredgingProcess.contexts.map((c) => (
             <span
               key={c}
-              className="border border-[#2a5c94] px-3 py-2 text-[0.68rem] uppercase tracking-[0.08em] text-[#c9def5]"
+              className="border border-[#2a5c94] px-3 py-2 text-[0.68rem] uppercase tracking-[0.08em] text-[#d6e8fb]"
             >
               {c}
             </span>
@@ -337,7 +327,7 @@ export default function DredgingPage() {
 
       {/* 12 — FAQ */}
       <section className={sectionPad}>
-        <SectionHeading label="12 — FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions." />
         <div className="mt-12 sm:mt-16">
           <FAQ items={dredgingFaq} />
         </div>
