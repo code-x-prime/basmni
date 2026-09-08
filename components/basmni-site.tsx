@@ -16,6 +16,7 @@ import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 import { MetricGrid } from '@/components/shared/blocks'
+import { Marquee } from '@/components/shared/Marquee'
 import { CTASection } from '@/components/shared/CTASection'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { sectionPad, sectionLabel, displayHeading, textLink } from '@/components/shared/ui'
@@ -140,6 +141,9 @@ export function BasmniSite() {
           ))}
         </RevealStagger>
       </section>
+
+      {/* Engineering highlights marquee */}
+      <Marquee />
 
       {/* Intro */}
       <section id="about" className={sectionPad}>

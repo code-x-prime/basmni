@@ -53,8 +53,27 @@
   .animate-hero-zoom {
     animation: hero-zoom 2s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
+
+  /* Homepage highlight marquee: the track holds the item list twice, so a
+     -50% translate loops seamlessly. */
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  .marquee-track {
+    animation: marquee-scroll 42s linear infinite;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
   @media (prefers-reduced-motion: reduce) {
-    .animate-hero-zoom {
+    .animate-hero-zoom,
+    .marquee-track {
       animation: none;
     }
   }

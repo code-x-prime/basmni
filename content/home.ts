@@ -21,3 +21,21 @@ export const home = {
   featuredNote:
     'Complete, end-to-end dredging and hydro-mechanical solutions using advanced equipment and modern methods.',
 }
+
+/**
+ * Auto-scrolling marquee strip under the homepage hero. Each item is an
+ * engineering highlight from delivered work. `icon` names a lucide-react icon.
+ */
+export const homeMarquee: { icon: string; text: string }[] = [
+  { icon: 'Gauge', text: 'Extreme-depth dredging — down to ~100 m below reservoir level' },
+  { icon: 'Waves', text: 'Teesta Low Dam-III — reservoir desilting for NHPC' },
+  { icon: 'Zap', text: 'SF6-free power transmission — up to 420 kV and 5,000 A' },
+  { icon: 'Factory', text: 'In-house fabrication of trash racks, dredges, booms and gates' },
+  { icon: 'Anchor', text: 'Floating log booms — wire-rope suspension for logs and ice' },
+  {
+    icon: 'Wrench',
+    text: 'Bhaledh trench weir — modified trash rack with civil works, Baira Siul',
+  },
+  { icon: 'Ruler', text: 'Steel liners, spillway gates and embedded parts — designed to site' },
+  { icon: 'Mountain', text: 'Himalayan project sites — remote, high-altitude installation' },
+]
