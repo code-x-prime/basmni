@@ -47,9 +47,8 @@ export function Header() {
 
   return (
     <motion.header
-      className={`fixed inset-x-0 top-0 z-30 flex flex-col text-white ${
-        open ? 'bg-graphite/85 backdrop-blur-lg' : ''
-      }`}
+      className={`fixed inset-x-0 top-0 z-30 flex flex-col text-white ${open ? 'bg-graphite/85 backdrop-blur-lg' : ''
+        }`}
       style={
         reduce || open
           ? undefined
@@ -76,7 +75,7 @@ export function Header() {
       </div>
 
       {/* Main row */}
-      <div className="flex h-[68px] items-center justify-between px-4 sm:h-[78px] sm:px-[clamp(1rem,5vw,4.5rem)]">
+      <div className="flex h-[68px] items-center justify-between px-4 sm:h-[150px] ">
         <Link
           href="/"
           className="shrink-0 [&_img]:object-contain [&_img]:object-left [&_img]:drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
@@ -88,7 +87,7 @@ export function Header() {
             width={948}
             height={299}
             priority
-            className="h-auto w-[150px] sm:w-[190px]"
+            className="h-auto w-[150px] sm:w-[500px]"
           />
         </Link>
 
@@ -102,12 +101,11 @@ export function Header() {
         </button>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-[clamp(1rem,2.5vw,2rem)] text-[0.72rem] font-semibold uppercase tracking-[0.11em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
+        <nav className="hidden items-center gap-[clamp(1rem,2.5vw,2rem)] text-[1rem] font-semibold uppercase tracking-[0.11em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
           {navigation.map((item) => {
             const active = isActive(pathname, item.href)
-            const labelCls = `group relative py-1 transition-colors duration-200 ${
-              active ? 'text-ice' : 'text-white hover:text-ice'
-            }`
+            const labelCls = `group relative py-1 transition-colors duration-200 ${active ? 'text-ice' : 'text-white hover:text-ice'
+              }`
             const indicator = active ? (
               <motion.span
                 layoutId="nav-indicator"
@@ -148,9 +146,8 @@ export function Header() {
                       <li key={c.href}>
                         <Link
                           href={c.href}
-                          className={`block px-3 py-2.5 text-[0.64rem] tracking-[0.1em] transition-colors hover:bg-white/5 hover:text-ice ${
-                            pathname === c.href ? 'text-ice' : 'text-white/70'
-                          }`}
+                          className={`block px-3 py-2.5 text-[0.85rem] tracking-[0.1em] transition-colors hover:bg-white/5 hover:text-ice ${pathname === c.href ? 'text-ice' : 'text-white/70'
+                            }`}
                         >
                           {c.label}
                         </Link>
@@ -202,9 +199,8 @@ export function Header() {
             >
               {navigation.map((item) => {
                 const active = isActive(pathname, item.href)
-                const mobileLabelCls = `block py-1.5 text-[0.9rem] uppercase tracking-[0.08em] ${
-                  active ? 'text-ice opacity-100' : 'opacity-80'
-                }`
+                const mobileLabelCls = `block py-1.5 text-[0.9rem] uppercase tracking-[0.08em] ${active ? 'text-ice opacity-100' : 'opacity-80'
+                  }`
                 return (
                   <motion.div
                     key={item.href}
@@ -228,9 +224,8 @@ export function Header() {
                           <Link
                             key={c.href}
                             href={c.href}
-                            className={`py-1.5 text-[0.72rem] uppercase tracking-[0.08em] ${
-                              pathname === c.href ? 'text-ice' : 'opacity-70'
-                            }`}
+                            className={`py-1.5 text-[0.72rem] uppercase tracking-[0.08em] ${pathname === c.href ? 'text-ice' : 'opacity-70'
+                              }`}
                             onClick={() => setOpen(false)}
                           >
                             {c.label}
