@@ -36,7 +36,7 @@ export function ImageRotator({
   const active = slides[i]
 
   return (
-    <div className={`group relative overflow-hidden bg-graphite ${className}`}>
+    <div className={`group relative overflow-hidden bg-white ${className}`}>
       {reduce ? (
         <Image src={active.src} alt={active.alt} fill sizes={sizes} className="object-cover" />
       ) : (
@@ -61,7 +61,7 @@ export function ImageRotator({
 
       <div className="pointer-events-none absolute inset-x-4 bottom-4 flex items-end justify-between gap-3 sm:inset-x-5 sm:bottom-5">
         {caption && (
-          <span className="text-[0.62rem] font-bold uppercase tracking-[0.1em] text-white/90">
+          <span className="text-[0.62rem] font-bold uppercase tracking-[0.1em] text-navy/90">
             {caption}
           </span>
         )}
@@ -71,7 +71,7 @@ export function ImageRotator({
               <span
                 key={n}
                 className={`h-1 w-4 transition-colors duration-500 ${
-                  n === i ? 'bg-ice' : 'bg-white/30'
+                  n === i ? 'bg-white' : 'bg-white/30'
                 }`}
               />
             ))}

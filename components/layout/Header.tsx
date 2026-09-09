@@ -38,27 +38,8 @@ export function Header() {
 
   return (
     <header className="fixed inset-x-0 top-0 z-30 flex flex-col border-b border-white/10 bg-graphite text-white shadow-[0_2px_24px_-12px_rgba(0,0,0,0.6)]">
-      {/* Utility bar — phone / email, desktop only */}
-      <div className="hidden h-9 items-center justify-end gap-6 border-b border-white/10 bg-black/10 px-[clamp(1rem,5vw,4.5rem)] text-[1rem] tracking-[0.02em] lg:flex">
-        <a
-          href={telHref}
-          className="flex items-center gap-1.5 text-white/75 transition-colors hover:text-ice"
-        >
-          <Phone className="w-3.5" />
-          {site.phone}
-        </a>
-        <span className="h-3 w-px bg-white/15" aria-hidden />
-        <a
-          href={`mailto:${site.email}`}
-          className="flex items-center gap-1.5 text-white/75 transition-colors hover:text-ice"
-        >
-          <Mail className="w-3.5" />
-          {site.email}
-        </a>
-      </div>
-
       {/* Main row */}
-      <div className="flex h-[68px] items-center justify-between gap-6 px-4 sm:h-[132px] sm:px-[clamp(1.5rem,5vw,4.5rem)]">
+      <div className="flex h-[76px] items-center justify-between gap-5 px-4 sm:h-[104px] sm:gap-8 sm:px-[clamp(1rem,3vw,2.5rem)]">
         <Link
           href="/"
           className="shrink-0 [&_img]:object-contain [&_img]:object-left [&_img]:drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
@@ -70,7 +51,7 @@ export function Header() {
             width={948}
             height={299}
             priority
-            className="h-auto w-[150px] sm:w-[360px]"
+            className="h-auto w-[188px] sm:w-[320px] lg:w-[380px]"
           />
         </Link>
 
@@ -84,7 +65,7 @@ export function Header() {
         </button>
 
         {/* Desktop nav */}
-        <nav className="hidden items-center gap-[clamp(0.7rem,1.5vw,1.6rem)] whitespace-nowrap text-[0.82rem] font-semibold uppercase tracking-[0.1em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
+        <nav className="hidden items-center gap-[clamp(0.7rem,1.5vw,1.75rem)] whitespace-nowrap text-[0.9rem] font-semibold uppercase tracking-[0.09em] [text-shadow:0_1px_4px_rgba(0,0,0,0.5)] md:flex">
           {navigation.map((item) => {
             const active = isActive(pathname, item.href)
             const labelCls = `group relative whitespace-nowrap py-1 transition-colors duration-200 ${
@@ -143,15 +124,33 @@ export function Header() {
               </div>
             )
           })}
-          <MagneticButton>
-            <Link
-              className="flex items-center gap-1.5 whitespace-nowrap border border-white/50 px-4 py-3 [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1"
-              href={navigationCta.href}
-            >
-              {navigationCta.label}
-              <ArrowUpRight />
-            </Link>
-          </MagneticButton>
+          <div className="ml-1 flex items-center gap-[clamp(0.75rem,1.6vw,1.75rem)] border-l border-white/15 pl-[clamp(0.75rem,1.8vw,1.75rem)]">
+            <div className="hidden flex-col items-end gap-1.5 normal-case tracking-normal lg:flex">
+              <a
+                href={telHref}
+                className="flex items-center gap-2 text-[0.92rem] font-medium text-white/85 transition-colors hover:text-ice"
+              >
+                <Phone className="w-4 shrink-0" />
+                {site.phone}
+              </a>
+              <a
+                href={`mailto:${site.email}`}
+                className="flex items-center gap-2 text-[0.92rem] font-medium text-white/85 transition-colors hover:text-ice"
+              >
+                <Mail className="w-4 shrink-0" />
+                {site.email}
+              </a>
+            </div>
+            <MagneticButton>
+              <Link
+                className="flex items-center gap-1.5 whitespace-nowrap border border-white/50 px-4 py-3 [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1"
+                href={navigationCta.href}
+              >
+                {navigationCta.label}
+                <ArrowUpRight />
+              </Link>
+            </MagneticButton>
+          </div>
         </nav>
       </div>
 
@@ -160,7 +159,7 @@ export function Header() {
         {open && (
           <motion.div
             key="mobile-nav"
-            className="fixed inset-x-0 bottom-0 top-[68px] bg-graphite/60 md:hidden"
+            className="fixed inset-x-0 bottom-0 top-[76px] bg-graphite/60 md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -232,6 +231,25 @@ export function Header() {
                   {navigationCta.label}
                   <ArrowUpRight />
                 </Link>
+              </motion.div>
+              <motion.div
+                variants={{ hidden: { opacity: 0, x: -12 }, show: { opacity: 1, x: 0 } }}
+                className="mt-1 flex flex-col gap-2 border-t border-white/15 pt-4"
+              >
+                <a
+                  href={telHref}
+                  className="flex items-center gap-2 text-[0.9rem] text-white/80 transition-colors hover:text-ice"
+                >
+                  <Phone className="w-4 shrink-0" />
+                  {site.phone}
+                </a>
+                <a
+                  href={`mailto:${site.email}`}
+                  className="flex items-center gap-2 text-[0.9rem] text-white/80 transition-colors hover:text-ice"
+                >
+                  <Mail className="w-4 shrink-0" />
+                  {site.email}
+                </a>
               </motion.div>
             </motion.nav>
           </motion.div>

@@ -7,7 +7,6 @@ import { aboutHero, aboutSections } from '@/content/pages'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
-import { CTASection } from '@/components/shared/CTASection'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
@@ -80,7 +79,7 @@ export default function AboutPage() {
       </section>
 
       {/* Engineering philosophy */}
-      <section className={`${sectionPad} bg-graphite text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <ImageBlock
@@ -91,20 +90,18 @@ export default function AboutPage() {
             />
           </Reveal>
           <Reveal direction="left">
-            <p className={`${sectionLabel} text-ice`}>{company.philosophy.label}</p>
+            <p className={`${sectionLabel} text-blue`}>{company.philosophy.label}</p>
             <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
               {company.philosophy.title}
             </h2>
-            <p className="mt-5 max-w-[560px] leading-[1.7] text-[#d6e8fb]">
-              {company.philosophy.body}
-            </p>
-            <ul className="mt-8 border-t border-[#1f4a80]">
+            <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">{company.philosophy.body}</p>
+            <ul className="mt-8 border-t border-border">
               {company.philosophy.points.map((p) => (
                 <li
                   key={p}
-                  className="flex gap-4 border-b border-[#1f4a80] py-3 text-[1rem] text-[#d6e8fb]"
+                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
                 >
-                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-ice" aria-hidden />
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   {p}
                 </li>
               ))}
@@ -114,7 +111,7 @@ export default function AboutPage() {
       </section>
 
       {/* Core capabilities */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading
           label={aboutSections.capabilities.label}
           title={aboutSections.capabilities.title}
@@ -132,7 +129,7 @@ export default function AboutPage() {
           {company.capabilitySteps.map((step) => (
             <RevealItem
               key={step.label}
-              className="group flex flex-col bg-[#dbe9fb] p-6 transition-colors hover:bg-white sm:p-8"
+              className="group flex flex-col bg-white p-6 transition-colors hover:bg-white sm:p-8"
             >
               <div className="flex items-center justify-end">
                 <ArrowUpRight className="w-4 -translate-x-1 text-blue opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
@@ -168,21 +165,21 @@ export default function AboutPage() {
       </section>
 
       {/* Basmni at a glance */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label={aboutSections.glance.label}
           title={aboutSections.glance.title}
         />
-        <div className="mt-9 grid grid-cols-2 gap-4 border-t border-[#2a5c94] sm:mt-11 sm:grid-cols-4">
+        <div className="mt-9 grid grid-cols-2 gap-4 border-t border-border sm:mt-11 sm:grid-cols-4">
           {company.stats.map((stat) => (
             <Reveal key={stat.label}>
-              <div className="border-r border-[#2a5c94] py-4">
+              <div className="border-r border-border py-4">
                 <AnimatedCounter
                   value={stat.value}
-                  className="block text-[2.6rem] tracking-[-0.08em] text-ice sm:text-[clamp(2.6rem,5vw,5rem)]"
+                  className="block text-[2.6rem] tracking-[-0.08em] text-blue sm:text-[clamp(2.6rem,5vw,5rem)]"
                 />
-                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#d6e8fb]">
+                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-muted">
                   {stat.label}
                 </span>
               </div>
@@ -192,7 +189,7 @@ export default function AboutPage() {
       </section>
 
       {/* Technology & equipment */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading
           label={aboutSections.equipment.label}
           title={aboutSections.equipment.title}
@@ -203,7 +200,7 @@ export default function AboutPage() {
             <RevealItem key={eq.title}>
               <Link
                 href={eq.href}
-                className="group flex h-full flex-col bg-[#dbe9fb] p-6 transition-colors hover:bg-white sm:p-7"
+                className="group flex h-full flex-col bg-white p-6 transition-colors hover:bg-white sm:p-7"
               >
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest transition-colors group-hover:text-blue">
@@ -255,7 +252,7 @@ export default function AboutPage() {
       </section>
 
       {/* Engineering-to-execution process */}
-      <section id="process" className={`${sectionPad} scroll-mt-52`}>
+      <section id="process" className={`${sectionPad} scroll-mt-[128px]`}>
         <SectionHeading label={aboutSections.process.label} title={aboutSections.process.title} />
         <div className="mt-9 sm:mt-11">
           <FeatureRows
@@ -267,15 +264,6 @@ export default function AboutPage() {
           />
         </div>
       </section>
-
-      <CTASection
-        eyebrow="Start a conversation"
-        title="Have a challenging project?"
-        description="Discuss your hydropower, dredging, hydro-mechanical or water infrastructure requirement with Basmni Technologies."
-        image={media.spillway}
-        primary={{ label: 'Discuss Your Project', href: '/contact' }}
-        secondary={{ label: 'View References', href: '/references' }}
-      />
     </PageTransition>
   )
 }

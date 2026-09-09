@@ -31,7 +31,7 @@ export function CTASection({
   secondary?: Action
 }) {
   return (
-    <section className="relative flex min-h-[590px] items-center bg-navy text-white sm:min-h-[620px]">
+    <section className="relative flex min-h-[590px] items-center bg-[#0b3a70] text-white sm:min-h-[620px]">
       <Image src={image} alt={imageAlt} fill sizes="100vw" className="object-cover" />
       <div className={`absolute inset-0 ${overlayGradient}`} />
       <RevealStagger
@@ -47,7 +47,7 @@ export function CTASection({
             {emphasis && (
               <>
                 <br />
-                <em className="not-italic text-ice">{emphasis}</em>
+                <em className="not-italic text-white">{emphasis}</em>
               </>
             )}
           </h2>

@@ -10,12 +10,10 @@ import {
   civilProcess,
   civilHeadlineMetrics,
   civilFaq,
-  civilCta,
 } from '@/content/civil'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
-import { CTASection } from '@/components/shared/CTASection'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { FAQ } from '@/components/shared/FAQ'
@@ -49,19 +47,19 @@ export default function CivilPage() {
       </section>
 
       {/* How it works */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label="How it works"
           title="Read the site. Treat the foundation. Pass water."
         />
-        <div className="mt-9 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-11 sm:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {civilHowItWorks.map((s) => (
-            <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
+            <Reveal key={s.number} className="bg-white p-6 sm:p-8">
               <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
                 {s.title}
               </h3>
-              <p className="mt-3 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
             </Reveal>
           ))}
         </div>
@@ -77,27 +75,27 @@ export default function CivilPage() {
       />
 
       {/* Key features */}
-      <section className={`${sectionPad} bg-graphite text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label="Key features"
           title="Foundation, seepage, flood and fit."
           deck="The parts of a water-retaining structure that decide whether it lasts — engineered per site."
         />
-        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {civilFeatures.map((f) => (
-            <RevealItem key={f.number} className="bg-graphite p-6">
-              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
+            <RevealItem key={f.number} className="bg-white p-6">
+              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-blue">
                 {f.title}
               </h3>
-              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{f.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
       </section>
 
       {/* Structure types */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading label="Structure types" title="Three settings, three structures." />
         <RevealStagger
           className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
@@ -122,7 +120,7 @@ export default function CivilPage() {
       </section>
 
       {/* Applications */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="Applications" title="Where civil works are delivered." />
         <RevealStagger
           className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 lg:grid-cols-3"
@@ -136,10 +134,10 @@ export default function CivilPage() {
                 className="min-h-[220px] sm:min-h-[240px]"
               />
               <div className="pt-4">
-                <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-ice">
+                <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-blue">
                   {a.title}
                 </h3>
-                <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{a.text}</p>
+                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{a.text}</p>
               </div>
             </RevealItem>
           ))}
@@ -147,13 +145,13 @@ export default function CivilPage() {
       </section>
 
       {/* Engineering & delivery */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading label="Engineering & delivery" title="Investigation to commissioning." />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{civilProcess.intro}</p>
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {civilProcess.steps.map((step) => (
-              <RevealItem key={step} className="bg-[#dbe9fb] p-6 sm:p-7">
+              <RevealItem key={step} className="bg-white p-6 sm:p-7">
                 <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
                   {step}
                 </h3>
@@ -180,17 +178,6 @@ export default function CivilPage() {
           <FAQ items={civilFaq} />
         </div>
       </section>
-
-      <CTASection
-        eyebrow="Start a conversation"
-        title={civilCta.title}
-        emphasis={civilCta.emphasis}
-        description={civilCta.description}
-        image={media.civilFoundationExcavation}
-        imageAlt="Long-reach excavator preparing a dam foundation in a dewatered riverbed"
-        primary={{ label: 'Discuss Your Project', href: '/contact' }}
-        secondary={{ label: 'View References', href: '/references' }}
-      />
     </PageTransition>
   )
 }

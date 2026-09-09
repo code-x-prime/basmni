@@ -19,7 +19,7 @@ export function DredgingEquipmentBlock({
   return (
     <div
       id={item.id}
-      className={`${sectionPad} grid scroll-mt-52 grid-cols-1 items-center gap-8 border-t border-border sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]`}
+      className={`${sectionPad} grid scroll-mt-[128px] grid-cols-1 items-center gap-8 border-t border-border sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]`}
     >
       <Reveal className={flip ? 'sm:order-2' : ''} direction={flip ? 'left' : 'right'}>
         <span className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">

@@ -50,7 +50,7 @@ export function Lightbox({
   return (
     <Portal>
       <motion.div
-        className="bg-graphite/92 fixed inset-0 z-[70] flex flex-col overflow-x-hidden backdrop-blur-sm"
+        className="bg-white/92 fixed inset-0 z-[70] flex flex-col overflow-x-hidden backdrop-blur-sm"
         role="dialog"
         aria-modal="true"
         aria-label={item.title}
@@ -61,7 +61,7 @@ export function Lightbox({
       >
         {/* Top bar */}
         <div
-          className="flex items-center justify-between gap-4 px-4 py-3 text-white sm:px-6"
+          className="flex items-center justify-between gap-4 px-4 py-3 text-navy sm:px-6"
           onClick={stop}
         >
           <div className="min-w-0">
@@ -69,14 +69,14 @@ export function Lightbox({
               {item.title}
             </p>
             {item.caption && (
-              <p className="truncate text-[0.66rem] uppercase tracking-[0.1em] text-ice/70">
+              <p className="truncate text-[0.66rem] uppercase tracking-[0.1em] text-blue/70">
                 {item.caption}
               </p>
             )}
           </div>
           <div className="flex shrink-0 items-center gap-3">
             {many && (
-              <span className="text-[0.66rem] tabular-nums tracking-[0.1em] text-ice/70">
+              <span className="text-[0.66rem] tabular-nums tracking-[0.1em] text-blue/70">
                 {index + 1} / {items.length}
               </span>
             )}

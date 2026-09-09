@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: '#f5f9fd',
+        background: '#ffffff',
         foreground: '#125096',
         muted: '#3a6198',
         border: '#d5e3f5',

@@ -6,7 +6,6 @@ import { contactHero, contactSections } from '@/content/pages'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
-import { CTASection } from '@/components/shared/CTASection'
 import { Reveal } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { ContactInfo } from '@/components/contact/ContactInfo'
@@ -61,7 +60,7 @@ export default function ContactPage() {
       </section>
 
       {/* Quick actions */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading label={contactSections.quick.label} title={contactSections.quick.title} />
         <div className="mt-8 sm:mt-10">
           <QuickActions />
@@ -112,10 +111,10 @@ export default function ContactPage() {
               />
               <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70e6,transparent_60%)]" />
               <span className="pointer-events-none absolute inset-x-5 bottom-5">
-                <span className="block text-[0.62rem] font-bold uppercase tracking-[0.14em] text-ice">
+                <span className="block text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
                   Central Delhi · Barakhamba Road
                 </span>
-                <span className="mt-1 inline-flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-white">
+                <span className="mt-1 inline-flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-navy">
                   Open in Google Maps
                   <ArrowUpRight className="w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
@@ -124,15 +123,6 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </section>
-
-      <CTASection
-        eyebrow="Prefer to talk first?"
-        title="Let's engineer your next project."
-        description="Call our engineers or send an enquiry and we will get back to you directly."
-        image={media.hero}
-        primary={{ label: 'Call Our Engineers', href: contact.phoneHref, tel: true }}
-        secondary={{ label: 'Send an Enquiry', href: '#enquiry-form' }}
-      />
     </PageTransition>
   )
 }

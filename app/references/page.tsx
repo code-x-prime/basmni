@@ -5,7 +5,6 @@ import { referencesHero, referencesSections } from '@/content/pages'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
-import { CTASection } from '@/components/shared/CTASection'
 import { Reveal } from '@/components/shared/Reveal'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { ImageBlock } from '@/components/shared/ImageBlock'
@@ -26,21 +25,21 @@ export default function ReferencesPage() {
       <PageHero {...referencesHero} />
 
       {/* Portfolio stats */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label={referencesSections.stats.label}
           title={referencesSections.stats.title}
         />
-        <div className="mt-9 grid grid-cols-2 gap-4 border-t border-[#2a5c94] sm:mt-11 sm:grid-cols-4">
+        <div className="mt-9 grid grid-cols-2 gap-4 border-t border-border sm:mt-11 sm:grid-cols-4">
           {projectStats.map((s) => (
             <Reveal key={s.label}>
-              <div className="border-r border-[#2a5c94] py-4">
+              <div className="border-r border-border py-4">
                 <AnimatedCounter
                   value={s.value}
-                  className="block text-[2.4rem] tracking-[-0.08em] text-ice sm:text-[clamp(2.4rem,5vw,4.6rem)]"
+                  className="block text-[2.4rem] tracking-[-0.08em] text-blue sm:text-[clamp(2.4rem,5vw,4.6rem)]"
                 />
-                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-[#d6e8fb]">
+                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-muted">
                   {s.label}
                 </span>
               </div>
@@ -90,7 +89,7 @@ export default function ReferencesPage() {
       <ReferencesGrid label="Browse" title="All reference projects." />
 
       {/* Complete archive list */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading
           label={referencesSections.archive.label}
           title={referencesSections.archive.title}
@@ -101,7 +100,7 @@ export default function ReferencesPage() {
       </section>
 
       {/* Field photography */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label={referencesSections.gallery.label}
@@ -143,15 +142,6 @@ export default function ReferencesPage() {
           ]}
         />
       </section>
-
-      <CTASection
-        eyebrow="Start a conversation"
-        title="Have a challenging project?"
-        description="Discuss your hydropower, dredging, hydro-mechanical or water infrastructure requirement with Basmni Technologies."
-        image={media.spillway}
-        primary={{ label: 'Discuss Your Project', href: '/contact' }}
-        secondary={{ label: 'Our Solutions', href: '/products-services/pressurized-air-cables' }}
-      />
     </PageTransition>
   )
 }

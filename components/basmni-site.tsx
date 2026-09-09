@@ -10,14 +10,12 @@ import { company } from '@/content/company'
 import { services } from '@/content/services'
 import { projects, projectCategories, type ProjectFilterValue } from '@/content/projects'
 import { home } from '@/content/home'
-import { contact } from '@/content/contact'
 import { pacHomeIntro, pacFeatures, pacHeadlineMetrics, pacHowItWorks } from '@/content/pac'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 import { MetricGrid } from '@/components/shared/blocks'
 import { Marquee } from '@/components/shared/Marquee'
-import { CTASection } from '@/components/shared/CTASection'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { sectionPad, sectionLabel, displayHeading, textLink } from '@/components/shared/ui'
 import { ProjectFilter } from '@/components/projects/ProjectFilter'
@@ -89,13 +87,10 @@ export function BasmniSite() {
     <>
       {/* Flagship solutions — homepage hero */}
       <section
-        className={`${sectionPad} relative overflow-hidden bg-graphite pt-[100px] text-white sm:pt-[164px] lg:pt-[200px]`}
+        className={`${sectionPad} relative overflow-hidden bg-white pt-[92px] text-navy sm:pt-[136px] lg:pt-[136px]`}
       >
-        {/* Faint engineering grid */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.05] [background-image:linear-gradient(#fff_1px,transparent_1px),linear-gradient(90deg,#fff_1px,transparent_1px)] [background-size:72px_72px]" />
         <div className="relative">
           <SectionHeading
-            dark
             label="Flagship solutions"
             title={<>Four systems that define our field</>}
             deck="Purpose-built power-transmission, debris-management, dredging and civil engineering platforms — engineered, manufactured and commissioned by Basmni."
@@ -109,7 +104,7 @@ export function BasmniSite() {
             <RevealItem key={s.title}>
               <Link
                 href={s.href}
-                className="border-white/12 group flex h-full flex-col overflow-hidden border bg-[#0b3a70]/60 transition-colors duration-300 hover:border-ice/50"
+                className="group flex h-full flex-col overflow-hidden border border-border bg-white transition-colors duration-300 hover:border-blue"
               >
                 <span className="relative block aspect-[4/3] overflow-hidden">
                   <Image
@@ -119,20 +114,19 @@ export function BasmniSite() {
                     sizes="(max-width: 768px) 100vw, 32vw"
                     className="object-cover transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
                   />
-                  <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70cc,transparent_55%)]" />
-                  <span className="absolute left-4 top-4 text-[0.7rem] font-bold tracking-[0.12em] text-ice">
+                  <span className="absolute left-3 top-3 bg-white/95 px-2 py-1 text-[0.7rem] font-bold tracking-[0.12em] text-blue">
                     0{i + 1}
                   </span>
                 </span>
                 <span className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
                   <span className="flex items-start justify-between gap-3">
-                    <span className="text-[clamp(1.15rem,1.6vw,1.5rem)] font-bold uppercase leading-[1.12] tracking-[0.01em] text-white">
+                    <span className="text-[clamp(1.15rem,1.6vw,1.5rem)] font-bold uppercase leading-[1.12] tracking-[0.01em] text-navy">
                       {s.title}
                     </span>
-                    <ArrowUpRight className="mt-1 w-4 shrink-0 -translate-x-1 text-ice opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+                    <ArrowUpRight className="mt-1 w-4 shrink-0 -translate-x-1 text-blue opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
                   </span>
-                  <span className="text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.blurb}</span>
-                  <span className="mt-auto pt-3 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-ice/80">
+                  <span className="text-[1rem] leading-[1.6] text-muted">{s.blurb}</span>
+                  <span className="mt-auto pt-3 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue/80">
                     Explore system
                   </span>
                 </span>
@@ -177,10 +171,10 @@ export function BasmniSite() {
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70cc,transparent_46%)]" />
             <figcaption className="absolute inset-x-5 bottom-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 sm:inset-x-7 sm:bottom-6">
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.1em] text-white">
+              <span className="text-[0.68rem] font-bold uppercase tracking-[0.1em] text-navy">
                 Critical water &amp; power infrastructure
               </span>
-              <span className="text-[0.6rem] uppercase tracking-[0.14em] text-ice/70">
+              <span className="text-[0.6rem] uppercase tracking-[0.14em] text-blue/70">
                 Design · Manufacture · Install · Commission
               </span>
             </figcaption>
@@ -193,17 +187,17 @@ export function BasmniSite() {
       {false && (
         <>
           {/* Stats */}
-          <section className={`${sectionPad} bg-navy text-white`}>
+          <section className={`${sectionPad} bg-white text-navy`}>
             <SectionHeading dark label="Experience" title={home.statsTitle} />
-            <div className="mt-9 grid grid-cols-2 items-start gap-4 border-t border-[#2a5c94] sm:mt-[4.5rem] sm:grid-cols-4">
+            <div className="mt-9 grid grid-cols-2 items-start gap-4 border-t border-border sm:mt-[4.5rem] sm:grid-cols-4">
               {company.stats.map((stat) => (
                 <Reveal key={stat.label}>
-                  <div className="border-r border-[#2a5c94] py-4 pr-4">
+                  <div className="border-r border-border py-4 pr-4">
                     <AnimatedCounter
                       value={stat.value}
-                      className="block text-[clamp(2rem,7vw,3rem)] leading-[1.1] tracking-[-0.06em] text-ice sm:text-[clamp(2.4rem,4vw,4rem)]"
+                      className="block text-[clamp(2rem,7vw,3rem)] leading-[1.1] tracking-[-0.06em] text-blue sm:text-[clamp(2.4rem,4vw,4rem)]"
                     />
-                    <span className="mt-2 block text-[0.62rem] uppercase tracking-[0.1em] text-[#d6e8fb]">
+                    <span className="mt-2 block text-[0.62rem] uppercase tracking-[0.1em] text-muted">
                       {stat.label}
                     </span>
                   </div>
@@ -213,7 +207,7 @@ export function BasmniSite() {
           </section>
 
           {/* Solutions */}
-          <section id="solutions" className={`${sectionPad} bg-[#dbe9fb]`}>
+          <section id="solutions" className={`${sectionPad} bg-white`}>
             <SectionHeading label="What we do" title={home.solutionTitle} />
             <p className="ml-auto mt-6 max-w-[380px] leading-[1.6] text-muted">
               {home.solutionIntro}
@@ -236,7 +230,7 @@ export function BasmniSite() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
                     key={service.number}
-                    className="relative min-h-[430px] overflow-hidden bg-navy text-left text-white sm:min-h-[460px]"
+                    className="relative min-h-[430px] overflow-hidden bg-white text-left text-navy sm:min-h-[460px]"
                   >
                     <ImageBlock
                       src={media[service.image]}
@@ -245,18 +239,18 @@ export function BasmniSite() {
                     />
                     <div className="absolute inset-0 bg-[linear-gradient(0deg,#0b3a70f5,#0b3a7008_70%)]" />
                     <div className="absolute inset-x-7 bottom-6 [&_svg]:w-4">
-                      <span className="text-[0.65rem] tracking-[0.12em] text-ice">
+                      <span className="text-[0.65rem] tracking-[0.12em] text-blue">
                         {service.number} / {service.category}
                       </span>
                       <h3 className="my-2.5 max-w-[430px] text-[clamp(1.7rem,3vw,3.1rem)] uppercase tracking-tightest">
                         {service.title}
                       </h3>
-                      <p className="max-w-[390px] text-[1rem] leading-[1.55] text-[#d6e8fb]">
+                      <p className="max-w-[390px] text-[1rem] leading-[1.55] text-muted">
                         {service.description}
                       </p>
                       <Link
                         href={service.href ?? '/contact'}
-                        className="mt-4 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.1em] text-ice"
+                        className="mt-4 inline-flex items-center gap-2 text-[0.65rem] uppercase tracking-[0.1em] text-blue"
                       >
                         Explore solution <MoveRight />
                       </Link>
@@ -268,13 +262,13 @@ export function BasmniSite() {
           </section>
 
           {/* Feature: PAC — flagship */}
-          <section className={`${sectionPad} bg-graphite text-white`}>
+          <section className={`${sectionPad} bg-white text-navy`}>
             <Reveal direction="up">
-              <p className={`${sectionLabel} text-ice`}>Pressurized Air Cables (PAC)</p>
+              <p className={`${sectionLabel} text-blue`}>Pressurized Air Cables (PAC)</p>
               <h2 className={`${displayHeading} mt-2 max-w-[20ch]`}>
-                {home.pacTitle} <em className="not-italic text-ice">{home.pacEmphasis}</em>
+                {home.pacTitle} <em className="not-italic text-blue">{home.pacEmphasis}</em>
               </h2>
-              <p className="mt-5 max-w-[560px] leading-[1.65] text-[#d6e8fb]">{pacHomeIntro[0]}</p>
+              <p className="mt-5 max-w-[560px] leading-[1.65] text-muted">{pacHomeIntro[0]}</p>
             </Reveal>
 
             <Reveal direction="up" className="mt-8 sm:mt-10">
@@ -288,16 +282,16 @@ export function BasmniSite() {
             </Reveal>
 
             <RevealStagger
-              className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-10 sm:grid-cols-2 lg:grid-cols-3"
+              className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-10 sm:grid-cols-2 lg:grid-cols-3"
               stagger={0.07}
             >
               {pacFeatures.slice(0, 6).map((f) => (
-                <RevealItem key={f.number} className="bg-graphite p-6">
-                  <span className="text-[0.63rem] font-bold text-ice">{f.number}</span>
-                  <h3 className="mt-3 text-[1rem] uppercase leading-[1.18] tracking-tightest text-ice">
+                <RevealItem key={f.number} className="bg-white p-6">
+                  <span className="text-[0.63rem] font-bold text-blue">{f.number}</span>
+                  <h3 className="mt-3 text-[1rem] uppercase leading-[1.18] tracking-tightest text-blue">
                     {f.title}
                   </h3>
-                  <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
+                  <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{f.text}</p>
                 </RevealItem>
               ))}
             </RevealStagger>
@@ -306,20 +300,17 @@ export function BasmniSite() {
               <MetricGrid items={pacHeadlineMetrics} dark columns="sm:grid-cols-4" />
             </div>
 
-            <div className="mt-9 grid grid-cols-1 gap-6 border-t border-[#1f4a80] pt-8 sm:mt-10 sm:grid-cols-3 sm:gap-8">
+            <div className="mt-9 grid grid-cols-1 gap-6 border-t border-border pt-8 sm:mt-10 sm:grid-cols-3 sm:gap-8">
               {pacHowItWorks.map((s) => (
                 <Reveal key={s.number}>
-                  <span className="text-[0.63rem] font-bold text-ice">{s.number}</span>
+                  <span className="text-[0.63rem] font-bold text-blue">{s.number}</span>
                   <h3 className="mt-3 text-[1rem] uppercase tracking-tightest">{s.title}</h3>
-                  <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{s.text}</p>
+                  <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{s.text}</p>
                 </Reveal>
               ))}
             </div>
 
-            <Link
-              href="/products-services/pressurized-air-cables"
-              className={`${textLink} mt-10 border-ice text-ice`}
-            >
+            <Link href="/products-services/pressurized-air-cables" className={`${textLink} mt-10`}>
               Explore PAC systems <ArrowUpRight />
             </Link>
           </section>
@@ -441,7 +432,7 @@ export function BasmniSite() {
           </section>
 
           {/* Gallery */}
-          <section className={`${sectionPad} bg-navy text-white`}>
+          <section className={`${sectionPad} bg-white text-navy`}>
             <SectionHeading dark label="Field archive" title={home.galleryTitle} />
             <ProjectFilter
               className="my-6"
@@ -454,7 +445,7 @@ export function BasmniSite() {
               {filteredGallery.map((item, i) => (
                 <RevealItem key={item.title} direction="scale">
                   <button
-                    className="relative block w-full overflow-hidden border-0 bg-graphite p-0 text-left text-white"
+                    className="relative block w-full overflow-hidden border-0 bg-white p-0 text-left text-navy"
                     onClick={() => setLightboxIndex(i)}
                   >
                     <ImageBlock
@@ -472,22 +463,6 @@ export function BasmniSite() {
           </section>
         </>
       )}
-
-      {/* CTA */}
-      <CTASection
-        eyebrow="Start a conversation"
-        title={home.ctaTitle}
-        emphasis="Let's engineer the solution."
-        description="Discuss your hydropower, dredging, hydro-mechanical or water infrastructure requirement with Basmni Technologies."
-        image={media.spillway}
-        imageAlt="Misty water infrastructure landscape"
-        primary={{
-          label: 'Call Our Engineers',
-          href: `tel:${contact.phone.replaceAll(' ', '')}`,
-          tel: true,
-        }}
-        secondary={{ label: 'Send an Enquiry', href: '/contact' }}
-      />
 
       <ProjectModal project={project} onClose={() => setProject(null)} />
 

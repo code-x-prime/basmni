@@ -80,9 +80,9 @@ export function ContactForm() {
     return (
       <div
         id="enquiry-form"
-        className="flex scroll-mt-52 flex-col items-start gap-4 border border-border bg-white p-7"
+        className="flex scroll-mt-[128px] flex-col items-start gap-4 border border-border bg-white p-7"
       >
-        <span className="grid h-11 w-11 place-items-center bg-navy text-white [&_svg]:w-5">
+        <span className="grid h-11 w-11 place-items-center bg-white text-navy [&_svg]:w-5">
           <Check />
         </span>
         <h3 className="text-[1.15rem] uppercase leading-[1.2] tracking-tightest">Enquiry sent.</h3>
@@ -102,7 +102,7 @@ export function ContactForm() {
   }
 
   return (
-    <form id="enquiry-form" onSubmit={onSubmit} noValidate className="scroll-mt-52">
+    <form id="enquiry-form" onSubmit={onSubmit} noValidate className="scroll-mt-[128px]">
       <p className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
         Send an enquiry
       </p>
@@ -212,7 +212,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 bg-navy px-5 py-3 text-[0.67rem] font-bold uppercase tracking-[0.1em] text-white transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 [&_svg]:w-4"
+        className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 bg-white px-5 py-3 text-[0.67rem] font-bold uppercase tracking-[0.1em] text-navy transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 [&_svg]:w-4"
       >
         {loading ? (
           <>

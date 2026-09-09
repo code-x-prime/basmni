@@ -21,7 +21,6 @@ import {
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
-import { CTASection } from '@/components/shared/CTASection'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { FAQ } from '@/components/shared/FAQ'
@@ -59,15 +58,15 @@ export default function PacPage() {
       </section>
 
       {/* 02 — How PAC works */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="How PAC works" title="Three functions, one sealed pipe." />
-        <div className="mt-9 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-11 sm:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {pacHowItWorks.map((s) => (
-            <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
+            <Reveal key={s.number} className="bg-white p-6 sm:p-8">
               <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
                 {s.title}
               </h3>
-              <p className="mt-3 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
             </Reveal>
           ))}
         </div>
@@ -83,20 +82,20 @@ export default function PacPage() {
       />
 
       {/* 03 — Key features */}
-      <section className={`${sectionPad} bg-graphite text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label="Key features"
           title="What makes PAC different."
           deck="Capacity, efficiency, a clean insulating medium and built-in monitoring in one metallic system."
         />
-        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-11 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-4">
           {pacFeatures.map((f) => (
-            <RevealItem key={f.number} className="bg-graphite p-6">
-              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
+            <RevealItem key={f.number} className="bg-white p-6">
+              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-blue">
                 {f.title}
               </h3>
-              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{f.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
@@ -132,7 +131,7 @@ export default function PacPage() {
       </section>
 
       {/* 05 — Key components */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading label="Key components" title="What a PAC system is made of." />
         <div className="mt-8 sm:mt-10">
           <FeatureRows items={pacComponents.map((c) => ({ title: c.title, text: c.text }))} />
@@ -171,7 +170,7 @@ export default function PacPage() {
       </section>
 
       {/* 07 — Solutions by grid level */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label="Solutions by grid level"
@@ -185,7 +184,7 @@ export default function PacPage() {
           {pacGridSolutions.map((s) => (
             <RevealItem
               key={s.title}
-              className="flex flex-col border border-[#2a5c94] bg-[#0a2f5c]/40 p-6 sm:p-7"
+              className="flex flex-col border border-border bg-white p-6 sm:p-7"
             >
               <ImageBlock
                 src={media[s.image]}
@@ -193,15 +192,15 @@ export default function PacPage() {
                 sizes="(max-width: 640px) 100vw, 45vw"
                 className="mb-5 aspect-[16/10]"
               />
-              <h3 className="text-[1.15rem] uppercase leading-[1.15] tracking-tightest text-ice">
+              <h3 className="text-[1.15rem] uppercase leading-[1.15] tracking-tightest text-blue">
                 {s.title}
               </h3>
-              <p className="mt-2.5 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
               <div className="mt-4 flex flex-wrap gap-2">
                 {s.tags.map((t) => (
                   <span
                     key={t}
-                    className="border border-[#2a5c94] px-2.5 py-1 text-[0.6rem] uppercase tracking-[0.1em] text-[#d6e8fb]"
+                    className="border border-border px-2.5 py-1 text-[0.6rem] uppercase tracking-[0.1em] text-muted"
                   >
                     {t}
                   </span>
@@ -234,7 +233,7 @@ export default function PacPage() {
       </section>
 
       {/* 09 — Proven engineering */}
-      <section className={`${sectionPad} bg-graphite text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label="Proven engineering"
@@ -242,25 +241,25 @@ export default function PacPage() {
         />
         <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
           <Reveal>
-            <ul className="border-t border-[#1f4a80]">
+            <ul className="border-t border-border">
               {pacProven.points.map((p) => (
                 <li
                   key={p}
-                  className="flex items-start gap-3 border-b border-[#1f4a80] py-3.5 text-[1rem] leading-[1.5] text-[#d6e8fb]"
+                  className="flex items-start gap-3 border-b border-border py-3.5 text-[1rem] leading-[1.5] text-muted"
                 >
-                  <span className="mt-0.5 shrink-0 text-ice">✓</span>
+                  <span className="mt-0.5 shrink-0 text-blue">✓</span>
                   {p}
                 </li>
               ))}
             </ul>
           </Reveal>
           <Reveal direction="left">
-            <p className="leading-[1.7] text-[#d6e8fb]">{pacProven.intro}</p>
-            <div className="mt-6 border-l-2 border-orange bg-[#0a2f5c]/40 p-5">
-              <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-ice">
+            <p className="leading-[1.7] text-muted">{pacProven.intro}</p>
+            <div className="mt-6 border-l-2 border-orange bg-white p-5">
+              <p className="text-[0.6rem] font-bold uppercase tracking-[0.14em] text-blue">
                 Technology reference
               </p>
-              <p className="mt-2.5 text-[1rem] leading-[1.6] text-[#d6e8fb]">
+              <p className="mt-2.5 text-[1rem] leading-[1.6] text-muted">
                 Wider references for pressurized-air / gas-insulated transmission cite their own
                 validation testing and pilot installations. Those belong to the technology as a
                 class; every Basmni link is engineered and tested to its own rated parameters.
@@ -272,7 +271,7 @@ export default function PacPage() {
 
       {/* 10 — Pressure & condition monitoring */}
       <section
-        className={`${sectionPad} grid grid-cols-1 items-center gap-8 bg-[#dbe9fb] sm:grid-cols-[0.9fr_1fr] sm:gap-[6vw]`}
+        className={`${sectionPad} grid grid-cols-1 items-center gap-8 bg-white sm:grid-cols-[0.9fr_1fr] sm:gap-[6vw]`}
       >
         <Reveal direction="right">
           <ImageBlock
@@ -305,15 +304,15 @@ export default function PacPage() {
       </section>
 
       {/* 11 — Engineering & installation */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="Engineering & installation" title="One accountable scope." />
-        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-[#d6e8fb]">
+        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">
           {pacInstallation.intro}
         </p>
         <div className="mt-9 sm:mt-11">
-          <RevealStagger className="grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:grid-cols-4">
+          <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-4">
             {pacInstallation.steps.map((step) => (
-              <RevealItem key={step} className="bg-navy p-6 sm:p-7">
+              <RevealItem key={step} className="bg-white p-6 sm:p-7">
                 <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest">
                   {step}
                 </h3>
@@ -325,7 +324,7 @@ export default function PacPage() {
           {pacInstallation.contexts.map((c) => (
             <span
               key={c}
-              className="border border-[#2a5c94] px-3 py-2 text-[0.68rem] uppercase tracking-[0.08em] text-[#d6e8fb]"
+              className="border border-border px-3 py-2 text-[0.68rem] uppercase tracking-[0.08em] text-muted"
             >
               {c}
             </span>
@@ -356,23 +355,12 @@ export default function PacPage() {
       </section>
 
       {/* 13 — FAQ */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading label="FAQ" title="Common questions." />
         <div className="mt-9 sm:mt-11">
           <FAQ items={pacFaq} />
         </div>
       </section>
-
-      <CTASection
-        eyebrow="Start a conversation"
-        title="Planning a transmission link?"
-        emphasis="Let's engineer the PAC system."
-        description="Tell us the voltage, current, route and site constraints. Basmni's engineering team will advise on configuration, installation and commissioning."
-        image={media.pacInfra}
-        imageAlt="High-voltage substation infrastructure at dusk"
-        primary={{ label: 'Discuss Your Project', href: '/contact' }}
-        secondary={{ label: 'View References', href: '/references' }}
-      />
     </PageTransition>
   )
 }

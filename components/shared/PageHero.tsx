@@ -32,7 +32,7 @@ export function PageHero({
   const reduce = useReducedMotion()
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#0b3a70] pt-[68px] text-white sm:pt-[132px] lg:pt-[168px]">
+    <section className="relative isolate overflow-hidden bg-[#0b3a70] pt-[76px] text-white sm:pt-[104px] lg:pt-[104px]">
       <div className="grid grid-cols-1 lg:min-h-[560px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
         {/* Image */}
         <motion.div
@@ -69,18 +69,18 @@ export function PageHero({
             <motion.nav
               aria-label="Breadcrumb"
               variants={fadeUp}
-              className="mb-4 flex flex-wrap items-center gap-2 text-[0.62rem] uppercase tracking-[0.14em] text-ice/70"
+              className="mb-4 flex flex-wrap items-center gap-2 text-[0.62rem] uppercase tracking-[0.14em] text-white/70"
             >
               {breadcrumb.map((crumb, i) => {
                 const last = i === breadcrumb.length - 1
                 return (
                   <Fragment key={crumb.href}>
                     {last ? (
-                      <span aria-current="page" className="text-ice">
+                      <span aria-current="page" className="text-white">
                         {crumb.label}
                       </span>
                     ) : (
-                      <Link href={crumb.href} className="transition-colors hover:text-ice">
+                      <Link href={crumb.href} className="transition-colors hover:text-white">
                         {crumb.label}
                       </Link>
                     )}
@@ -109,7 +109,7 @@ export function PageHero({
             {description && (
               <motion.p
                 variants={fadeUp}
-                className="mt-5 max-w-[48ch] leading-[1.65] text-[#d6e8fb]"
+                className="mt-5 max-w-[48ch] leading-[1.65] text-[#cfe0f5]"
               >
                 {description}
               </motion.p>

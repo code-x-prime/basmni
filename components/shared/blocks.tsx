@@ -21,14 +21,14 @@ export function MetricGrid({
       {items.map((m) => (
         <RevealItem
           key={m.label}
-          className={`border-t-2 pt-3 ${dark ? 'border-ice' : 'border-orange'}`}
+          className={`border-t-2 pt-3 ${dark ? 'border-orange' : 'border-orange'}`}
         >
           <AnimatedCounter
             value={m.value}
-            className={`block text-[clamp(1.4rem,3vw,2.4rem)] font-bold tracking-[-0.06em] ${dark ? 'text-ice' : 'text-blue'}`}
+            className={`block text-[clamp(1.4rem,3vw,2.4rem)] font-bold tracking-[-0.06em] ${dark ? 'text-blue' : 'text-blue'}`}
           />
           <span
-            className={`mt-1 block text-[0.6rem] uppercase tracking-[0.1em] ${dark ? 'text-[#d6e8fb]' : 'text-muted'}`}
+            className={`mt-1 block text-[0.6rem] uppercase tracking-[0.1em] ${dark ? 'text-muted' : 'text-muted'}`}
           >
             {m.label}
           </span>
@@ -49,7 +49,7 @@ export function FeatureRows({
   items: { number?: string; title: string; text: string; href?: string }[]
   dark?: boolean
 }) {
-  const base = dark ? 'border-[#1f4a80]' : 'border-border'
+  const base = dark ? 'border-border' : 'border-border'
   return (
     <RevealStagger className={`border-t ${base}`}>
       {items.map((item) => {
@@ -61,20 +61,20 @@ export function FeatureRows({
           >
             <span
               aria-hidden
-              className={`mt-[0.55rem] h-1.5 w-1.5 shrink-0 transition-transform duration-300 ${dark ? 'bg-ice' : 'bg-blue'} ${
+              className={`mt-[0.55rem] h-1.5 w-1.5 shrink-0 transition-transform duration-300 ${dark ? 'bg-white' : 'bg-blue'} ${
                 item.href ? 'group-hover:translate-x-0.5' : ''
               }`}
             />
             <span>
               <span
-                className={`block text-[clamp(1rem,2vw,1.35rem)] uppercase leading-[1.15] tracking-tightest ${dark ? 'text-white' : 'text-foreground'} ${
+                className={`block text-[clamp(1rem,2vw,1.35rem)] uppercase leading-[1.15] tracking-tightest ${dark ? 'text-navy' : 'text-foreground'} ${
                   item.href ? 'transition-colors group-hover:text-blue' : ''
                 }`}
               >
                 {item.title}
               </span>
               <span
-                className={`mt-2 block text-[1rem] leading-[1.55] ${dark ? 'text-[#d6e8fb]' : 'text-muted'}`}
+                className={`mt-2 block text-[1rem] leading-[1.55] ${dark ? 'text-muted' : 'text-muted'}`}
               >
                 {item.text}
               </span>

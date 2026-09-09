@@ -12,12 +12,10 @@ import {
   trcmComponents,
   trcmRoi,
   trcmFaq,
-  trcmCta,
 } from '@/content/trcm'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
-import { CTASection } from '@/components/shared/CTASection'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { FAQ } from '@/components/shared/FAQ'
@@ -51,15 +49,15 @@ export default function TrcmPage() {
       </section>
 
       {/* How it works */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="How it works" title="Detect. Rake. Discharge." />
-        <div className="mt-9 grid grid-cols-1 gap-px border border-[#2a5c94] bg-[#2a5c94] sm:mt-11 sm:grid-cols-3">
+        <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {trcmHowItWorks.map((s) => (
-            <Reveal key={s.number} className="bg-navy p-6 sm:p-8">
+            <Reveal key={s.number} className="bg-white p-6 sm:p-8">
               <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
                 {s.title}
               </h3>
-              <p className="mt-3 text-[1rem] leading-[1.6] text-[#d6e8fb]">{s.text}</p>
+              <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
             </Reveal>
           ))}
         </div>
@@ -75,27 +73,27 @@ export default function TrcmPage() {
       />
 
       {/* Key features */}
-      <section className={`${sectionPad} bg-graphite text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label="Key features"
           title="Automated, and matched to the intake."
           deck="The mechanism is chosen for the depth, channel and debris — not one machine for every site."
         />
-        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-[#1f4a80] bg-[#1f4a80] sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {trcmFeatures.map((f) => (
-            <RevealItem key={f.number} className="bg-graphite p-6">
-              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-ice">
+            <RevealItem key={f.number} className="bg-white p-6">
+              <h3 className="text-[1.05rem] uppercase leading-[1.18] tracking-tightest text-blue">
                 {f.title}
               </h3>
-              <p className="mt-2.5 text-[1rem] leading-[1.55] text-[#d6e8fb]">{f.text}</p>
+              <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{f.text}</p>
             </RevealItem>
           ))}
         </RevealStagger>
       </section>
 
       {/* Configurations */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading label="Configurations" title="Four ways to keep a rack clean." />
         <RevealStagger
           className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2"
@@ -139,7 +137,7 @@ export default function TrcmPage() {
       </section>
 
       {/* Applications */}
-      <section className={`${sectionPad} bg-navy text-white`}>
+      <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="Applications" title="Where debris management matters." />
         <RevealStagger
           className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 lg:grid-cols-3"
@@ -153,10 +151,10 @@ export default function TrcmPage() {
                 className="min-h-[220px] sm:min-h-[240px]"
               />
               <div className="pt-4">
-                <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-ice">
+                <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-blue">
                   {a.title}
                 </h3>
-                <p className="mt-2 text-[1rem] leading-[1.55] text-[#d6e8fb]">{a.text}</p>
+                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{a.text}</p>
               </div>
             </RevealItem>
           ))}
@@ -201,13 +199,13 @@ export default function TrcmPage() {
       </section>
 
       {/* Engineering & delivery */}
-      <section className={`${sectionPad} bg-[#dbe9fb]`}>
+      <section className={`${sectionPad} bg-white`}>
         <SectionHeading label="Engineering & delivery" title="Survey to commissioning." />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{trcmProcess.intro}</p>
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {trcmProcess.steps.map((step) => (
-              <RevealItem key={step} className="bg-[#dbe9fb] p-6 sm:p-7">
+              <RevealItem key={step} className="bg-white p-6 sm:p-7">
                 <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
                   {step}
                 </h3>
@@ -234,17 +232,6 @@ export default function TrcmPage() {
           <FAQ items={trcmFaq} />
         </div>
       </section>
-
-      <CTASection
-        eyebrow="Start a conversation"
-        title={trcmCta.title}
-        emphasis={trcmCta.emphasis}
-        description={trcmCta.description}
-        image={media.trcm}
-        imageAlt="Trash rack cleaning machines on a hydropower project platform"
-        primary={{ label: 'Discuss Your Project', href: '/contact' }}
-        secondary={{ label: 'View References', href: '/references' }}
-      />
     </PageTransition>
   )
 }

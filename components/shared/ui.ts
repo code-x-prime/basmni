@@ -7,7 +7,7 @@
 export const sectionPad = 'px-5 py-11 sm:px-[7vw] sm:py-[clamp(2.75rem,4.5vw,4.5rem)]'
 
 export const eyebrow = 'text-[0.84rem] font-bold uppercase tracking-[0.14em] text-blue'
-export const eyebrowDark = 'text-[0.84rem] font-bold uppercase tracking-[0.14em] text-ice'
+export const eyebrowDark = 'text-[0.84rem] font-bold uppercase tracking-[0.14em] text-white'
 
 export const sectionLabel = 'text-[0.84rem] font-bold uppercase tracking-[0.14em]'
 

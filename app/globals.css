@@ -5,7 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    background: #f5f9fd;
+    background: #ffffff;
     /* `clip` prevents horizontal overflow WITHOUT turning <html> (or <body>)
        into a second scroll container — using `overflow-x: hidden` on <body>
        forces its `overflow-y` to compute to `auto`, which produces a second
@@ -13,7 +13,7 @@
     overflow-x: clip;
   }
   body {
-    background: #f5f9fd;
+    background: #ffffff;
     color: #125096;
     font-family: var(--font-manrope), Arial, sans-serif;
     font-size: 1.0625rem;

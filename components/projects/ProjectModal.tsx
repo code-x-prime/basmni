@@ -52,7 +52,7 @@ export function ProjectModal({
       <AnimatePresence>
         {project && (
           <motion.div
-            className="fixed inset-0 z-[70] overflow-y-auto overflow-x-hidden bg-graphite/85 backdrop-blur-sm"
+            className="fixed inset-0 z-[70] overflow-y-auto overflow-x-hidden bg-white/85 backdrop-blur-sm"
             role="dialog"
             aria-modal="true"
             aria-label={project.name}
@@ -111,7 +111,7 @@ export function ProjectModal({
                   <Link
                     href="/contact"
                     onClick={onClose}
-                    className="group mt-6 inline-flex min-h-11 items-center gap-2 bg-navy px-4 py-3 text-[0.66rem] font-bold uppercase tracking-[0.1em] text-white transition-transform duration-200 hover:-translate-y-0.5 [&_svg]:w-4"
+                    className="group mt-6 inline-flex min-h-11 items-center gap-2 bg-white px-4 py-3 text-[0.66rem] font-bold uppercase tracking-[0.1em] text-navy transition-transform duration-200 hover:-translate-y-0.5 [&_svg]:w-4"
                   >
                     Discuss a similar project
                     <ArrowUpRight className="transition-transform duration-200 group-hover:translate-x-1" />

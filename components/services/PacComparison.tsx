@@ -20,7 +20,7 @@ export function PacComparison({
       <div className="flex flex-col gap-4 sm:hidden">
         {rows.map((r) => (
           <div key={r.criteria} className="border border-border">
-            <p className="border-b border-border bg-[#dbe9fb] px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-navy">
+            <p className="border-b border-border bg-white px-4 py-2.5 text-[0.7rem] font-bold uppercase tracking-[0.1em] text-navy">
               {r.criteria}
             </p>
             <div className="px-4 py-3">
