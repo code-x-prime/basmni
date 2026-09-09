@@ -92,7 +92,13 @@ export function BasmniSite() {
         <div className="relative">
           <SectionHeading
             label="Flagship solutions"
-            title={<>Four systems that define our field</>}
+            title={
+              <>
+                Four systems that
+                <br />
+                define our field
+              </>
+            }
             deck="Purpose-built power-transmission, debris-management, dredging and civil engineering platforms — engineered, manufactured and commissioned by Basmni."
           />
         </div>

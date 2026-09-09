@@ -25,7 +25,7 @@ const linkClass = 'text-[1rem] leading-[1.6] text-muted hover:text-foreground'
 export function Footer() {
   const tel = `tel:${contact.phone.replaceAll(' ', '')}`
   return (
-    <footer className="border-t border-border bg-white px-5 pb-6 pt-16 text-foreground sm:px-[7vw] sm:pt-20">
+    <footer className="border-t border-border bg-white px-5 pb-6 pt-10 text-foreground sm:px-[7vw]">
       <div className="grid gap-10 sm:grid-cols-[1.2fr_1fr_1fr_1.4fr] sm:gap-12">
         <div>
           <Image
