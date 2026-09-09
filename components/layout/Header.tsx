@@ -4,11 +4,10 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { ArrowUpRight, Mail, Menu, Phone, X } from 'lucide-react'
+import { Mail, Menu, Phone, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { site } from '@/content/site'
-import { navigation, navigationCta } from '@/content/navigation'
-import { MagneticButton } from '@/components/motion/MagneticButton'
+import { navigation } from '@/content/navigation'
 
 function isActive(pathname: string, href: string) {
   if (href === '/') return pathname === '/'
@@ -39,7 +38,7 @@ export function Header() {
   return (
     <header className="fixed inset-x-0 top-0 z-30 flex flex-col border-b border-white/10 bg-graphite text-white shadow-[0_2px_24px_-12px_rgba(0,0,0,0.6)]">
       {/* Main row */}
-      <div className="flex h-[76px] items-center justify-between gap-5 px-4 sm:h-[104px] sm:gap-8 sm:px-[clamp(1rem,3vw,2.5rem)]">
+      <div className="flex h-[76px] items-center justify-between gap-5 pl-0 pr-4 sm:h-[104px] sm:gap-8 sm:pr-[clamp(1rem,3vw,2.5rem)]">
         <Link
           href="/"
           className="shrink-0 [&_img]:object-contain [&_img]:object-left [&_img]:drop-shadow-[0_2px_6px_rgba(0,0,0,0.55)]"
@@ -51,7 +50,7 @@ export function Header() {
             width={948}
             height={299}
             priority
-            className="h-auto w-[188px] sm:w-[320px] lg:w-[380px]"
+            className="h-auto w-[196px] sm:w-[330px] lg:w-[400px]"
           />
         </Link>
 
@@ -124,32 +123,21 @@ export function Header() {
               </div>
             )
           })}
-          <div className="ml-1 flex items-center gap-[clamp(0.75rem,1.6vw,1.75rem)] border-l border-white/15 pl-[clamp(0.75rem,1.8vw,1.75rem)]">
-            <div className="hidden flex-col items-end gap-1.5 normal-case tracking-normal lg:flex">
-              <a
-                href={telHref}
-                className="flex items-center gap-2 text-[0.92rem] font-medium text-white/85 transition-colors hover:text-ice"
-              >
-                <Phone className="w-4 shrink-0" />
-                {site.phone}
-              </a>
-              <a
-                href={`mailto:${site.email}`}
-                className="flex items-center gap-2 text-[0.92rem] font-medium text-white/85 transition-colors hover:text-ice"
-              >
-                <Mail className="w-4 shrink-0" />
-                {site.email}
-              </a>
-            </div>
-            <MagneticButton>
-              <Link
-                className="flex items-center gap-1.5 whitespace-nowrap border border-white/50 px-4 py-3 [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1"
-                href={navigationCta.href}
-              >
-                {navigationCta.label}
-                <ArrowUpRight />
-              </Link>
-            </MagneticButton>
+          <div className="ml-1 hidden flex-col items-end gap-1.5 border-l border-white/15 pl-[clamp(0.75rem,1.8vw,1.75rem)] normal-case tracking-normal lg:flex">
+            <a
+              href={telHref}
+              className="flex items-center gap-2 text-[0.92rem] font-medium text-white/85 transition-colors hover:text-ice"
+            >
+              <Phone className="w-4 shrink-0" />
+              {site.phone}
+            </a>
+            <a
+              href={`mailto:${site.email}`}
+              className="flex items-center gap-2 text-[0.92rem] font-medium text-white/85 transition-colors hover:text-ice"
+            >
+              <Mail className="w-4 shrink-0" />
+              {site.email}
+            </a>
           </div>
         </nav>
       </div>
@@ -222,16 +210,6 @@ export function Header() {
                   </motion.div>
                 )
               })}
-              <motion.div variants={{ hidden: { opacity: 0, x: -12 }, show: { opacity: 1, x: 0 } }}>
-                <Link
-                  className="flex items-center justify-center gap-1.5 border border-white/50 px-3.5 py-3 text-[0.75rem] uppercase tracking-[0.1em] [&_svg]:w-4"
-                  href={navigationCta.href}
-                  onClick={() => setOpen(false)}
-                >
-                  {navigationCta.label}
-                  <ArrowUpRight />
-                </Link>
-              </motion.div>
               <motion.div
                 variants={{ hidden: { opacity: 0, x: -12 }, show: { opacity: 1, x: 0 } }}
                 className="mt-1 flex flex-col gap-2 border-t border-white/15 pt-4"
