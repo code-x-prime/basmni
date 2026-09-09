@@ -82,16 +82,72 @@ export default function AboutPage() {
         </RevealStagger>
       </section>
 
+      {/* Flagship: Pressurized Air Cables */}
+      <section className={`${sectionPad} bg-white text-navy`}>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
+          <Reveal direction="right">
+            <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
+            <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
+              Pressurized Air Cables (PAC).
+            </h2>
+            <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
+              PAC is Basmni&rsquo;s heavy-duty power-transmission system: a sealed metallic pipe
+              insulated with clean, dry technical air instead of SF6 gas or fluorinated polymers. It
+              carries the capacity of a gas-insulated line with none of the greenhouse-gas exposure
+              &mdash; engineered, supplied and commissioned for high-voltage substations, dense grid
+              corridors and hydropower evacuation.
+            </p>
+            <ul className="mt-8 border-t border-border">
+              {[
+                'SF6-free and PFAS-free insulation',
+                'Up to 420 kV and 5,000 A continuous',
+                '2&times;&ndash;10&times; lower losses than XLPE cable',
+                'Built-in condition monitoring',
+              ].map((p) => (
+                <li
+                  key={p}
+                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
+                >
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
+                  <span dangerouslySetInnerHTML={{ __html: p }} />
+                </li>
+              ))}
+            </ul>
+            <Link href="/products-services/pressurized-air-cables" className={`${textLink} mt-8`}>
+              Explore Pressurized Air Cables <ArrowUpRight />
+            </Link>
+          </Reveal>
+          <Reveal direction="left">
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.pacCableIndustrial}
+                alt="Cutaway of a pressurized-air cable beside an industrial power plant"
+                parallax
+                className="min-h-[300px] sm:min-h-[460px]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                PAC &mdash; industrial power plant
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Engineering philosophy */}
       <section className={`${sectionPad} bg-white text-navy`}>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
           <Reveal direction="right">
-            <ImageBlock
-              src={media.dredging}
-              alt="Deep dam dredging system in operation"
-              parallax
-              className="min-h-[300px] sm:min-h-[460px]"
-            />
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.trcm}
+                alt="Trash rack cleaning machine on a hydropower project platform"
+                parallax
+                className="min-h-[300px] sm:min-h-[460px]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                TRCM &mdash; Bhutan
+              </figcaption>
+            </figure>
           </Reveal>
           <Reveal direction="left">
             <p className={`${sectionLabel} text-blue`}>{company.philosophy.label}</p>
@@ -178,12 +234,12 @@ export default function AboutPage() {
         <div className="mt-9 grid grid-cols-2 gap-4 border-t border-border sm:mt-11 sm:grid-cols-4">
           {company.stats.map((stat) => (
             <Reveal key={stat.label}>
-              <div className="border-r border-border py-4">
+              <div className="border-r border-border py-4 text-center last:border-r-0">
                 <AnimatedCounter
                   value={stat.value}
                   className="block text-[2.6rem] tracking-[-0.08em] text-blue sm:text-[clamp(2.6rem,5vw,5rem)]"
                 />
-                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-muted">
+                <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.1em] text-muted">
                   {stat.label}
                 </span>
               </div>
