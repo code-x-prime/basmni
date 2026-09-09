@@ -19,10 +19,7 @@ export function MetricGrid({
   return (
     <RevealStagger className={`grid grid-cols-2 gap-px ${columns}`}>
       {items.map((m) => (
-        <RevealItem
-          key={m.label}
-          className={`border-t-2 pt-3 ${dark ? 'border-orange' : 'border-orange'}`}
-        >
+        <RevealItem key={m.label} className="border-t-2 border-orange pt-3 text-center">
           <AnimatedCounter
             value={m.value}
             className={`block text-[clamp(1.4rem,3vw,2.4rem)] font-bold tracking-[-0.06em] ${dark ? 'text-blue' : 'text-blue'}`}

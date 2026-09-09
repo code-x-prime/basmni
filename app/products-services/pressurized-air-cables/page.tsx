@@ -312,7 +312,7 @@ export default function PacPage() {
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-4">
             {pacInstallation.steps.map((step) => (
-              <RevealItem key={step} className="bg-white p-6 sm:p-7">
+              <RevealItem key={step} className="bg-white p-6 text-center sm:p-7">
                 <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest">
                   {step}
                 </h3>
