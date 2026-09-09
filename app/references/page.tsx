@@ -9,7 +9,6 @@ import { Reveal } from '@/components/shared/Reveal'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { ReferencesGrid } from '@/components/projects/ReferencesGrid'
-import { ProjectArchive } from '@/components/projects/ProjectArchive'
 import { FieldArchive } from '@/components/projects/FieldArchive'
 import { sectionPad } from '@/components/shared/ui'
 
@@ -45,6 +44,43 @@ export default function ReferencesPage() {
               </div>
             </Reveal>
           ))}
+        </div>
+      </section>
+
+      {/* Before / after */}
+      <section className={`${sectionPad} bg-white`}>
+        <SectionHeading
+          label="Before / after"
+          title="Bhaledh trench weir — Baira Siul."
+          deck="Desilting and civil restoration of the trench weir apron: from a silted, worn intake bay to a rebuilt apron with modified trash-rack screens and restored flow."
+        />
+        <div className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 sm:gap-6">
+          <Reveal direction="right">
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.refBhaledhBefore}
+                alt="Excavator desilting the drained, silt-choked trench weir intake bay at Bhaledh"
+                reveal
+                className="aspect-[4/3]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                Before &mdash; desilting in progress
+              </figcaption>
+            </figure>
+          </Reveal>
+          <Reveal direction="left">
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.refBhaledhAfter}
+                alt="Rebuilt trench weir apron with new screen panels and restored water flow at Bhaledh"
+                reveal
+                className="aspect-[4/3]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                After &mdash; apron &amp; screens restored
+              </figcaption>
+            </figure>
+          </Reveal>
         </div>
       </section>
 
@@ -85,19 +121,8 @@ export default function ReferencesPage() {
         </div>
       </section>
 
-      {/* Interactive filtered grid + modal */}
+      {/* Browse — full filterable project list */}
       <ReferencesGrid label="Browse" title="All reference projects." />
-
-      {/* Complete archive list */}
-      <section className={`${sectionPad} bg-white`}>
-        <SectionHeading
-          label={referencesSections.archive.label}
-          title={referencesSections.archive.title}
-        />
-        <div className="mt-9 sm:mt-11">
-          <ProjectArchive />
-        </div>
-      </section>
 
       {/* Field photography */}
       <section className={`${sectionPad} bg-white text-navy`}>

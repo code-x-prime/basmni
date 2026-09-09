@@ -21,6 +21,8 @@ export const media = {
   trcmDamIntakeMachine: '/images/trcm-dam-intake-machine.jpeg',
   trcmIntakeDebrisBand: '/images/trcm-intake-debris-band.jpeg',
   civilTrenchWeirIntake: '/images/civil-trench-weir-intake.jpeg',
+  refBhaledhBefore: '/images/ref-bhaledh-before.jpeg',
+  refBhaledhAfter: '/images/ref-bhaledh-after.jpeg',
   civilIntakeScreensCanal: '/images/civil-intake-screens-canal.jpeg',
   civilDewateredIntakeBay: '/images/civil-dewatered-intake-bay.jpeg',
   civilTrashRackPanels: '/images/civil-trash-rack-panels.jpeg',

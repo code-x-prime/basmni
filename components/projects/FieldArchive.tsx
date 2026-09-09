@@ -34,16 +34,16 @@ function Frame({
         <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70e6,transparent_55%)]" />
         <span className="pointer-events-none absolute inset-x-4 bottom-4 flex items-end justify-between gap-3">
           <span className="min-w-0">
-            <span className="block truncate text-[0.8rem] font-bold uppercase tracking-[0.06em] text-navy">
+            <span className="block truncate text-[0.8rem] font-bold uppercase tracking-[0.06em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
               {item.title}
             </span>
             {item.caption && (
-              <span className="mt-0.5 block truncate text-[0.66rem] uppercase tracking-[0.08em] text-blue/80">
+              <span className="mt-0.5 block truncate text-[0.66rem] uppercase tracking-[0.08em] text-white/80 [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]">
                 {item.caption}
               </span>
             )}
           </span>
-          <ArrowUpRight className="w-4 shrink-0 -translate-x-1 text-blue opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
+          <ArrowUpRight className="w-4 shrink-0 -translate-x-1 text-white opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
         </span>
       </button>
     </RevealItem>
