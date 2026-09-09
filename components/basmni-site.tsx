@@ -168,10 +168,10 @@ export function BasmniSite() {
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70cc,transparent_46%)]" />
             <figcaption className="absolute inset-x-5 bottom-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 sm:inset-x-7 sm:bottom-6">
-              <span className="text-[0.68rem] font-bold uppercase tracking-[0.1em] text-navy">
+              <span className="text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
                 Critical water &amp; power infrastructure
               </span>
-              <span className="text-[0.6rem] uppercase tracking-[0.14em] text-blue/70">
+              <span className="text-[0.64rem] uppercase tracking-[0.14em] text-white/80 [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
                 Design · Manufacture · Install · Commission
               </span>
             </figcaption>

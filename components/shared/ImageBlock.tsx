@@ -14,6 +14,8 @@ type Props = {
   parallax?: boolean
   /** On first enter: image scales 1.06 → 1 while a cover panel wipes away. */
   reveal?: boolean
+  /** CSS object-position for the cover fit (e.g. "center 40%"). */
+  imagePosition?: string
 }
 
 /**
@@ -30,36 +32,52 @@ export function ImageBlock(props: Props) {
     className = '',
     priority = false,
     sizes = '(max-width: 768px) 100vw, 50vw',
+    imagePosition,
   } = props
   const parallax = props.parallax && !reduce
   const reveal = props.reveal && !reduce
+  const posStyle = imagePosition ? { objectPosition: imagePosition } : undefined
 
   if (!parallax && !reveal) {
     return (
       <div
         className={`relative overflow-hidden bg-white [&_img]:object-cover [&_img]:transition-transform [&_img]:duration-[600ms] hover:[&_img]:scale-[1.04] ${className}`}
       >
-        <Image src={src} alt={alt} fill priority={priority} sizes={sizes} />
+        <Image src={src} alt={alt} fill priority={priority} sizes={sizes} style={posStyle} />
       </div>
     )
   }
 
   if (parallax) {
     return (
-      <ParallaxImage src={src} alt={alt} className={className} priority={priority} sizes={sizes} />
+      <ParallaxImage
+        src={src}
+        alt={alt}
+        className={className}
+        priority={priority}
+        sizes={sizes}
+        posStyle={posStyle}
+      />
     )
   }
 
-  return <RevealImage src={src} alt={alt} className={className} priority={priority} sizes={sizes} />
+  return (
+    <RevealImage
+      src={src}
+      alt={alt}
+      className={className}
+      priority={priority}
+      sizes={sizes}
+      posStyle={posStyle}
+    />
+  )
 }
 
-function ParallaxImage({
-  src,
-  alt,
-  className,
-  priority,
-  sizes,
-}: Required<Omit<Props, 'parallax' | 'reveal'>>) {
+type SubProps = Required<Omit<Props, 'parallax' | 'reveal' | 'imagePosition'>> & {
+  posStyle?: { objectPosition: string }
+}
+
+function ParallaxImage({ src, alt, className, priority, sizes, posStyle }: SubProps) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
@@ -73,19 +91,14 @@ function ParallaxImage({
           priority={priority}
           sizes={sizes}
           className="object-cover"
+          style={posStyle}
         />
       </motion.div>
     </div>
   )
 }
 
-function RevealImage({
-  src,
-  alt,
-  className,
-  priority,
-  sizes,
-}: Required<Omit<Props, 'parallax' | 'reveal'>>) {
+function RevealImage({ src, alt, className, priority, sizes, posStyle }: SubProps) {
   return (
     <div
       className={`group relative overflow-hidden bg-white [&_img]:transition-transform [&_img]:duration-[700ms] hover:[&_img]:scale-[1.05] ${className}`}
@@ -104,6 +117,7 @@ function RevealImage({
           priority={priority}
           sizes={sizes}
           className="object-cover"
+          style={posStyle}
         />
       </motion.div>
       <motion.div

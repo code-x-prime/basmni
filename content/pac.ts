@@ -127,7 +127,7 @@ export const pacGridSolutions: PacSolution[] = [
     title: 'High-voltage networks',
     text: 'High-performance links for transmission networks and grid-expansion projects — moving large blocks of power over medium and long distances with low losses and a narrow right-of-way.',
     tags: ['Transmission networks', 'Grid expansion', 'Bulk power transfer'],
-    image: 'pacTransmissionGrid',
+    image: 'pacSubstationSwitchyard',
   },
   {
     title: 'Medium-voltage networks',

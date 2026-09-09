@@ -22,31 +22,6 @@ export type Project = {
  */
 export const projects: Project[] = [
   {
-    id: 'dikshi-trench-weir',
-    name: 'Dikshi Hydro Electric Power Project — Trench Weir Trash Rack',
-    client: 'Dikshi HEP (24 MW)',
-    category: 'Civil',
-    year: '2022',
-    awardDate: '16.04.2022',
-    scope:
-      'Profiled trench weir trash rack and design for modification of the trench weir at Dikshi Hydro Electric Power Project (24 MW).',
-    contractNo: 'SHCPIPL/22-23/010',
-    image: 'trcm',
-    featured: true,
-  },
-  {
-    id: 'dikshi-trcm',
-    name: 'Dikshi HEP — Trash Rack Cleaning Machine & Hydraulic Power Pack',
-    client: 'Dikshi HEP',
-    category: 'TRCM',
-    year: '2022',
-    awardDate: '27.04.2022',
-    scope:
-      'Trash rack cleaning machine with electrical panels and hydraulic power pack / mechanical system for Dikshi HEP.',
-    contractNo: 'SHCPIPL/22-23/011',
-    image: 'trcm',
-  },
-  {
     id: 'bhaledh-baira-siul',
     name: 'Bhaledh Trench Weir — Baira Siul Power Station',
     client: 'Baira Siul Power Station (NHPC)',
@@ -96,18 +71,7 @@ export const projects: Project[] = [
     contractNo: '4500090730',
     image: 'logBoom',
   },
-  {
-    id: 'salal-dam-desilting',
-    name: 'Salal Dam Reservoir — Desilting',
-    client: 'Salal Power Station (NHPC)',
-    category: 'Dredging',
-    year: '2025',
-    awardDate: '17.05.2025',
-    scope: 'Desilting / silt removal in front of the intake gates of the Salal Dam reservoir.',
-    contractNo: 'NH/SPS/Dam Complex/2025-26/1008',
-    image: 'debrisPanorama',
-    featured: true,
-  },
+
   {
     id: 'nimoo-bazgo-desilting',
     name: 'Nimoo Bazgo Power Station — Draft Tube Gate Desilting',

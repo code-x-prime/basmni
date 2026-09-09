@@ -6,7 +6,7 @@ import { Fragment } from 'react'
 import { motion, useReducedMotion, type Variants } from 'framer-motion'
 import { media } from '@/content/site'
 import type { PageHeroContent } from '@/content/pages'
-import { eyebrowDark } from './ui'
+import { eyebrow as eyebrowCls } from './ui'
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 18 },
@@ -16,9 +16,9 @@ const fadeUp: Variants = {
 /**
  * Editorial split hero for inner pages: a real engineering photograph on the
  * left (~46%) and the breadcrumb / eyebrow / heading / description on the right
- * (~54%). Not full-screen — ~560px mobile, 600px desktop. On mobile the layout
- * stacks image-first, then content. The image animates in on load; the text
- * reveals in a short stagger.
+ * (~54%) on a white ground. Not full-screen — ~560px desktop. On mobile the
+ * layout stacks image-first, then content. The image animates in on load; the
+ * text reveals in a short stagger.
  */
 export function PageHero({
   eyebrow,
@@ -32,8 +32,8 @@ export function PageHero({
   const reduce = useReducedMotion()
 
   return (
-    <section className="relative isolate overflow-hidden bg-[#0b3a70] pt-[76px] text-white sm:pt-[104px] lg:pt-[104px]">
-      <div className="grid grid-cols-1 lg:min-h-[560px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+    <section className="relative isolate overflow-hidden bg-white pt-[76px] text-navy sm:pt-[104px] lg:pt-[104px]">
+      <div className="grid grid-cols-1 lg:min-h-[520px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
         {/* Image */}
         <motion.div
           className="relative min-h-[248px] sm:min-h-[300px] lg:min-h-0"
@@ -50,15 +50,15 @@ export function PageHero({
             className="object-cover"
             style={{ objectPosition: imagePosition }}
           />
-          {/* Legibility for the header logo on mobile; blend into navy at the
-              content edge on desktop. */}
-          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(7,31,43,0.62)_0%,rgba(7,31,43,0.12)_42%,rgba(7,31,43,0)_72%)] lg:bg-[linear-gradient(90deg,rgba(7,31,43,0.42)_0%,rgba(7,31,43,0)_40%,rgba(7,31,43,0)_80%,#0b3a70_100%),linear-gradient(180deg,rgba(7,31,43,0.42)_0%,rgba(7,31,43,0)_24%)]" />
+          {/* Fade the photo into white at the content edge (right on desktop,
+              bottom on mobile) so the two halves read as one panel. */}
+          <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0)_55%,#ffffff_100%)] lg:bg-[linear-gradient(90deg,rgba(255,255,255,0)_72%,#ffffff_100%)]" />
         </motion.div>
 
         {/* Content */}
         <div className="relative flex items-center">
           <motion.div
-            className="w-full px-5 pb-14 pt-10 sm:px-8 sm:pb-16 lg:px-[clamp(2.5rem,4.5vw,4.75rem)] lg:pb-24 lg:pt-14"
+            className="w-full px-5 pb-14 pt-10 sm:px-8 sm:pb-16 lg:px-[clamp(2.5rem,4.5vw,4.75rem)] lg:pb-20 lg:pt-14"
             initial="hidden"
             animate="show"
             variants={{
@@ -69,18 +69,18 @@ export function PageHero({
             <motion.nav
               aria-label="Breadcrumb"
               variants={fadeUp}
-              className="mb-4 flex flex-wrap items-center gap-2 text-[0.62rem] uppercase tracking-[0.14em] text-white/70"
+              className="mb-4 flex flex-wrap items-center gap-2 text-[0.62rem] uppercase tracking-[0.14em] text-muted"
             >
               {breadcrumb.map((crumb, i) => {
                 const last = i === breadcrumb.length - 1
                 return (
                   <Fragment key={crumb.href}>
                     {last ? (
-                      <span aria-current="page" className="text-white">
+                      <span aria-current="page" className="text-blue">
                         {crumb.label}
                       </span>
                     ) : (
-                      <Link href={crumb.href} className="transition-colors hover:text-white">
+                      <Link href={crumb.href} className="transition-colors hover:text-blue">
                         {crumb.label}
                       </Link>
                     )}
@@ -90,13 +90,13 @@ export function PageHero({
               })}
             </motion.nav>
 
-            <motion.p variants={fadeUp} className={eyebrowDark}>
+            <motion.p variants={fadeUp} className={eyebrowCls}>
               {eyebrow}
             </motion.p>
 
             <motion.h1
               variants={fadeUp}
-              className="mt-3 max-w-[17ch] text-[clamp(2rem,4.6vw,3.5rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]"
+              className="mt-3 max-w-[17ch] text-[clamp(2rem,4.6vw,3.5rem)] uppercase leading-[1.1] tracking-tightest text-navy [overflow-wrap:anywhere]"
             >
               {titleLines.map((line, i) => (
                 <Fragment key={line}>
@@ -109,7 +109,7 @@ export function PageHero({
             {description && (
               <motion.p
                 variants={fadeUp}
-                className="mt-5 max-w-[48ch] leading-[1.65] text-[#cfe0f5]"
+                className="mt-5 max-w-[48ch] text-[1.05rem] leading-[1.65] text-muted"
               >
                 {description}
               </motion.p>

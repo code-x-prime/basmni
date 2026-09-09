@@ -122,10 +122,11 @@ export default function PacPage() {
         </Reveal>
         <Reveal direction="left">
           <ImageBlock
-            src={media.pacTransmissionGrid}
-            alt="High-voltage transmission corridor served by a pressurized-air cable system"
+            src={media.pacGantry}
+            alt="High-voltage substation gantry and transmission conductors under a clear sky"
             reveal
-            className="min-h-[320px] sm:min-h-[460px]"
+            imagePosition="center 40%"
+            className="aspect-[4/3] w-full sm:aspect-[5/4]"
           />
         </Reveal>
       </section>
