@@ -9,7 +9,6 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
-import { FeatureRows } from '@/components/shared/blocks'
 import { sectionPad, sectionLabel, textLink } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
@@ -118,45 +117,69 @@ export default function AboutPage() {
             </Link>
           </Reveal>
           <Reveal direction="left">
-            <figure className="relative overflow-hidden">
-              <ImageBlock
-                src={media.pacCableIndustrial}
-                alt="Cutaway of a pressurized-air cable beside an industrial power plant"
-                parallax
-                className="min-h-[300px] sm:min-h-[460px]"
-              />
-              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
-                PAC &mdash; industrial power plant
-              </figcaption>
-            </figure>
+            <Link
+              href="/products-services/pressurized-air-cables"
+              className="group block"
+              aria-label="Explore Pressurized Air Cables"
+            >
+              <figure className="relative overflow-hidden">
+                <ImageBlock
+                  src={media.pacCableIndustrial}
+                  alt="Cutaway of a pressurized-air cable beside an industrial power plant"
+                  parallax
+                  className="min-h-[300px] sm:min-h-[460px]"
+                />
+                <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                  PAC &mdash; industrial power plant
+                  <ArrowUpRight className="w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </figcaption>
+              </figure>
+            </Link>
           </Reveal>
         </div>
       </section>
 
-      {/* Engineering philosophy */}
+      {/* Flagship: Trash Rack Cleaning Machines */}
       <section className={`${sectionPad} bg-white text-navy`}>
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
           <Reveal direction="right">
-            <figure className="relative overflow-hidden">
-              <ImageBlock
-                src={media.trcm}
-                alt="Trash rack cleaning machine on a hydropower project platform"
-                parallax
-                className="min-h-[300px] sm:min-h-[460px]"
-              />
-              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
-                TRCM &mdash; Bhutan
-              </figcaption>
-            </figure>
+            <Link
+              href="/products-services/trash-rack-cleaning-machines"
+              className="group block"
+              aria-label="Explore Trash Rack Cleaning Machines"
+            >
+              <figure className="relative overflow-hidden">
+                <ImageBlock
+                  src={media.trcm}
+                  alt="Trash rack cleaning machine on a hydropower project platform"
+                  parallax
+                  className="min-h-[300px] sm:min-h-[460px]"
+                />
+                <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                  TRCM &mdash; Bhutan
+                  <ArrowUpRight className="w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </figcaption>
+              </figure>
+            </Link>
           </Reveal>
           <Reveal direction="left">
-            <p className={`${sectionLabel} text-blue`}>{company.philosophy.label}</p>
+            <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
             <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
-              {company.philosophy.title}
+              Trash Rack Cleaning Machines.
             </h2>
-            <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">{company.philosophy.body}</p>
+            <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
+              Debris on the intake screen builds a differential head across the rack, starves
+              turbines and pumps, and loads the bars until they bend. Basmni designs, builds and
+              commissions automated cleaning machines &mdash; hydraulic-arm, wire-rope, chain and
+              gantry types &mdash; matched to the intake, with PLC or SCADA control.
+            </p>
             <ul className="mt-8 border-t border-border">
-              {company.philosophy.points.map((p) => (
+              {[
+                'Four machine types for any intake',
+                'Hydraulic-arm reach up to ~20 m',
+                'Wire-rope depth beyond 20 m',
+                '24/7 automated cleaning cycles',
+              ].map((p) => (
                 <li
                   key={p}
                   className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
@@ -166,6 +189,126 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
+            <Link
+              href="/products-services/trash-rack-cleaning-machines"
+              className={`${textLink} mt-8`}
+            >
+              Explore Trash Rack Cleaning Machines <ArrowUpRight />
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Flagship: Dredging Services */}
+      <section className={`${sectionPad} bg-white text-navy`}>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
+          <Reveal direction="right">
+            <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
+            <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
+              Deep Dam &amp; Reservoir Dredging.
+            </h2>
+            <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
+              Sediment fills the dead-storage zone, chokes intakes and cuts usable capacity. Basmni
+              takes the whole recovery scope &mdash; engineering, mobilisation and operation &mdash;
+              using cable-deployed submersible pumps and sediment fluidisation to work reliably down
+              to around 100&nbsp;m, at high solids concentrations and over long discharge pipelines.
+            </p>
+            <ul className="mt-8 border-t border-border">
+              {[
+                'Working depth to around 100 m',
+                '35–60% solids handling',
+                'Long-distance slurry discharge',
+                'Compact 12 × 8 m dredge footprint',
+              ].map((p) => (
+                <li
+                  key={p}
+                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
+                >
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <Link href="/products-services/deep-dam-dredging" className={`${textLink} mt-8`}>
+              Explore Dredging Services <ArrowUpRight />
+            </Link>
+          </Reveal>
+          <Reveal direction="left">
+            <Link
+              href="/products-services/deep-dam-dredging"
+              className="group block"
+              aria-label="Explore Dredging Services"
+            >
+              <figure className="relative overflow-hidden">
+                <ImageBlock
+                  src={media.dredgePumpPontoon}
+                  alt="Cable-deployed dredge pump and hydraulic arm on a pontoon in a reservoir"
+                  parallax
+                  className="min-h-[300px] sm:min-h-[460px]"
+                />
+                <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                  Dredging &mdash; reservoir desilting
+                  <ArrowUpRight className="w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </figcaption>
+              </figure>
+            </Link>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Flagship: Civil Works */}
+      <section className={`${sectionPad} bg-white text-navy`}>
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
+          <Reveal direction="right">
+            <Link
+              href="/products-services/civil-works"
+              className="group block"
+              aria-label="Explore Civil Works"
+            >
+              <figure className="relative overflow-hidden">
+                <ImageBlock
+                  src={media.civilTrenchWeirIntake}
+                  alt="Trench-weir intake structure with embedded steel screens in a concrete channel"
+                  parallax
+                  className="min-h-[300px] sm:min-h-[460px]"
+                />
+                <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                  Civil works &mdash; trench-weir intake
+                  <ArrowUpRight className="w-3.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                </figcaption>
+              </figure>
+            </Link>
+          </Reveal>
+          <Reveal direction="left">
+            <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
+            <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
+              Specialized Civil Works.
+            </h2>
+            <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
+              Every dam, barrage and river weir sits in a different geological setting. Basmni
+              delivers the allied civil scope &mdash; foundation and bedrock treatment, mass
+              concrete and RCC works, spillways, seepage cut-offs, trench-weir troughs and desilting
+              chambers &mdash; built in step with the hydro-mechanical package.
+            </p>
+            <ul className="mt-8 border-t border-border">
+              {[
+                'Site-specific structure engineering',
+                'Foundation and seepage treatment',
+                'Spillways and flood-passing works',
+                'Coordinated with gates and racks',
+              ].map((p) => (
+                <li
+                  key={p}
+                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
+                >
+                  <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
+                  {p}
+                </li>
+              ))}
+            </ul>
+            <Link href="/products-services/civil-works" className={`${textLink} mt-8`}>
+              Explore Civil Works <ArrowUpRight />
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -201,27 +344,6 @@ export default function AboutPage() {
             </RevealItem>
           ))}
         </RevealStagger>
-      </section>
-
-      {/* Industries / applications */}
-      <section className={sectionPad}>
-        <SectionHeading
-          label={aboutSections.applications.label}
-          title={aboutSections.applications.title}
-        />
-        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-[1fr_1fr] sm:gap-[6vw]">
-          <Reveal direction="right">
-            <ImageBlock
-              src={media.spillway}
-              alt="Spillway and intake structure at a hydropower station"
-              reveal
-              className="min-h-[300px] sm:min-h-[520px]"
-            />
-          </Reveal>
-          <Reveal direction="left">
-            <FeatureRows items={company.applications} />
-          </Reveal>
-        </div>
       </section>
 
       {/* Basmni at a glance */}
@@ -278,51 +400,6 @@ export default function AboutPage() {
             Explore our flagship solutions <ArrowUpRight />
           </Link>
         </Reveal>
-      </section>
-
-      {/* Why Basmni + field experience */}
-      <section className={sectionPad}>
-        <SectionHeading label={aboutSections.why.label} title={aboutSections.why.title} />
-        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
-          <Reveal direction="right">
-            <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2">
-              {company.whyBasmni.map((w) => (
-                <RevealItem key={w.title} className="bg-background p-6 sm:p-7">
-                  <h3 className="text-[1rem] uppercase leading-[1.15] tracking-tightest text-blue">
-                    {w.title}
-                  </h3>
-                  <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{w.text}</p>
-                </RevealItem>
-              ))}
-            </RevealStagger>
-          </Reveal>
-          <Reveal direction="left">
-            <ImageBlock
-              src={media.debrisPanorama}
-              alt="Debris management operations at a reservoir"
-              reveal
-              className="min-h-[300px] sm:min-h-[460px]"
-            />
-            <p className="mt-4 text-[1rem] leading-[1.6] text-muted">
-              Field execution across dams, barrages and hydro-power stations — delivered for NHPC,
-              NEEPCO and other operators.
-            </p>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* Engineering-to-execution process */}
-      <section id="process" className={`${sectionPad} scroll-mt-[128px]`}>
-        <SectionHeading label={aboutSections.process.label} title={aboutSections.process.title} />
-        <div className="mt-9 sm:mt-11">
-          <FeatureRows
-            items={company.capabilitySteps.map((s) => ({
-              number: s.number,
-              title: s.label,
-              text: s.blurb,
-            }))}
-          />
-        </div>
       </section>
     </PageTransition>
   )
