@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { media } from '@/content/site'
 import { company } from '@/content/company'
-import { aboutHero, aboutSections } from '@/content/pages'
-import { PageHero } from '@/components/shared/PageHero'
+import { aboutSections } from '@/content/pages'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
@@ -22,16 +21,18 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageTransition>
-      <PageHero {...aboutHero} />
+      {/* About Basmni — page intro */}
+      <section className={`${sectionPad} pt-[100px] sm:pt-[136px] lg:pt-[136px]`}>
+        <div className="mx-auto max-w-[900px] text-center">
+          <h1 className="text-[clamp(2.6rem,7vw,5.5rem)] uppercase leading-[1.04] tracking-tightest">
+            About Basmni
+          </h1>
+          <p className="mx-auto mt-6 max-w-[56ch] text-[1.05rem] leading-[1.7] text-muted">
+            {aboutSections.intro.deck}
+          </p>
+        </div>
 
-      {/* 01 — About Basmni */}
-      <section className={sectionPad}>
-        <SectionHeading
-          label={aboutSections.intro.label}
-          title={aboutSections.intro.title}
-          deck={aboutSections.intro.deck}
-        />
-        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[7vw]">
+        <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[7vw]">
           <Reveal className="space-y-5 leading-[1.75] text-muted" direction="right">
             {company.story.map((para) => (
               <p key={para.slice(0, 24)}>{para}</p>
@@ -65,7 +66,10 @@ export default function AboutPage() {
             { value: 'PAN INDIA', label: 'Operations' },
             { value: '50+', label: 'Team members' },
           ].map((f) => (
-            <RevealItem key={f.label} className="border-r border-border py-4 pr-4 last:border-r-0">
+            <RevealItem
+              key={f.label}
+              className="border-r border-border py-4 text-center last:border-r-0"
+            >
               <AnimatedCounter
                 value={f.value}
                 className="block text-[clamp(1.3rem,3vw,2rem)] font-bold tracking-[-0.06em] text-blue"
