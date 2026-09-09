@@ -44,7 +44,7 @@ export const projects: Project[] = [
     scope:
       'Design, manufacturing, supply, installation, testing and commissioning of Trash Rack Cleaning Machine (TRCM) and Fine Screen Cleaning Machines (FSCM).',
     contractNo: 'BHSL/SCMD/PO-06/2024/1045',
-    image: 'pac',
+    image: 'trcm',
     featured: true,
   },
   {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     scope:
       'Desilting / silt removal in front of the intake service gate, TRC area and upstream / downstream of the radial gates of the power house and barrage area.',
     contractNo: 'NH/TLD-IIIPS/HM/2024/932',
-    image: 'dredging',
+    image: 'dredgePumpPontoon',
   },
   {
     id: 'kutehr-floating-boom',
@@ -82,7 +82,7 @@ export const projects: Project[] = [
     scope:
       'Desilting / silt removal in front of all six draft tube gates in submerged condition at the tail pool of Nimoo Bazgo Power Station.',
     contractNo: 'NH/NBPS/C&P/WO-42/2025-26/85',
-    image: 'dredging',
+    image: 'dredgeSubmersibleHead',
     featured: true,
   },
   {
@@ -95,7 +95,7 @@ export const projects: Project[] = [
     scope:
       'Desilting / silt removal work in front of the hydro-mechanical gates at TLD-III PS, Rambi.',
     contractNo: 'NH/TLD-IIIPS/HM/2025/1031',
-    image: 'spillway',
+    image: 'dredgeSlurryDischarge',
   },
   {
     id: 'bhaledh-apron-restoration',
@@ -107,7 +107,7 @@ export const projects: Project[] = [
     scope:
       'Restoration of the damaged apron, Bhaledh Feeder Tunnel, desilting chamber and silt flushing tunnel at Bhaledh, Baira Siul Power Station.',
     contractNo: 'NH/BSPS/CC/CW/42/2025-26/LOA-36',
-    image: 'field',
+    image: 'refBhaledhAfter',
   },
   {
     id: 'dikrong-tail-pool-dredging',
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     awardDate: '13.07.2026',
     scope: 'Dredging of sediments from the tail pool for Dikrong Power House, PLHPS, NEEPCO Ltd.',
     contractNo: 'PLHPS/C&P/CIVIL-PH/T-46/2026-27/545',
-    image: 'hero',
+    image: 'dredgeReservoirValley',
     featured: true,
   },
 ]
