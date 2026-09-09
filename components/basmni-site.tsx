@@ -89,24 +89,18 @@ export function BasmniSite() {
       <section
         className={`${sectionPad} relative overflow-hidden bg-white pt-[92px] text-navy sm:pt-[136px] lg:pt-[136px]`}
       >
-        <div className="relative">
-          <SectionHeading
-            label="Flagship solutions"
-            title={
-              <>
-                Four systems that
-                <br />
-                define our field
-              </>
-            }
-            deck="Purpose-built power-transmission, debris-management, dredging and civil engineering platforms — engineered, manufactured and commissioned by Basmni."
-          />
+        <div className="relative border-t border-border pt-4">
+          <h2 className={`${displayHeading} max-w-none`}>Four systems that define our field</h2>
+          <p className="mt-5 max-w-[560px] text-[1.05rem] leading-[1.65] text-muted">
+            Purpose-built power-transmission, debris-management, dredging and civil engineering
+            platforms — engineered, manufactured and commissioned by Basmni.
+          </p>
         </div>
         <RevealStagger
           className="relative mt-9 grid grid-cols-1 gap-5 sm:mt-11 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4"
           stagger={0.09}
         >
-          {flagshipSystems.map((s, i) => (
+          {flagshipSystems.map((s) => (
             <RevealItem key={s.title}>
               <Link
                 href={s.href}
@@ -120,9 +114,6 @@ export function BasmniSite() {
                     sizes="(max-width: 768px) 100vw, 32vw"
                     className="object-cover transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
                   />
-                  <span className="absolute left-3 top-3 bg-white/95 px-2 py-1 text-[0.7rem] font-bold tracking-[0.12em] text-blue">
-                    0{i + 1}
-                  </span>
                 </span>
                 <span className="flex flex-1 flex-col gap-3 p-6 sm:p-7">
                   <span className="flex items-start justify-between gap-3">
