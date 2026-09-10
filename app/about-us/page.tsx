@@ -83,7 +83,7 @@ export default function AboutPage() {
 
       {/* Flagship: Pressurized Air Cables */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
+        <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
             <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
@@ -127,7 +127,7 @@ export default function AboutPage() {
                   src={media.pacCableIndustrial}
                   alt="Cutaway of a pressurized-air cable beside an industrial power plant"
                   parallax
-                  className="min-h-[300px] sm:min-h-[460px]"
+                  className="min-h-[260px] sm:min-h-[380px]"
                 />
                 <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
                   PAC &mdash; industrial power plant
@@ -141,7 +141,7 @@ export default function AboutPage() {
 
       {/* Flagship: Trash Rack Cleaning Machines */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
+        <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <Link
               href="/products-services/trash-rack-cleaning-machines"
@@ -153,7 +153,7 @@ export default function AboutPage() {
                   src={media.trcm}
                   alt="Trash rack cleaning machine on a hydropower project platform"
                   parallax
-                  className="min-h-[300px] sm:min-h-[460px]"
+                  className="min-h-[260px] sm:min-h-[380px]"
                 />
                 <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
                   TRCM &mdash; Bhutan
@@ -201,7 +201,7 @@ export default function AboutPage() {
 
       {/* Flagship: Dredging Services */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
+        <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
             <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
@@ -244,7 +244,7 @@ export default function AboutPage() {
                   src={media.dredgePumpPontoon}
                   alt="Cable-deployed dredge pump and hydraulic arm on a pontoon in a reservoir"
                   parallax
-                  className="min-h-[300px] sm:min-h-[460px]"
+                  className="min-h-[260px] sm:min-h-[380px]"
                 />
                 <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
                   Dredging &mdash; reservoir desilting
@@ -258,7 +258,7 @@ export default function AboutPage() {
 
       {/* Flagship: Civil Works */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
+        <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[0.9fr_1.1fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <Link
               href="/products-services/civil-works"
@@ -270,7 +270,7 @@ export default function AboutPage() {
                   src={media.civilTrenchWeirIntake}
                   alt="Trench-weir intake structure with embedded steel screens in a concrete channel"
                   parallax
-                  className="min-h-[300px] sm:min-h-[460px]"
+                  className="min-h-[260px] sm:min-h-[380px]"
                 />
                 <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
                   Civil works &mdash; trench-weir intake
