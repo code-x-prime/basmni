@@ -103,10 +103,7 @@ export default function AboutPage() {
                 '2&times;&ndash;10&times; lower losses than XLPE cable',
                 'Built-in condition monitoring',
               ].map((p) => (
-                <li
-                  key={p}
-                  className="flex gap-3 text-[1rem] text-muted"
-                >
+                <li key={p} className="flex gap-3 text-[1rem] text-muted">
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   <span dangerouslySetInnerHTML={{ __html: p }} />
                 </li>
@@ -180,10 +177,7 @@ export default function AboutPage() {
                 'Wire-rope depth beyond 20 m',
                 '24/7 automated cleaning cycles',
               ].map((p) => (
-                <li
-                  key={p}
-                  className="flex gap-3 text-[1rem] text-muted"
-                >
+                <li key={p} className="flex gap-3 text-[1rem] text-muted">
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   {p}
                 </li>
@@ -220,10 +214,7 @@ export default function AboutPage() {
                 'Long-distance slurry discharge',
                 'Compact 12 × 8 m dredge footprint',
               ].map((p) => (
-                <li
-                  key={p}
-                  className="flex gap-3 text-[1rem] text-muted"
-                >
+                <li key={p} className="flex gap-3 text-[1rem] text-muted">
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   {p}
                 </li>
@@ -297,10 +288,7 @@ export default function AboutPage() {
                 'Spillways and flood-passing works',
                 'Coordinated with gates and racks',
               ].map((p) => (
-                <li
-                  key={p}
-                  className="flex gap-3 text-[1rem] text-muted"
-                >
+                <li key={p} className="flex gap-3 text-[1rem] text-muted">
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   {p}
                 </li>

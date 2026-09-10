@@ -19,14 +19,12 @@ export function SectionHeading({
   return (
     <div className={dark ? 'text-navy' : ''}>
       <div className="flex flex-col items-start gap-5 border-t border-border pt-3 sm:flex-row sm:justify-between sm:gap-8">
-        <p className={`${sectionLabel} min-w-[190px] ${dark ? 'text-blue' : 'text-blue'}`}>
-          {label}
-        </p>
+        <p className={`${sectionLabel} text-blue sm:min-w-[190px]`}>{label}</p>
         <h2 className={displayHeading}>{title}</h2>
       </div>
       {deck && (
         <p
-          className={`ml-auto mt-6 max-w-[480px] text-[1.05rem] leading-[1.65] ${dark ? 'text-muted' : 'text-muted'}`}
+          className={`mt-6 max-w-[480px] text-[1.05rem] leading-[1.65] sm:ml-auto ${dark ? 'text-muted' : 'text-muted'}`}
         >
           {deck}
         </p>

@@ -22,7 +22,6 @@ import {
   sectionLabel,
   displayHeading,
   textLink,
-  eyebrowDark,
   buttonLight,
   buttonGhost,
 } from '@/components/shared/ui'
@@ -94,7 +93,7 @@ export function BasmniSite() {
   return (
     <>
       {/* Homepage hero */}
-      <section className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden bg-[#0b3a70] pt-[76px] text-white sm:min-h-[100vh] sm:pt-[104px]">
+      <section className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden bg-[#0b3a70] pt-[76px] text-white sm:min-h-[80vh] sm:pt-[104px]">
         <Image
           src={media.pacCableIndustrial}
           alt="Cutaway of a pressurized-air cable beside an industrial power plant"
@@ -104,12 +103,14 @@ export function BasmniSite() {
           className="object-cover opacity-40"
         />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#0b3a70f2_0%,#0b3a70e6_55%,#0b3a70f2_100%)]" />
-        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 pb-12 pt-8 text-center sm:pb-16 sm:pt-9">
-          <p className={eyebrowDark}>Hydro-power · Water · Energy transmission</p>
-          <h1 className="mt-4 text-[clamp(1.7rem,3.4vw,2.9rem)] uppercase leading-[1.12] tracking-tightest [overflow-wrap:anywhere]">
+        <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center px-5 py-14 text-center sm:py-16">
+          <p className="text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white sm:text-[0.84rem] sm:tracking-[0.14em]">
+            Hydro-power · Water · Energy transmission
+          </p>
+          <h1 className="mt-4 text-[clamp(1.5rem,6vw,2.9rem)] uppercase leading-[1.14] tracking-tight [overflow-wrap:anywhere] sm:tracking-tightest">
             Engineering the backbone of national infrastructure
           </h1>
-          <p className="mt-5 max-w-[60ch] text-[1rem] leading-[1.65] text-[#cfe0f5]">
+          <p className="mt-5 max-w-[60ch] text-[0.95rem] leading-[1.6] text-[#cfe0f5] sm:text-[1rem] sm:leading-[1.65]">
             Basmni Technologies Pvt. Ltd. delivers deep dam dredging, Pressurized Air Cables (PAC),
             hydro-mechanical equipment, civil works and precision fabrication for the most demanding
             hydro-power and infrastructure projects across India.
@@ -182,7 +183,7 @@ export function BasmniSite() {
       {/* Intro */}
       <section id="about" className={sectionPad}>
         <SectionHeading label="Who we are" title={home.intro.title} />
-        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-[4.5rem] sm:grid-cols-[1.15fr_0.85fr] sm:gap-[8vw]">
+        <div className="mt-8 grid grid-cols-1 gap-7 sm:mt-14 sm:grid-cols-[1.15fr_0.85fr] sm:gap-[8vw]">
           <div>
             <p className="max-w-[640px] text-[clamp(1.8rem,3.3vw,3.5rem)] leading-[1.1]">
               Engineering that performs where conditions are at their most demanding.
@@ -211,7 +212,7 @@ export function BasmniSite() {
               className="aspect-[4/3] sm:aspect-[2/1]"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70b3,transparent_38%)]" />
-            <figcaption className="absolute inset-x-5 bottom-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 sm:inset-x-7 sm:bottom-6">
+            <figcaption className="absolute inset-x-4 bottom-3 flex flex-col gap-1 sm:inset-x-7 sm:bottom-6 sm:flex-row sm:flex-wrap sm:items-end sm:justify-between sm:gap-x-4">
               <span className="text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
                 Critical water &amp; power infrastructure
               </span>
