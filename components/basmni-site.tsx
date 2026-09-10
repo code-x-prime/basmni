@@ -104,17 +104,17 @@ export function BasmniSite() {
           className="object-cover opacity-40"
         />
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#0b3a70f2_0%,#0b3a70e6_55%,#0b3a70f2_100%)]" />
-        <div className="relative px-5 pb-12 pt-8 sm:px-[7vw] sm:pb-16 sm:pt-9">
+        <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 pb-12 pt-8 text-center sm:pb-16 sm:pt-9">
           <p className={eyebrowDark}>Hydro-power · Water · Energy transmission</p>
-          <h1 className="mt-4 max-w-[22ch] text-[clamp(1.7rem,3.4vw,2.9rem)] uppercase leading-[1.12] tracking-tightest">
+          <h1 className="mt-4 text-[clamp(1.7rem,3.4vw,2.9rem)] uppercase leading-[1.12] tracking-tightest">
             Engineering the backbone of national infrastructure
           </h1>
-          <p className="mt-5 max-w-[64ch] text-[1rem] leading-[1.65] text-[#cfe0f5]">
+          <p className="mt-5 max-w-[60ch] text-[1rem] leading-[1.65] text-[#cfe0f5]">
             Basmni Technologies Pvt. Ltd. delivers deep dam dredging, Pressurized Air Cables (PAC),
             hydro-mechanical equipment, civil works and precision fabrication for the most demanding
             hydro-power and infrastructure projects across India.
           </p>
-          <div className="mt-7 flex flex-wrap gap-3">
+          <div className="mt-7 flex flex-wrap justify-center gap-3">
             <Link
               className={`${buttonLight} max-sm:w-full`}
               href="/products-services/pressurized-air-cables"
@@ -206,11 +206,11 @@ export function BasmniSite() {
               src={media.dredgeArchDamAerial}
               alt="Aerial view of an arch dam and reservoir with a Basmni dredge working below the wall"
               reveal
-              imagePosition="center 30%"
+              imagePosition="center 68%"
               sizes="(max-width: 1024px) 100vw, 86vw"
-              className="aspect-[4/3] sm:aspect-[21/9]"
+              className="aspect-[4/3] sm:aspect-[2/1]"
             />
-            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70cc,transparent_46%)]" />
+            <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70b3,transparent_38%)]" />
             <figcaption className="absolute inset-x-5 bottom-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 sm:inset-x-7 sm:bottom-6">
               <span className="text-[0.72rem] font-bold uppercase tracking-[0.1em] text-white [text-shadow:0_1px_6px_rgba(0,0,0,0.6)]">
                 Critical water &amp; power infrastructure
@@ -506,8 +506,8 @@ export function BasmniSite() {
       )}
 
       {/* Closing CTA band */}
-      <section className="bg-[#0b3a70] text-white">
-        <div className="flex flex-col gap-6 px-5 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-[7vw] sm:py-14">
+      <section className="px-5 py-12 sm:px-[7vw] sm:py-16">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 bg-[#0b3a70] px-6 py-10 text-white sm:flex-row sm:items-center sm:justify-between sm:px-12 sm:py-12">
           <div>
             <h2 className="max-w-[22ch] text-[clamp(1.5rem,3vw,2.4rem)] uppercase leading-[1.15] tracking-tightest">
               Planning a hydro, dredging, or heavy fabrication project?

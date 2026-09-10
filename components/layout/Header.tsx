@@ -36,9 +36,9 @@ export function Header() {
   const telHref = `tel:${site.phone.replace(/\s+/g, '')}`
 
   return (
-    <header className="fixed inset-x-0 top-0 z-30 flex flex-col border-b border-navy/10 bg-white/85 text-navy shadow-[0_4px_24px_-10px_rgba(10,50,100,0.28)] [backdrop-filter:blur(24px)_saturate(160%)] supports-[backdrop-filter]:bg-white/75">
+    <header className="fixed inset-x-0 top-0 z-30 flex flex-col border-b border-navy/10 bg-white text-navy shadow-[0_4px_24px_-10px_rgba(10,50,100,0.28)]">
       {/* Main row */}
-      <div className="flex h-[76px] items-center justify-between gap-5 pl-0 pr-4 sm:h-[104px] sm:gap-8 sm:pr-[clamp(1rem,3vw,2.5rem)]">
+      <div className="flex h-[76px] items-center justify-between gap-5 px-4 sm:h-[104px] sm:gap-8 sm:px-[clamp(1rem,3vw,2.5rem)]">
         <Link
           href="/"
           className="shrink-0 [&_img]:object-contain [&_img]:object-left"
@@ -50,7 +50,7 @@ export function Header() {
             width={948}
             height={299}
             priority
-            className="h-auto w-[196px] sm:w-[330px] lg:w-[400px]"
+            className="h-auto w-[180px] sm:w-[300px] lg:w-[360px]"
           />
         </Link>
 
