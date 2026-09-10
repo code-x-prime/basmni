@@ -60,7 +60,7 @@ export async function POST(req: Request) {
     ['Company', data.company || '—'],
     ['Email', data.email],
     ['Phone', data.phone || '—'],
-    ['Project type', data.projectType || '—'],
+    ['Product & service', data.projectType || '—'],
   ]
   const textBody = rows.map(([k, v]) => `${k}: ${v}`).join('\n') + `\n\nMessage:\n${data.message}\n`
   const htmlBody = `

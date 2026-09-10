@@ -162,9 +162,10 @@ export function BasmniSite() {
             <ImageBlock
               src={media.dredgeArchDamAerial}
               alt="Aerial view of an arch dam and reservoir with a Basmni dredge working below the wall"
-              parallax
+              reveal
+              imagePosition="center 30%"
               sizes="(max-width: 1024px) 100vw, 86vw"
-              className="aspect-[4/3] sm:aspect-[16/8]"
+              className="aspect-[4/3] sm:aspect-[21/9]"
             />
             <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70cc,transparent_46%)]" />
             <figcaption className="absolute inset-x-5 bottom-4 flex flex-wrap items-end justify-between gap-x-4 gap-y-1 sm:inset-x-7 sm:bottom-6">

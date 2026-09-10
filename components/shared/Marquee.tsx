@@ -35,7 +35,7 @@ export function Marquee() {
   return (
     <section
       aria-label="Engineering highlights"
-      className="relative overflow-hidden border-y border-[#1f4a80] bg-[#0b3a70] py-3.5 text-white [mask-image:linear-gradient(90deg,transparent,#000_6%,#000_94%,transparent)]"
+      className="relative overflow-hidden border-y border-[#1f4a80] bg-[#0b3a70] py-3.5 text-white"
     >
       <div className="marquee-track flex w-max items-center gap-0 motion-reduce:animate-none">
         {items.map((item, i) => {

@@ -171,14 +171,14 @@ export function ContactForm() {
         </label>
 
         <label className="block sm:col-span-2">
-          <span className={labelClass}>Project type</span>
+          <span className={labelClass}>Product &amp; service</span>
           <select
             className={`mt-1.5 ${inputBase} border-border`}
             value={values.projectType}
             onChange={set('projectType')}
             disabled={loading}
           >
-            <option value="">Select a project type</option>
+            <option value="">Select a product or service</option>
             {contact.projectTypes.map((t) => (
               <option key={t} value={t}>
                 {t}

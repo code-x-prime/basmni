@@ -73,17 +73,17 @@ export default function ContactPage() {
           label={contactSections.location.label}
           title={contactSections.location.title}
         />
-        <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-12 sm:grid-cols-2 sm:items-center sm:gap-[6vw]">
-          <Reveal direction="right">
+        <div className="mt-8 border-t border-border pt-8 sm:mt-12">
+          <Reveal direction="up">
             <p className={`${sectionLabel} text-blue`}>Head office</p>
-            <address className="mt-3 text-[1.15rem] not-italic leading-[1.6] text-foreground">
+            <address className="mt-3 text-[1.25rem] not-italic leading-[1.6] text-foreground">
               {contact.addressLines.map((line) => (
                 <span key={line} className="block">
                   {line}
                 </span>
               ))}
             </address>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href={contact.mapsUrl}
                 target="_blank"
@@ -96,30 +96,6 @@ export default function ContactPage() {
                 Call {contact.phone}
               </a>
             </div>
-          </Reveal>
-          <Reveal direction="left">
-            <a
-              href={contact.mapsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group relative block overflow-hidden border border-border"
-            >
-              <ImageBlock
-                src={media.hydropowerDam}
-                alt="Hydropower infrastructure — Basmni project environment"
-                className="min-h-[240px] sm:min-h-[320px]"
-              />
-              <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(0deg,#0b3a70e6,transparent_60%)]" />
-              <span className="pointer-events-none absolute inset-x-5 bottom-5">
-                <span className="block text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
-                  Central Delhi · Barakhamba Road
-                </span>
-                <span className="mt-1 inline-flex items-center gap-1.5 text-[0.68rem] font-bold uppercase tracking-[0.1em] text-navy">
-                  Open in Google Maps
-                  <ArrowUpRight className="w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                </span>
-              </span>
-            </a>
           </Reveal>
         </div>
       </section>
