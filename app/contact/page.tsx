@@ -73,28 +73,39 @@ export default function ContactPage() {
           label={contactSections.location.label}
           title={contactSections.location.title}
         />
-        <div className="mt-8 border-t border-border pt-8 sm:mt-12">
-          <Reveal direction="up">
+        <div className="mt-8 grid grid-cols-1 gap-8 border-t border-border pt-8 sm:mt-12 sm:grid-cols-[0.8fr_1.2fr] sm:gap-[6vw]">
+          <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Head office</p>
-            <address className="mt-3 text-[1.25rem] not-italic leading-[1.6] text-foreground">
+            <address className="mt-3 text-[1.15rem] not-italic leading-[1.7] text-foreground">
               {contact.addressLines.map((line) => (
                 <span key={line} className="block">
                   {line}
                 </span>
               ))}
             </address>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-7 flex flex-col gap-3">
               <a
                 href={contact.mapsUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${buttonDark} max-sm:w-full`}
+                className={`${buttonDark} w-full`}
               >
                 Get Directions <ArrowUpRight />
               </a>
-              <a href={contact.phoneHref} className={`${buttonDark} max-sm:w-full`}>
+              <a href={contact.phoneHref} className={`${buttonDark} w-full`}>
                 Call {contact.phone}
               </a>
+            </div>
+          </Reveal>
+          <Reveal direction="left">
+            <div className="relative aspect-[16/10] overflow-hidden border border-border sm:aspect-auto sm:h-full sm:min-h-[300px]">
+              <iframe
+                title="Basmni Technologies head office location"
+                src={`https://www.google.com/maps?q=${encodeURIComponent(contact.address)}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="absolute inset-0 h-full w-full"
+              />
             </div>
           </Reveal>
         </div>
