@@ -33,12 +33,12 @@ export default function ReferencesPage() {
         <div className="mt-9 grid grid-cols-2 gap-4 border-t border-border sm:mt-11 sm:grid-cols-4">
           {projectStats.map((s) => (
             <Reveal key={s.label}>
-              <div className="border-r border-border py-4">
+              <div className="border-r border-border py-4 text-center last:border-r-0">
                 <AnimatedCounter
                   value={s.value}
                   className="block text-[2.4rem] tracking-[-0.08em] text-blue sm:text-[clamp(2.4rem,5vw,4.6rem)]"
                 />
-                <span className="text-[0.65rem] uppercase tracking-[0.1em] text-muted">
+                <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.1em] text-muted">
                   {s.label}
                 </span>
               </div>
