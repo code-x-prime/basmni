@@ -23,7 +23,7 @@ export default function AboutPage() {
       {/* About Basmni — page intro */}
       <section className={`${sectionPad} pt-[100px] sm:pt-[136px] lg:pt-[136px]`}>
         <div className="mx-auto max-w-[900px] text-center">
-          <h1 className="text-[clamp(2.6rem,7vw,5.5rem)] uppercase leading-[1.04] tracking-tightest">
+          <h1 className="text-[clamp(1.8rem,6vw,5.5rem)] uppercase leading-[1.04] tracking-tightest [overflow-wrap:anywhere]">
             About Basmni
           </h1>
           <p className="mx-auto mt-6 max-w-[56ch] text-[1.05rem] leading-[1.7] text-muted">
@@ -86,7 +86,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Pressurized Air Cables (PAC).
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
@@ -96,7 +96,7 @@ export default function AboutPage() {
               &mdash; engineered, supplied and commissioned for high-voltage substations, dense grid
               corridors and hydropower evacuation.
             </p>
-            <ul className="mt-8 border-t border-border">
+            <ul className="mt-7 space-y-2.5">
               {[
                 'SF6-free and PFAS-free insulation',
                 'Up to 420 kV and 5,000 A continuous',
@@ -105,7 +105,7 @@ export default function AboutPage() {
               ].map((p) => (
                 <li
                   key={p}
-                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
+                  className="flex gap-3 text-[1rem] text-muted"
                 >
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   <span dangerouslySetInnerHTML={{ __html: p }} />
@@ -164,7 +164,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal direction="left">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Trash Rack Cleaning Machines.
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
@@ -173,7 +173,7 @@ export default function AboutPage() {
               commissions automated cleaning machines &mdash; hydraulic-arm, wire-rope, chain and
               gantry types &mdash; matched to the intake, with PLC or SCADA control.
             </p>
-            <ul className="mt-8 border-t border-border">
+            <ul className="mt-7 space-y-2.5">
               {[
                 'Four machine types for any intake',
                 'Hydraulic-arm reach up to ~20 m',
@@ -182,7 +182,7 @@ export default function AboutPage() {
               ].map((p) => (
                 <li
                   key={p}
-                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
+                  className="flex gap-3 text-[1rem] text-muted"
                 >
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   {p}
@@ -204,7 +204,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Deep Dam &amp; Reservoir Dredging.
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
@@ -213,7 +213,7 @@ export default function AboutPage() {
               using cable-deployed submersible pumps and sediment fluidisation to work reliably down
               to around 100&nbsp;m, at high solids concentrations and over long discharge pipelines.
             </p>
-            <ul className="mt-8 border-t border-border">
+            <ul className="mt-7 space-y-2.5">
               {[
                 'Working depth to around 100 m',
                 '35–60% solids handling',
@@ -222,7 +222,7 @@ export default function AboutPage() {
               ].map((p) => (
                 <li
                   key={p}
-                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
+                  className="flex gap-3 text-[1rem] text-muted"
                 >
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   {p}
@@ -281,7 +281,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal direction="left">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.8rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Specialized Civil Works.
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
@@ -290,7 +290,7 @@ export default function AboutPage() {
               concrete and RCC works, spillways, seepage cut-offs, trench-weir troughs and desilting
               chambers &mdash; built in step with the hydro-mechanical package.
             </p>
-            <ul className="mt-8 border-t border-border">
+            <ul className="mt-7 space-y-2.5">
               {[
                 'Site-specific structure engineering',
                 'Foundation and seepage treatment',
@@ -299,7 +299,7 @@ export default function AboutPage() {
               ].map((p) => (
                 <li
                   key={p}
-                  className="flex gap-4 border-b border-border py-3 text-[1rem] text-muted"
+                  className="flex gap-3 text-[1rem] text-muted"
                 >
                   <span className="mt-2.5 h-1.5 w-1.5 shrink-0 bg-blue" aria-hidden />
                   {p}
@@ -337,7 +337,7 @@ export default function AboutPage() {
               <div className="flex items-center justify-end">
                 <ArrowUpRight className="w-4 -translate-x-1 text-blue opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100" />
               </div>
-              <h3 className="mt-3 text-[clamp(1.15rem,2.2vw,1.7rem)] uppercase leading-[1.1] tracking-tightest">
+              <h3 className="mt-3 text-[clamp(1.15rem,2.2vw,1.7rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
                 {step.label}
               </h3>
               <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{step.blurb}</p>

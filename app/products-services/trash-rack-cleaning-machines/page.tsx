@@ -54,7 +54,7 @@ export default function TrcmPage() {
         <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {trcmHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-white p-6 sm:p-8">
-              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
                 {s.title}
               </h3>
               <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>

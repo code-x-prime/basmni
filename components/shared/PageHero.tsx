@@ -96,7 +96,7 @@ export function PageHero({
 
             <motion.h1
               variants={fadeUp}
-              className="mt-3 max-w-[17ch] text-[clamp(2rem,4.6vw,3.5rem)] uppercase leading-[1.1] tracking-tightest text-navy [overflow-wrap:anywhere]"
+              className="mt-3 max-w-[17ch] text-[clamp(1.6rem,4.6vw,3.5rem)] uppercase leading-[1.1] tracking-tightest text-navy [overflow-wrap:anywhere]"
             >
               {titleLines.map((line, i) => (
                 <Fragment key={line}>

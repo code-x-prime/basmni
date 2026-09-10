@@ -88,7 +88,7 @@ export default function DredgingPage() {
         <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {dredgingHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-white p-6 sm:p-8">
-              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
                 {s.title}
               </h3>
               <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
@@ -192,7 +192,7 @@ export default function DredgingPage() {
         <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {dredgingTechnology.map((t) => (
             <Reveal key={t.title} className="bg-white p-6 sm:p-8">
-              <h3 className="text-[clamp(1.1rem,2.2vw,1.5rem)] uppercase leading-[1.15] tracking-tightest">
+              <h3 className="text-[clamp(1.1rem,2.2vw,1.5rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
                 {t.title}
               </h3>
               <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{t.text}</p>
@@ -304,7 +304,7 @@ export default function DredgingPage() {
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {dredgingProcess.steps.map((step) => (
               <RevealItem key={step} className="bg-white p-6 text-center sm:p-7">
-                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest">
+                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
                   {step}
                 </h3>
               </RevealItem>

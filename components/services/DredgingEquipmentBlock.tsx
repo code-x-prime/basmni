@@ -25,7 +25,7 @@ export function DredgingEquipmentBlock({
         <span className="text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue">
           Equipment {String(index + 1).padStart(2, '0')}
         </span>
-        <h3 className="mt-2 text-[clamp(1.6rem,3.4vw,2.8rem)] uppercase leading-[1.1] tracking-tightest">
+        <h3 className="mt-2 text-[clamp(1.6rem,3.4vw,2.8rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
           {item.title}
         </h3>
         <p className="mt-4 max-w-[520px] leading-[1.65] text-muted">{item.body}</p>

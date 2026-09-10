@@ -85,7 +85,9 @@ export function ContactForm() {
         <span className="grid h-11 w-11 place-items-center bg-white text-navy [&_svg]:w-5">
           <Check />
         </span>
-        <h3 className="text-[1.15rem] uppercase leading-[1.2] tracking-tightest">Enquiry sent.</h3>
+        <h3 className="text-[1.15rem] uppercase leading-[1.2] tracking-tightest [overflow-wrap:anywhere]">
+          Enquiry sent.
+        </h3>
         <p className="max-w-[42ch] text-[1rem] leading-[1.6] text-muted">
           Thank you — our engineering team has received your details and will respond directly,
           usually within one working day.

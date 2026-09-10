@@ -8,7 +8,7 @@ export function ContactInfo() {
   return (
     <div>
       <p className={`${sectionLabel} text-blue`}>Contact our engineering team</p>
-      <h2 className="mt-3 text-[clamp(1.8rem,3.5vw,2.8rem)] uppercase leading-[1.1] tracking-tightest">
+      <h2 className="mt-3 text-[clamp(1.8rem,3.5vw,2.8rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
         Talk to the people who build the systems.
       </h2>
 

@@ -106,7 +106,7 @@ export function BasmniSite() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#0b3a70f2_0%,#0b3a70e6_55%,#0b3a70f2_100%)]" />
         <div className="relative mx-auto flex max-w-3xl flex-col items-center px-5 pb-12 pt-8 text-center sm:pb-16 sm:pt-9">
           <p className={eyebrowDark}>Hydro-power · Water · Energy transmission</p>
-          <h1 className="mt-4 text-[clamp(1.7rem,3.4vw,2.9rem)] uppercase leading-[1.12] tracking-tightest">
+          <h1 className="mt-4 text-[clamp(1.7rem,3.4vw,2.9rem)] uppercase leading-[1.12] tracking-tightest [overflow-wrap:anywhere]">
             Engineering the backbone of national infrastructure
           </h1>
           <p className="mt-5 max-w-[60ch] text-[1rem] leading-[1.65] text-[#cfe0f5]">
@@ -509,7 +509,7 @@ export function BasmniSite() {
       <section className="px-5 py-12 sm:px-[7vw] sm:py-16">
         <div className="mx-auto flex max-w-7xl flex-col gap-6 bg-[#0b3a70] px-6 py-10 text-white sm:flex-row sm:items-center sm:justify-between sm:px-12 sm:py-12">
           <div>
-            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3vw,2.4rem)] uppercase leading-[1.15] tracking-tightest">
+            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3vw,2.4rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
               Planning a hydro, dredging, or heavy fabrication project?
             </h2>
             <p className="mt-3 max-w-[60ch] text-[1rem] leading-[1.6] text-[#cfe0f5]">

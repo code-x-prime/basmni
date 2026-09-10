@@ -42,7 +42,7 @@ export function CTASection({
           <p className={eyebrowDark}>{eyebrow}</p>
         </RevealItem>
         <RevealItem>
-          <h2 className="my-4 text-[clamp(2.7rem,12vw,4rem)] uppercase tracking-tightest sm:text-[clamp(2.8rem,5vw,5.5rem)]">
+          <h2 className="my-4 text-[clamp(1.8rem,9vw,4rem)] uppercase tracking-tightest sm:text-[clamp(2.8rem,5vw,5.5rem)]">
             {title}
             {emphasis && (
               <>

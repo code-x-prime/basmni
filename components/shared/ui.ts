@@ -11,7 +11,8 @@ export const eyebrowDark = 'text-[0.84rem] font-bold uppercase tracking-[0.14em]
 
 export const sectionLabel = 'text-[0.84rem] font-bold uppercase tracking-[0.14em]'
 
-export const displayHeading = 'flex-1 text-[clamp(2.2rem,4.5vw,4.4rem)] uppercase tracking-tightest'
+export const displayHeading =
+  'flex-1 text-[clamp(1.7rem,4.5vw,4.4rem)] uppercase tracking-tightest [overflow-wrap:anywhere]'
 
 export const button =
   'group inline-flex min-h-12 items-center justify-center gap-[0.55rem] border border-transparent px-4 py-3 text-[0.67rem] font-bold uppercase tracking-[0.1em] transition-[transform,background-color,box-shadow] duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_20px_-8px_rgba(10,30,41,0.5)] [&_svg]:w-4 [&_svg]:transition-transform [&_svg]:duration-200 hover:[&_svg]:translate-x-1'
