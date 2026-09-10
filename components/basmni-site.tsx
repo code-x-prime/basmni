@@ -131,7 +131,9 @@ export function BasmniSite() {
       {/* Flagship solutions */}
       <section className={`${sectionPad} relative overflow-hidden bg-white text-navy`}>
         <div className="relative border-t border-border pt-4">
-          <h2 className={`${displayHeading} max-w-none`}>Four systems that define our field</h2>
+          <h2 className={`${displayHeading} max-w-none`}>
+            Integrated capabilities for hydro and heavy infrastructure
+          </h2>
           <p className="mt-5 max-w-[560px] text-[1.05rem] leading-[1.65] text-muted">
             Purpose-built power-transmission, debris-management, dredging and civil engineering
             platforms — engineered, manufactured and commissioned by Basmni.
