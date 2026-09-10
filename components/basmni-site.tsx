@@ -505,6 +505,24 @@ export function BasmniSite() {
         </>
       )}
 
+      {/* Closing CTA band */}
+      <section className="bg-[#0b3a70] text-white">
+        <div className="flex flex-col gap-6 px-5 py-12 sm:flex-row sm:items-center sm:justify-between sm:px-[7vw] sm:py-14">
+          <div>
+            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3vw,2.4rem)] uppercase leading-[1.15] tracking-tightest">
+              Planning a hydro, dredging, or heavy fabrication project?
+            </h2>
+            <p className="mt-3 max-w-[60ch] text-[1rem] leading-[1.6] text-[#cfe0f5]">
+              Our engineering team supports tenders, feasibility and turnkey delivery for government
+              and utility clients across India.
+            </p>
+          </div>
+          <Link className={`${buttonLight} shrink-0 max-sm:w-full`} href="/contact">
+            Request a Consultation <ArrowUpRight />
+          </Link>
+        </div>
+      </section>
+
       <ProjectModal project={project} onClose={() => setProject(null)} />
 
       {lightboxIndex !== null && (
