@@ -38,8 +38,8 @@ export default function ContactPage() {
           </Reveal>
           <Reveal direction="left">
             <ImageBlock
-              src={media.fieldInspection}
-              alt="Basmni engineers reviewing drawings on a water infrastructure site"
+              src={media.dredgeReservoirValley}
+              alt="Reservoir and dam in a green valley — a Basmni project environment"
               reveal
               className="min-h-[280px] sm:min-h-[420px]"
             />
