@@ -17,7 +17,15 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 import { MetricGrid } from '@/components/shared/blocks'
 import { Marquee } from '@/components/shared/Marquee'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
-import { sectionPad, sectionLabel, displayHeading, textLink } from '@/components/shared/ui'
+import {
+  sectionPad,
+  sectionLabel,
+  displayHeading,
+  textLink,
+  eyebrowDark,
+  buttonLight,
+  buttonGhost,
+} from '@/components/shared/ui'
 import { ProjectFilter } from '@/components/projects/ProjectFilter'
 import { ProjectCard } from '@/components/projects/ProjectCard'
 import { ProjectModal } from '@/components/projects/ProjectModal'
@@ -85,10 +93,43 @@ export function BasmniSite() {
 
   return (
     <>
-      {/* Flagship solutions — homepage hero */}
-      <section
-        className={`${sectionPad} relative overflow-hidden bg-white pt-[92px] text-navy sm:pt-[136px] lg:pt-[136px]`}
-      >
+      {/* Homepage hero */}
+      <section className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden bg-[#0b3a70] pt-[76px] text-white sm:min-h-[100vh] sm:pt-[104px]">
+        <Image
+          src={media.pacCableIndustrial}
+          alt="Cutaway of a pressurized-air cable beside an industrial power plant"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover opacity-40"
+        />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#0b3a70f2_0%,#0b3a70e6_55%,#0b3a70f2_100%)]" />
+        <div className="relative px-5 pb-12 pt-8 sm:px-[7vw] sm:pb-16 sm:pt-9">
+          <p className={eyebrowDark}>Hydro-power · Water · Energy transmission</p>
+          <h1 className="mt-4 max-w-[22ch] text-[clamp(1.7rem,3.4vw,2.9rem)] uppercase leading-[1.12] tracking-tightest">
+            Engineering the backbone of national infrastructure
+          </h1>
+          <p className="mt-5 max-w-[64ch] text-[1rem] leading-[1.65] text-[#cfe0f5]">
+            Basmni Technologies Pvt. Ltd. delivers deep dam dredging, Pressurized Air Cables (PAC),
+            hydro-mechanical equipment, civil works and precision fabrication for the most demanding
+            hydro-power and infrastructure projects across India.
+          </p>
+          <div className="mt-7 flex flex-wrap gap-3">
+            <Link
+              className={`${buttonLight} max-sm:w-full`}
+              href="/products-services/pressurized-air-cables"
+            >
+              Explore Solutions <ArrowUpRight />
+            </Link>
+            <Link className={`${buttonGhost} max-sm:w-full`} href="/contact">
+              Request a Consultation <ArrowUpRight />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Flagship solutions */}
+      <section className={`${sectionPad} relative overflow-hidden bg-white text-navy`}>
         <div className="relative border-t border-border pt-4">
           <h2 className={`${displayHeading} max-w-none`}>Four systems that define our field</h2>
           <p className="mt-5 max-w-[560px] text-[1.05rem] leading-[1.65] text-muted">
