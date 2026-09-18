@@ -19,7 +19,7 @@ export const aboutHero: PageHeroContent = {
   eyebrow: 'About Basmni',
   titleLines: ['Engineering experience.', 'Built for critical infrastructure.'],
   description:
-    'An engineering and infrastructure solutions provider operating on a Pan-India scale for the hydro-power and water resource sectors since 2016.',
+    'An Engineering and Infrastructure solutions provider operating on a Pan-India scale for the hydro-power and water resource sectors since 2016.',
   image: 'heroAbout',
   imageAlt: 'Curved concrete hydropower dam spanning a rocky river canyon',
   imagePosition: 'center 60%',
@@ -85,7 +85,7 @@ export const referencesHero: PageHeroContent = {
   eyebrow: 'Project References',
   titleLines: ['Engineering', 'in the field.'],
   description:
-    'A selection of Basmni engineering and infrastructure projects delivered across India for NHPC, NEEPCO and other operators.',
+    'A selection of Basmni Engineering and Infrastructure projects delivered across India for NHPC, NEEPCO and other operators.',
   image: 'heroReferences',
   imageAlt: 'Arch dam with a gantry crane and a floating debris boom at a hydropower project',
   imagePosition: 'center',
@@ -108,7 +108,7 @@ export const aboutSections = {
   intro: {
     label: 'About Basmni',
     title: 'About Basmni.',
-    deck: 'An engineering and infrastructure solutions provider operating on a Pan-India scale for the hydro-power and water resource sectors since 2016.',
+    deck: 'An Engineering and Infrastructure solutions provider operating on a Pan-India scale for the hydro-power and water resource sectors since 2016.',
   },
   capabilities: {
     label: 'Capabilities',

@@ -62,19 +62,19 @@ const flagshipSystems = [
   },
   {
     title: 'Trash Rack Cleaning Machines',
-    blurb: 'Automated intake debris removal — hydraulic and wire-rope machines, log booms.',
+    blurb: 'Automated intake debris removal — Hydraulic and Wire-Rope TRCM, Log Booms Barriers.',
     src: media.trcm,
     href: '/products-services/trash-rack-cleaning-machines',
   },
   {
     title: 'Dredging Services',
-    blurb: 'Deep dam and reservoir dredging engineered to 100 m working depth.',
+    blurb: 'Deep Dam and Reservoir Dredging Engineered for depth upto 100 m working depth.',
     src: media.dredgePumpPontoon,
     href: '/products-services/deep-dam-dredging',
   },
   {
     title: 'Civil Works',
-    blurb: 'Allied civil engineering for dams, barrages and river weirs.',
+    blurb: 'Civil Engineering works for Dams, Barrages and River Weirs.',
     src: media.civilTrenchWeirIntake,
     href: '/products-services/civil-works',
   },
@@ -131,9 +131,9 @@ export function BasmniSite() {
             Engineering the backbone of national infrastructure
           </h1>
           <p className="mt-5 max-w-[60ch] text-[0.95rem] leading-[1.6] text-[#cfe0f5] sm:text-[1rem] sm:leading-[1.65]">
-            Basmni Technologies Pvt. Ltd. delivers deep dam dredging, Pressurized Air Cables (PAC),
-            hydro-mechanical equipment, civil works and precision fabrication for the most demanding
-            hydro-power and infrastructure projects across India.
+            Basmni Technologies Pvt. Ltd. delivers Deep Dam Dredging, Pressurized Air Cables (PAC),
+            Hydro-Mechanical Equipment, Civil works and Precision Fabrication for the most demanding
+            Hydro-Power and Infrastructure projects across India.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
             <a

@@ -1,9 +1,9 @@
 export const company = {
   intro:
-    'Basmni Technologies Pvt. Ltd. is an engineering and infrastructure solutions company established in 2016 and headquartered in Delhi. With Pan-India operations, we serve the hydropower and water resource sectors through design, manufacturing, supply and execution.',
+    'Basmni Technologies Pvt. Ltd. is an Engineering and Infrastructure solutions company established in 2016 and headquartered in Delhi. With Pan-India operations, we serve the hydropower and water resource sectors through design, manufacturing, supply and execution.',
 
   story: [
-    'Established in 2016 and headquartered in Delhi, Basmni Technologies Pvt. Ltd. is a premier engineering and infrastructure solutions provider operating on a Pan-India scale. Over the years, we have built a robust reputation for delivering cutting-edge, reliable and heavy-duty technological solutions tailored to the rigorous demands of the hydro-power and water resource sectors.',
+    'Established in 2016 and headquartered in Delhi, Basmni Technologies Pvt. Ltd. is a premier Engineering and Infrastructure solutions provider operating on a Pan-India scale. Over the years, we have built a robust reputation for delivering cutting-edge, reliable and heavy-duty technological solutions tailored to the rigorous demands of the hydro-power and water resource sectors.',
     'Our core expertise lies in designing, manufacturing, supplying and executing complex electro-mechanical equipment and specialized civil engineering works for major dams, barrages and hydro-power stations across the nation. Driven by a commitment to engineering excellence, safety and operational efficiency, we empower critical infrastructure to perform at its peak.',
     'We provide complete, end-to-end solutions — from the first drawing to final commissioning — using advanced equipment and modern methods for dams and reservoirs operating under demanding conditions.',
   ],
