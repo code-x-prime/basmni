@@ -69,7 +69,7 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="mt-14 flex flex-col justify-between gap-2 border-t border-border pt-5 text-[0.62rem] uppercase tracking-[0.08em] text-muted sm:flex-row sm:items-center">
+      <div className="mt-14 flex flex-col justify-between gap-2 border-t border-border pt-5 text-[0.7rem] uppercase tracking-[0.08em] text-muted sm:flex-row sm:items-center">
         <span>© 2026 Basmni Technologies Pvt. Ltd.</span>
         <span className="flex flex-wrap items-center gap-x-4 gap-y-1">
           <span>All rights reserved.</span>
