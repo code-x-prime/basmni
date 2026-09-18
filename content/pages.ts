@@ -142,7 +142,7 @@ export const referencesSections = {
 export const contactSections = {
   intro: {
     label: 'Contact',
-    title: 'Talk to the people who build the systems.',
+    title: 'Talk to the experts.',
     body: 'Whether you are scoping a desilting campaign, an intake protection package or a civil modification, our engineering team can advise on configuration, delivery and commissioning.',
   },
   quick: { label: 'Quick actions', title: 'Reach us directly.' },
