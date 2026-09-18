@@ -44,7 +44,7 @@ export default function TrcmPage() {
           ))}
         </div>
         <div className="mt-8 sm:mt-10">
-          <MetricGrid items={trcmHeadlineMetrics} columns="sm:grid-cols-3" />
+          <MetricGrid items={trcmHeadlineMetrics} columns="sm:grid-cols-4" />
         </div>
       </section>
 

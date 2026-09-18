@@ -23,7 +23,7 @@ export default function AboutPage() {
       {/* About Basmni — page intro */}
       <section className={`${sectionPad} pt-[100px] sm:pt-[136px] lg:pt-[136px]`}>
         <div className="mx-auto max-w-[900px] text-center">
-          <h1 className="text-[clamp(1.8rem,6vw,5.5rem)] uppercase leading-[1.04] tracking-tightest [overflow-wrap:anywhere]">
+          <h1 className="text-[clamp(1.8rem,6vw,4rem)] uppercase leading-[1.04] tracking-tightest [overflow-wrap:anywhere]">
             About Basmni
           </h1>
           <p className="mx-auto mt-6 max-w-[56ch] text-[1.05rem] leading-[1.7] text-muted">
@@ -86,7 +86,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Pressurized Air Cables (PAC).
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
@@ -161,7 +161,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal direction="left">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Trash Rack Cleaning Machines.
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
@@ -198,7 +198,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 items-center gap-8 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[6vw]">
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Deep Dam &amp; Reservoir Dredging.
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
@@ -272,7 +272,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal direction="left">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
-            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3.4rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
+            <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
               Specialized Civil Works.
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">

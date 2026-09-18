@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowUpRight, MoveRight } from 'lucide-react'
+import { ArrowDown, ArrowUpRight, MoveRight } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { media } from '@/content/site'
 import { company } from '@/content/company'
@@ -40,6 +40,14 @@ const gallery = [
   { src: media.debrisPanorama, title: 'Debris management', category: 'Dredging' },
 ]
 
+const heroImages = [
+  { src: media.pacCableIndustrial, alt: 'Cutaway of a pressurized-air cable beside an industrial power plant' },
+  { src: media.dredgePumpPontoon, alt: 'Dredge pump pontoon working a reservoir' },
+  { src: media.trcm, alt: 'Trash rack cleaning machine at a dam intake' },
+  { src: media.civilTrenchWeirIntake, alt: 'Civil works at a weir intake trench' },
+  { src: media.spillway, alt: 'Spillway with debris boom' },
+]
+
 const solutionTabs = ['All', 'Dredging', 'PAC', 'TRCM', 'Civil'] as const
 type SolutionTab = (typeof solutionTabs)[number]
 
@@ -73,6 +81,7 @@ const flagshipSystems = [
 ]
 
 export function BasmniSite() {
+  const [heroIndex, setHeroIndex] = useState(0)
   const [serviceFilter, setServiceFilter] = useState<SolutionTab>('All')
   const [projectFilter, setProjectFilter] = useState<ProjectFilterValue>('All')
   const [galleryFilter, setGalleryFilter] = useState<SolutionTab | 'Hydropower'>('All')
@@ -90,19 +99,30 @@ export function BasmniSite() {
     (g) => galleryFilter === 'All' || g.category === galleryFilter
   )
 
+  useEffect(() => {
+    const id = setInterval(() => {
+      setHeroIndex((i) => (i + 1) % heroImages.length)
+    }, 2000)
+    return () => clearInterval(id)
+  }, [])
+
   return (
     <>
       {/* Homepage hero */}
       <section className="relative isolate flex min-h-[100svh] flex-col justify-center overflow-hidden bg-[#0b3a70] pt-[76px] text-white sm:min-h-[80vh] sm:pt-[104px]">
-        <Image
-          src={media.pacCableIndustrial}
-          alt="Cutaway of a pressurized-air cable beside an industrial power plant"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover opacity-40"
-        />
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#0b3a70f2_0%,#0b3a70e6_55%,#0b3a70f2_100%)]" />
+        {heroImages.map((img, i) => (
+          <Image
+            key={img.src}
+            src={img.src}
+            alt={img.alt}
+            fill
+            priority={i === 0}
+            sizes="100vw"
+            className={`object-cover transition-opacity duration-1000 ease-in-out ${i === heroIndex ? 'opacity-100' : 'opacity-0'
+              }`}
+          />
+        ))}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#0b3a70cc_0%,#0b3a70b3_55%,#0b3a70cc_100%)]" />
         <div className="relative mx-auto flex w-full max-w-3xl flex-col items-center px-5 py-14 text-center sm:py-16">
           <p className="text-[0.72rem] font-bold uppercase tracking-[0.12em] text-white sm:text-[0.84rem] sm:tracking-[0.14em]">
             Hydro-power · Water · Energy transmission
@@ -116,12 +136,16 @@ export function BasmniSite() {
             hydro-power and infrastructure projects across India.
           </p>
           <div className="mt-7 flex flex-wrap justify-center gap-3">
-            <Link
+            <a
               className={`${buttonLight} max-sm:w-full`}
-              href="/products-services/pressurized-air-cables"
+              href="#scroll"
+              onClick={(e) => {
+                e.preventDefault()
+                document.getElementById('scroll')?.scrollIntoView({ behavior: 'smooth' })
+              }}
             >
-              Explore Solutions <ArrowUpRight />
-            </Link>
+              Explore Solutions <ArrowDown />
+            </a>
             <Link className={`${buttonGhost} max-sm:w-full`} href="/contact">
               Request a Consultation <ArrowUpRight />
             </Link>
@@ -130,7 +154,10 @@ export function BasmniSite() {
       </section>
 
       {/* Flagship solutions */}
-      <section className={`${sectionPad} relative overflow-hidden bg-white text-navy`}>
+      <section
+        id="scroll"
+        className={`${sectionPad} relative scroll-mt-[76px] overflow-hidden bg-white text-navy sm:scroll-mt-[108px]`}
+      >
         <div className="relative border-t border-border pt-4">
           <h2 className={`${displayHeading} max-w-none`}>
             Integrated capabilities for hydro and heavy infrastructure

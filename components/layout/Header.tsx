@@ -16,6 +16,7 @@ function isActive(pathname: string, href: string) {
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -28,6 +29,13 @@ export function Header() {
     }
   }, [open])
 
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   // Close the mobile menu whenever the route changes.
   useEffect(() => {
     setOpen(false)
@@ -36,9 +44,15 @@ export function Header() {
   const telHref = `tel:${site.phone.replace(/\s+/g, '')}`
 
   return (
-    <header className="fixed inset-x-0 top-0 z-30 flex flex-col border-b border-navy/10 bg-white text-navy shadow-[0_4px_24px_-10px_rgba(10,50,100,0.28)]">
+    <header
+      className={`fixed inset-x-0 top-0 z-30 flex flex-col border-b transition-[background-color,backdrop-filter,box-shadow] duration-300 ${
+        scrolled
+          ? 'border-navy/10 bg-white/70 shadow-[0_4px_24px_-10px_rgba(10,50,100,0.28)] backdrop-blur-lg backdrop-saturate-150'
+          : 'border-transparent bg-white shadow-none'
+      } text-navy`}
+    >
       {/* Main row */}
-      <div className="flex h-[76px] items-center justify-between gap-5 px-4 sm:h-[104px] sm:gap-8 sm:px-[clamp(1rem,3vw,2.5rem)]">
+      <div className="flex h-[76px] items-center justify-between gap-5 px-4 sm:h-[108px] sm:gap-8 sm:px-[clamp(1rem,3vw,2.5rem)]">
         <Link
           href="/"
           className="shrink-0 [&_img]:object-contain [&_img]:object-left"
@@ -50,7 +64,7 @@ export function Header() {
             width={948}
             height={299}
             priority
-            className="h-auto w-[180px] sm:w-[300px] lg:w-[360px]"
+            className="h-auto w-[180px] sm:w-[300px] lg:w-[340px]"
           />
         </Link>
 
@@ -67,9 +81,8 @@ export function Header() {
         <nav className="hidden items-center gap-[clamp(0.7rem,1.5vw,1.75rem)] whitespace-nowrap text-[0.9rem] font-semibold uppercase tracking-[0.09em] md:flex">
           {navigation.map((item) => {
             const active = isActive(pathname, item.href)
-            const labelCls = `group relative whitespace-nowrap py-1 transition-colors duration-200 ${
-              active ? 'text-blue' : 'text-navy hover:text-blue'
-            }`
+            const labelCls = `group relative whitespace-nowrap py-1 transition-colors duration-200 ${active ? 'text-blue' : 'text-navy hover:text-blue'
+              }`
             const indicator = active ? (
               <motion.span
                 layoutId="nav-indicator"
@@ -110,9 +123,8 @@ export function Header() {
                       <li key={c.href}>
                         <Link
                           href={c.href}
-                          className={`block whitespace-nowrap px-4 py-2.5 text-[0.82rem] font-semibold uppercase tracking-[0.09em] transition-colors hover:bg-navy/5 hover:text-blue ${
-                            pathname === c.href ? 'text-blue' : 'text-navy/75'
-                          }`}
+                          className={`block whitespace-nowrap px-4 py-2.5 text-[0.82rem] font-semibold uppercase tracking-[0.09em] transition-colors hover:bg-navy/5 hover:text-blue ${pathname === c.href ? 'text-blue' : 'text-navy/75'
+                            }`}
                         >
                           {c.label}
                         </Link>
@@ -171,9 +183,8 @@ export function Header() {
             >
               {navigation.map((item) => {
                 const active = isActive(pathname, item.href)
-                const mobileLabelCls = `block py-1.5 text-[1rem] uppercase tracking-[0.08em] ${
-                  active ? 'text-blue opacity-100' : 'text-navy opacity-80'
-                }`
+                const mobileLabelCls = `block py-1.5 text-[1rem] uppercase tracking-[0.08em] ${active ? 'text-blue opacity-100' : 'text-navy opacity-80'
+                  }`
                 return (
                   <motion.div
                     key={item.href}
@@ -197,9 +208,8 @@ export function Header() {
                           <Link
                             key={c.href}
                             href={c.href}
-                            className={`py-1.5 text-[0.72rem] uppercase tracking-[0.08em] ${
-                              pathname === c.href ? 'text-blue' : 'text-navy/70'
-                            }`}
+                            className={`py-1.5 text-[0.72rem] uppercase tracking-[0.08em] ${pathname === c.href ? 'text-blue' : 'text-navy/70'
+                              }`}
                             onClick={() => setOpen(false)}
                           >
                             {c.label}
