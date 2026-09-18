@@ -17,15 +17,18 @@ export function MetricGrid({
   columns?: string
 }) {
   return (
-    <RevealStagger className={`grid grid-cols-2 gap-px ${columns}`}>
+    <RevealStagger className={`grid grid-cols-2 gap-3 sm:gap-px ${columns}`}>
       {items.map((m) => (
-        <RevealItem key={m.label} className="border-t-2 border-orange pt-3 text-center">
+        <RevealItem
+          key={m.label}
+          className="rounded-lg border border-border bg-white px-3 py-4 text-center shadow-sm sm:rounded-none sm:border-0 sm:border-t-2 sm:border-orange sm:bg-transparent sm:px-0 sm:pt-3 sm:shadow-none"
+        >
           <AnimatedCounter
             value={m.value}
-            className={`block text-[clamp(1.4rem,3vw,2.4rem)] font-bold tracking-[-0.06em] ${dark ? 'text-blue' : 'text-blue'}`}
+            className={`block text-[clamp(1.5rem,5vw,2.4rem)] font-bold tracking-[-0.04em] sm:tracking-[-0.06em] ${dark ? 'text-blue' : 'text-blue'}`}
           />
           <span
-            className={`mt-1 block text-[0.6rem] uppercase tracking-[0.1em] ${dark ? 'text-muted' : 'text-muted'}`}
+            className={`mt-1.5 block text-[0.65rem] uppercase leading-tight tracking-[0.08em] sm:mt-1 sm:text-[0.6rem] sm:tracking-[0.1em] ${dark ? 'text-muted' : 'text-muted'}`}
           >
             {m.label}
           </span>
