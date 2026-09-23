@@ -3,7 +3,7 @@ import { contact } from '@/content/contact'
 import { sectionLabel } from '@/components/shared/ui'
 
 const rowLabel = 'flex items-center gap-1.5 text-[0.62rem] font-bold uppercase tracking-[0.14em] text-blue [&_svg]:w-3.5'
-const rowLink = 'block text-[1.05rem] text-foreground transition-colors hover:text-blue'
+const rowLink = 'block text-[1.15rem] font-bold text-navy transition-colors hover:text-blue'
 
 export function ContactInfo() {
   return (
@@ -13,38 +13,38 @@ export function ContactInfo() {
         Talk to the experts
       </h2>
 
-      <dl className="mt-10 space-y-7">
-        <div>
+      <dl className="mt-10 space-y-9">
+        <div className="border-l-2 border-blue pl-4">
           <dt className={rowLabel}>
             <Phone /> Phone
           </dt>
-          <dd className="mt-1">
+          <dd className="mt-2">
             <a href={contact.phoneHref} className={rowLink}>
               {contact.phone}
             </a>
           </dd>
         </div>
-        <div>
+        <div className="border-l-2 border-blue pl-4">
           <dt className={rowLabel}>
             <Mail /> Email
           </dt>
-          <dd className="mt-1 space-y-1">
+          <dd className="mt-2 space-y-1">
             <a href={`mailto:${contact.email}`} className={rowLink}>
               {contact.email}
             </a>
             <a
               href={`mailto:${contact.emailAlt}`}
-              className="block text-[1rem] text-muted transition-colors hover:text-blue"
+              className="block text-[1rem] font-semibold text-muted transition-colors hover:text-blue"
             >
               {contact.emailAlt}
             </a>
           </dd>
         </div>
-        <div>
+        <div className="border-l-2 border-blue pl-4">
           <dt className={rowLabel}>
             <MapPin /> Address
           </dt>
-          <dd className="mt-1 not-italic leading-[1.6] text-muted">
+          <dd className="mt-2 not-italic font-semibold leading-[1.6] text-navy">
             {contact.addressLines.map((line) => (
               <span key={line} className="block">
                 {line}
