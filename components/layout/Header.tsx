@@ -108,7 +108,7 @@ export function Header() {
             }
 
             return (
-              <div key={item.href} className="group/nav relative">
+              <div key={`${item.href}-${pathname}`} className="group/nav relative">
                 <button
                   type="button"
                   aria-haspopup="true"

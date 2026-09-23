@@ -214,7 +214,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 bg-white px-5 py-3 text-[0.67rem] font-bold uppercase tracking-[0.1em] text-navy transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 [&_svg]:w-4"
+        className="mt-6 inline-flex w-full min-h-12 items-center justify-center gap-2 bg-blue px-5 py-3 text-[0.67rem] font-bold uppercase tracking-[0.1em] text-white transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0 [&_svg]:w-4"
       >
         {loading ? (
           <>

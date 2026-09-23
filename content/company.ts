@@ -10,7 +10,7 @@ export const company = {
 
   philosophy: {
     label: 'Engineering philosophy',
-    title: 'Design intelligence, proven in the field.',
+    title: 'Design intelligence, proven in the field',
     body: 'Every Basmni system is engineered around the real operating conditions it will face — hydrostatic pressure, abrasion, restricted access, fluctuating water levels and long discharge routes. We combine design and manufacturing under one roof so equipment is built for the site, not adapted to it, and we stay on the project through installation, testing and commissioning.',
     points: [
       'Site-specific configuration over off-the-shelf equipment',

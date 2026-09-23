@@ -16,6 +16,8 @@ type Props = {
   reveal?: boolean
   /** CSS object-position for the cover fit (e.g. "center 40%"). */
   imagePosition?: string
+  /** Use 'contain' to show the full image uncropped (e.g. a portrait photo). Defaults to 'cover'. */
+  objectFit?: 'cover' | 'contain'
 }
 
 /**
@@ -33,6 +35,7 @@ export function ImageBlock(props: Props) {
     priority = false,
     sizes = '(max-width: 768px) 100vw, 50vw',
     imagePosition,
+    objectFit = 'cover',
   } = props
   const parallax = props.parallax && !reduce
   const reveal = props.reveal && !reduce
@@ -41,7 +44,7 @@ export function ImageBlock(props: Props) {
   if (!parallax && !reveal) {
     return (
       <div
-        className={`relative overflow-hidden bg-white [&_img]:object-cover [&_img]:transition-transform [&_img]:duration-[600ms] hover:[&_img]:scale-[1.04] ${className}`}
+        className={`relative overflow-hidden bg-white [&_img]:transition-transform [&_img]:duration-[600ms] hover:[&_img]:scale-[1.04] ${objectFit === 'contain' ? '[&_img]:object-contain' : '[&_img]:object-cover'} ${className}`}
       >
         <Image src={src} alt={alt} fill priority={priority} sizes={sizes} style={posStyle} />
       </div>
@@ -69,6 +72,7 @@ export function ImageBlock(props: Props) {
       priority={priority}
       sizes={sizes}
       posStyle={posStyle}
+      objectFit={objectFit}
     />
   )
 }
@@ -98,7 +102,7 @@ function ParallaxImage({ src, alt, className, priority, sizes, posStyle }: SubPr
   )
 }
 
-function RevealImage({ src, alt, className, priority, sizes, posStyle }: SubProps) {
+function RevealImage({ src, alt, className, priority, sizes, posStyle, objectFit }: SubProps) {
   return (
     <div
       className={`group relative overflow-hidden bg-white [&_img]:transition-transform [&_img]:duration-[700ms] hover:[&_img]:scale-[1.05] ${className}`}
@@ -116,7 +120,7 @@ function RevealImage({ src, alt, className, priority, sizes, posStyle }: SubProp
           fill
           priority={priority}
           sizes={sizes}
-          className="object-cover"
+          className={objectFit === 'contain' ? 'object-contain' : 'object-cover'}
           style={posStyle}
         />
       </motion.div>

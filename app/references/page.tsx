@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
 import { media } from '@/content/site'
-import { featuredProjects, projectStats } from '@/content/projects'
 import { referencesHero, referencesSections } from '@/content/pages'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Reveal } from '@/components/shared/Reveal'
-import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { ReferencesGrid } from '@/components/projects/ReferencesGrid'
 import { FieldArchive } from '@/components/projects/FieldArchive'
@@ -23,35 +21,11 @@ export default function ReferencesPage() {
     <PageTransition>
       <PageHero {...referencesHero} />
 
-      {/* Portfolio stats */}
-      <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading
-          dark
-          label={referencesSections.stats.label}
-          title={referencesSections.stats.title}
-        />
-        <div className="mt-9 grid grid-cols-2 gap-4 border-t border-border sm:mt-11 sm:grid-cols-4">
-          {projectStats.map((s) => (
-            <Reveal key={s.label}>
-              <div className="border-r border-border py-4 text-center last:border-r-0">
-                <AnimatedCounter
-                  value={s.value}
-                  className="block text-[2.4rem] tracking-[-0.08em] text-blue sm:text-[clamp(2.4rem,5vw,4.6rem)]"
-                />
-                <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.1em] text-muted">
-                  {s.label}
-                </span>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       {/* Before / after */}
       <section className={`${sectionPad} bg-white`}>
         <SectionHeading
           label="Before / after"
-          title="Bhaledh trench weir — Baira Siul."
+          title="Bhaledh trench weir — Baira Siul"
           deck="Desilting and civil restoration of the trench weir apron: from a silted, worn intake bay to a rebuilt apron with modified trash-rack screens and restored flow."
         />
         <div className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 sm:gap-6">
@@ -84,45 +58,8 @@ export default function ReferencesPage() {
         </div>
       </section>
 
-      {/* Featured projects */}
-      <section className={sectionPad}>
-        <SectionHeading
-          label={referencesSections.featured.label}
-          title={referencesSections.featured.title}
-        />
-        <div className="mt-9 grid grid-cols-1 gap-x-6 gap-y-12 sm:mt-11 sm:grid-cols-2">
-          {featuredProjects.map((p, i) => (
-            <Reveal key={p.id} direction={i % 2 === 0 ? 'right' : 'left'}>
-              <article className="group">
-                <ImageBlock
-                  src={media[p.image]}
-                  alt={p.name}
-                  reveal
-                  className="min-h-[260px] sm:min-h-[340px]"
-                />
-                <div className="pt-4">
-                  <span className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-blue">
-                    {p.category} · {p.year}
-                  </span>
-                  <h3 className="mt-1.5 text-[1.25rem] leading-[1.2] tracking-tightest sm:text-[1.4rem]">
-                    {p.name}
-                  </h3>
-                  <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{p.scope}</p>
-                  {p.contractNo && (
-                    <p className="mt-3 text-[0.66rem] uppercase tracking-[0.06em] text-muted/80">
-                      Contract {p.contractNo}
-                      {p.awardDate ? ` · Awarded ${p.awardDate}` : ''}
-                    </p>
-                  )}
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       {/* Browse — full filterable project list */}
-      <ReferencesGrid label="Browse" title="All reference projects." />
+      <ReferencesGrid label="Browse" title="All reference projects" />
 
       {/* Field photography */}
       <section className={`${sectionPad} bg-white text-navy`}>
@@ -134,6 +71,56 @@ export default function ReferencesPage() {
         />
         <FieldArchive
           items={[
+            {
+              src: media.pipeCraneInstallation,
+              title: 'Trench-weir intake structure',
+              caption: 'Embedded screens in a diversion channel',
+            },
+            {
+              src: media.civilPipesCraneRiverside,
+              title: 'Pipeline installation',
+              caption: 'Crane-lifted flanged pipe at a riverside site',
+            },
+            {
+              src: media.civilPipesCraneHillside,
+              title: 'Pipeline installation',
+              caption: 'Flanged pipe delivery on a hillside access road',
+            },
+            {
+              src: media.civilPipeStackRiverside,
+              title: 'Fabricated pipe stockyard',
+              caption: 'Flanged steel pipe staged for installation',
+            },
+            {
+              src: media.civilPipeDeliveryTruck,
+              title: 'Fabricated pipe to site',
+              caption: 'Flanged pipe sections on a mountain delivery route',
+            },
+            {
+              src: media.civilFlangedPipesTruck,
+              title: 'Flanged pipe delivery',
+              caption: 'Slung and secured for transport to site',
+            },
+            {
+              src: media.civilTruckBuoysMountainRoad,
+              title: 'Log boom buoys to site',
+              caption: 'Floating boom sections staged for delivery',
+            },
+            {
+              src: media.civilBuoysTruckLoading,
+              title: 'Log boom buoys loading',
+              caption: 'Crane loading floating boom sections for transport',
+            },
+            {
+              src: media.nimooDredging,
+              title: 'Nimoo dredging',
+              caption: 'Intake structure desilting in high-flow water',
+            },
+            {
+              src: media.dikrongDredging,
+              title: 'Dikrong dredging',
+              caption: 'Cable-deployed dredge pump on a reservoir pontoon',
+            },
             {
               src: media.hero,
               title: 'Hydro-mechanical installation',
@@ -148,11 +135,6 @@ export default function ReferencesPage() {
               src: media.trcm,
               title: 'Trash rack cleaning machines',
               caption: 'Hydraulic TRCM on site',
-            },
-            {
-              src: media.civilTrenchWeirIntake,
-              title: 'Trench-weir intake structure',
-              caption: 'Embedded screens in a diversion channel',
             },
             {
               src: media.civilFoundationExcavation,

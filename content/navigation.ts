@@ -3,7 +3,7 @@ export type NavItem = { label: string; href: string; children?: NavChild[] }
 
 export const navigation: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about-us' },
+  { label: 'About Us', href: '/about-us' },
   {
     label: 'Products & Services',
     href: '/products-services',
@@ -24,22 +24,22 @@ export const navigationCta = { label: 'Discuss Your Project', href: '/contact' }
 export const routeCopy = {
   '/about-us': {
     eyebrow: 'About Basmni',
-    title: 'Engineering with field intelligence.',
+    title: 'Engineering with field intelligence',
     body: 'Basmni Technologies Pvt. Ltd. brings design, manufacturing, installation and commissioning together for demanding water infrastructure.',
   },
   '/products-services/pressurized-air-cables': {
     eyebrow: 'Pressurized Air Cables (PAC)',
-    title: 'High-performance power transmission.',
+    title: 'High-performance power transmission',
     body: 'SF6- and PFAS-free power transmission insulated with clean compressed technical air.',
   },
   '/references': {
     eyebrow: 'References',
-    title: 'Work that performs in the field.',
+    title: 'Work that performs in the field',
     body: 'Explore selected hydro-mechanical and hydropower infrastructure projects delivered across India.',
   },
   '/contact': {
     eyebrow: 'Start a conversation',
-    title: 'Let’s engineer the solution.',
+    title: 'Let’s engineer the solution',
     body: 'Tell us about your project, operating conditions and delivery requirements.',
   },
 } as const

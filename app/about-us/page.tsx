@@ -26,9 +26,6 @@ export default function AboutPage() {
           <h1 className="text-[clamp(1.8rem,6vw,4rem)] uppercase leading-[1.04] tracking-tightest [overflow-wrap:anywhere]">
             About Basmni
           </h1>
-          <p className="mx-auto mt-6 max-w-[56ch] text-[1.05rem] leading-[1.7] text-muted">
-            {aboutSections.intro.deck}
-          </p>
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-8 sm:mt-16 sm:grid-cols-[1.1fr_0.9fr] sm:gap-[7vw]">
@@ -49,10 +46,11 @@ export default function AboutPage() {
           </Reveal>
           <Reveal direction="left">
             <ImageBlock
-              src={media.field}
-              alt="Basmni engineering team at a mountain project site"
+              src={media.aboutFieldCrane}
+              alt="Basmni engineering team installing crane-lifted equipment at a mountain project site"
               reveal
-              className="min-h-[320px] sm:min-h-[480px]"
+              objectFit="contain"
+              className="min-h-[420px] sm:min-h-[600px]"
             />
           </Reveal>
         </div>
@@ -87,7 +85,7 @@ export default function AboutPage() {
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
             <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
-              Pressurized Air Cables (PAC).
+              Pressurized Air Cables (PAC)
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
               PAC is Basmni&rsquo;s heavy-duty power-transmission system: a sealed metallic pipe
@@ -162,7 +160,7 @@ export default function AboutPage() {
           <Reveal direction="left">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
             <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
-              Trash Rack Cleaning Machines.
+              Trash Rack Cleaning Machines
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
               Debris on the intake screen builds a differential head across the rack, starves
@@ -199,7 +197,7 @@ export default function AboutPage() {
           <Reveal direction="right">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
             <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
-              Deep Dam &amp; Reservoir Dredging.
+              Deep Dam &amp; Reservoir Dredging
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
               Sediment fills the dead-storage zone, chokes intakes and cuts usable capacity. Basmni
@@ -273,7 +271,7 @@ export default function AboutPage() {
           <Reveal direction="left">
             <p className={`${sectionLabel} text-blue`}>Flagship solution</p>
             <h2 className="mt-3 text-[clamp(1.5rem,4vw,3rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
-              Specialized Civil Works.
+              Specialized Civil Works
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
               Every dam, barrage and river weir sits in a different geological setting. Basmni
@@ -310,8 +308,8 @@ export default function AboutPage() {
         />
         <Reveal direction="up" className="mt-9 sm:mt-11">
           <ImageBlock
-            src={media.civilSiteReview}
-            alt="Basmni engineers reviewing drawings at a waterfront construction site"
+            src={media.capabilitiesTeam}
+            alt="Basmni project team on-site at a reservoir installation"
             reveal
             className="min-h-[260px] sm:min-h-[420px]"
           />
@@ -347,9 +345,9 @@ export default function AboutPage() {
               <div className="border-r border-border py-4 text-center last:border-r-0">
                 <AnimatedCounter
                   value={stat.value}
-                  className="block text-[2.6rem] tracking-[-0.08em] text-blue sm:text-[clamp(2.6rem,5vw,5rem)]"
+                  className="block text-[1.6rem] tracking-[-0.08em] text-blue sm:text-[clamp(2.6rem,5vw,2.5rem)]"
                 />
-                <span className="mt-1 block text-[0.65rem] uppercase tracking-[0.1em] text-muted">
+                <span className="mt-1 block text-[0.8rem] uppercase tracking-[0.1em] text-muted">
                   {stat.label}
                 </span>
               </div>
@@ -365,7 +363,15 @@ export default function AboutPage() {
           title={aboutSections.equipment.title}
           deck={aboutSections.equipment.deck}
         />
-        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal direction="up" className="mt-9 sm:mt-11">
+          <ImageBlock
+            src={media.equipmentDamSpillway}
+            alt="Dam spillway with hydro-mechanical equipment installed on site"
+            reveal
+            className="min-h-[260px] sm:min-h-[440px]"
+          />
+        </Reveal>
+        <RevealStagger className="mt-4 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {company.equipment.map((eq) => (
             <RevealItem key={eq.title}>
               <Link
@@ -388,6 +394,43 @@ export default function AboutPage() {
             Explore our flagship solutions <ArrowUpRight />
           </Link>
         </Reveal>
+      </section>
+
+      {/* Before / after — Indira Sagar */}
+      <section className={`${sectionPad} bg-white`}>
+        <SectionHeading
+          label="Before / after"
+          title="Indira Sagar civil works"
+          deck="Foundation excavation through rock, rebar cage tied in place and the poured, cured intake shaft — a single civil structure from bare pit to finished pour."
+        />
+        <div className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 sm:gap-6">
+          <Reveal direction="right">
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.refIndirasagarBefore}
+                alt="Rebar cage being tied inside the excavated intake shaft pit at Indira Sagar"
+                reveal
+                className="aspect-[4/3]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                Before &mdash; excavation &amp; rebar
+              </figcaption>
+            </figure>
+          </Reveal>
+          <Reveal direction="left">
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.refIndirasagarAfter}
+                alt="Completed circular concrete intake shaft cast in place at Indira Sagar"
+                reveal
+                className="aspect-[4/3]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                After &mdash; shaft cast &amp; cured
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
       </section>
     </PageTransition>
   )

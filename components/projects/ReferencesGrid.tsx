@@ -63,10 +63,6 @@ export function ReferencesGrid({ label, title }: { label: string; title: string 
                   {p.name}
                 </h3>
                 <p className="mt-2.5 text-[0.95rem] leading-[1.55] text-muted">{p.scope}</p>
-                <p className="mt-auto pt-4 text-[0.62rem] uppercase tracking-[0.06em] text-muted/80">
-                  {p.contractNo ? `Contract ${p.contractNo}` : 'Contract ref. on file'}
-                  {p.awardDate ? ` · Awarded ${p.awardDate}` : ''}
-                </p>
               </div>
             </motion.article>
           ))}

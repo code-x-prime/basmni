@@ -162,7 +162,7 @@ export const dredgingCta = {
 
 /** International partnership + company standing. */
 export const dredgingPartnership = {
-  title: 'Backed by a world-leading dredge manufacturer.',
+  title: 'Backed by a world-leading dredge manufacturer',
   text: 'Basmni Technologies, established in 2016, delivers end-to-end deep dredging for dams and reservoirs. The dredge, pump and cutting technology is built on a technical partnership with Dragflow s.r.l. of Italy — a world-leading manufacturer of submersible dredge pumps and cable dredges.',
   points: [
     'End-to-end scope — engineering, equipment, mobilisation and operation',

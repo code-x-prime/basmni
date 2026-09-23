@@ -17,7 +17,7 @@ const home: Crumb = { label: 'Home', href: '/' }
 
 export const aboutHero: PageHeroContent = {
   eyebrow: 'About Basmni',
-  titleLines: ['Engineering experience.', 'Built for critical infrastructure.'],
+  titleLines: ['Engineering experience', 'Built for critical infrastructure'],
   description:
     'An Engineering and Infrastructure solutions provider operating on a Pan-India scale for the hydro-power and water resource sectors since 2016.',
   image: 'heroAbout',
@@ -28,7 +28,7 @@ export const aboutHero: PageHeroContent = {
 
 export const pacHero: PageHeroContent = {
   eyebrow: 'Pressurized Air Cables (PAC)',
-  titleLines: ['High-pressurized', 'air cable systems.'],
+  titleLines: ['High-pressurized', 'air cable systems'],
   description:
     'Heavy-duty power transmission insulated with clean compressed technical air — SF6-free, PFAS-free, low-loss and continuously monitored. Basmni engineers, supplies and commissions PAC systems for high-voltage substations, dense grid corridors and hydropower evacuation.',
   image: 'pacCableIndustrial',
@@ -42,7 +42,7 @@ export const pacHero: PageHeroContent = {
 
 export const dredgingHero: PageHeroContent = {
   eyebrow: 'Deep Dam & Reservoir Dredging',
-  titleLines: ['Deep dam', 'dredging.'],
+  titleLines: ['Deep dam', 'dredging'],
   description:
     'End-to-end dredging for dams and reservoirs under extreme conditions — depths to around 100 m, high solids concentrations, hydrostatic pressure and long discharge pipelines. Basmni engineers, mobilises and operates the dredge, pump and pipeline package.',
   image: 'dredgePumpPontoon',
@@ -53,7 +53,7 @@ export const dredgingHero: PageHeroContent = {
 
 export const trcmHero: PageHeroContent = {
   eyebrow: 'Trash Rack Cleaning Machines (TRCM)',
-  titleLines: ['Trash rack', 'cleaning machines.'],
+  titleLines: ['Trash rack', 'cleaning machines'],
   description:
     'Automated debris removal that protects downstream infrastructure and holds peak water flow. Debris on the intake screen builds a differential head across the rack, starves turbines and pumps, and loads the bars until they bend. Hydraulic, wire-rope, chain and gantry machines — matched to the intake.',
   image: 'trcmDamIntakeMachine',
@@ -71,7 +71,7 @@ export const trcmHero: PageHeroContent = {
 
 export const civilHero: PageHeroContent = {
   eyebrow: 'Specialized Civil Works',
-  titleLines: ['Specialized', 'civil works.'],
+  titleLines: ['Specialized', 'civil works'],
   description:
     'Allied civil engineering for dams, barrages and river weirs — foundation and bedrock treatment, mass concrete and RCC works, spillways, seepage cut-offs, trench-weir troughs and desilting chambers, built in coordination with the hydro-mechanical scope and tailored to the site.',
   image: 'civilTrenchWeirIntake',
@@ -83,7 +83,7 @@ export const civilHero: PageHeroContent = {
 
 export const referencesHero: PageHeroContent = {
   eyebrow: 'Project References',
-  titleLines: ['Engineering', 'in the field.'],
+  titleLines: ['Engineering', 'in the field'],
   description:
     'A selection of Basmni Engineering and Infrastructure projects delivered across India for NHPC, NEEPCO and other operators.',
   image: 'heroReferences',
@@ -94,7 +94,7 @@ export const referencesHero: PageHeroContent = {
 
 export const contactHero: PageHeroContent = {
   eyebrow: 'Contact Basmni',
-  titleLines: ["Let's engineer", 'your next project.'],
+  titleLines: ["Let's engineer", 'your next project'],
   description:
     'Tell us about your project, operating conditions and delivery requirements. Our engineering team will respond directly.',
   image: 'civil',
@@ -107,44 +107,44 @@ export const contactHero: PageHeroContent = {
 export const aboutSections = {
   intro: {
     label: 'About Basmni',
-    title: 'About Basmni.',
+    title: 'About Basmni',
     deck: 'An Engineering and Infrastructure solutions provider operating on a Pan-India scale for the hydro-power and water resource sectors since 2016.',
   },
   capabilities: {
     label: 'Capabilities',
-    title: 'From engineering to execution.',
+    title: 'From engineering to execution',
     deck: 'One accountable team across every stage — equipment is engineered for the site and stays supported through commissioning.',
   },
   applications: {
     label: 'Applications',
-    title: 'Where our engineering works.',
+    title: 'Where our engineering works',
   },
-  glance: { label: 'At a glance', title: 'Basmni at a glance.' },
+  glance: { label: 'At a glance', title: 'Basmni at a glance' },
   equipment: {
     label: 'Technology & equipment',
-    title: 'The systems behind the work.',
+    title: 'The systems behind the work',
     deck: 'Dredges, pumps, cleaning machines and power-transmission systems — engineered, built and commissioned by Basmni.',
   },
-  why: { label: 'Why Basmni', title: 'Built for demanding environments.' },
+  why: { label: 'Why Basmni', title: 'Built for demanding environments' },
   process: {
     label: 'Process',
-    title: 'A single path from design to site.',
+    title: 'A single path from design to site',
   },
 }
 
 export const referencesSections = {
-  stats: { label: 'Portfolio', title: 'A record of delivered contracts.' },
-  featured: { label: 'Featured', title: 'Selected projects.' },
-  archive: { label: 'Archive', title: 'Complete project list.' },
-  gallery: { label: 'Field archive', title: 'Engineering in the field.' },
+  stats: { label: 'Portfolio', title: 'A record of delivered contracts' },
+  featured: { label: 'Featured', title: 'Selected projects' },
+  archive: { label: 'Archive', title: 'Complete project list' },
+  gallery: { label: 'Field archive', title: 'Engineering in the field' },
 }
 
 export const contactSections = {
   intro: {
     label: 'Contact',
-    title: 'Talk to the experts.',
+    title: 'Talk to the experts',
     body: 'Whether you are scoping a desilting campaign, an intake protection package or a civil modification, our engineering team can advise on configuration, delivery and commissioning.',
   },
-  quick: { label: 'Quick actions', title: 'Reach us directly.' },
-  location: { label: 'Location', title: 'Where we are.' },
+  quick: { label: 'Quick actions', title: 'Reach us directly' },
+  location: { label: 'Location', title: 'Where we are' },
 }

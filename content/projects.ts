@@ -82,7 +82,7 @@ export const projects: Project[] = [
     scope:
       'Desilting / silt removal in front of all six draft tube gates in submerged condition at the tail pool of Nimoo Bazgo Power Station.',
     contractNo: 'NH/NBPS/C&P/WO-42/2025-26/85',
-    image: 'dredgeSubmersibleHead',
+    image: 'nimooDredging',
     featured: true,
   },
   {
@@ -118,7 +118,7 @@ export const projects: Project[] = [
     awardDate: '13.07.2026',
     scope: 'Dredging of sediments from the tail pool for Dikrong Power House, PLHPS, NEEPCO Ltd.',
     contractNo: 'PLHPS/C&P/CIVIL-PH/T-46/2026-27/545',
-    image: 'dredgeReservoirValley',
+    image: 'dikrongDredging',
     featured: true,
   },
 ]
