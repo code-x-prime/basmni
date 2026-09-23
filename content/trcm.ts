@@ -81,7 +81,7 @@ export const trcmHowItWorks: TrcmStep[] = [
   {
     number: '02',
     title: 'Rake the screen',
-    text: 'The grab is driven down the face of the trash rack — by rigid hydraulic arms or a wire-rope hoist — and combs debris off the bars from the bottom up with positive force.',
+    text: 'The grab is driven down the face of the trash rack — by rigid hydraulic arms or a wire-rope hoist — and combs debris off the bars.',
   },
   {
     number: '03',
