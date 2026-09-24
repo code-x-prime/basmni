@@ -43,7 +43,7 @@ export default function PacPage() {
       <section className={sectionPad}>
         <SectionHeading
           label="Overview"
-          title="Power transmission insulated with pressurized air."
+          title="Power transmission insulated with pressurized air"
         />
         <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {pacHomeIntro.map((p) => (
@@ -59,7 +59,7 @@ export default function PacPage() {
 
       {/* 02 — How PAC works */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="How PAC works" title="Three functions, one sealed pipe." />
+        <SectionHeading dark label="How PAC works" title="Three functions, one sealed pipe" />
         <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {pacHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-white p-6 sm:p-8">
@@ -86,7 +86,7 @@ export default function PacPage() {
         <SectionHeading
           dark
           label="Key features"
-          title="What makes PAC different."
+          title="What makes PAC different"
           deck="Capacity, efficiency, a clean insulating medium and built-in monitoring in one metallic system."
         />
         <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-4">
@@ -133,7 +133,7 @@ export default function PacPage() {
 
       {/* 05 — Key components */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Key components" title="What a PAC system is made of." />
+        <SectionHeading label="Key components" title="What a PAC system is made of" />
         <div className="mt-8 sm:mt-10">
           <FeatureRows items={pacComponents.map((c) => ({ title: c.title, text: c.text }))} />
         </div>
@@ -141,7 +141,7 @@ export default function PacPage() {
 
       {/* 06 — Technical specifications */}
       <section className={sectionPad}>
-        <SectionHeading label="Technical specifications" title="Basmni PAC system parameters." />
+        <SectionHeading label="Technical specifications" title="Basmni PAC system parameters" />
         <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
           <Reveal>
             <table className="w-full border-collapse text-left">
@@ -175,7 +175,7 @@ export default function PacPage() {
         <SectionHeading
           dark
           label="Solutions by grid level"
-          title="Where PAC fits across the grid."
+          title="Where PAC fits across the grid"
           deck="From transmission networks and substations to specialised high-current applications — engineered to the rated parameters of each project."
         />
         <RevealStagger
@@ -216,7 +216,7 @@ export default function PacPage() {
       <section className={sectionPad}>
         <SectionHeading
           label="Comparison"
-          title="PAC vs established alternatives."
+          title="PAC vs established alternatives"
           deck="How a pressurized-air cable compares with underground XLPE cable and with overhead lines."
         />
         <div className="mt-8 sm:mt-10">
@@ -238,7 +238,7 @@ export default function PacPage() {
         <SectionHeading
           dark
           label="Proven engineering"
-          title="Established principles, a cleaner architecture."
+          title="Established principles, a cleaner architecture"
         />
         <div className="mt-8 grid grid-cols-1 gap-8 sm:mt-10 sm:grid-cols-[1fr_0.9fr] sm:gap-[6vw]">
           <Reveal>
@@ -306,7 +306,7 @@ export default function PacPage() {
 
       {/* 11 — Engineering & installation */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="Engineering & installation" title="One accountable scope." />
+        <SectionHeading dark label="Engineering & installation" title="One accountable scope" />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">
           {pacInstallation.intro}
         </p>
@@ -337,7 +337,7 @@ export default function PacPage() {
       <section className={sectionPad}>
         <SectionHeading
           label="Engineering support"
-          title="Work with our engineering team."
+          title="Work with our engineering team"
           deck={pacEngineeringSupport.intro}
         />
         <RevealStagger
@@ -357,7 +357,7 @@ export default function PacPage() {
 
       {/* 13 — FAQ */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions" />
         <div className="mt-9 sm:mt-11">
           <FAQ items={pacFaq} />
         </div>

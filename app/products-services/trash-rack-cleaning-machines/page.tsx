@@ -77,7 +77,7 @@ export default function TrcmPage() {
         <SectionHeading
           dark
           label="Key features"
-          title="Automated, and matched to the intake."
+          title="Automated, and matched to the intake"
           deck="The mechanism is chosen for the depth, channel and debris — not one machine for every site."
         />
         <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
@@ -94,7 +94,7 @@ export default function TrcmPage() {
 
       {/* Configurations */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Configurations" title="Four ways to keep a rack clean." />
+        <SectionHeading label="Configurations" title="Four ways to keep a rack clean" />
         <RevealStagger
           className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2"
           stagger={0.08}

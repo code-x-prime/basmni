@@ -24,7 +24,7 @@ export default function AboutPage() {
       <section className={`${sectionPad} pt-[100px] sm:pt-[136px] lg:pt-[136px]`}>
         <div className="mx-auto max-w-[900px] text-center">
           <h1 className="text-[clamp(1.8rem,6vw,4rem)] uppercase leading-[1.04] tracking-tightest [overflow-wrap:anywhere]">
-            About Basmni
+            Basmni: A Brief Inside
           </h1>
         </div>
 
@@ -171,8 +171,8 @@ export default function AboutPage() {
             <ul className="mt-7 space-y-2.5">
               {[
                 'Four machine types for any intake',
-                'Hydraulic-arm reach up to ~20 m',
-                'Wire-rope depth beyond 20 m',
+                'Hydraulic-arm reach up to ~30 m',
+                'Wire-rope TRCM  any depth',
                 '24/7 automated cleaning cycles',
               ].map((p) => (
                 <li key={p} className="flex gap-3 text-[1rem] text-muted">
@@ -200,7 +200,7 @@ export default function AboutPage() {
               Deep Dam &amp; Reservoir Dredging
             </h2>
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
-              Sediment fills the dead-storage zone, chokes intakes and cuts usable capacity. Basmni
+              Sediment fills the dead-storage zone, chokes intakes and depletes usable capacity. Basmni
               takes the whole recovery scope &mdash; engineering, mobilisation and operation &mdash;
               using cable-deployed submersible pumps and sediment fluidisation to work reliably down
               to around 100&nbsp;m, at high solids concentrations and over long discharge pipelines.
@@ -282,7 +282,7 @@ export default function AboutPage() {
             <ul className="mt-7 space-y-2.5">
               {[
                 'Site-specific structure engineering',
-                'Foundation and seepage treatment',
+                'Foundation and Grouting works',
                 'Spillways and flood-passing works',
                 'Coordinated with gates and racks',
               ].map((p) => (
