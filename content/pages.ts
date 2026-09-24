@@ -56,9 +56,8 @@ export const trcmHero: PageHeroContent = {
   titleLines: ['Trash rack', 'cleaning machines'],
   description:
     'Automated debris removal that protects downstream infrastructure and holds peak water flow. Debris on the intake screen builds a differential head across the rack, starves turbines and pumps, and loads the bars until they bend. Hydraulic, wire-rope, chain and gantry machines — matched to the intake.',
-  image: 'trcmDamIntakeMachine',
-  imageAlt:
-    'Gantry-mounted trash rack cleaning machine lifting logs off a dam intake screen, spillway behind',
+  image: 'trcmGantryInstalledSite',
+  imageAlt: 'Gantry-mounted trash rack cleaning machine installed at a hydropower intake',
   imagePosition: 'center',
   breadcrumb: [
     home,

@@ -132,7 +132,7 @@ export const trcmConfigurations: TrcmConfig[] = [
   {
     title: 'Rope / wire-cable operated',
     text: 'For deep intake channels beyond 20 m. Wire-rope hoists lower heavy grab buckets or multi-blade grapples under gravity — cost-effective and adaptable where a rigid arm cannot reach.',
-    image: 'trcmHydraulicDredgeCrane',
+    image: 'trcmSubmersiblePumpHoses',
   },
   {
     title: 'Chain-driven continuous rake',

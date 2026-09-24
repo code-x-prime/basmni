@@ -65,8 +65,8 @@ export default function TrcmPage() {
 
       {/* Image band */}
       <ImageBlock
-        src={media.trcmSubmersiblePumpHoses}
-        alt="Submersible pump and hose assembly being rigged on a TRCM installation deck"
+        src={media.trcmHydraulicDredgeCrane}
+        alt="Hydraulic grab crane on rail tracks at a dam intake platform, water discharging behind"
         parallax
         sizes="100vw"
         className="h-[42vh] min-h-[280px] sm:h-[56vh]"
