@@ -46,6 +46,10 @@ export const trcmComponents: { title: string; text: string }[] = [
     title: 'Control system (PLC / SCADA)',
     text: 'Runs manual, semi-automatic or fully automatic cleaning cycles, typically triggered by a differential water-level sensor or a timer.',
   },
+  {
+    title: 'Hydraulic system',
+    text: 'Power pack, valves and pressure-rated piping that deliver oil to the cylinders driving the arm, grab and carriage.',
+  },
 ]
 
 /** ROI comparison — operating a plant with and without an automated TRCM. */
