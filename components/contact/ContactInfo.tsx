@@ -32,10 +32,7 @@ export function ContactInfo() {
             <a href={`mailto:${contact.email}`} className={rowLink}>
               {contact.email}
             </a>
-            <a
-              href={`mailto:${contact.emailAlt}`}
-              className="block text-[1rem] font-semibold text-muted transition-colors hover:text-blue"
-            >
+            <a href={`mailto:${contact.emailAlt}`} className={rowLink}>
               {contact.emailAlt}
             </a>
           </dd>

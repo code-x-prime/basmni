@@ -164,6 +164,16 @@ export const company = {
       text: 'Tightly spaced teeth for leaves, plastics and aquatic weeds.',
       href: '/products-services/trash-rack-cleaning-machines',
     },
+    {
+      title: 'Log boom barriers',
+      text: 'Wire-rope suspended floating booms that intercept logs, ice and debris ahead of the intake.',
+      href: '/products-services/trash-rack-cleaning-machines',
+    },
+    {
+      title: 'Civil works',
+      text: 'Foundation, mass concrete and trench-weir works engineered alongside the hydro-mechanical scope.',
+      href: '/products-services/civil-works',
+    },
   ],
 
   whyBasmni: [

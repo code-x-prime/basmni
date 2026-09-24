@@ -1,8 +1,10 @@
 import type { Metadata } from 'next'
+import { media } from '@/content/site'
 import { contactHero } from '@/content/pages'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { Reveal } from '@/components/shared/Reveal'
+import { ImageBlock } from '@/components/shared/ImageBlock'
 import { ContactInfo } from '@/components/contact/ContactInfo'
 import { ContactForm } from '@/components/contact/ContactForm'
 import { sectionPad } from '@/components/shared/ui'
@@ -29,6 +31,16 @@ export default function ContactPage() {
           </Reveal>
         </div>
       </section>
+
+      {/* Full-width closing image */}
+      <Reveal>
+        <ImageBlock
+          src={media.civil}
+          alt="Concrete arch dam and reservoir in a river canyon"
+          reveal
+          className="min-h-[280px] w-full sm:min-h-[420px]"
+        />
+      </Reveal>
     </PageTransition>
   )
 }

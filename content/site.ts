@@ -81,6 +81,13 @@ export const media = {
   dredgeArchDamAerial: '/images/dredge-arch-dam-aerial.jpeg',
   dredgeReservoirValley: '/images/dredge-reservoir-valley.jpeg',
   dredgeSlurryDischarge: '/images/dredge-slurry-discharge.jpeg',
+  trcmHydraulicDredgeCrane: '/images/trcm-hydraulic-dredge-crane.jpeg',
+  trcmGantryInstalledSite: '/images/trcm-gantry-installed-site.jpeg',
+  trcmRackPanelsCrane: '/images/trcm-rack-panels-crane.jpeg',
+  trcmSubmersiblePumpHoses: '/images/trcm-submersible-pump-hoses.jpeg',
+  trcmSubmersiblePumpCloseup: '/images/trcm-submersible-pump-closeup.jpeg',
+  trcmReservoirValleyDeck: '/images/trcm-reservoir-valley-deck.jpeg',
+  trcmTeamSiteVisit: '/images/trcm-team-site-visit.jpeg',
 }
 
 export type MediaKey = keyof typeof media

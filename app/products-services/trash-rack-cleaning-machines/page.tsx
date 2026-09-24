@@ -65,8 +65,8 @@ export default function TrcmPage() {
 
       {/* Image band */}
       <ImageBlock
-        src={media.trcmIntakeDebrisBand}
-        alt="Logs, branches and weed piled against a dam intake screen, water backed up on the upstream side"
+        src={media.trcmSubmersiblePumpHoses}
+        alt="Submersible pump and hose assembly being rigged on a TRCM installation deck"
         parallax
         sizes="100vw"
         className="h-[42vh] min-h-[280px] sm:h-[56vh]"
@@ -200,8 +200,16 @@ export default function TrcmPage() {
 
       {/* Engineering & delivery */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Engineering & delivery" title="Survey to commissioning." />
+        <SectionHeading label="Engineering & delivery" title="Survey to commissioning" />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{trcmProcess.intro}</p>
+        <Reveal className="mt-9 sm:mt-11">
+          <ImageBlock
+            src={media.trcmTeamSiteVisit}
+            alt="Basmni engineering team on-site at a hydropower reservoir installation"
+            reveal
+            className="min-h-[240px] sm:min-h-[360px]"
+          />
+        </Reveal>
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {trcmProcess.steps.map((step) => (

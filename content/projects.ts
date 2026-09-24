@@ -121,6 +121,17 @@ export const projects: Project[] = [
     image: 'dikrongDredging',
     featured: true,
   },
+  {
+    id: 'pac-hv-substation',
+    name: 'High-Voltage Substation — Pressurized Air Cable Transmission',
+    client: 'Grid corridor & substation evacuation',
+    category: 'PAC',
+    year: '2026',
+    scope:
+      'Engineering, supply and commissioning of SF6- and PFAS-free Pressurized Air Cable transmission for a high-voltage substation, rated up to 420 kV and 5,000 A continuous.',
+    image: 'pacCableIndustrial',
+    featured: true,
+  },
 ]
 
 export const featuredProjects = projects.filter((p) => p.featured)

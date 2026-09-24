@@ -132,17 +132,17 @@ export const trcmConfigurations: TrcmConfig[] = [
   {
     title: 'Rope / wire-cable operated',
     text: 'For deep intake channels beyond 20 m. Wire-rope hoists lower heavy grab buckets or multi-blade grapples under gravity — cost-effective and adaptable where a rigid arm cannot reach.',
-    image: 'spillway',
+    image: 'trcmHydraulicDredgeCrane',
   },
   {
     title: 'Chain-driven continuous rake',
     text: 'For shallow channels, pump houses and high volumes of fine debris. Continuous rotating chains pull a series of rake blades along the screen panel for uninterrupted cleaning.',
-    image: 'trashRack',
+    image: 'trcmRackPanelsCrane',
   },
   {
     title: 'Traversing / mobile gantry',
     text: 'For multi-bay dam intakes and wide barrages. A self-propelled carriage on rail tracks above the deck moves along the structure so one machine services every bay.',
-    image: 'trcmDamIntakeMachine',
+    image: 'trcmGantryInstalledSite',
   },
   {
     title: 'Log boom barriers',
@@ -170,12 +170,12 @@ export const trcmApplications: TrcmApplication[] = [
   {
     title: 'Pumping & cooling-water intakes',
     text: 'Fine screening ahead of sensitive pumps and cooling-water systems where small debris would foul or damage equipment.',
-    image: 'trashRack',
+    image: 'trcmSubmersiblePumpCloseup',
   },
   {
     title: 'Reservoir surfaces',
     text: 'Log booms across the reservoir keep floating timber and ice away from the intake approach in the first place.',
-    image: 'logBoom',
+    image: 'trcmReservoirValleyDeck',
   },
 ]
 

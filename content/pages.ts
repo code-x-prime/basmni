@@ -85,7 +85,7 @@ export const referencesHero: PageHeroContent = {
   eyebrow: 'Project References',
   titleLines: ['Engineering', 'in the field'],
   description:
-    'A selection of Basmni Engineering and Infrastructure projects delivered across India for NHPC, NEEPCO and other operators.',
+    'A selection of Basmni Engineering and Infrastructure projects delivered across India and Bhutan.',
   image: 'heroReferences',
   imageAlt: 'Arch dam with a gantry crane and a floating debris boom at a hydropower project',
   imagePosition: 'center',
