@@ -52,8 +52,9 @@ export function ReferencesGrid({ label, title }: { label: string; title: string 
               <ImageBlock
                 src={media[p.image]}
                 alt={p.name}
+                objectFit="contain"
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="aspect-[4/3]"
+                className="aspect-[4/3] bg-background"
               />
               <div className="flex flex-1 flex-col p-5 sm:p-6">
                 <span className="text-[0.6rem] font-bold uppercase tracking-[0.12em] text-blue">
