@@ -193,7 +193,7 @@ export const dredgingSeries: DredgeSeries[] = [
       'Hydraulic power pack',
       'Operator cabin',
     ],
-    image: 'dredgeSubmersibleHead',
+    image: 'dredgeSubmersiblePumpStandalone',
   },
   {
     code: 'DRP',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ArrowDown, ArrowRight } from 'lucide-react'
 import { media } from '@/content/site'
 import { trcmHero } from '@/content/pages'
 import {
@@ -165,10 +166,36 @@ export default function TrcmPage() {
       <section className={sectionPad}>
         <SectionHeading
           label="Direct ROI"
-          title="Operating with and without a machine."
+          title="Operating with and without a machine"
           deck="The return shows up as recovered capacity, lower maintenance, safer work and flood-season uptime."
         />
-        <div className="mt-9 overflow-x-auto sm:mt-11">
+        {/* Mobile: stacked comparison cards */}
+        <div className="mt-9 space-y-4 sm:hidden">
+          {trcmRoi.map((r) => (
+            <div key={r.benefit} className="border border-border p-4">
+              <h3 className="text-[0.8rem] font-bold uppercase tracking-tightest text-navy">
+                {r.benefit}
+              </h3>
+              <div className="mt-3 space-y-3">
+                <div>
+                  <span className="block text-[0.6rem] font-bold uppercase tracking-[0.12em] text-muted">
+                    Without a TRCM
+                  </span>
+                  <p className="mt-1 text-[0.95rem] leading-[1.5] text-muted">{r.without}</p>
+                </div>
+                <div className="border-t border-border pt-3">
+                  <span className="block text-[0.6rem] font-bold uppercase tracking-[0.12em] text-blue">
+                    With a TRCM
+                  </span>
+                  <p className="mt-1 text-[0.95rem] leading-[1.5] text-foreground">{r.with}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop: comparison table */}
+        <div className="mt-9 hidden overflow-x-auto sm:mt-11 sm:block">
           <table className="w-full min-w-[640px] border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
@@ -211,13 +238,24 @@ export default function TrcmPage() {
           />
         </Reveal>
         <div className="mt-9 sm:mt-11">
-          <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
-            {trcmProcess.steps.map((step) => (
-              <RevealItem key={step} className="bg-white p-6 text-center sm:p-7">
-                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
-                  {step}
-                </h3>
-              </RevealItem>
+          <RevealStagger className="flex flex-col sm:flex-row sm:items-stretch">
+            {trcmProcess.steps.map((step, i) => (
+              <div key={step} className="flex flex-1 flex-col sm:flex-row sm:items-center">
+                <RevealItem className="flex flex-1 flex-col items-center gap-2 border border-border p-6 text-center sm:p-7">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-[0.85rem] font-bold text-white">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
+                    {step}
+                  </h3>
+                </RevealItem>
+                {i < trcmProcess.steps.length - 1 && (
+                  <div className="flex shrink-0 items-center justify-center text-blue sm:w-8">
+                    <ArrowRight className="hidden w-5 -rotate-0 sm:block" />
+                    <ArrowDown className="w-5 sm:hidden" />
+                  </div>
+                )}
+              </div>
             ))}
           </RevealStagger>
         </div>

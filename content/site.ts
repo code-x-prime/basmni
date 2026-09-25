@@ -81,6 +81,8 @@ export const media = {
   dredgeArchDamAerial: '/images/dredge-arch-dam-aerial.jpeg',
   dredgeReservoirValley: '/images/dredge-reservoir-valley.jpeg',
   dredgeSlurryDischarge: '/images/dredge-slurry-discharge.jpeg',
+  dredgeSubmersiblePumpStandalone: '/images/dredge-submersible-pump-standalone.jpeg',
+  dredgePumpRiggingHose: '/images/dredge-pump-rigging-hose.jpeg',
   trcmHydraulicDredgeCrane: '/images/trcm-hydraulic-dredge-crane.jpeg',
   trcmGantryInstalledSite: '/images/trcm-gantry-installed-site.jpeg',
   trcmRackPanelsCrane: '/images/trcm-rack-panels-crane.jpeg',

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { ArrowDown, ArrowRight } from 'lucide-react'
 import { media } from '@/content/site'
 import { dredgingHero } from '@/content/pages'
 import { dredgingEquipment, dredgingTechnology } from '@/content/services'
@@ -39,7 +40,7 @@ export default function DredgingPage() {
 
       {/* 01 — Overview */}
       <section className={sectionPad}>
-        <SectionHeading label="Overview" title="Recovering storage lost to sediment." />
+        <SectionHeading label="Overview" title="Recovering storage lost to sediment" />
         <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {dredgingHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
@@ -99,8 +100,8 @@ export default function DredgingPage() {
 
       {/* Image band */}
       <ImageBlock
-        src={media.dredgeReservoirValley}
-        alt="Reservoir and dam in a green valley during a dredging campaign"
+        src={media.dredgePumpRiggingHose}
+        alt="Submersible dredge pump being rigged with discharge hose on a dam platform"
         parallax
         sizes="100vw"
         className="h-[42vh] min-h-[280px] sm:h-[56vh]"
@@ -296,18 +297,29 @@ export default function DredgingPage() {
 
       {/* 11 — Engineering & delivery */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="Engineering & delivery" title="Survey to handover." />
+        <SectionHeading dark label="Engineering & delivery" title="Survey to handover" />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">
           {dredgingProcess.intro}
         </p>
         <div className="mt-9 sm:mt-11">
-          <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
-            {dredgingProcess.steps.map((step) => (
-              <RevealItem key={step} className="bg-white p-6 text-center sm:p-7">
-                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
-                  {step}
-                </h3>
-              </RevealItem>
+          <RevealStagger className="flex flex-col sm:flex-row sm:items-stretch">
+            {dredgingProcess.steps.map((step, i) => (
+              <div key={step} className="flex flex-1 flex-col sm:flex-row sm:items-center">
+                <RevealItem className="flex flex-1 flex-col items-center gap-2 border border-border p-6 text-center sm:p-7">
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-[0.85rem] font-bold text-white">
+                    {i + 1}
+                  </span>
+                  <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
+                    {step}
+                  </h3>
+                </RevealItem>
+                {i < dredgingProcess.steps.length - 1 && (
+                  <div className="flex shrink-0 items-center justify-center text-blue sm:w-8">
+                    <ArrowRight className="hidden w-5 sm:block" />
+                    <ArrowDown className="w-5 sm:hidden" />
+                  </div>
+                )}
+              </div>
             ))}
           </RevealStagger>
         </div>
