@@ -177,13 +177,13 @@ export default function TrcmPage() {
           <table className="w-full min-w-[640px] border-collapse text-left">
             <thead>
               <tr className="border-b border-border">
-                <th className="w-[26%] py-3.5 pr-4 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
+                <th className="w-[26%] py-3.5 pr-4 text-[0.78rem] font-bold uppercase tracking-[0.12em] text-muted">
                   Operational benefit
                 </th>
-                <th className="w-[37%] px-4 py-3.5 text-center text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
+                <th className="w-[37%] px-4 py-3.5 text-center text-[0.78rem] font-bold uppercase tracking-[0.12em] text-muted">
                   Without a TRCM
                 </th>
-                <th className="w-[37%] px-4 py-3.5 text-center text-[0.62rem] font-bold uppercase tracking-[0.12em] text-blue">
+                <th className="w-[37%] px-4 py-3.5 text-center text-[0.78rem] font-bold uppercase tracking-[0.12em] text-blue">
                   <span className="rounded bg-blue/10 px-2.5 py-1">With a TRCM</span>
                 </th>
               </tr>
