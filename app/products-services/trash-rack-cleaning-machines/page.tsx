@@ -67,7 +67,8 @@ export default function TrcmPage() {
               src={media.trcmHydraulicDredgeCrane}
               alt="Hydraulic grab crane on rail tracks at a dam intake platform, water discharging behind"
               reveal
-              className="min-h-[280px] sm:min-h-[380px]"
+              objectFit="contain"
+              className="min-h-[280px] bg-background sm:min-h-[380px]"
             />
           </Reveal>
         </div>

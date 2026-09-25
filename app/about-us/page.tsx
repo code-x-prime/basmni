@@ -232,8 +232,9 @@ export default function AboutPage() {
                 <ImageBlock
                   src={media.dredgePumpPontoon}
                   alt="Cable-deployed dredge pump and hydraulic arm on a pontoon in a reservoir"
-                  parallax
-                  className="min-h-[260px] sm:min-h-[380px]"
+                  reveal
+                  objectFit="contain"
+                  className="min-h-[260px] bg-background sm:min-h-[380px]"
                 />
                 <figcaption className="absolute left-4 top-4 flex items-center gap-1.5 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
                   Dredging &mdash; reservoir desilting
