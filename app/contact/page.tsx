@@ -32,16 +32,17 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Full-width closing image */}
-      <Reveal>
-        <ImageBlock
-          src={media.trcmTeamSiteVisit}
-          alt="Basmni engineering team on-site at a hydropower reservoir installation"
-          reveal
-          objectFit="contain"
-          className="min-h-[280px] w-full bg-background sm:min-h-[480px]"
-        />
-      </Reveal>
+      {/* Closing image */}
+      <div className={`${sectionPad} pt-0`}>
+        <Reveal className="mx-auto max-w-7xl">
+          <ImageBlock
+            src={media.trcmTeamSiteVisit}
+            alt="Basmni engineering team on-site at a hydropower reservoir installation"
+            reveal
+            className="aspect-[16/9] w-full"
+          />
+        </Reveal>
+      </div>
     </PageTransition>
   )
 }
