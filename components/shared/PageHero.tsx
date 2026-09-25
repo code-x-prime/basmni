@@ -34,7 +34,7 @@ export function PageHero({
 
   return (
     <section className="relative isolate overflow-hidden bg-white pt-[76px] text-navy sm:pt-[104px] lg:pt-[104px]">
-      <div className="grid grid-cols-1 lg:min-h-[520px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
+      <div className="grid grid-cols-1 lg:min-h-[520px] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         {/* Image */}
         <motion.div
           className="relative min-h-[248px] bg-background sm:min-h-[300px] lg:min-h-0"
@@ -97,7 +97,7 @@ export function PageHero({
 
             <motion.h1
               variants={fadeUp}
-              className="mt-3 max-w-[17ch] text-[clamp(1.6rem,4.6vw,3.5rem)] uppercase leading-[1.1] tracking-tightest text-navy [overflow-wrap:anywhere]"
+              className="mt-3 max-w-[22ch] text-[clamp(1.6rem,4.6vw,3.5rem)] uppercase leading-[1.1] tracking-tightest text-navy [overflow-wrap:anywhere]"
             >
               {titleLines.map((line, i) => (
                 <Fragment key={line}>
@@ -110,7 +110,7 @@ export function PageHero({
             {description && (
               <motion.p
                 variants={fadeUp}
-                className="mt-5 max-w-[48ch] text-[1.05rem] leading-[1.65] text-muted"
+                className="mt-5 max-w-[60ch] text-[1.05rem] leading-[1.65] text-muted"
               >
                 {description}
               </motion.p>
