@@ -10,6 +10,8 @@ export type PageHeroContent = {
   imageAlt: string
   /** CSS object-position for the hero image so the subject stays in frame. */
   imagePosition?: string
+  /** Use 'contain' to show a portrait/tall photo in full, uncropped. Defaults to 'cover'. */
+  imageFit?: 'cover' | 'contain'
   breadcrumb: Crumb[]
 }
 
@@ -59,6 +61,7 @@ export const trcmHero: PageHeroContent = {
   image: 'trcmGantryInstalledSite',
   imageAlt: 'Gantry-mounted trash rack cleaning machine installed at a hydropower intake',
   imagePosition: 'center',
+  imageFit: 'contain',
   breadcrumb: [
     home,
     {

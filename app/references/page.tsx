@@ -58,6 +58,43 @@ export default function ReferencesPage() {
         </div>
       </section>
 
+      {/* Before / after — Indira Sagar */}
+      <section className={`${sectionPad} bg-white`}>
+        <SectionHeading
+          label="Before / after"
+          title="Indira Sagar civil works"
+          deck="Foundation excavation through rock, rebar cage tied in place and the poured, cured intake shaft — a single civil structure from bare pit to finished pour."
+        />
+        <div className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 sm:gap-6">
+          <Reveal direction="right">
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.refIndirasagarBefore}
+                alt="Rebar cage being tied inside the excavated intake shaft pit at Indira Sagar"
+                reveal
+                className="aspect-[4/3]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                Before &mdash; excavation &amp; rebar
+              </figcaption>
+            </figure>
+          </Reveal>
+          <Reveal direction="left">
+            <figure className="relative overflow-hidden">
+              <ImageBlock
+                src={media.refIndirasagarAfter}
+                alt="Completed circular concrete intake shaft cast in place at Indira Sagar"
+                reveal
+                className="aspect-[4/3]"
+              />
+              <figcaption className="absolute left-4 top-4 bg-white/95 px-3 py-1.5 text-[0.68rem] font-bold uppercase tracking-[0.12em] text-blue">
+                After &mdash; shaft cast &amp; cured
+              </figcaption>
+            </figure>
+          </Reveal>
+        </div>
+      </section>
+
       {/* Browse — full filterable project list */}
       <ReferencesGrid label="Browse" title="All reference projects" />
 

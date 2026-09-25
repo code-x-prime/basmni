@@ -27,6 +27,7 @@ export function PageHero({
   image,
   imageAlt,
   imagePosition = 'center',
+  imageFit = 'cover',
   breadcrumb,
 }: PageHeroContent) {
   const reduce = useReducedMotion()
@@ -36,7 +37,7 @@ export function PageHero({
       <div className="grid grid-cols-1 lg:min-h-[520px] lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)]">
         {/* Image */}
         <motion.div
-          className="relative min-h-[248px] sm:min-h-[300px] lg:min-h-0"
+          className="relative min-h-[248px] bg-background sm:min-h-[300px] lg:min-h-0"
           initial={{ opacity: 0, scale: reduce ? 1 : 1.06 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
@@ -47,7 +48,7 @@ export function PageHero({
             fill
             priority
             sizes="(max-width: 1024px) 100vw, 46vw"
-            className="object-cover"
+            className={imageFit === 'contain' ? 'object-contain' : 'object-cover'}
             style={{ objectPosition: imagePosition }}
           />
           {/* Fade the photo into white at the content edge (right on desktop,

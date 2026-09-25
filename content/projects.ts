@@ -98,18 +98,6 @@ export const projects: Project[] = [
     image: 'dredgeSlurryDischarge',
   },
   {
-    id: 'bhaledh-apron-restoration',
-    name: 'Bhaledh — Baira Siul Power Station — Apron & Tunnel Restoration',
-    client: 'Baira Siul Power Station (NHPC)',
-    category: 'Civil',
-    year: '2026',
-    awardDate: '16.01.2026',
-    scope:
-      'Restoration of the damaged apron, Bhaledh Feeder Tunnel, desilting chamber and silt flushing tunnel at Bhaledh, Baira Siul Power Station.',
-    contractNo: 'NH/BSPS/CC/CW/42/2025-26/LOA-36',
-    image: 'refBhaledhAfter',
-  },
-  {
     id: 'dikrong-tail-pool-dredging',
     name: 'Dikrong Power House, PLHPS — Tail Pool Dredging',
     client: 'NEEPCO Ltd, Arunachal Pradesh',
