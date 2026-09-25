@@ -153,6 +153,81 @@ export default function ReferencesPage() {
               title: 'Material delivery',
               caption: 'Sand delivery to a civil works site',
             },
+            {
+              src: media.pipeCraneInstallation,
+              title: 'Trench-weir intake structure',
+              caption: 'Embedded screens in a diversion channel',
+            },
+            {
+              src: media.civilPipesCraneRiverside,
+              title: 'Pipeline installation',
+              caption: 'Crane-lifted flanged pipe at a riverside site',
+            },
+            {
+              src: media.civilPipesCraneHillside,
+              title: 'Pipeline installation',
+              caption: 'Flanged pipe delivery on a hillside access road',
+            },
+            {
+              src: media.civilPipeStackRiverside,
+              title: 'Fabricated pipe stockyard',
+              caption: 'Flanged steel pipe staged for installation',
+            },
+            {
+              src: media.civilPipeDeliveryTruck,
+              title: 'Fabricated pipe to site',
+              caption: 'Flanged pipe sections on a mountain delivery route',
+            },
+            {
+              src: media.civilFlangedPipesTruck,
+              title: 'Flanged pipe delivery',
+              caption: 'Slung and secured for transport to site',
+            },
+            {
+              src: media.civilTruckBuoysMountainRoad,
+              title: 'Log boom buoys to site',
+              caption: 'Floating boom sections staged for delivery',
+            },
+            {
+              src: media.civilBuoysTruckLoading,
+              title: 'Log boom buoys loading',
+              caption: 'Crane loading floating boom sections for transport',
+            },
+            {
+              src: media.nimooDredging,
+              title: 'Nimoo dredging',
+              caption: 'Intake structure desilting in high-flow water',
+            },
+            {
+              src: media.dikrongDredging,
+              title: 'Dikrong dredging',
+              caption: 'Cable-deployed dredge pump on a reservoir pontoon',
+            },
+            {
+              src: media.hero,
+              title: 'Hydro-mechanical installation',
+              caption: 'Himalayan valley project site',
+            },
+            {
+              src: media.dredging,
+              title: 'Reservoir intake dredging',
+              caption: 'Sediment removal at the intake',
+            },
+            {
+              src: media.trcm,
+              title: 'Trash rack cleaning machines',
+              caption: 'Hydraulic TRCM on site',
+            },
+            {
+              src: media.civilFoundationExcavation,
+              title: 'Dam foundation excavation',
+              caption: 'Dewatered riverbed preparation',
+            },
+            {
+              src: media.civilSteelDeliverySite,
+              title: 'Embedded steel to site',
+              caption: 'Fabricated sections on the hill road',
+            },
           ]}
         />
       </section>
