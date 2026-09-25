@@ -368,7 +368,8 @@ export default function AboutPage() {
             src={media.equipmentDamSpillway}
             alt="Dam spillway with hydro-mechanical equipment installed on site"
             reveal
-            className="min-h-[260px] sm:min-h-[440px]"
+            objectFit="contain"
+            className="min-h-[260px] bg-background sm:min-h-[440px]"
           />
         </Reveal>
         <RevealStagger className="mt-4 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">

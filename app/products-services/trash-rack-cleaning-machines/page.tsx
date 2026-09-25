@@ -7,7 +7,6 @@ import {
   trcmHowItWorks,
   trcmFeatures,
   trcmConfigurations,
-  trcmApplications,
   trcmProcess,
   trcmHeadlineMetrics,
   trcmComponents,
@@ -139,31 +138,6 @@ export default function TrcmPage() {
         </RevealStagger>
       </section>
 
-      {/* Applications */}
-      <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="Applications" title="Where debris management matters" />
-        <RevealStagger
-          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
-          stagger={0.08}
-        >
-          {trcmApplications.map((a) => (
-            <RevealItem key={a.title}>
-              <ImageBlock
-                src={media[a.image]}
-                alt={a.title}
-                objectFit="contain"
-                className="min-h-[220px] bg-background sm:min-h-[260px]"
-              />
-              <div className="pt-4">
-                <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-blue">
-                  {a.title}
-                </h3>
-                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{a.text}</p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </section>
 
       {/* ROI comparison */}
       <section className={sectionPad}>

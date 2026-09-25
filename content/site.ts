@@ -87,6 +87,7 @@ export const media = {
   trcmGantryInstalledSite: '/images/trcm-gantry-installed-site.jpeg',
   trcmRackPanelsCrane: '/images/trcm-rack-panels-crane.jpeg',
   trcmSubmersiblePumpHoses: '/images/trcm-submersible-pump-hoses.jpeg',
+  trcmCranePrecastSite: '/images/trcm-crane-precast-site.jpeg',
   trcmSubmersiblePumpCloseup: '/images/trcm-submersible-pump-closeup.jpeg',
   trcmReservoirValleyDeck: '/images/trcm-reservoir-valley-deck.jpeg',
   trcmTeamSiteVisit: '/images/trcm-team-site-visit.jpeg',
