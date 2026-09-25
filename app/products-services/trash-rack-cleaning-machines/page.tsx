@@ -95,23 +95,22 @@ export default function TrcmPage() {
 
       {/* Configurations */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Configurations" title="Four ways to keep a rack clean" />
+        <SectionHeading label="Configurations" title="Five ways to keep a rack clean" />
         <RevealStagger
-          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2"
+          className="mt-9 flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 sm:mt-11 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
           stagger={0.08}
         >
           {trcmConfigurations.map((c) => (
-            <RevealItem key={c.title}>
-              <ImageBlock
-                src={media[c.image]}
-                alt={c.title}
-                className="min-h-[240px] sm:min-h-[280px]"
-              />
+            <RevealItem
+              key={c.title}
+              className="w-[78vw] shrink-0 snap-start sm:w-[320px] lg:w-[360px]"
+            >
+              <ImageBlock src={media[c.image]} alt={c.title} className="min-h-[240px] sm:min-h-[280px]" />
               <div className="pt-4">
                 <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
                   {c.title}
                 </h3>
-                <p className="mt-2 max-w-[420px] text-[1rem] leading-[1.55] text-muted">{c.text}</p>
+                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{c.text}</p>
               </div>
             </RevealItem>
           ))}
@@ -202,11 +201,11 @@ export default function TrcmPage() {
                 <th className="w-[26%] py-3.5 pr-4 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
                   Operational benefit
                 </th>
-                <th className="w-[37%] px-4 py-3.5 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
+                <th className="w-[37%] px-4 py-3.5 text-center text-[0.62rem] font-bold uppercase tracking-[0.12em] text-muted">
                   Without a TRCM
                 </th>
-                <th className="w-[37%] px-4 py-3.5 text-[0.62rem] font-bold uppercase tracking-[0.12em] text-blue">
-                  With a TRCM
+                <th className="w-[37%] px-4 py-3.5 text-center text-[0.62rem] font-bold uppercase tracking-[0.12em] text-blue">
+                  <span className="rounded bg-blue/10 px-2.5 py-1">With a TRCM</span>
                 </th>
               </tr>
             </thead>
@@ -216,8 +215,12 @@ export default function TrcmPage() {
                   <td className="py-4 pr-4 text-[0.8rem] font-bold uppercase tracking-tightest text-navy">
                     {r.benefit}
                   </td>
-                  <td className="px-4 py-4 text-[1rem] leading-[1.55] text-muted">{r.without}</td>
-                  <td className="px-4 py-4 text-[1rem] leading-[1.55] text-foreground">{r.with}</td>
+                  <td className="px-4 py-4 text-center text-[1rem] leading-[1.55] text-muted">
+                    {r.without}
+                  </td>
+                  <td className="bg-blue/5 px-4 py-4 text-center text-[1rem] leading-[1.55] text-foreground">
+                    {r.with}
+                  </td>
                 </tr>
               ))}
             </tbody>
