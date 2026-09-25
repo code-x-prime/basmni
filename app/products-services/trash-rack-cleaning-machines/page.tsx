@@ -52,26 +52,27 @@ export default function TrcmPage() {
       {/* How it works */}
       <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="How it works" title="Detect. Rake. Discharge." />
-        <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
-          {trcmHowItWorks.map((s) => (
-            <Reveal key={s.number} className="bg-white p-6 sm:p-8">
-              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
-                {s.title}
-              </h3>
-              <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
-            </Reveal>
-          ))}
+        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 lg:grid-cols-[1.1fr_0.9fr] lg:gap-[6vw]">
+          <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3 lg:grid-cols-1">
+            {trcmHowItWorks.map((s) => (
+              <Reveal key={s.number} className="bg-white p-6 sm:p-8">
+                <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal direction="left">
+            <ImageBlock
+              src={media.trcmHydraulicDredgeCrane}
+              alt="Hydraulic grab crane on rail tracks at a dam intake platform, water discharging behind"
+              reveal
+              className="min-h-[280px] sm:min-h-[380px]"
+            />
+          </Reveal>
         </div>
       </section>
-
-      {/* Image band */}
-      <ImageBlock
-        src={media.trcmHydraulicDredgeCrane}
-        alt="Hydraulic grab crane on rail tracks at a dam intake platform, water discharging behind"
-        objectFit="contain"
-        sizes="100vw"
-        className="h-[42vh] min-h-[280px] bg-background sm:h-[56vh]"
-      />
 
       {/* Key features */}
       <section className={`${sectionPad} bg-white text-navy`}>
@@ -142,7 +143,7 @@ export default function TrcmPage() {
       <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="Applications" title="Where debris management matters" />
         <RevealStagger
-          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2"
+          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
           stagger={0.08}
         >
           {trcmApplications.map((a) => (
@@ -150,7 +151,8 @@ export default function TrcmPage() {
               <ImageBlock
                 src={media[a.image]}
                 alt={a.title}
-                className="min-h-[220px] sm:min-h-[240px]"
+                objectFit="contain"
+                className="min-h-[220px] bg-background sm:min-h-[260px]"
               />
               <div className="pt-4">
                 <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-blue">

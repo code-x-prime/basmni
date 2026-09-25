@@ -35,10 +35,11 @@ export default function ContactPage() {
       {/* Full-width closing image */}
       <Reveal>
         <ImageBlock
-          src={media.civil}
-          alt="Concrete arch dam and reservoir in a river canyon"
+          src={media.trcmTeamSiteVisit}
+          alt="Basmni engineering team on-site at a hydropower reservoir installation"
           reveal
-          className="min-h-[280px] w-full sm:min-h-[420px]"
+          objectFit="contain"
+          className="min-h-[280px] w-full bg-background sm:min-h-[480px]"
         />
       </Reveal>
     </PageTransition>
