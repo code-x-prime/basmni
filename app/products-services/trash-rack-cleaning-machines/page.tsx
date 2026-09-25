@@ -210,12 +210,12 @@ export default function TrcmPage() {
       <section className={`${sectionPad} bg-white`}>
         <SectionHeading label="Engineering & delivery" title="Survey to commissioning" />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{trcmProcess.intro}</p>
-        <Reveal className="mt-9 sm:mt-11">
+        <Reveal className="mx-auto mt-9 max-w-7xl sm:mt-11">
           <ImageBlock
             src={media.trcmTeamSiteVisit}
             alt="Basmni engineering team on-site at a hydropower reservoir installation"
             reveal
-            className="min-h-[240px] sm:min-h-[360px]"
+            className="aspect-[16/9] w-full"
           />
         </Reveal>
         <div className="mt-9 sm:mt-11">

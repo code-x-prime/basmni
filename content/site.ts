@@ -91,6 +91,15 @@ export const media = {
   trcmSubmersiblePumpCloseup: '/images/trcm-submersible-pump-closeup.jpeg',
   trcmReservoirValleyDeck: '/images/trcm-reservoir-valley-deck.jpeg',
   trcmTeamSiteVisit: '/images/trcm-team-site-visit.jpeg',
+  tunnelDesiltingCrew: '/images/tunnel-desilting-crew.jpeg',
+  excavatorRockCutting: '/images/excavator-rock-cutting.jpeg',
+  shaftDesiltingWorkers: '/images/shaft-desilting-workers.jpeg',
+  shaftRebarCageTeam: '/images/shaft-rebar-cage-team.jpeg',
+  spillwayTrashRackExcavator: '/images/spillway-trash-rack-excavator.jpeg',
+  riverWeirExcavatorWork: '/images/river-weir-excavator-work.jpeg',
+  intakeGateExcavatorInstall: '/images/intake-gate-excavator-install.jpeg',
+  sandDeliveryTruckSite: '/images/sand-delivery-truck-site.jpeg',
+  circularShaftRebarPour: '/images/circular-shaft-rebar-pour.jpeg',
 }
 
 export type MediaKey = keyof typeof media
