@@ -12,7 +12,7 @@ import { sectionPad } from '@/components/shared/ui'
 export const metadata: Metadata = {
   title: 'Contact Basmni Technologies Pvt. Ltd.',
   description:
-    'Contact the Basmni Technologies engineering team. Headquartered at 904 New Delhi House, 27 Barakhamba Road, New Delhi - 110001. Phone +91 98101 48456, email info@basmni.com or basmnitech@gmail.com.',
+    'Contact the Basmni Technologies engineering team. Headquartered at 904 New Delhi House, 27 Barakhamba Road, New Delhi - 110001. Phone +91 93103 34622, email info@basmni.com or basmnitech@gmail.com.',
 }
 
 export default function ContactPage() {

@@ -14,11 +14,11 @@ export type TrcmApplication = { title: string; text: string; image: MediaKey }
 
 export const trcmHomeIntro: string[] = [
   'A trash rack cleaning machine keeps the debris load off the intake screen so the plant runs at design head. Logs, branches, leaves, aquatic weed and plastics collect on the bars, build a differential water level across the rack, and starve the turbines or pumps downstream — a head loss of a few centimetres is lost megawatts.',
-  'Basmni designs, manufactures, installs and commissions automated TRCMs — hydraulic arm, wire-rope, chain-rake and traversing-gantry types — matched to the intake depth, channel width, debris profile and structure on each site, with PLC or SCADA control for manual, semi-automatic and fully automatic cleaning cycles.',
+  'Basmni designs, manufactures, installs and commissions automated TRCMs — hydraulically operated and wire-rope operated types, with log boom barriers to hold floating trash — matched to the intake depth, channel width, debris profile and structure on each site, with PLC or SCADA control for manual, semi-automatic and fully automatic cleaning cycles.',
 ]
 
 export const trcmHeadlineMetrics = [
-  { value: '4', label: 'Machine types' },
+  { value: '2', label: 'Machine types' },
   { value: 'Up to ~20m', label: 'Hydraulic-arm reach' },
   { value: '>20m', label: 'Wire-rope depth' },
   { value: '24/7', label: 'Automated cleaning' },
@@ -139,18 +139,8 @@ export const trcmConfigurations: TrcmConfig[] = [
     image: 'trcmCranePrecastSite',
   },
   {
-    title: 'Chain-driven continuous rake',
-    text: 'For shallow channels, pump houses and high volumes of fine debris. Continuous rotating chains pull a series of rake blades along the screen panel for uninterrupted cleaning.',
-    image: 'trcmRackPanelsCrane',
-  },
-  {
-    title: 'Traversing / mobile gantry',
-    text: 'For multi-bay dam intakes and wide barrages. A self-propelled carriage on rail tracks above the deck moves along the structure so one machine services every bay.',
-    image: 'trcmGantryInstalledSite',
-  },
-  {
     title: 'Log boom barriers',
-    text: 'A floating first line of defence: impact-resistant buoyancy modules on steel tension cables that rise and fall with the water level, intercepting logs, uprooted trees and seasonal ice floes before they reach the rack.',
+    text: 'The third way is to hold the floating trash before it reaches the rack. Impact-resistant buoyancy modules on steel tension cables rise and fall with the water level, and the trash they hold is discharged through the flap gate of the reservoir.',
     image: 'logBoom',
   },
 ]
@@ -207,7 +197,7 @@ export const trcmFaq: { q: string; a: string }[] = [
   },
   {
     q: 'Which machine type suits my intake?',
-    a: 'The hydraulic jib/arm type suits heavy debris and compacted mats at shallow-to-medium depths (up to about 15–20 m). The wire-rope type suits deep channels beyond 20 m, where the grab is lowered well below the deck. A chain-driven continuous rake suits shallow channels and pump houses with high volumes of fine debris. A traversing gantry suits multi-bay dam intakes and wide barrages where one machine has to serve every bay.',
+    a: 'A trash rack panel is cleaned in two ways. The hydraulically operated TRCM suits heavy debris and compacted mats at shallow-to-medium depths (up to about 15–20 m). The wire-rope operated TRCM suits deep channels beyond 20 m, where the grab is lowered well below the deck. A log boom barrier adds a third line of defence by holding floating trash, which is then discharged through the flap gate of the reservoir.',
   },
   {
     q: 'What are the main parts of a TRCM?',

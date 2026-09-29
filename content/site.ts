@@ -1,7 +1,7 @@
 export const site = {
   company: 'Basmni Technologies Pvt. Ltd.',
   tagline: 'Engineering the future of dams, energy transmission and water infrastructure.',
-  phone: '+91 98101 48456',
+  phone: '+91 93103 34622',
   email: 'info@basmni.com',
   address: '904 New Delhi House, 27 Barakhamba Road, New Delhi - 110001',
   // logoLight: white wordmark for dark backgrounds (header, dark sections)

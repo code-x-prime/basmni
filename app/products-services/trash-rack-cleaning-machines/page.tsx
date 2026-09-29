@@ -25,7 +25,7 @@ import { sectionPad } from '@/components/shared/ui'
 export const metadata: Metadata = {
   title: 'Trash Rack Cleaning Machines (TRCM) | Basmni Technologies Pvt. Ltd.',
   description:
-    'Trash rack cleaning machines from Basmni Technologies — automated hydraulic-arm, wire-rope, chain-rake and traversing-gantry debris removal for hydropower intakes, barrages, canals and pumping stations, plus log boom barriers. Head-loss protection, machine types, components, ROI, applications and installation.',
+    'Trash rack cleaning machines from Basmni Technologies — automated hydraulic and wire-rope debris removal for hydropower intakes, barrages, canals and pumping stations, plus log boom barriers. Head-loss protection, machine types, components, ROI, applications and installation.',
 }
 
 export default function TrcmPage() {
@@ -96,7 +96,7 @@ export default function TrcmPage() {
 
       {/* Configurations */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Configurations" title="Five ways to keep a rack clean" />
+        <SectionHeading label="Configurations" title="Three ways to keep a rack clean" />
         <RevealStagger
           className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
           stagger={0.08}

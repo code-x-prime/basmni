@@ -48,8 +48,8 @@ export const exploreCta = {
   label: 'Explore Solutions',
   href: '/products-services/pressurized-air-cables',
 }
-export const callCta = { label: 'Talk to Our Engineers', href: 'tel:+919810148456' }
+export const callCta = { label: 'Talk to Our Engineers', href: 'tel:+919310334622' }
 export const enquiryCta = { label: 'Send an Enquiry', href: '/contact' }
-export const contactLinks = { phone: 'tel:+919810148456', email: 'mailto:info@basmni.com' }
+export const contactLinks = { phone: 'tel:+919310334622', email: 'mailto:info@basmni.com' }
 export const footerLinks = navigation
 export default navigation

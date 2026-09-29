@@ -57,7 +57,7 @@ export const trcmHero: PageHeroContent = {
   eyebrow: 'Trash Rack Cleaning Machines (TRCM)',
   titleLines: ['Trash rack', 'cleaning machines'],
   description:
-    'Automated debris removal that protects downstream infrastructure and holds peak water flow. Debris on the intake screen builds a differential head across the rack, starves turbines and pumps, and loads the bars until they bend. Hydraulic, wire-rope, chain and gantry machines — matched to the intake.',
+    'Automated debris removal that protects downstream infrastructure and holds peak water flow. Debris on the intake screen builds a differential head across the rack, starves turbines and pumps, and loads the bars until they bend. Hydraulic and wire-rope machines, plus log boom barriers — matched to the intake.',
   image: 'trcmGantryInstalledSite',
   imageAlt: 'Gantry-mounted trash rack cleaning machine installed at a hydropower intake',
   imagePosition: 'center',

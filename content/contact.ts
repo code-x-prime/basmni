@@ -1,6 +1,6 @@
 export const contact = {
-  phone: '+91 98101 48456',
-  phoneHref: 'tel:+919810148456',
+  phone: '+91 93103 34622',
+  phoneHref: 'tel:+919310334622',
   email: 'info@basmni.com',
   emailAlt: 'basmnitech@gmail.com',
   address: '904 New Delhi House, 27 Barakhamba Road, New Delhi - 110001',

@@ -165,8 +165,8 @@ export default function AboutPage() {
             <p className="mt-5 max-w-[560px] leading-[1.7] text-muted">
               Debris on the intake screen builds a differential head across the rack, starves
               turbines and pumps, and loads the bars until they bend. Basmni designs, builds and
-              commissions automated cleaning machines &mdash; hydraulic-arm, wire-rope, chain and
-              gantry types &mdash; matched to the intake, with PLC or SCADA control.
+              commissions automated cleaning machines &mdash; hydraulically operated and wire-rope
+              operated types &mdash; matched to the intake, with PLC or SCADA control.
             </p>
             <ul className="mt-7 space-y-2.5">
               {[
