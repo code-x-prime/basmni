@@ -109,6 +109,36 @@ export default function ReferencesPage() {
         <FieldArchive
           items={[
             {
+              src: media.floatingPipelineCraneAssembly,
+              title: 'Floating pipeline assembly',
+              caption: 'Crane-lifted pipe section with orange float collars at the dam',
+            },
+            {
+              src: media.floatingPipelineCraneCrew,
+              title: 'Floating pipeline crew',
+              caption: 'Team fitting float collars on a flanged discharge pipe',
+            },
+            {
+              src: media.floatingPipelineAssemblyYard,
+              title: 'Discharge pipeline staging',
+              caption: 'Float-collared pipe sections laid out in the assembly yard',
+            },
+            {
+              src: media.floatingPipelineFloatsYard,
+              title: 'Pipeline floats in the yard',
+              caption: 'Flanged discharge pipe sections fitted with floats before dispatch',
+            },
+            {
+              src: media.basmniServiceBoatCraneLift,
+              title: 'Basmni service boat',
+              caption: 'Crane lifting the Basmni work boat into position',
+            },
+            {
+              src: media.basmniServiceBoatLaunch,
+              title: 'Work boat handling',
+              caption: 'Crew guiding the Basmni boat on slings next to the pipeline floats',
+            },
+            {
               src: media.spillwayTrashRackExcavator,
               title: 'Trash rack panel installation',
               caption: 'Excavator placing rack panels at a spillway intake',
