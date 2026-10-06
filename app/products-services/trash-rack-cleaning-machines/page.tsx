@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { ArrowDown, ArrowRight } from 'lucide-react'
 import { media } from '@/content/site'
 import { trcmHero } from '@/content/pages'
 import {
@@ -220,24 +219,16 @@ export default function TrcmPage() {
           />
         </Reveal>
         <div className="mt-9 sm:mt-11">
-          <RevealStagger className="flex flex-col sm:flex-row sm:items-stretch">
-            {trcmProcess.steps.map((step, i) => (
-              <div key={step} className="flex flex-1 flex-col sm:flex-row sm:items-center">
-                <RevealItem className="flex flex-1 flex-col items-center gap-2 border border-border p-6 text-center sm:p-7">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-[0.85rem] font-bold text-white">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
-                    {step}
-                  </h3>
-                </RevealItem>
-                {i < trcmProcess.steps.length - 1 && (
-                  <div className="flex shrink-0 items-center justify-center text-blue sm:w-8">
-                    <ArrowRight className="hidden w-5 -rotate-0 sm:block" />
-                    <ArrowDown className="w-5 sm:hidden" />
-                  </div>
-                )}
-              </div>
+          <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
+            {trcmProcess.steps.map((step) => (
+              <RevealItem
+                key={step}
+                className="flex items-center justify-center bg-white px-6 py-10 text-center sm:py-14"
+              >
+                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
+                  {step}
+                </h3>
+              </RevealItem>
             ))}
           </RevealStagger>
         </div>
@@ -255,7 +246,7 @@ export default function TrcmPage() {
 
       {/* FAQ */}
       <section className={sectionPad}>
-        <SectionHeading label="FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions" />
         <div className="mt-9 sm:mt-11">
           <FAQ items={trcmFaq} />
         </div>

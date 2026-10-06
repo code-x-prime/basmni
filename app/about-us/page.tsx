@@ -9,7 +9,7 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { AnimatedCounter } from '@/components/shared/AnimatedCounter'
-import { sectionPad, sectionLabel, textLink } from '@/components/shared/ui'
+import { sectionPad, sectionLabel, textLink, buttonLight } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
   title: 'About Basmni Technologies Pvt. Ltd. | Engineering & Infrastructure',
@@ -364,16 +364,7 @@ export default function AboutPage() {
           title={aboutSections.equipment.title}
           deck={aboutSections.equipment.deck}
         />
-        <Reveal direction="up" className="mt-9 sm:mt-11">
-          <ImageBlock
-            src={media.equipmentDamSpillway}
-            alt="Dam spillway with hydro-mechanical equipment installed on site"
-            reveal
-            objectFit="contain"
-            className="min-h-[260px] bg-background sm:min-h-[440px]"
-          />
-        </Reveal>
-        <RevealStagger className="mt-4 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {company.equipment.map((eq) => (
             <RevealItem key={eq.title}>
               <Link
@@ -398,6 +389,23 @@ export default function AboutPage() {
         </Reveal>
       </section>
 
+      {/* Closing CTA band */}
+      <section className="px-5 py-12 sm:px-[7vw] sm:py-16">
+        <div className="mx-auto flex max-w-7xl flex-col gap-6 bg-[#0b3a70] px-6 py-10 text-white sm:flex-row sm:items-center sm:justify-between sm:px-12 sm:py-12">
+          <div>
+            <h2 className="max-w-[22ch] text-[clamp(1.5rem,3vw,2.4rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
+              Planning a hydro, dredging, or heavy fabrication project?
+            </h2>
+            <p className="mt-3 max-w-[60ch] text-[1rem] leading-[1.6] text-[#cfe0f5]">
+              Our engineering team supports tenders, feasibility and turnkey delivery for government
+              and utility clients across India.
+            </p>
+          </div>
+          <Link className={`${buttonLight} shrink-0 max-sm:w-full`} href="/contact">
+            Request a Consultation <ArrowUpRight />
+          </Link>
+        </div>
+      </section>
     </PageTransition>
   )
 }

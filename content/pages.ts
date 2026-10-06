@@ -43,10 +43,10 @@ export const pacHero: PageHeroContent = {
 }
 
 export const dredgingHero: PageHeroContent = {
-  eyebrow: 'Deep Dam & Reservoir Dredging',
-  titleLines: ['Deep dam', 'dredging'],
+  eyebrow: 'Dam | Reservoir | Canal | River | Sea',
+  titleLines: ['Dredging'],
   description:
-    'End-to-end dredging for dams and reservoirs under extreme conditions — depths to around 100 m, high solids concentrations, hydrostatic pressure and long discharge pipelines. Basmni engineers, mobilises and operates the dredge, pump and pipeline package.',
+    'End-to-end dredging for dams and reservoirs under extreme conditions — depths upto 100 m, high solids concentrations, hydrostatic pressure and long discharge pipelines. Basmni engineers, mobilises and operates the dredge, pump and pipeline package.',
   image: 'dredgePumpPontoon',
   imageAlt: 'Cable-deployed dredge pump and hydraulic arm on a pontoon in a reservoir',
   imagePosition: 'center',

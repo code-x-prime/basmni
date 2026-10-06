@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { ArrowDown, ArrowRight } from 'lucide-react'
 import { media } from '@/content/site'
 import { dredgingHero } from '@/content/pages'
 import { dredgingEquipment, dredgingTechnology } from '@/content/services'
@@ -7,15 +6,11 @@ import {
   dredgingHomeIntro,
   dredgingHowItWorks,
   dredgingFeatures,
-  dredgingApplications,
   dredgingProcess,
   dredgingHeadlineMetrics,
   dredgingFaq,
   dredgingPartnership,
-  dredgingSeries,
   dredgingAdvantages,
-  dredgingCaseStudies,
-  dredgingIndiaProjects,
 } from '@/content/dredging'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
@@ -112,7 +107,7 @@ export default function DredgingPage() {
         <SectionHeading
           dark
           label="Key features"
-          title="Built for extreme conditions."
+          title="Built for extreme conditions"
           deck="Depth, solids concentration, cutting tools and discharge distance — engineered to the reservoir."
         />
         <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
@@ -132,7 +127,7 @@ export default function DredgingPage() {
         <div className={`${sectionPad} pb-0`}>
           <SectionHeading
             label="Dredging equipment"
-            title="Equipment for extreme-depth dredging."
+            title="Equipment for extreme-depth dredging"
           />
         </div>
         {dredgingEquipment.map((item, i) => (
@@ -140,55 +135,12 @@ export default function DredgingPage() {
         ))}
       </section>
 
-      {/* 06 — Dredge series */}
-      <section className={`${sectionPad} bg-white`}>
-        <SectionHeading
-          label="Dredge series"
-          title="DRH, DRP and DRSP."
-          deck="Three platform series — cable, remote-controlled and shallow-water — each with a fixed general arrangement."
-        />
-        <RevealStagger
-          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
-          stagger={0.08}
-        >
-          {dredgingSeries.map((s) => (
-            <RevealItem key={s.code} className="flex flex-col border border-border bg-background">
-              <ImageBlock
-                src={media[s.image]}
-                alt={`${s.code} — ${s.title}`}
-                className="aspect-[16/10]"
-              />
-              <div className="flex flex-1 flex-col p-6 sm:p-7">
-                <span className="text-[0.7rem] font-bold tracking-[0.14em] text-blue">
-                  {s.code}
-                </span>
-                <h3 className="mt-2 text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
-                  {s.title}
-                </h3>
-                <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{s.forWhat}</p>
-                <ul className="mt-4 border-t border-border pt-3">
-                  {s.components.map((c) => (
-                    <li
-                      key={c}
-                      className="flex gap-2.5 py-1.5 text-[0.95rem] leading-[1.5] text-muted"
-                    >
-                      <span className="mt-0.5 shrink-0 text-blue">—</span>
-                      {c}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </section>
-
       {/* 07 — Dredging technology */}
       <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
           label="Dredging technology"
-          title="The technical concept behind the depth."
+          title="The technical concept behind the depth"
         />
         <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
           {dredgingTechnology.map((t) => (
@@ -206,7 +158,7 @@ export default function DredgingPage() {
       <section className={sectionPad}>
         <SectionHeading
           label="Why Basmni's solution"
-          title="High depth, small dredge, fast on site."
+          title="High depth, small dredge, fast on site"
         />
         <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 sm:grid-cols-2 sm:gap-[6vw]">
           {dredgingAdvantages.map((a) => (
@@ -230,71 +182,6 @@ export default function DredgingPage() {
         </div>
       </section>
 
-      {/* 09 — Case studies */}
-      <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading
-          dark
-          label="Case studies"
-          title="Proven on dams in service."
-          deck="Selected deep-dam-dredging campaigns delivered with the dam kept in full operation."
-        />
-        <RevealStagger
-          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
-          stagger={0.08}
-        >
-          {dredgingCaseStudies.map((c) => (
-            <RevealItem key={c.location} className="flex flex-col border border-border">
-              <ImageBlock
-                src={media[c.image]}
-                alt={`${c.location}, ${c.country}`}
-                className="aspect-[16/10]"
-              />
-              <div className="flex flex-1 flex-col p-6">
-                <span className="text-[0.62rem] font-bold uppercase tracking-[0.12em] text-blue">
-                  {c.country} · {c.depth}
-                </span>
-                <h3 className="mt-2 text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-blue">
-                  {c.location}
-                </h3>
-                <p className="mt-2.5 text-[1rem] leading-[1.55] text-muted">{c.summary}</p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-        <p className="mt-10 text-[1rem] leading-[1.6] text-muted">
-          Dam-dredging project references in India include {dredgingIndiaProjects.join(', ')}.
-        </p>
-      </section>
-
-      {/* 10 — Applications */}
-      <section className={`${sectionPad} bg-white`}>
-        <SectionHeading
-          label="Applications"
-          title="Where dredging is needed."
-          deck="From dead-storage recovery to canal systems — matched to the site and disposal constraints."
-        />
-        <RevealStagger
-          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 lg:grid-cols-3"
-          stagger={0.08}
-        >
-          {dredgingApplications.map((a) => (
-            <RevealItem key={a.title}>
-              <ImageBlock
-                src={media[a.image]}
-                alt={a.title}
-                className="min-h-[220px] sm:min-h-[240px]"
-              />
-              <div className="pt-4">
-                <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
-                  {a.title}
-                </h3>
-                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{a.text}</p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </section>
-
       {/* 11 — Engineering & delivery */}
       <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading dark label="Engineering & delivery" title="Survey to handover" />
@@ -302,24 +189,16 @@ export default function DredgingPage() {
           {dredgingProcess.intro}
         </p>
         <div className="mt-9 sm:mt-11">
-          <RevealStagger className="flex flex-col sm:flex-row sm:items-stretch">
-            {dredgingProcess.steps.map((step, i) => (
-              <div key={step} className="flex flex-1 flex-col sm:flex-row sm:items-center">
-                <RevealItem className="flex flex-1 flex-col items-center gap-2 border border-border p-6 text-center sm:p-7">
-                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-blue text-[0.85rem] font-bold text-white">
-                    {i + 1}
-                  </span>
-                  <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
-                    {step}
-                  </h3>
-                </RevealItem>
-                {i < dredgingProcess.steps.length - 1 && (
-                  <div className="flex shrink-0 items-center justify-center text-blue sm:w-8">
-                    <ArrowRight className="hidden w-5 sm:block" />
-                    <ArrowDown className="w-5 sm:hidden" />
-                  </div>
-                )}
-              </div>
+          <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
+            {dredgingProcess.steps.map((step) => (
+              <RevealItem
+                key={step}
+                className="flex items-center justify-center bg-white px-6 py-10 text-center sm:py-14"
+              >
+                <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest [overflow-wrap:anywhere]">
+                  {step}
+                </h3>
+              </RevealItem>
             ))}
           </RevealStagger>
         </div>
@@ -337,7 +216,7 @@ export default function DredgingPage() {
 
       {/* 12 — FAQ */}
       <section className={sectionPad}>
-        <SectionHeading label="FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions" />
         <div className="mt-9 sm:mt-11">
           <FAQ items={dredgingFaq} />
         </div>

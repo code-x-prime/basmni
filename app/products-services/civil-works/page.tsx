@@ -151,7 +151,10 @@ export default function CivilPage() {
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {civilProcess.steps.map((step) => (
-              <RevealItem key={step} className="bg-white p-6 text-center sm:p-7">
+              <RevealItem
+                key={step}
+                className="flex items-center justify-center bg-white px-6 py-10 text-center sm:py-14"
+              >
                 <h3 className="text-[clamp(1.1rem,2vw,1.5rem)] uppercase leading-[1.1] tracking-tightest text-navy">
                   {step}
                 </h3>
@@ -173,7 +176,7 @@ export default function CivilPage() {
 
       {/* FAQ */}
       <section className={sectionPad}>
-        <SectionHeading label="FAQ" title="Common questions." />
+        <SectionHeading label="FAQ" title="Common questions" />
         <div className="mt-9 sm:mt-11">
           <FAQ items={civilFaq} />
         </div>
