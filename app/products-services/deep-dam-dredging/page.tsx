@@ -70,10 +70,11 @@ export default function DredgingPage() {
         </Reveal>
         <Reveal direction="left">
           <ImageBlock
-            src={media.dredgeDragflowMachine}
-            alt="Dragflow submersible dredge machine on a pontoon in a reservoir"
+            src={media.dredgeOperatorRemoteReservoir}
+            alt="Operator controlling a dredge by remote from the dam wall, with the dredge working in the reservoir"
             reveal
-            className="min-h-[320px] sm:min-h-[440px]"
+            objectFit="contain"
+            className="min-h-[320px] bg-background sm:min-h-[440px]"
           />
         </Reveal>
       </section>
@@ -94,13 +95,16 @@ export default function DredgingPage() {
       </section>
 
       {/* Image band */}
-      <ImageBlock
-        src={media.dredgePumpRiggingHose}
-        alt="Submersible dredge pump being rigged with discharge hose on a dam platform"
-        parallax
-        sizes="100vw"
-        className="h-[42vh] min-h-[280px] sm:h-[56vh]"
-      />
+      <div className={`${sectionPad} bg-white`}>
+        <Reveal className="mx-auto max-w-5xl">
+          <ImageBlock
+            src={media.dredgeCableBargeReal}
+            alt="Blue Dragflow cable dredge barge with tripod frame working on a reservoir"
+            reveal
+            className="aspect-[3/2] w-full"
+          />
+        </Reveal>
+      </div>
 
       {/* 04 — Key features */}
       <section className={`${sectionPad} bg-white text-navy`}>

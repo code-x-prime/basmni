@@ -47,9 +47,11 @@ export const dredgingHero: PageHeroContent = {
   titleLines: ['Dredging'],
   description:
     'End-to-end dredging for dams and reservoirs under extreme conditions — depths upto 100 m, high solids concentrations, hydrostatic pressure and long discharge pipelines. Basmni engineers, mobilises and operates the dredge, pump and pipeline package.',
-  image: 'dredgePumpPontoon',
-  imageAlt: 'Cable-deployed dredge pump and hydraulic arm on a pontoon in a reservoir',
+  image: 'dredgeHeroCablePumpDiagram',
+  imageAlt:
+    'Cutaway diagram of a dredge barge at a dam wall with a cable-suspended pump working on the reservoir bed',
   imagePosition: 'center',
+  imageFit: 'contain',
   breadcrumb: [home, { label: 'Deep Dam Dredging', href: '/products-services/deep-dam-dredging' }],
 }
 

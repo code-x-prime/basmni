@@ -49,7 +49,8 @@ export function DredgingEquipmentBlock({
           src={media[item.image]}
           alt={item.title}
           reveal
-          className="min-h-[280px] sm:min-h-[440px]"
+          objectFit="contain"
+          className="min-h-[280px] bg-background sm:min-h-[440px]"
         />
       </Reveal>
     </div>

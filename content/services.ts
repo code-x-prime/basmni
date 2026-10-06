@@ -144,7 +144,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'cable-dredges',
     title: 'Cable dredges',
-    image: 'dredgeSubmersibleHead',
+    image: 'dredgeCableDredgeReservoir',
     application:
       'Extreme depths, up to and beyond 100 m — deep canyons, dead-storage zones and dam intakes.',
     benefit:
@@ -154,7 +154,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'remote-controlled-dredges',
     title: 'Remote-controlled dredges',
-    image: 'dredgeArchDamAerial',
+    image: 'dredgeRemoteControlUnit',
     application:
       'Hazardous environments and restricted zones near intake gates, trash racks and toxic or acidic sludge basins.',
     benefit: 'Keeps operators away from the hazard while retaining precise, monitored positioning.',
@@ -163,7 +163,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'amphibious-dredges',
     title: 'Amphibious dredges',
-    image: 'dredgeDamShoreline',
+    image: 'dredgeAmphibiousReal',
     application:
       'Shallow tail-water zones, marshy reservoir peripheries and littoral areas with fluctuating water levels.',
     benefit:
@@ -173,7 +173,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'slurry-submersible-pumps',
     title: 'Slurry submersible pumps',
-    image: 'dredgeDragflowMachine',
+    image: 'dredgeSlurryPumpRange',
     application:
       'Integrated directly onto cable-deployment frames or remote dredges as the core workhorse.',
     benefit:
