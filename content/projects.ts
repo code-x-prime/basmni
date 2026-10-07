@@ -86,18 +86,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: 'tld-iii-hm-gates',
-    name: 'TLD-III PS, Rambi — Hydro-Mechanical Gate Desilting',
-    client: 'Teesta Low Dam-III Power Station (NHPC)',
-    category: 'Dredging',
-    year: '2025',
-    awardDate: '23.08.2025',
-    scope:
-      'Desilting / silt removal work in front of the hydro-mechanical gates at TLD-III PS, Rambi.',
-    contractNo: 'NH/TLD-IIIPS/HM/2025/1031',
-    image: 'dredgeSlurryDischarge',
-  },
-  {
     id: 'dikrong-tail-pool-dredging',
     name: 'Dikrong Power House, PLHPS — Tail Pool Dredging',
     client: 'NEEPCO Ltd, Arunachal Pradesh',
@@ -107,17 +95,6 @@ export const projects: Project[] = [
     scope: 'Dredging of sediments from the tail pool for Dikrong Power House, PLHPS, NEEPCO Ltd.',
     contractNo: 'PLHPS/C&P/CIVIL-PH/T-46/2026-27/545',
     image: 'dikrongDredging',
-    featured: true,
-  },
-  {
-    id: 'pac-hv-substation',
-    name: 'High-Voltage Substation — Pressurized Air Cable Transmission',
-    client: 'Grid corridor & substation evacuation',
-    category: 'PAC',
-    year: '2026',
-    scope:
-      'Engineering, supply and commissioning of SF6- and PFAS-free Pressurized Air Cable transmission for a high-voltage substation, rated up to 420 kV and 5,000 A continuous.',
-    image: 'pacCableIndustrial',
     featured: true,
   },
 ]

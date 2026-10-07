@@ -19,7 +19,7 @@ import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { FAQ } from '@/components/shared/FAQ'
 import { MetricGrid } from '@/components/shared/blocks'
-import { sectionPad } from '@/components/shared/ui'
+import { sectionPad, sectionLabel } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
   title: 'Trash Rack Cleaning Machines (TRCM) | Basmni Technologies Pvt. Ltd.',
@@ -34,7 +34,7 @@ export default function TrcmPage() {
 
       {/* Overview */}
       <section className={sectionPad}>
-        <SectionHeading label="Overview" title="Keeping the intake bay clear." />
+        <SectionHeading label="Overview" title="Keeping the intake bay clear" />
         <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {trcmHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
@@ -49,7 +49,19 @@ export default function TrcmPage() {
 
       {/* How it works */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="How it works" title="Detect. Rake. Discharge." />
+        <p className={`${sectionLabel} text-blue`}>How it works</p>
+        <div className="mt-4 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
+          {['Detect', 'Rake', 'Discharge'].map((word) => (
+            <Reveal
+              key={word}
+              className="flex items-center justify-center bg-white px-6 py-8 text-center sm:py-12"
+            >
+              <h2 className="text-[clamp(1.6rem,3.6vw,2.8rem)] uppercase leading-[1.1] tracking-tightest text-blue">
+                {word}
+              </h2>
+            </Reveal>
+          ))}
+        </div>
         <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 lg:grid-cols-[1.1fr_0.9fr] lg:gap-[6vw]">
           <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3 lg:grid-cols-1">
             {trcmHowItWorks.map((s) => (
@@ -63,11 +75,10 @@ export default function TrcmPage() {
           </div>
           <Reveal direction="left">
             <ImageBlock
-              src={media.trcmHydraulicDredgeCrane}
-              alt="Hydraulic grab crane on rail tracks at a dam intake platform, water discharging behind"
+              src={media.trcmBlueMachineCloseup}
+              alt="Blue trash rack cleaning machine on rails at a dam intake, with the grab raised"
               reveal
-              objectFit="contain"
-              className="min-h-[280px] bg-background sm:min-h-[380px]"
+              className="aspect-square w-full"
             />
           </Reveal>
         </div>
@@ -78,7 +89,7 @@ export default function TrcmPage() {
         <SectionHeading
           dark
           label="Key features"
-          title="Automated, and matched to the intake"
+          title="Automated and matched to the intake"
           deck="The mechanism is chosen for the depth, channel and debris — not one machine for every site."
         />
         <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">

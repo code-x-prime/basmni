@@ -153,7 +153,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   },
   {
     id: 'remote-controlled-dredges',
-    title: 'Remote-controlled dredges',
+    title: 'Remote-controlled dredge',
     image: 'dredgeRemoteControlUnit',
     application:
       'Hazardous environments and restricted zones near intake gates, trash racks and toxic or acidic sludge basins.',
@@ -162,7 +162,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   },
   {
     id: 'amphibious-dredges',
-    title: 'Amphibious dredges',
+    title: 'Amphibious pumps',
     image: 'dredgeAmphibiousReal',
     application:
       'Shallow tail-water zones, marshy reservoir peripheries and littoral areas with fluctuating water levels.',

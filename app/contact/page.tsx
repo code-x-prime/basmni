@@ -1,12 +1,11 @@
 import type { Metadata } from 'next'
-import { media } from '@/content/site'
 import { contactHero } from '@/content/pages'
 import { PageHero } from '@/components/shared/PageHero'
 import { PageTransition } from '@/components/shared/PageTransition'
 import { Reveal } from '@/components/shared/Reveal'
-import { ImageBlock } from '@/components/shared/ImageBlock'
 import { ContactInfo } from '@/components/contact/ContactInfo'
 import { ContactForm } from '@/components/contact/ContactForm'
+import { ConsultationBand } from '@/components/shared/ConsultationBand'
 import { sectionPad } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
@@ -32,17 +31,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Closing image */}
-      <div className={`${sectionPad} pt-0`}>
-        <Reveal className="mx-auto max-w-7xl">
-          <ImageBlock
-            src={media.trcmTeamSiteVisit}
-            alt="Basmni engineering team on-site at a hydropower reservoir installation"
-            reveal
-            className="aspect-[16/9] w-full"
-          />
-        </Reveal>
-      </div>
+      <ConsultationBand />
     </PageTransition>
   )
 }

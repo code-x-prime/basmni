@@ -8,6 +8,7 @@ import { Reveal } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { ReferencesGrid } from '@/components/projects/ReferencesGrid'
 import { FieldArchive } from '@/components/projects/FieldArchive'
+import { ConsultationBand } from '@/components/shared/ConsultationBand'
 import { sectionPad } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
@@ -261,6 +262,8 @@ export default function ReferencesPage() {
           ]}
         />
       </section>
+
+      <ConsultationBand />
     </PageTransition>
   )
 }

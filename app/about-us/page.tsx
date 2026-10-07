@@ -24,7 +24,7 @@ export default function AboutPage() {
       <section className={`${sectionPad} pt-[100px] sm:pt-[136px] lg:pt-[136px]`}>
         <div className="mx-auto max-w-[900px] text-center">
           <h1 className="text-[clamp(1.8rem,6vw,4rem)] uppercase leading-[1.04] tracking-tightest [overflow-wrap:anywhere]">
-            Basmni: A Brief Inside
+            Basmni: A Brief Insight
           </h1>
         </div>
 

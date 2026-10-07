@@ -81,7 +81,19 @@ export default function DredgingPage() {
 
       {/* 03 — How it works */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="How it works" title="Fluidise. Pump. Convey." />
+        <p className={`${sectionLabel} text-blue`}>How it works</p>
+        <div className="mt-4 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
+          {['Fluidise', 'Pump', 'Convey'].map((word) => (
+            <Reveal
+              key={word}
+              className="flex items-center justify-center bg-white px-6 py-8 text-center sm:py-12"
+            >
+              <h2 className="text-[clamp(1.6rem,3.6vw,2.8rem)] uppercase leading-[1.1] tracking-tightest text-blue">
+                {word}
+              </h2>
+            </Reveal>
+          ))}
+        </div>
         <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {dredgingHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-white p-6 sm:p-8">

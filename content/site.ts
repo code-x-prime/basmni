@@ -85,6 +85,8 @@ export const media = {
   dredgeCableBargeReal: '/images/dredge-cable-barge-real.jpeg',
   dredgeCableDredgeReservoir: '/images/dredge-cable-dredge-reservoir.jpeg',
   dredgeAmphibiousReal: '/images/dredge-amphibious-real.jpeg',
+  trcmBlueMachineCloseup: '/images/trcm-blue-machine-closeup.jpeg',
+  trcmWireRopeCraneSite: '/images/trcm-wire-rope-crane-site.jpeg',
   floatingPipelineAssemblyYard: '/images/floating-pipeline-assembly-yard.jpeg',
   floatingPipelineFloatsYard: '/images/floating-pipeline-floats-yard.jpeg',
   basmniServiceBoatCraneLift: '/images/basmni-service-boat-crane-lift.jpeg',

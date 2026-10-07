@@ -26,37 +26,22 @@ export const civilHeadlineMetrics = [
 export const civilHowItWorks: CivilStep[] = [
   {
     number: '01',
-    title: 'Read the site',
-    text: 'The structure type follows the setting — storage in a mountain valley, diversion across a flat river, a trench intake in a steep rocky bed — so foundation, geometry and hydraulics are set by the site.',
+    title: 'Site study and preparation',
+    text: 'The site is studied first — storage in a mountain valley, diversion across a flat river, a trench intake in a steep rocky bed — so the structure type, foundation, geometry and hydraulics are set by the site.',
   },
   {
     number: '02',
-    title: 'Treat the foundation',
-    text: 'Deep bedrock grouting, sheet-pile cut-offs and prepared rafts control seepage and settlement before any water-retaining concrete is placed.',
+    title: 'Laying the foundation',
+    text: 'Deep bedrock grouting, sheet-pile cut-offs and prepared rafts are laid to control seepage and settlement before any water-retaining concrete is placed.',
   },
   {
     number: '03',
-    title: 'Build and pass water',
-    text: 'Mass concrete, rockfill or gated RCC piers are placed with spillways, desilting chambers and embedded steel to move flood water safely while the structure does its job.',
+    title: 'Building the structure',
+    text: 'Mass concrete, rockfill or gated RCC piers are built up with spillways, desilting chambers and embedded steel, so the structure moves flood water safely while it does its job.',
   },
 ]
 
 export const civilFeatures: CivilFeature[] = [
-  {
-    number: '01',
-    title: 'Site-specific engineering',
-    text: 'Each structure is designed for its own hydrodynamic and geological conditions rather than adapted from a standard type.',
-  },
-  {
-    number: '02',
-    title: 'Foundation treatment',
-    text: 'Deep bedrock grouting and prepared rafts give storage dams the bearing and watertightness for high reservoir pressure.',
-  },
-  {
-    number: '03',
-    title: 'Seepage control',
-    text: 'Underground sheet piles and cut-offs block seepage paths under barrages built across permeable alluvial rivers.',
-  },
   {
     number: '04',
     title: 'Flood-passing works',
@@ -71,6 +56,21 @@ export const civilFeatures: CivilFeature[] = [
     number: '06',
     title: 'Integrated with hydro-mechanical',
     text: 'Civil works are coordinated with the trash racks, gates and embedded parts so the two scopes fit together on site.',
+  },
+  {
+    number: '01',
+    title: 'Site-specific engineering',
+    text: 'Each structure is designed for its own hydrodynamic and geological conditions rather than adapted from a standard type.',
+  },
+  {
+    number: '02',
+    title: 'Foundation treatment',
+    text: 'Deep bedrock grouting and prepared rafts give storage dams the bearing and watertightness for high reservoir pressure.',
+  },
+  {
+    number: '03',
+    title: 'Seepage control',
+    text: 'Underground sheet piles and cut-offs block seepage paths under barrages built across permeable alluvial rivers.',
   },
 ]
 

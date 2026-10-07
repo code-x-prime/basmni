@@ -5,10 +5,8 @@ import {
   civilHomeIntro,
   civilHowItWorks,
   civilFeatures,
-  civilStructures,
   civilApplications,
   civilProcess,
-  civilHeadlineMetrics,
   civilFaq,
 } from '@/content/civil'
 import { PageHero } from '@/components/shared/PageHero'
@@ -17,8 +15,7 @@ import { SectionHeading } from '@/components/shared/SectionHeading'
 import { Reveal, RevealStagger, RevealItem } from '@/components/shared/Reveal'
 import { ImageBlock } from '@/components/shared/ImageBlock'
 import { FAQ } from '@/components/shared/FAQ'
-import { MetricGrid } from '@/components/shared/blocks'
-import { sectionPad } from '@/components/shared/ui'
+import { sectionPad, sectionLabel } from '@/components/shared/ui'
 
 export const metadata: Metadata = {
   title: 'Specialized Civil Works | Basmni Technologies Pvt. Ltd.',
@@ -33,7 +30,7 @@ export default function CivilPage() {
 
       {/* Overview */}
       <section className={sectionPad}>
-        <SectionHeading label="Overview" title="Engineered for the site, not the drawing." />
+        <SectionHeading label="Overview" title="Engineered for the site" />
         <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {civilHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
@@ -41,18 +38,23 @@ export default function CivilPage() {
             </Reveal>
           ))}
         </div>
-        <div className="mt-8 sm:mt-10">
-          <MetricGrid items={civilHeadlineMetrics} columns="sm:grid-cols-3" />
-        </div>
       </section>
 
       {/* How it works */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading
-          dark
-          label="How it works"
-          title="Read the site. Treat the foundation. Pass water."
-        />
+        <p className={`${sectionLabel} text-blue`}>How it works</p>
+        <div className="mt-4 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
+          {['Study', 'Design', 'Build'].map((word) => (
+            <Reveal
+              key={word}
+              className="flex items-center justify-center bg-white px-6 py-8 text-center sm:py-12"
+            >
+              <h2 className="text-[clamp(1.6rem,3.6vw,2.8rem)] uppercase leading-[1.1] tracking-tightest text-blue">
+                {word}
+              </h2>
+            </Reveal>
+          ))}
+        </div>
         <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
           {civilHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-white p-6 sm:p-8">
@@ -78,8 +80,8 @@ export default function CivilPage() {
       <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
-          label="Key features"
-          title="Foundation, seepage, flood and fit."
+          label="Key"
+          title="Foundation, seepage, flood and works"
           deck="The parts of a water-retaining structure that decide whether it lasts — engineered per site."
         />
         <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">
@@ -94,34 +96,9 @@ export default function CivilPage() {
         </RevealStagger>
       </section>
 
-      {/* Structure types */}
-      <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Structure types" title="Three settings, three structures." />
-        <RevealStagger
-          className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-3"
-          stagger={0.08}
-        >
-          {civilStructures.map((c) => (
-            <RevealItem key={c.title}>
-              <ImageBlock
-                src={media[c.image]}
-                alt={c.title}
-                className="min-h-[220px] sm:min-h-[260px]"
-              />
-              <div className="pt-4">
-                <h3 className="text-[1.05rem] uppercase leading-[1.15] tracking-tightest text-navy">
-                  {c.title}
-                </h3>
-                <p className="mt-2 text-[1rem] leading-[1.55] text-muted">{c.text}</p>
-              </div>
-            </RevealItem>
-          ))}
-        </RevealStagger>
-      </section>
-
       {/* Applications */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="Applications" title="Where civil works are delivered." />
+        <SectionHeading dark label="Applications" title="Where civil works are delivered" />
         <RevealStagger
           className="mt-9 grid grid-cols-1 gap-4 sm:mt-11 sm:grid-cols-2 lg:grid-cols-3"
           stagger={0.08}
@@ -146,7 +123,7 @@ export default function CivilPage() {
 
       {/* Engineering & delivery */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Engineering & delivery" title="Investigation to commissioning." />
+        <SectionHeading label="Engineering & delivery" title="Investigation to commissioning" />
         <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{civilProcess.intro}</p>
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">

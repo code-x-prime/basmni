@@ -60,6 +60,7 @@ export function ImageBlock(props: Props) {
         priority={priority}
         sizes={sizes}
         posStyle={posStyle}
+        objectFit={objectFit}
       />
     )
   }
@@ -81,7 +82,7 @@ type SubProps = Required<Omit<Props, 'parallax' | 'reveal' | 'imagePosition'>> &
   posStyle?: { objectPosition: string }
 }
 
-function ParallaxImage({ src, alt, className, priority, sizes, posStyle }: SubProps) {
+function ParallaxImage({ src, alt, className, priority, sizes, posStyle, objectFit }: SubProps) {
   const ref = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start end', 'end start'] })
   const y = useTransform(scrollYProgress, [0, 1], ['-8%', '8%'])
@@ -94,7 +95,7 @@ function ParallaxImage({ src, alt, className, priority, sizes, posStyle }: SubPr
           fill
           priority={priority}
           sizes={sizes}
-          className="object-cover"
+          className={objectFit === 'contain' ? 'object-contain' : 'object-cover'}
           style={posStyle}
         />
       </motion.div>

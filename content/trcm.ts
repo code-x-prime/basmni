@@ -129,14 +129,14 @@ export const trcmFeatures: TrcmFeature[] = [
 
 export const trcmConfigurations: TrcmConfig[] = [
   {
-    title: 'Hydraulic jib / arm type',
+    title: 'Hydraulic TRCM',
     text: 'For shallow-to-medium intake depths (up to about 15–20 m). Rigid single, double or telescopic hydraulic arms exert positive raking force into a deep, compacted debris layer that a gravity rake cannot penetrate.',
     image: 'trcm',
   },
   {
-    title: 'Rope / wire-cable operated',
+    title: 'Rope / wire-cable operated TRCM',
     text: 'For deep intake channels beyond 20 m. Wire-rope hoists lower heavy grab buckets or multi-blade grapples under gravity — cost-effective and adaptable where a rigid arm cannot reach.',
-    image: 'trcmCranePrecastSite',
+    image: 'trcmWireRopeCraneSite',
   },
   {
     title: 'Log boom barriers',
