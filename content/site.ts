@@ -34,7 +34,7 @@ export const media = {
   civilIntakeChannelGate: '/images/civil-intake-channel-gate.jpeg',
   spillway: '/images/spillway-debris-boom.jpeg',
   field: '/images/field-crane-installation.jpeg',
-  aboutFieldCrane: '/images/field-crane-installation-2.jpeg',
+  aboutTeamDragflowPump: '/images/about-team-dragflow-pump.jpeg',
   capabilitiesTeam: '/images/capabilities-team-site.jpeg',
   equipmentDamSpillway: '/images/dam-spillway-equipment.jpeg',
   refIndirasagarBefore: '/images/ref-indirasagar-before.jpeg',

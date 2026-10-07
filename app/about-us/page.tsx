@@ -46,11 +46,10 @@ export default function AboutPage() {
           </Reveal>
           <Reveal direction="left">
             <ImageBlock
-              src={media.aboutFieldCrane}
-              alt="Basmni engineering team installing crane-lifted equipment at a mountain project site"
+              src={media.aboutTeamDragflowPump}
+              alt="Basmni engineer standing in front of a Dragflow submersible dredge pump on a dredge deck"
               reveal
-              objectFit="contain"
-              className="min-h-[420px] sm:min-h-[600px]"
+              className="aspect-[1177/1393] w-full"
             />
           </Reveal>
         </div>
