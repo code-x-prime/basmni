@@ -254,11 +254,6 @@ export default function ReferencesPage() {
               title: 'Dam foundation excavation',
               caption: 'Dewatered riverbed preparation',
             },
-            {
-              src: media.civilSteelDeliverySite,
-              title: 'Embedded steel to site',
-              caption: 'Fabricated sections on the hill road',
-            },
           ]}
         />
       </section>

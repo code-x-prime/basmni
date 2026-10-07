@@ -55,26 +55,27 @@ export default function CivilPage() {
             </Reveal>
           ))}
         </div>
-        <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
-          {civilHowItWorks.map((s) => (
-            <Reveal key={s.number} className="bg-white p-6 sm:p-8">
-              <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
-                {s.title}
-              </h3>
-              <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
-            </Reveal>
-          ))}
+        <div className="mt-9 grid grid-cols-1 gap-8 sm:mt-11 lg:grid-cols-[1.1fr_0.9fr] lg:gap-[6vw]">
+          <div className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3 lg:grid-cols-1">
+            {civilHowItWorks.map((s) => (
+              <Reveal key={s.number} className="bg-white p-6 sm:p-8">
+                <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-[1rem] leading-[1.6] text-muted">{s.text}</p>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal direction="left">
+            <ImageBlock
+              src={media.civilWeirExcavatorRackPanels}
+              alt="Excavator placing black trash rack panels on the concrete apron of a river weir, with water flowing over the weir behind"
+              reveal
+              className="aspect-[4/3] w-full"
+            />
+          </Reveal>
         </div>
       </section>
-
-      {/* Image band */}
-      <ImageBlock
-        src={media.civilTrashRackPanels}
-        alt="Long embedded steel screen panels set into a dewatered concrete intake structure"
-        parallax
-        sizes="100vw"
-        className="h-[42vh] min-h-[280px] sm:h-[56vh]"
-      />
 
       {/* Key features */}
       <section className={`${sectionPad} bg-white text-navy`}>

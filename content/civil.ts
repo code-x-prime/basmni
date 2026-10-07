@@ -96,17 +96,17 @@ export const civilApplications: CivilApplication[] = [
   {
     title: 'Storage dams',
     text: 'New and modified concrete or rockfill dams in mountain valleys, with foundation grouting, spillways and outlet works.',
-    image: 'civilFoundationExcavation',
+    image: 'civilDamSpillwayPiers',
   },
   {
     title: 'Diversion barrages',
     text: 'Gated barrages on wide rivers, with raft foundations and seepage cut-offs to divert flow into canals or intakes.',
-    image: 'civilDewateredIntakeBay',
+    image: 'civilGatedBarrageGantry',
   },
   {
     title: 'Trench-weir intakes',
     text: 'Stream intakes flush in steep rocky beds, capturing water while passing boulders and debris downstream.',
-    image: 'civilTrenchWeirIntake',
+    image: 'civilIntakeChannelGate',
   },
   {
     title: 'Intake screens & channels',
@@ -121,7 +121,7 @@ export const civilApplications: CivilApplication[] = [
   {
     title: 'Embedded steel & site logistics',
     text: 'Fabricated racks, liners, gate frames and embedded parts hauled to remote sites and set into the structure.',
-    image: 'civilSteelDeliverySite',
+    image: 'civilIntakeTrashRackWall',
   },
 ]
 
