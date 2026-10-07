@@ -134,7 +134,7 @@ export default function TrcmPage() {
       <section className={sectionPad}>
         <SectionHeading
           label="Key components"
-          title="What a cleaning machine is made of."
+          title="What a cleaning machine is made of"
           deck="Five sub-assemblies work together to rake the screen, move along the intake and carry the debris off site."
         />
         <RevealStagger className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-2 lg:grid-cols-3">

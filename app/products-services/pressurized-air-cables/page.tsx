@@ -107,7 +107,7 @@ export default function PacPage() {
       >
         <Reveal direction="right">
           <p className={`${sectionLabel} text-blue`}>Why pressurized air</p>
-          <h2 className={`${displayHeading} mt-2`}>SF6-free. PFAS-free. Just clean air.</h2>
+          <h2 className={`${displayHeading} mt-2`}>SF6-free. PFAS-free. Just clean air</h2>
           <p className="mt-5 max-w-[520px] leading-[1.65] text-muted">
             Conventional gas-insulated transmission relies on SF6 — a gas with a very high
             global-warming potential — while polymeric cable systems depend on fluorinated
@@ -284,7 +284,7 @@ export default function PacPage() {
         </Reveal>
         <Reveal direction="left">
           <p className={`${sectionLabel} text-blue`}>Pressure &amp; condition monitoring</p>
-          <h2 className={`${displayHeading} mt-2`}>The system tells you how it is doing.</h2>
+          <h2 className={`${displayHeading} mt-2`}>The system tells you how it is doing</h2>
           <p className="mt-5 max-w-[520px] leading-[1.65] text-muted">
             Monitoring is part of the design, not an add-on. Continuous measurement gives the
             operator a transparent, real-time picture of link health and turns maintenance into a
