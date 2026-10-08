@@ -31,6 +31,7 @@ export const media = {
   civilGatedBarrageGantry: '/images/civil-gated-barrage-gantry.jpeg',
   civilDamSpillwayPiers: '/images/civil-dam-spillway-piers.jpeg',
   civilIntakeTrashRackWall: '/images/civil-intake-trash-rack-wall.jpeg',
+  civilSteelDeliveryTruck: '/images/civil-steel-delivery-truck.jpeg',
   civilIntakeChannelGate: '/images/civil-intake-channel-gate.jpeg',
   spillway: '/images/spillway-debris-boom.jpeg',
   field: '/images/field-crane-installation.jpeg',

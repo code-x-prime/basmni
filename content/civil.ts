@@ -121,7 +121,7 @@ export const civilApplications: CivilApplication[] = [
   {
     title: 'Embedded steel & site logistics',
     text: 'Fabricated racks, liners, gate frames and embedded parts hauled to remote sites and set into the structure.',
-    image: 'civilIntakeTrashRackWall',
+    image: 'civilSteelDeliveryTruck',
   },
 ]
 
