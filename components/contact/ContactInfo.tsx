@@ -42,11 +42,19 @@ export function ContactInfo() {
             <MapPin /> Address
           </dt>
           <dd className="mt-2 not-italic font-semibold leading-[1.6] text-navy">
-            {contact.addressLines.map((line) => (
-              <span key={line} className="block">
-                {line}
-              </span>
-            ))}
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Open Basmni Technologies head office on Google Maps"
+              className="block transition-colors hover:text-blue"
+            >
+              {contact.addressLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
+            </a>
           </dd>
         </div>
       </dl>
