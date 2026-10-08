@@ -111,7 +111,7 @@ export const civilApplications: CivilApplication[] = [
   {
     title: 'Intake screens & channels',
     text: 'Embedded rack panels and lined approach channels that screen the diverted flow before it reaches the conveyance system.',
-    image: 'civilIntakeScreensCanal',
+    image: 'civilIntakeTrashRackWall',
   },
   {
     title: 'Desilting & intake chambers',
