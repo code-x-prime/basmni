@@ -306,10 +306,12 @@ export default function PacPage() {
 
       {/* 11 — Engineering & installation */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="Engineering & installation" title="One accountable scope" />
-        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">
-          {pacInstallation.intro}
-        </p>
+        <SectionHeading
+          dark
+          label="Engineering & installation"
+          title="One accountable scope"
+          deck={pacInstallation.intro}
+        />
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-4">
             {pacInstallation.steps.map((step) => (

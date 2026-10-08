@@ -171,11 +171,11 @@ export default function TrcmPage() {
                   </span>
                   <p className="mt-1 text-[0.95rem] leading-[1.5] text-muted">{r.without}</p>
                 </div>
-                <div className="border-t border-border pt-3">
+                <div className="rounded bg-blue/10 p-3">
                   <span className="block text-[0.6rem] font-bold uppercase tracking-[0.12em] text-blue">
                     With a TRCM
                   </span>
-                  <p className="mt-1 text-[0.95rem] leading-[1.5] text-foreground">{r.with}</p>
+                  <p className="mt-1 text-[0.95rem] font-semibold leading-[1.5] text-navy">{r.with}</p>
                 </div>
               </div>
             </div>
@@ -194,7 +194,7 @@ export default function TrcmPage() {
                   Without a TRCM
                 </th>
                 <th className="w-[37%] px-4 py-3.5 text-center text-[0.78rem] font-bold uppercase tracking-[0.12em] text-blue">
-                  <span className="rounded bg-blue/10 px-2.5 py-1">With a TRCM</span>
+                  <span className="rounded bg-blue px-3 py-1.5 text-white">With a TRCM</span>
                 </th>
               </tr>
             </thead>
@@ -207,7 +207,7 @@ export default function TrcmPage() {
                   <td className="px-4 py-4 text-center text-[1rem] leading-[1.55] text-muted">
                     {r.without}
                   </td>
-                  <td className="bg-blue/5 px-4 py-4 text-center text-[1rem] leading-[1.55] text-foreground">
+                  <td className="bg-blue/10 px-4 py-4 text-center text-[1rem] font-semibold leading-[1.55] text-navy">
                     {r.with}
                   </td>
                 </tr>
@@ -219,8 +219,11 @@ export default function TrcmPage() {
 
       {/* Engineering & delivery */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Engineering & delivery" title="Survey to commissioning" />
-        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{trcmProcess.intro}</p>
+        <SectionHeading
+          label="Engineering & delivery"
+          title="Survey to commissioning"
+          deck={trcmProcess.intro}
+        />
         <Reveal className="mx-auto mt-9 max-w-7xl sm:mt-11">
           <ImageBlock
             src={media.trcmTeamSiteVisit}

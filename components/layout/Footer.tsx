@@ -21,6 +21,8 @@ const solutionLinks = [
 ]
 
 const linkClass = 'text-[1rem] leading-[1.6] text-muted hover:text-foreground'
+const headingClass =
+  'mb-1.5 block w-fit border-b-2 border-blue pb-2 text-[0.9rem] font-extrabold uppercase tracking-[0.14em] text-navy'
 
 export function Footer() {
   const tel = `tel:${contact.phone.replaceAll(' ', '')}`
@@ -39,7 +41,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2.5">
-          <b className="text-[0.67rem] uppercase tracking-[0.12em] text-blue">Company</b>
+          <b className={headingClass}>Company</b>
           {companyLinks.map((l) => (
             <Link key={l.href} href={l.href} className={linkClass}>
               {l.label}
@@ -48,7 +50,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2.5">
-          <b className="text-[0.67rem] uppercase tracking-[0.12em] text-blue">Solutions</b>
+          <b className={headingClass}>Solutions</b>
           {solutionLinks.map((l) => (
             <Link key={l.href} href={l.href} className={linkClass}>
               {l.label}
@@ -57,7 +59,7 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col gap-2.5">
-          <b className="text-[0.67rem] uppercase tracking-[0.12em] text-blue">Contact</b>
+          <b className={headingClass}>Contact</b>
           <a href={tel} className={`inline-flex items-center gap-2 ${linkClass}`}>
             <Phone className="w-4" />
             {contact.phone}

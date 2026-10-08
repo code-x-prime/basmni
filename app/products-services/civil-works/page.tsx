@@ -124,8 +124,11 @@ export default function CivilPage() {
 
       {/* Engineering & delivery */}
       <section className={`${sectionPad} bg-white`}>
-        <SectionHeading label="Engineering & delivery" title="Investigation to commissioning" />
-        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">{civilProcess.intro}</p>
+        <SectionHeading
+          label="Engineering & delivery"
+          title="Investigation to commissioning"
+          deck={civilProcess.intro}
+        />
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {civilProcess.steps.map((step) => (

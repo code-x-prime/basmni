@@ -39,7 +39,7 @@ export default function DredgingPage() {
         <div className="mt-8 grid grid-cols-1 gap-6 sm:mt-10 sm:grid-cols-2 sm:gap-[6vw]">
           {dredgingHomeIntro.map((p) => (
             <Reveal key={p.slice(0, 24)}>
-              <p className="leading-[1.7] text-muted">{p}</p>
+              <p className="text-justify leading-[1.7] text-muted">{p}</p>
             </Reveal>
           ))}
         </div>
@@ -80,21 +80,21 @@ export default function DredgingPage() {
       </section>
 
       {/* 03 — How it works */}
-      <section className={`${sectionPad} bg-white text-navy`}>
+      <section className={`${sectionPad} bg-white pt-0 text-navy sm:pt-0`}>
         <p className={`${sectionLabel} text-blue`}>How it works</p>
-        <div className="mt-4 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
+        <div className="mt-3 grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-3">
           {['Fluidise', 'Pump', 'Convey'].map((word) => (
             <Reveal
               key={word}
-              className="flex items-center justify-center bg-white px-6 py-8 text-center sm:py-12"
+              className="flex items-center justify-center bg-white px-4 py-4 text-center sm:py-5"
             >
-              <h2 className="text-[clamp(1.6rem,3.6vw,2.8rem)] uppercase leading-[1.1] tracking-tightest text-blue">
+              <h2 className="text-[clamp(1.2rem,2.4vw,1.8rem)] uppercase leading-[1.1] tracking-tightest text-blue">
                 {word}
               </h2>
             </Reveal>
           ))}
         </div>
-        <div className="mt-9 grid grid-cols-1 gap-px border border-border bg-border sm:mt-11 sm:grid-cols-3">
+        <div className="mt-6 grid grid-cols-1 gap-px border border-border bg-border sm:mt-8 sm:grid-cols-3">
           {dredgingHowItWorks.map((s) => (
             <Reveal key={s.number} className="bg-white p-6 sm:p-8">
               <h3 className="text-[clamp(1.15rem,2.2vw,1.6rem)] uppercase leading-[1.15] tracking-tightest [overflow-wrap:anywhere]">
@@ -200,10 +200,12 @@ export default function DredgingPage() {
 
       {/* 11 — Engineering & delivery */}
       <section className={`${sectionPad} bg-white text-navy`}>
-        <SectionHeading dark label="Engineering & delivery" title="Survey to handover" />
-        <p className="ml-auto mt-6 max-w-[420px] leading-[1.6] text-muted">
-          {dredgingProcess.intro}
-        </p>
+        <SectionHeading
+          dark
+          label="Engineering & delivery"
+          title="Survey to handover"
+          deck={dredgingProcess.intro}
+        />
         <div className="mt-9 sm:mt-11">
           <RevealStagger className="grid grid-cols-1 gap-px border border-border bg-border sm:grid-cols-5">
             {dredgingProcess.steps.map((step) => (

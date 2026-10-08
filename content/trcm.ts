@@ -189,7 +189,7 @@ export const trcmProcess = {
 export const trcmFaq: { q: string; a: string }[] = [
   {
     q: 'What is a Trash Rack Cleaning Machine?',
-    a: 'An automated machine that removes debris, vegetation and trash accumulating on intake grates so water flow to turbines and gates is not blocked. Basmni offers hydraulic-type, wire-rope-type and fine-screen configurations depending on intake depth and debris volume.',
+    a: 'An automated machine that removes debris, vegetation and trash accumulating on intake gates so water flow to turbines and gates is not blocked. Basmni offers hydraulic-type, wire-rope-type and fine-screen configurations depending on intake depth and debris volume.',
   },
   {
     q: 'Where are TRCM systems used?',
