@@ -110,7 +110,7 @@ export default function DredgingPage() {
       <div className={`${sectionPad} bg-white`}>
         <Reveal className="mx-auto max-w-5xl">
           <ImageBlock
-            src={media.dredgeCableBargeReal}
+            src={media.dredgeCableBargeClear}
             alt="Blue Dragflow cable dredge barge with tripod frame working on a reservoir"
             reveal
             className="aspect-[3/2] w-full"

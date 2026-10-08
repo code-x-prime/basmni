@@ -86,7 +86,7 @@ export const media = {
   dredgeReservoirValley: '/images/dredge-reservoir-valley.jpeg',
   dredgeSlurryDischarge: '/images/dredge-slurry-discharge.jpeg',
   dredgeHeroCablePumpDiagram: '/images/dredge-hero-cable-pump-diagram.jpeg',
-  dredgeCableBargeReal: '/images/dredge-cable-barge-real.jpeg',
+  dredgeCableBargeClear: '/images/dredge-cable-barge-clear.jpeg',
   dredgeCableDredgeReservoir: '/images/dredge-cable-dredge-reservoir.jpeg',
   dredgeAmphibiousReal: '/images/dredge-amphibious-real.jpeg',
   trcmBlueMachineCloseup: '/images/trcm-blue-machine-closeup.jpeg',
