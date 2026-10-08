@@ -66,12 +66,12 @@ export default function CivilPage() {
               </Reveal>
             ))}
           </div>
-          <Reveal direction="left">
+          <Reveal direction="left" className="h-full">
             <ImageBlock
               src={media.civilWeirExcavatorRackPanels}
               alt="Excavator placing black trash rack panels on the concrete apron of a river weir, with water flowing over the weir behind"
               reveal
-              className="aspect-[4/3] w-full"
+              className="aspect-[4/3] w-full lg:aspect-auto lg:h-full"
             />
           </Reveal>
         </div>

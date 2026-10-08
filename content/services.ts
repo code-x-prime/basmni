@@ -135,6 +135,7 @@ export type DredgingEquipment = {
   id: string
   title: string
   image: MediaKey
+  extraImage?: MediaKey
   application: string
   benefit: string
   body: string
@@ -144,7 +145,7 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'cable-dredges',
     title: 'Cable dredges',
-    image: 'dredgeCableDredgeReservoir',
+    image: 'dredgeDragflowRender',
     application:
       'Extreme depths, up to and beyond 100 m — deep canyons, dead-storage zones and dam intakes.',
     benefit:
@@ -154,7 +155,8 @@ export const dredgingEquipment: DredgingEquipment[] = [
   {
     id: 'remote-controlled-dredges',
     title: 'Remote-controlled dredge',
-    image: 'dredgeRemoteControlUnit',
+    image: 'dredgeCableDredgeReservoir',
+    extraImage: 'dredgeRemoteControlUnit',
     application:
       'Hazardous environments and restricted zones near intake gates, trash racks and toxic or acidic sludge basins.',
     benefit: 'Keeps operators away from the hazard while retaining precise, monitored positioning.',

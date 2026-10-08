@@ -99,7 +99,7 @@ export const media = {
   floatingPipelineCraneAssembly: '/images/floating-pipeline-crane-assembly.jpeg',
   floatingPipelineCraneCrew: '/images/floating-pipeline-crane-crew.jpeg',
   dredgeSlurryPumpRange: '/images/dredge-slurry-pump-range.jpeg',
-  dredgeDragflowRender: '/images/dredge-dragflow-render.jpeg',
+  dredgeDragflowRender: '/images/dredge-dragflow-render-trimmed.jpeg',
   dredgeRemoteControlUnit: '/images/dredge-remote-control-unit.jpeg',
   dredgeOperatorRemoteReservoir: '/images/dredge-operator-remote-reservoir.jpeg',
   dredgeSubmersiblePumpStandalone: '/images/dredge-submersible-pump-standalone.jpeg',

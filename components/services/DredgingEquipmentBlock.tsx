@@ -45,13 +45,30 @@ export function DredgingEquipmentBlock({
         </dl>
       </Reveal>
       <Reveal className={flip ? 'sm:order-1' : ''} direction={flip ? 'right' : 'left'}>
-        <ImageBlock
-          src={media[item.image]}
-          alt={item.title}
-          reveal
-          objectFit="contain"
-          className="min-h-[280px] bg-background sm:min-h-[440px]"
-        />
+        {item.extraImage ? (
+          <div className="grid grid-cols-2 gap-3 sm:gap-4">
+            <ImageBlock
+              src={media[item.image]}
+              alt={item.title}
+              reveal
+              className="aspect-square w-full"
+            />
+            <ImageBlock
+              src={media[item.extraImage]}
+              alt={`${item.title} — remote control unit`}
+              reveal
+              className="aspect-square w-full"
+            />
+          </div>
+        ) : (
+          <ImageBlock
+            src={media[item.image]}
+            alt={item.title}
+            reveal
+            objectFit="contain"
+            className="min-h-[280px] bg-background sm:min-h-[440px]"
+          />
+        )}
       </Reveal>
     </div>
   )
