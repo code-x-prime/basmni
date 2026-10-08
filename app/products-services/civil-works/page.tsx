@@ -81,7 +81,7 @@ export default function CivilPage() {
       <section className={`${sectionPad} bg-white text-navy`}>
         <SectionHeading
           dark
-          label="Key"
+          label="Key works"
           title="Foundation, seepage, flood and works"
           deck="The parts of a water-retaining structure that decide whether it lasts — engineered per site."
         />
